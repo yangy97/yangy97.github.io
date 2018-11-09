@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		
+		<mate name="keywords" content="杨玉印,老杨,洋芋" />
+		<meta name="description" content="照片墙,好友,同学,friends" />
+		<meta http-equiv="refresh" content="600" />
+		<meta name="myname" content="杨玉印 ,照片" />
+		<meta name="myid" content="2016051603119" />
+        <title>Photos</title>
+        <link rel="stylesheet" type="text/css" href="css/public.css" />
+		<style>
+	
+			
+			ul {
+				list-style-type:none;/*列表无装饰*/
+				float: left;/*左浮动*/
+				margin-left: 50px;
+				padding: 10px 10px 50px 10px;
+				background: #FFFFFF;
+				border: 1px solid #FFFFFF;/*边框*/
+				box-shadow: 0px 2px 15px #333 inset;
+				transition: all 0.8s;/*全部0.8秒过度一次*/
+			}
+			
+			li {
+				position: relative;
+			}ul:hover{
+				z-index: 10;
+				transform: scale(1.3);/*放大*/
+			}
+			
+			.pic1 {
+				z-index: 1;
+				-webkit-transform: rotate(-20deg);
+				-moz-transform: rotate(-20deg);
+				transform: rotate(-20deg);/*逆时针转动*/
+			}
+			
+			.pic2 {
+				z-index: 2;
+				-webkit-transform: rotate(-10deg);
+				-moz-transform: rotate(-10deg);
+				transform: rotate(-10deg);/*逆时针转动*/
+			}
+			
+			.pic3 {
+				z-index: 3;
+				-webkit-transform: rotate(15deg);
+				-moz-transform: rotate(15deg);
+				transform: rotate(15deg);/*顺时针转动*/
+			}
+			
+			.pic4 {
+				z-index: 0;
+				-webkit-transform: rotate(20deg);
+				-moz-transform: rotate(20deg);
+				transform: rotate(20deg);/*顺时针转动*/
+			}
+			
+			.pic5 {
+				z-index: 2;
+				-webkit-transform: rotate(-10deg);
+				-moz-transform: rotate(-10deg);
+				transform: rotate(-10deg);/*逆时针转动*/
+			}
+			
+			.pic6 {
+				z-index: 1;
+				-webkit-transform: rotate(10deg);
+				-moz-transform: rotate(10deg);/*顺时针转动*/
+			}
+			
+			.pic7 {
+				z-index: 1;
+				-webkit-transform: rotate(20deg);
+				-moz-transform: rotate(20deg);
+				transform: rotate(20deg);/*顺时针转动*/
+			}
+			.demo {
+				width: 1200px;/*阴影宽度*/
+				color: #fff;
+				font: bold 55px/100% "微软雅黑", "lucida grande", "lucida sans", helvetica, arial, sans;
+				text-transform: uppercase;
+			}
+			
+			.demo1 {
+				color: transparent;/*透明*/
+				text-shadow: 0 0 5px #0C6;/*文字阴影*/
+				text-align: center;/*文本居中*/
+			}
+			
+			
+			
+			#fd {
+				width: 1200px;
+				margin: 0 auto;
+				display: inline-block;
+			}
+			
+			#fd p {
+				float: left;/*左浮动*/
+				margin-left: 50px;
+				padding: 10px 10px 50px 10px;
+				background: #FFFFFF;
+				border: 1px solid #FFFFFF;
+				box-shadow: 0px 2px 15px #333 inset;/*盒子阴影,外阴影*/
+				transition: all 0.8s;
+			}
+			
+			#fd p:hover {
+				z-index: 10;/*z轴*/
+				transform: rotate(10deg);/*顺时针转动*/
+			}
+			
+			
+			
+			
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jscss.js"></script>
+<script src="js/snowfall.jquery.js" type="text/javascript" charset="utf-8"></script><!--js的引用-->
+	</head>
+
+	<body>
+		<div id="containter">
+        <div class="demo demo1" style="margin-top:5px;">welcome <br/>This is our world</div>
+			<div id="navigation" style="margin-top:10px;">
+				 <ol>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/index.html"  target="_blank">Home</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Family.html"  target="_blank">Family</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/CQNU.html"  target="_blank">CQNU</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Hometown.html"  target="_blank"> Hometown</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Photos.html"  target="_blank">Photos</a> </li>
+      </ol>
+			</div>
+
+			<div id="fd">
+				<!--照片墙开始-->
+				<p class="pic7"> <img src="images/1.jpg" title="李亚林"> </p>
+				<ul class="pic3">
+					<li><img src="images/16.jpg" title="崔茜歆"></li>
+				</ul>
+				<p class="pic1"> <img src="images/1.2.jpg" title="孙成鹏"> </p>
+				<ul class="pic3">
+					<li><img src="images/22.jpg" title="隆行"></li>
+				</ul>
+
+				<p class="pic5"> <img src="images/26.jpg" title="邝国锋"> </p>
+				<ul class="pic7">
+					<li><img src="images/27.jpg" title="黎凤"></li>
+				</ul>
+				<p class="pic5"> <img src="images/24.jpg" title="马梦思"> </p>
+				<ul class="pic2">
+					<li><img src="images/2.jpg" title="蒋翠霞"></li>
+				</ul>
+				<p class="pic3"> <img src="images/14.jpg" title="刘树红"> </p>
+				<ul class="pic4">
+					<li><img src="images/9.jpg" title="喻科霖"></li>
+				</ul>
+				<p class="pic5"> <img src="images/5.jpg" title="王茂权"> </p>
+
+				<ul class="pic6">
+					<li><img src="images/6.jpg" title="向万红"></li>
+				</ul>
+				<p class="pic2"><img src="images/3.jpg" title="汪豪"></p>
+				<ul class="pic3">
+					<li><img src="images/8.jpg" title="合照"></li>
+				</ul>
+				<ul class="pic4">
+					<li><img src="images/28.jpg" title="马荷馨"></li>
+				</ul>
+				<ul class="pic7" style="margin-top: -20px;">
+					<li><img src="images/11.jpg" title="姚苏玲"></li>
+				</ul>
+				<p class="pic1"><img src="images/10.jpg" title="秦祥云"></p>
+				<p class="pic1"><img src="images/7.jpg" title="陈爽"></p>
+
+				<p class="pic2" style="margin-top: -20px;"><img src="images/23.jpg" title="马梦思"></p>
+				<ul class="pic4">
+					<li><img src="images/1.1.jpg" title="李藜"></li>
+				</ul>
+				<p class="pic3" style="margin-top: -20px;"><img src="images/1.3.jpg" title="郭尧"></p>
+				<ul class="pic7">
+					<li><img src="images/25.jpg" title="马梦思"></li>
+				</ul>
+				<p class="pic4" style="margin-top: -20px;"><img src="images/12.jpg" title="周家银"></p>
+				<ul class="pic5">
+					<li><img src="images/13.jpg" title="李沅祝"></li>
+				</ul>
+				<p class="pic2" style="margin-top: -20px;"><img src="images/8.jpg" title="合照"></p>
+				<ul class="pic3">
+					<li><img src="images/19.jpg" title="陈怡冰"></li>
+				</ul>
+				<p class="pic2" style="margin-top: -20px;"><img src="images/15.jpg" title="隆行"></p>
+				<ul class="pic4">
+					<li><img src="images/4.jpg" title="钟权"></li>
+				</ul>
+				<p class="pic5" style="margin-top: -20px;"><img src="images/20.jpg" title="张悦愉"></p>
+				<ul class="pic1">
+					<li><img src="images/17.jpg"></li>
+				</ul>
+				<p class="pic5" style="margin-top: -20px;"><img src="images/21.jpg" title="魏华成"></p>
+			</div>
+            
+
+		</div>
+		<!--照片墙结束-->
+		<center style="padding-top:100px;">
+			<div id="top"></div><!--右下角快捷键-->
+            <script type="text/javascript">
+			$(document).snowfall({
+				image: "img/4.png",//图片
+				flakeCount: 60,//下落的数量
+				round: true,
+				minSize: 30,
+				maxSpeed: 3,//下落的速度
+				maxSize: 4
+			});
+	</script>	
+	</body>
+
+</html>

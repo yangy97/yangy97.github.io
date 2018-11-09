@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="utf-8">
+		<mate name="keywords" content="杨玉印,老杨,洋芋" />
+		<meta name="description" content="丰都,鬼城,计算机,一个刚开始做网页的菜鸟" />
+		<meta http-equiv="refresh" content="600" />
+		<meta name="myname" content="杨玉印 " />
+		<meta name="myid" content="2016051603119" />
+		<title>Hometown</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<style>
+#content {
+	width: 1200px;/*内容宽度*/
+}
+.h1 {
+	border: 2px solid pink;
+	/*div的边线*/
+	margin-top: 50px;
+	/*顶外边距*/
+	margin-left: 80px;
+	/*左外边距*/
+	margin-bottom: 20px;
+	/*底外边距*/
+	margin-right: 10px;
+	/*右外边距*/
+	font-size: 22px;
+	/*字号大小*/
+	font-family: arial;
+	position: relative;
+	/*相对定位*/
+	width: 450px;
+	/*宽度*/
+				
+	float: left;
+	/*左浮动*/
+	border-radius: 50px 10px 50px 10px;/*圆角*/
+}
+.h2 {
+	border: 2px solid pink;
+	/*div的边线*/
+	margin-top: 50px;
+	/*顶外边距*/
+	margin-right: 80px;
+	/*右外边距*/
+	margin-bottom: 20px;
+	/*底外边距*/
+	font-size: 22px;
+	font-family: arial;
+	position: relative;
+	/*相对定位*/
+	width: 450px;
+	/*宽度*/
+				
+				/*宽度*/
+	float: right;
+	/*右浮动*/
+	border-radius: 50px 10px 50px 10px;
+	display: inline-block;/*让div在文字长度上显示*/
+}
+.h3 {
+	border: 2px solid pink;
+	/*div的边线*/
+	margin-bottom: 50px;
+	/*底外边距*/
+	margin-left: 80px;
+	/*左外边距*/
+	font-size: 22px;
+	font-family: arial;
+	position: relative;
+	/*相对定位*/
+	width: 450px;
+	/*宽度*/
+				
+	float: left;
+	/*左浮动*/
+	border-radius: 50px 10px 50px 10px;/*圆角*/
+}
+.h4 {
+	border: 2px solid pink;
+	/*div的边线*/
+	margin-bottom: 50px;
+	margin-right: 80px;
+	font-size: 22px;
+	font-family: arial;
+	position: relative;
+	/*相对定位*/
+	width: 450px;
+	/*宽度*/
+			
+	float: right;
+	/*右浮动*/
+	border-radius: 50px 10px 50px 10px;/*圆角*/
+}
+h1 {
+	font-family: 华文行楷;
+	/*字体*/
+	font-size: 30px;
+	/*字体大小*/
+	text-decoration: underline;
+	/*下划线*/
+	color: #0078AA;
+	/*字体颜色*/
+}
+h3 {
+	font-family: 幼圆;
+	/*字体*/
+	font-size: 18px;
+	/*字体大小*/
+	color:#000;
+	/*字体颜色*/
+	padding: 0px 20px 0px 20px;
+	/*顶右底左的内边距*/
+	text-align: justify;
+	/*两端对齐*/
+}
+.demo {
+	width: 1200px;
+	color: #fff;
+	font: bold 55px/100% "微软雅黑", "lucida grande", "lucida sans", helvetica, arial, sans;
+	text-transform: uppercase;/*文本字体大写*/
+}
+.demo1 {
+	color: transparent;
+	/*字体的透明*/
+	text-shadow: 0 0 5px #0C6;
+	/*文本阴影*/
+	text-align: center;/*文本居中*/
+}
+a1:hover {
+	color: #06F;
+}/*鼠标移上文字变成蓝色*/
+b1:hover {
+	border-radius: 80px;
+}
+.chara2 {
+	vertical-align: top;
+	/*垂直对齐*/
+	padding-top: 15px;
+	/*顶内边距*/
+	padding-left: 30px;
+	/*左内边距*/
+	font-size: 12px;
+	/*字号*/
+	padding-right: 15px;/*右内边距*/
+}
+.yj {
+	border-radius: 25px/20px;/*图片圆角*/
+}
+.slider {
+	margin: 0 auto;
+	width: 990px
+}
+.slider-container {
+	height: 425px;
+	margin: 0 auto;
+	overflow: hidden;/*隐藏多余的内容*/
+	position: relative;
+	width: 990px;
+}
+.slider-container .slider-wrapper {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 5000em; /*防止显示错误,百度的*/
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;/*每400ms图片滑动*/
+}
+.slider-container .slide {
+	float: left;
+	height: 425px;/*图片div高度*/
+	overflow: hidden;
+	position: relative;
+	width: 990px;
+	border-radius:50px;
+}
+.slider-nav {
+	
+	
+	width: 948px;
+}
+.slider-nav li {
+	display: inline;
+	padding: 3px;/*小圆点的内边距*/
+}
+.slider-nav .bullet {
+	background-color: #59baa8;
+	border-radius: 50%;
+	display: inline-block;
+	text-indent: -9000px;/*把元素移到图片外面*/
+	overflow: hidden;
+	height: 16px;
+	width: 16px;
+
+}
+.slider-nav .active {
+	background-color: #e7433b
+}
+.slider-nav .prev, .slider-nav .next {
+	display: inline-block;
+	text-indent: -9000px;/*将第一行左缩进*/
+	overflow: hidden;
+}
+.slider-nav .next {
+	margin: 0 auto;
+}
+
+#footer {
+	clear: both;
+	/*清除两边浮动*/
+	font-size: 30px;
+	width: 1200px;
+	/*宽度*/
+	height: 50px;
+	/*高度*/
+	margin-bottom: 0px;
+	text-align: center;
+	position: relative;
+	/*相对定位*/
+				
+				
+	height: 60px;
+}
+</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jscss.js"></script>
+		<script src="js/snowfall.jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slider.js"></script>
+		<!--js的调用-->
+
+		</head>
+
+		<body>
+<div id="containter">
+          <div class="demo demo1" style="padding-top:50px;"> My Hometown</div>
+          <div id="links">
+    <div id="navigation">
+            <ol>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/index.html"  target="_blank">Home</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Family.html"  target="_blank">Family</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/CQNU.html"  target="_blank">CQNU</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Hometown.html"  target="_blank"> Hometown</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Photos.html"  target="_blank">Photos</a> </li>
+      </ol>
+            </div>
+  </div>
+          <!--菜单导航-->
+          <div id="content">
+          <table width="1000px" align="center" cellpadding="0" cellspacing="1">
+    <!--表格开始-->
+    <tr class="chara2">
+              <td style="text-align:center">< <img class="yj b1" src="img/丰都县.jpg"> </a>
+      </div>
+    <br/>
+   <h1> <a href="http://baike.baidu.com/link?url=BlLOMyepArn7Bt3o82RAQZFKYY9kGU1HZCEQyqWgLpVWMqTqZCPKyxoTyEIp5YKWKVm_qbs7XLYEvwIFroRsp6ZL9wTV9_yTHBTHQiKR91srmpWxYS74imIvrIIA8der" target="_blank">丰都县</a>
+      </h1>
+    
+    <h3><a1>&nbsp;&nbsp;&nbsp;&nbsp;丰都,先秦时期,属巴国。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;秦代,属巴郡枳县;西汉,属益州巴郡枳县;东汉初,置隶属益州巴郡;献帝初平元年至建安五年(190年-200年)隶属益州永宁郡。东汉和帝永元二年(90年),分枳县地置平都县,是为丰都建县之始。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;三国时期,蜀汉延熙十七年(254年),平都县并入临江县,属益州巴郡。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              西晋,属梁州巴郡;成汉,属荆州巴郡;东晋,属梁州巴郡。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;南北朝时期,刘宋时属益州巴郡;南齐时属巴州巴郡;南梁时属楚州临江郡;西魏、北周时属临州临江郡。<br/>
+              。
+              &nbsp;&nbsp;&nbsp;&nbsp;隋朝,开皇三年(583年),属临州临江县;大业三年(607年)属巴东郡临江县;恭帝义宁二年(618年),自临江县分出置丰都县,隶临州。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;唐代,贞观八年(634年),隶山南道忠州;天宝元年(742年),隶山南东道南宾郡;乾元元年(785年),隶山南东道忠州;至五代前蜀、后蜀,隶忠州。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;宋朝,宋真宗时,隶夔州路忠州南宾郡;徽宗政和元年(1111年),复并入临江县;南宁高宗绍兴元年(1131年),丰都县复置;度宗咸淳元年(1265年),隶夔州路咸淳府。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;元初隶四川行省重庆路忠州;至元二十一年(1284年),垫江县并入丰都;至正二十二年(1362年),明玉珍大夏政权时,垫江分出。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;明朝,洪武十年(1377年),丰都县并入涪州,属四川承宣布政使司重庆府;十三年(1380年)自涪州(今涪陵)分出复置县,改名酆都,隶重庆府忠州。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;清代,康熙十三年(1674年),酆都县为吴三桂军占领;十九年(1680年)清军复收;雍正十二年(1734年),隶忠州直隶州;嘉庆七年(1802年),隶川东道忠州直隶州。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;民国元年(1912年),隶四川省忠州;民国2年(1913年),隶四川行政公署川东道;民国3年(1914年),隶四川巡按使公署东川道;民国17年(1928年),直隶四川省;民国24年(1935年),隶四川省第八行政督察区。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;中华人民共和国建立后,1950年,隶西南区川东行署区涪陵专区;1952年9月,隶四川省涪陵专区;1958年县名酆都改为丰都;1968年至1995年,丰都县隶四川省涪陵地区;1996年设立地级涪陵市,丰都隶属涪陵市。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;1997年12月,丰都县正式由重庆直辖市管辖。<br/>
+              <br/>
+             </h3>
+      </td>
+    
+      </tr>
+    
+  </table>
+          <div class="slider">
+    <div class="slider-container">
+              <div class="slider-wrapper">
+        <div class="slide"> <img src="img/feng.jpg"> </div>
+        <div class="slide"> <img src="img/feng1.jpg"> </div>
+        <div class="slide"> <img src="img/gui.jpg"> </div>
+        <div class="slide"> <img src="img/nan.jpg"> </div>
+      </div>
+            </div>
+  </div>
+          
+          <!--导航条结束-->
+          <div class="h1"><img src="img/shi1.jpg" style="float:left; border-radius:50px;"> <div><a1>&nbsp;&nbsp;&nbsp;&nbsp;麻辣鸡块麻辣鸡块起源于江湖菜,确切年代无从考究,但从民间传说又可看出一二。”<br/>&nbsp;&nbsp;&nbsp;&nbsp;从汉朝开始,丰都便在平都山(今名山)大兴土木,在唐朝时修仙都观,即今天的“天子殿”。仙都观门前左右站立有高2米的鸡脚、无常二神:白面无常爷,迎孝接善;青脸鸡脚神,锁恶拿顽。<br/>&nbsp;&nbsp;&nbsp;&nbsp;做法很简单,将鸡肉白水煮熟切成小块,再将红油,味精,香油,白糖,花椒面,酱油调匀,淋在鸡块上即可。而丰都的鸡块煮熟却不煮烂,肉质硬硬的却能轻易地用牙撕碎,极易入嘴。菜色泽红亮鲜艳,质地嫩气,味厚香浓,香辣味鲜</a1> </div></div>
+          <div class="h2"><img src="img/shi2.jpg" style="float:left; border-radius:50px;"><div><a1>&nbsp;&nbsp;&nbsp;&nbsp;丰都仙家豆腐乳:选用优质大豆,以白胡椒、沙仁、白叩等几十种名贵中药配制香料,坚持科学配方,精心加工,产品质量享有很高的声誉,畅销全国各地。米、小麦、食盐等原料,古法精酿,品质优良,豆尖中的蛋白质经发酵、水解后形成多种氨基酸等营养物质,通过天然酿造,达到红润香,有着浓郁的酱香及酯香气,味鲜美、醇厚、咸、甜适于酱卤,烩炒菜等实为调味佳品。含有多种氨基酸和维生素,营养丰富,开胃助食,特别对年老体弱及儿童有帮助消化、增强食欲、增加记忆、加速恢复健康的功能,实为消费者喜爱的佑餐调味品</a1> </div></div>
+
+          <!--正文结束--> 
+          
+        </div>
+<div id="footer"><strong>重庆师范大学计算机与信息科学学院16计科杨玉印版权所有,指导老师:戴政国</strong> </div>
+</div>
+</div>
+<center style="padding-top:100px;">
+<div id="top"></div>
+<!--右下角快捷键--> 
+<script type="text/javascript">
+			$(document).snowfall({
+				image: "img/1.png",//图片
+				flakeCount: 60,//下落的数量
+				round: true,
+				minSize: 30,
+				maxSpeed: 3,//下落的速度
+				maxSize: 4
+			});
+			(function() {
+		Slider.init({
+			target: $('.slider'),
+			time: 6000
+		});
+	})();
+	</script>
+</body>
+</html>

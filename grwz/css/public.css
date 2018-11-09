@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+body, html {
+	background-color: #d1edd5;/*背景颜色*/
+	margin: 0px auto;/*让网页居中*/
+	padding: 0 auto;/*让网页居中*/
+}
+#containter {
+	margin: 0px auto;/*文本居中*/
+	width: 1200px;/*容器宽度*/
+	font-family: arial;
+	font-size: 20px;
+	background: url(../img/2.gif);
+	border-radius: 50px;/*圆角为5px*/
+	
+}
+#links {
+	font-family: arial;
+	width: 100%;/*导航条与containter一样宽*/
+		margin-top: 5px;
+}
+#navigation {
+	font-family: Arial;
+}
+#navigation ol {
+	list-style-type: none;/*无装饰*/
+	margin: 0px;
+	padding: 0px;
+}
+#navigation li {
+	float: left;/*水平显示个个项目,这样列表变成了一行显示*/
+}
+#navigation li a {
+	display: block;
+	/*区块显示*/
+	padding: 3px 6px;/*设置内边距*/
+	text-decoration: none;/*文本装饰效果无*/
+	border: 2px solid #c6ebf7;
+	/*左边的粗蓝框*/
+	margin-left: 75px;
+	margin-right: 65px;
+}
+#navigation li a:link, #navigation li a:visited {
+	background-color: #0F9;/*导航条原来的颜色*/
+	color: #fff;/*导航条当鼠标移上时颜色变化*/
+	border-radius: 20px;
+}
+#navigation li a:hover {
+	/*鼠标经过时*/
+	background-color: #0FC;
+	/*改变背景色*/
+	color: #ff0;/*字体的颜色*/
+}
+.izl-rmenu {
+	position: fixed;/*位置固定*/
+	right: 0;/*放在左下角*/
+	bottom: 0px;
+	padding-bottom: 0px;
+	/*background: url(../images/r_b.png) 0px bottom no-repeat;/*图片放的位置*/
+	z-index: 999;/*显示在最上方*/
+}
+.izl-rmenu .btn {
+	width: 72px;/*下角图标的宽度*/
+	height: 73px;/*下角图标的高度*/
+	margin-bottom: 1px;
+	cursor: pointer;/*鼠标指定时*/
+	position: relative;/*相对位置*/
+}
+.izl-rmenu .btn-qq {
+	background: url(../images/r_qq.png) 0px 0px no-repeat;/*背景图片*/
+	background-color: #6da9de;/*颜色*/
+	opacity: 1;/*不透明*/
+}
+.izl-rmenu .btn-qq:hover {
+	background-color: #488bc7;/*鼠标移上图片后的颜色*/
+}
+.izl-rmenu a.btn-qq, .izl-rmenu a.btn-qq:visited {
+	background: url(../images/r_qq.png) 0px 0px no-repeat;
+	background-color: #6da9de;
+	text-decoration: none;
+	display: block;
+	opacity: 1;/*不透明*/
+}
+.izl-rmenu .btn-wx {
+	background: url(../images/r_wx1.png) 0px 0px no-repeat;/*背景颜色*/
+	background-color: #78c340;
+	opacity: 0.9;/*透明度为0.9*/
+}
+.izl-rmenu .btn-wx:hover {
+	background-color: #58a81c;
+}
+.izl-rmenu .btn-wx .pic {
+	position: absolute;/*绝对位置*/
+	left: -160px;/*向左移动160px,也就是左浮动*/
+	top: 0px;
+	display: none;
+	width: 160px;/*宽度*/
+	height: 160px;/*高度*/
+}
+.izl-rmenu .btn-phone {
+	background: url(../images/r_phone.png) 0px 0px no-repeat;
+	background-color: #fbb01f;
+	opacity: 0.9;
+}
+.izl-rmenu .btn-phone:hover {
+	background-color: #ff811b;
+}
+.izl-rmenu .btn-phone .phone {
+	background-color: #ff811b;/*鼠标移动上去后的背景颜色*/
+	position: absolute;
+	width: 160px;/*宽度*/
+	left: -160px;/*向左移动160px,也就是左浮动*/
+	top: 0px;
+	line-height: 73px;/*行高*/
+	color: #FFF;
+	font-size: 18px;
+	text-align: center;
+	display: none;/*无块状显示*/
+}
+.izl-rmenu .btn-top {
+	background: url(../images/r_top.png) 0px 0px no-repeat;
+	background-color: #666666;
+	display: none;
+	opacity: 1;
+}
+.izl-rmenu .btn-top:hover {
+	background-color: #444;
+}

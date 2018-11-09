@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<mate name="keywords" content="杨玉印,老杨,洋芋" />
+		<meta name="description" content="杨玉印个人主页,计算机,电脑,计科,菜鸟,初学者" />
+		<meta http-equiv="refresh" content="600" />
+		<meta name="myname" content="杨玉印" />
+		<meta name="myid" content="2016051603119" />
+        <title>Home</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<style>
+			body,
+			html {
+				background-color: #d1edd5;
+				/*背景颜色*/
+				margin: 0px auto;
+				/*让网页居中*/
+				padding: 0 auto;
+				/*让网页居中*/
+			}
+			
+			#containter {
+				margin: 0px auto;
+				/*让网页居中*/
+				width: 1200px;
+				/*设置容器的宽度*/
+				font-family: arial;
+				/*设置字体*/
+				font-size: 20px;
+				/*设置字体大小*/
+				border-radius: 50px;
+				/*设置边框圆角*/
+				background: url(img/2.gif);
+			}
+			
+			#links {
+				font-family: arial;
+				/*导航菜单的字体*/
+				width: 100%;
+				/*于父容器一样宽*/
+				margin-top: 5px;
+			}
+			
+			#content {
+				color: #000;
+				/*字体颜色*/
+				margin: 85px 300px 0px 350px;
+				/*内容的外边距*/
+				width: 550px;
+				/*内容的宽度*/
+			}
+			
+			#right {
+				width: 250px;
+				/*右容器的宽度*/
+				font-family: arial;
+				font-size: 20px;
+				border-radius: 30px;
+				text-align: center;
+				/*文本居中*/
+				float: right;
+				/*整体右浮动*/
+				margin-top: 20px;
+				/*设置外边距*/
+				margin-right: 10px;
+				/*设置外边距*/
+			}
+			
+			#left {
+				width: 320px;
+				/*内容的宽度*/
+				margin-top: 20px;
+				/*设置外边距*/
+				margin-left: 20px;
+				/*设置外边距*/
+				font-family: arial;
+				font-size: 20px;
+				float: left;
+				/*浮动*/
+			}
+			
+			#left p {
+				font-size: 20px;
+				text-align: center;
+				/*文本居中*/
+			}
+			
+			#left span {
+				font-size: 20px;
+				text-align: center;
+				/*文本居中*/
+				color: #10c9f1;
+				/*背景颜色*/
+			}
+			
+			.demo {
+				width: 1200px;/*阴影宽度*/
+				color: #fff;
+				font: bold 55px/100% "微软雅黑", "lucida grande", "lucida sans", helvetica, arial, sans;
+				text-transform: uppercase;
+			}
+			
+			.demo1 {
+				color: transparent;/*透明*/
+				text-shadow: 0 0 5px #0C6;/*文字阴影*/
+				text-align: center;/*文本居中*/
+			}
+			
+			.bl ul {
+				margin: 0px;
+				padding: 0px;/*无序列表没有内外边距*/
+				list-style-type: none;
+				/*无图片符号*/
+			}
+			
+			.bl li a {
+				text-align: left;/*文本左浮动*/
+				text-decoration: none;
+				/*无文本装饰*/
+			}
+			
+			.bl li a:visited {
+				display: block;/*块状显示*/
+				background-color: #09F;/*背景颜色*/
+				color: #fff;
+				border-radius: 20px;/*圆角*/
+			}
+			
+			.bl li a:hover {
+				background-color: #0FC;
+				/*改变背景色*/
+				color: #ff0;/*字体颜色*/
+			}
+			
+			#bottom {
+				margin: 0 auto;/*容器居中*/
+				width: 1200px;/*底部div的宽度*/
+				margin-top: 50px;
+				border-radius: 50px;/*圆角*/
+				
+				background: url(img/2.gif);/*背景图片*/
+			}
+			
+			#footer {
+				margin: 0 auto;
+				/*文本居中*/
+				clear: both;
+				/*清除两边浮动*/
+				font-size: 30px;/*字号大小*/
+				width: 1200px;
+				height: 30px;
+				position: relative;
+				/*相对定位*/
+				text-align: center;/*文本居中*/
+				color: #000;/*字体颜色*/
+			}
+			
+			.pic1 {
+				width: 250px;
+				/*图片的宽度*/
+				height: 400px;
+				/*图片的高度*/
+				font-family: arial;
+				/*字体格式*/
+				margin-top: 50px;
+				/*顶外边距*/
+				margin-left: 20px;
+				/*左外边距*/
+				border-radius: 50px;
+				/*圆角*/
+			}
+			
+			.pic2 {
+				width: 250px;
+				/*右边图片的宽度*/
+				height: 300px;
+				/*图片的高度*/
+				font-family: arial;
+				/*字体格式*/
+				margin-top: 25px;
+				/*顶外边距*/
+				margin-right: 20px;
+				/*左外边距*/
+				border-radius: 50px;
+				/*圆角*/
+			}
+			
+			.pic3 {
+				height: 30px;
+				/*footer的高度*/
+				border-radius: 10px;
+				/*圆角*/
+			}
+			
+			h1 {
+				font-family: arial;
+				/*字体格式*/
+				font-size: 19px;
+				/*字体大小*/
+				margin-top: 10px;
+				/*顶外边距*/
+				margin-left: 10px;
+				/*左外边距*/
+				float: left;
+				/*左浮动*/
+			}
+			
+			h2 {
+				font-family: 华文彩云;
+				font-size: 25px;
+				text-shadow: -1px -1px 0 #a0b9ff, 1px 1px 0 #333, 1px 1px 0 #444;
+				/*文本阴影*/
+			}
+			 a1:hover{ color:#06F;}/*鼠标移上文字变成蓝色*/
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jscss.js"></script>
+        <script src="js/snowfall.jquery.js" type="text/javascript" charset="utf-8"></script>
+<!--应用js-->
+		
+	</head>
+
+	<body>
+		<div id="containter">
+			<div class="demo demo1">欢迎<br/>welcome to my world</div>
+			<div id="links">
+				<div id="navigation">
+					 <ol>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/index.html"  target="_blank">Home</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Family.html"  target="_blank">Family</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/CQNU.html"  target="_blank">CQNU</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Hometown.html"  target="_blank"> Hometown</a> </li>
+        <li> <a href="http://yangy.dev.dxdc.net/grwz/Photos.html"  target="_blank">Photos</a> </li>
+      </ol>
+				</div>
+			</div>
+			<div id="left">
+				<div class="bl"><img src="img/me.jpg" class="pic1 "><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我就是我,别人无法取代 <br/>
+					<br/>
+					<ul>
+						<li> &nbsp;&nbsp;&nbsp;
+							<a href="#" style="color:#000 "> <strong>姓名</strong>:<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杨玉印</strong></a>
+						</li>
+						<br/>
+						<li> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" style="color:#000 "><strong>性别:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;男</strong></a>
+						</li>
+						<br/>
+						<li> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" style="color:#000"><strong>年龄</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19岁</strong></a>
+						</li>
+						<br/>
+						<li> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="http://www.cqnu.edu.cn/" target="_blank" style="color:#000"><strong>学校</strong>:<strong>重庆师范大学</strong> </a>
+						</li>
+						<br/>
+						<li> &nbsp;&nbsp;&nbsp;
+							<a href="http://sise.cqnu.edu.cn/" target="_blank" style="color:#000"><strong>专业</strong>:<strong>计算机科学与技术1班</strong></u>
+							</a>
+						</li>
+						<br/>
+						<li> &nbsp;&nbsp;&nbsp;&nbsp; <strong>电话</strong><strong>:18423516243</strong><br/>
+							<br/>
+						</li>
+						<li> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="http://user.qzone.qq.com/1558496605/infocenter?ptsig=pU*0KQYKui*QXBaOj2H4UT*aXqDaD4zI34z*f-hZAJU_" target="_blank" style="color:#000"><strong>QQ</strong><strong>:1558496605</strong></a><br/> &nbsp;&nbsp;&nbsp;&nbsp;
+							<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=tYSAjIKGgICBhoH1xMSb1trY" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png" /></a><br/>
+						</li>
+					</ul>
+					<br/>
+					<strong>座右铭:</strong><br/>
+					<h1> 人不要等明天,<br/>
+        因为<br/>
+        没有人知道<br/>
+        自己有没有明天。</h1>
+				</div>
+			</div>
+			<div id="right"> <img src="img/b.jpg" class="pic2">
+				<h1><a1>
+      <p>那道风景</p>
+      <br/>
+      我追逐在季节里<br/>
+      <br/>
+      风的火苗跳跃着<br/>
+      <br/>
+      快乐的因子疯长<br/>
+      <br/>
+      真想把那风景裁入心底<br/>
+      <br/>
+      叠印留存<br/>
+      <br/>
+      不想让它变幻<br/>
+      <br/>
+      可是春天一年就会来一回<br/>
+      <br/>
+      捂不住的蝴蝶飞呀飞<br/>
+      <br/>
+      不知道是蝴蝶喜欢了春天<br/>
+      <br/>
+      还是春天招引了蝴蝶<br/>
+      <br/>
+      眼前的柠檬茶里<br/>
+      <br/>
+      品出了酸甜<br/>
+      <br/></a1>
+    </h1>
+			</div>
+			<div id="content">
+				<h2>职业规划</h2>
+				<p><a1> &nbsp;&nbsp;&nbsp;&nbsp;未来谁也说不准,就好像蓝天,深邃而广阔,小时候对于每男孩子来说都是想做一个科学家,慢慢长大了,发现这个理想距离我还是太遥远了,就没去想它了。</p></a1>
+               <a1> 现在,我上了大学,又到了思考未来的时候了。<br/> &nbsp;&nbsp;&nbsp;&nbsp;1.现在主要是学好计算机这一块,为以后铺好前进的道路 <br/> &nbsp;&nbsp;&nbsp;&nbsp;2.未来从事计算机方向:对于计算机,我觉得还是很有“钱途",学好专业知识,出去找一个好的工作,学以致用,主要学习web前端的知识,掌握web前端的技能,励志成为一个web前端工程师。 <br/></a1>
+					<h2>个人特长</h2>
+					<br> <a1>&nbsp;&nbsp;&nbsp;&nbsp;1.平时对于机械类的很感兴趣,在家没事捣鼓机械 <br/> &nbsp;&nbsp;&nbsp;&nbsp;2.好动,没事就喜欢溜出去玩一玩 <br/> &nbsp;&nbsp;&nbsp;&nbsp;3.认真,别看我好动,我也是一个认真的人,对于自己决定的事,我会认真的完成 <br/> &nbsp;&nbsp;&nbsp;&nbsp;4.乐观,有着一颗乐观的心,不以物喜,不以己悲。 <br/></a1>
+					<h2>励志名言</h2><a1> &nbsp;&nbsp;&nbsp;&nbsp;【1】知人者智,自知者明;胜人者力,自胜者强。 <br/> &nbsp;&nbsp;&nbsp;&nbsp;【2】不谋万世者,不足谋一时; <br/> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;不谋全局者,不足谋一域。<br/> &nbsp;&nbsp;&nbsp;&nbsp;【3】心似浮云常自在,意如流水任东西 <br/> &nbsp;&nbsp;&nbsp;&nbsp;【4】:最鼓舞人心的一句话:星星之火,可以燎原。 <br/> &nbsp;&nbsp;&nbsp;&nbsp;【5】:最豪迈和傲气的一句话:一切反动派都是纸老虎! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【6】:最谦虚的一句话:夺取全国胜利,只是万里长征的第一步! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【7】:最自信的一句话:自信人生二百年,会当水击三千里! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【8】:最有凝聚力的一句话:军民团结如一人,试看天下谁能敌! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【9】:最清醒的一句话:在战略上要藐视敌人,在战术上要重视敌人! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【10】:最有哲理的一句话:凡是敌人反对的我们就要拥护,凡是敌人拥护的我们就要反对! <br/> &nbsp;&nbsp;&nbsp;&nbsp;【11】:最有自尊的一句话:封锁吧!封锁它十年、八年,中国的一切问题都解决了! <br /> &nbsp;&nbsp;&nbsp;&nbsp;【12】:最具奥运精神的一句话:文明其精神,野蛮其体魄! <br /> &nbsp;&nbsp;&nbsp;&nbsp;【13】:最像长辈的一句话:好好学习,天天向上! <br /> &nbsp;&nbsp;&nbsp;&nbsp;【13】:最混蛋的一句话:我现在要好好学习了!</a1>
+					<br/>
+					<br/>
+			</div>
+		</div>
+		<div id="bottom">
+			<form style="margin:50px;">
+				<fieldset style="border:0;">
+					<!--这是从网上找的属性,为了实现边框加文字效果,然后去掉边框-->
+					<!--个人自我介绍-->
+					<legend style="font-family: 华文彩云; font-size: 20px;">自我介绍</legend>
+					<iframe height=450 width=480 src='http://player.youku.com/embed/XMTg4NjQyMDIwOA==' frameborder=0 'allowfullscreen'></iframe>
+					<div style="display:inline-block;float:right;">
+						<table cellspacing="30">
+							<tr>
+								<td style="font-family: 华文行楷;font-size: 40px;">这就是一个开学视频很简单<br/>
+									<br/> &nbsp;&nbsp;希望大家喜欢
+									<br/></td>
+							</tr>
+						</table>
+						<br/>
+						<br/> &nbsp;&nbsp;
+						<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=152428&auto=1&height=66"></iframe>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div id="footer" class="pic3">
+			<marquee scrollamount="6">
+				重庆师范大学计算机与信息科学学院16计科杨玉印版权所有,指导老师:戴政国
+			</marquee>
+		</div>
+		<center style="padding-top:100px;">
+			<div id="top"></div><!--右下角-->
+            <script type="text/javascript">
+			$(document).snowfall({
+				image: "img/1.png",//图片
+				flakeCount: 60,//下落的数量
+				round: true,
+				minSize: 30,
+				maxSpeed: 3,//下落的速度
+				maxSize: 4
+			});
+	</script>	
+	</body>
+
+</html>
