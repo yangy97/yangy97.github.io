@@ -1,0 +1,361 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: "microsoft yahei"
+}/*body的设置*/
+
+.layout {
+	width: 1100px;/*layout宽度*/
+	margin: 0 auto;
+	position: relative;
+}
+
+.layout1 {
+     float: left;
+	width:1100px;
+	margin: 0 auto;
+	position: relative;
+	font-size: 15px;
+}
+.section1 {width: 100%;
+	height: 900px;
+	color: purple;
+	margin: 0 auto;
+	background-color:#CCD5DE;
+}
+
+.thx {
+	position: absolute;
+	top: 200px;
+	margin-left: 50px;
+}
+
+.thx .txt {
+	font-size: 50px;
+	line-height: 110px;/*行高*/
+	-webkit-animation: zoomIn 0.5s 0s linear forwards;/*动画设置*/
+	animation: zoomIn 0.5s 0s linear forwards;
+	color: #000000;
+	font-family: 华文楷体;
+}
+
+.thx .txt.gxh {
+	font-size: 23px;/*字体大小*/
+}
+
+.thx .unsubscribe {
+	font-size: 28px;/*字体*/
+	height: 80px;/*高度*/
+	line-height: 80px;/*行高*/
+	width: 390px;/*宽度*/
+	text-align: center;/*文本居中*/
+	border: 1px solid #fff;/*文本边框*/
+	border-radius: 40px;/*边框圆角*/
+	margin-top: 75px;/*顶部外边距*/
+	cursor: pointer;/*鼠标指针*/
+		font-family:华文楷体;
+}
+
+.thx .unsubscribe:hover {
+	background: #cde2f0;
+	color: #066ab4;/*鼠标放上去的变换*/
+}
+
+.pic {
+width: 300px;
+	height: 820px;
+	position: absolute;
+	right: 400px;
+	top: 20px;
+	/*图片的位置*/
+}
+
+.notice {
+	width: 480px;
+	height: 820px;
+	position: absolute;
+	left: 280px;
+	bottom: 20px;;
+	-webkit-animation: fadeInUp 0.5s 0.5s linear both;/*动画*/
+	animation: fadeInUp 0.5s 0.5s linear both;
+	background: no-repeat;
+	opacity: 0;/*背景透明*/
+}
+
+.section2 {
+	height: 819px;
+	background-color: #EEEEEE;
+	color: #000;/*第二块的高度背景，字体颜色*/
+}
+.section .bigtxt{
+	height: 500px;
+	width: 500px;
+	top:80px;
+	right: 0;
+	display: inline-block;
+	color:#fff;/*第二块中*/
+}
+
+.section2 .paopao{
+width:454px;
+height: 402px;
+position: absolute;
+right: -200px;
+	background: url(../img/xiao.png) no-repeat;
+}
+
+.section2 .layout {
+	height: 819px;/*第二部分高度*/
+}
+
+.section3 {
+	background: #f6f6f6;
+	height:600px;/*第三部分高度*/
+}
+
+.section4 {width: 100%;
+	height: 600px;
+	background:url(../img/boat.png) no-repeat;
+	overflow: hidden;/*第四部分高度，宽度。背景图片*/
+}
+
+.section5 {
+	color: #000;
+	height: 400px;
+	background: url(../img/yfeiji.png) no-repeat left top,url(../img/yson.png) no-repeat right top;/*第五部分的颜色，高度，背景图片*/
+}
+
+.bigtxt {
+	font-size: 50px;
+	position: absolute;
+	line-height: 80px;
+	margin-left: 200px;/*文本的字体，位置，行高，左边距*/
+	width: 400px;
+}
+
+.subtxt {
+	font-size: 20px;
+	width: 400px;/*字体，文本宽度*/
+}
+.section .subtxt1 {
+	font-size: 20px;
+	width: 400px;
+	right: 0;
+	top: 30px;/*字体大小。文本宽度，相对位置*/
+}
+
+.section2 .bigtxt {
+	left: 0;
+	text-align: left;
+	top: 436px;/*文本左浮动，相对位置*/
+}
+
+.section3 .bigtxt {
+	text-align: right;/*文本右浮动*/
+	right: 0;
+	top: 190px;
+	color: #333;
+}
+.section3 .bigtxt1 {
+	text-align: center;/*文本居中*/
+	right: 0px;
+	top: 20px;
+	color: #333;
+	font-size: 30px;
+}
+.section3 .bigtxt2 {
+	text-align:center;
+	right: 0;
+	top: 50px;
+	color: #333;
+}
+.section4 .bigtxt {
+	left: px;
+	top: 50px;
+	color: #5c5c5c;
+}
+
+.stars {
+	width: 811px;
+	height: 380px;
+	background: url(../img/stars.png) no-repeat;/*stars图片*/
+	position: absolute;
+	left: -144px;
+	top: 100px;
+	display: none;/*位置*/
+}
+.pc_star {
+	width: 220px;
+	height: 120px;
+	background-image: url(../img/web.png) no-repeat;
+	position: absolute;
+	left: 240px;
+	top: 140px;
+}
+
+
+.paopao {
+	width: 200px;
+	height: 433px;
+	background: url(../img/shui.jpg);
+	position: relative;
+	right: -500px;
+	top: 86px;
+	display: none;
+}.section2 .bigtxt,
+.section4 .bigtxt,
+.section3 .subtxt,
+.section3 .bigtxt,
+{
+	display: none;
+}
+/*导入的动画*/
+.leftIn {
+	-webkit-animation: fadeInLeft 1s 0s ease-in 1 both;
+	animation: fadeInLeft 1s 0s ease-in 1 both;
+}
+
+.rightIn {
+	-webkit-animation: fadeInRight 1s 0s ease-in 1 both;
+	animation: fadeInRight 1s 0s ease-in 1 both;
+}
+
+.leftInbounce {
+	-webkit-animation: bounceInLeft 1s 0s ease-in 1 both;
+	animation: bounceInLeft 1s 0s ease-in 1 both;
+}
+
+.rightInbounce {
+	-webkit-animation: bounceInRight 1.5s 0s ease-in 1 both;
+	animation: bounceInRight 1.5s 0s ease-in 1 both;
+}
+
+.upIn {
+	-webkit-animation: fadeInUp 1s 0s ease-in 1 both;
+	animation: fadeInUp 1s 0s ease-in 1 both;
+}.tada {
+	-webkit-animation: tada 1s 0s ease-in 3 both;
+	animation: tada 1s 0s ease-in 3 both;
+}
+
+.pulseIn {
+	-webkit-animation: rotateIn 2s 0s ease-in 1 both;
+	animation: rotateIn 2s 0s ease-in 1 both;
+}
+
+#tcopyright {
+	margin: 80px auto 20px auto;
+	font-size: 14px;
+}
+
+.stars img {
+	position: absolute;
+}
+
+.avatar1 {
+	left: 214px;
+	top: 2px;
+	-webkit-animation: rotateIn 2s 0s ease-in 1 both;
+	animation: rotateIn 2s 0s ease-in 1 both;
+}
+
+.avatar2 {
+	left: 176px;
+	top: 122px;
+	-webkit-animation: rotateIn 2s 0.5s ease-in 1 both;
+	animation: rotateIn 2s 0.5s ease-in 1 both;
+}
+
+.avatar3 {
+	left: 16px;
+	bottom: 90px;
+	-webkit-animation: rotateIn 2s 1s ease-in 1 both;
+	animation: rotateIn 2s 1s ease-in 1 both;
+}
+
+.avatar4 {
+	top: 18px;
+	right: 150px;
+	-webkit-animation: rotateIn 2s 1.5s ease-in 1 both;
+	animation: rotateIn 2s 1.5s ease-in 1 both;
+}
+
+.avatar5 {
+	right: 94px;
+	top: 190px;
+	-webkit-animation: rotateIn 2s 1s ease-in 1 both;
+	animation: rotateIn 2s 1s ease-in 1 both;
+}
+
+.avatar6 {
+	bottom: 20px;
+	right: 170px;
+	-webkit-animation: rotateIn 2s 1.5s ease-in 1 both;
+	animation: rotateIn 2s 1.5s ease-in 1 both;
+}
+
+.un3 {
+	display: none;
+	margin-bottom: 24px;
+}
+.flipInXCode {
+	-webkit-animation: flipInX 1s 0s ease-in 1 both;
+	animation: flipInX 1s 0s ease-in 1 both;
+}
+
+.flipOutXCode {
+	-webkit-animation: flipOutX 1s 0s ease-in 1 both;
+	animation: flipOutX 1s 0s ease-in 1 both;
+}
+
+
+.downIn {
+	-webkit-animation: fadeInDown 1s 0s ease-in 1 both;
+	animation: fadeInDown 1s 0s ease-in 1 both;
+}
+.avatar7 {
+	-webkit-animation: rotateInDownRight 2s 0s ease-in 1 both;
+	animation: rotateInDownRight 2s 0s ease-in 1 both;
+}
+
+.avatar8 {
+	-webkit-animation: rotateInUpLeft 2s 0s ease-in 1 both;
+	animation: rotateInUpLeft 2s 0s ease-in 1 both;
+}
+
+.avatar9 {
+	-webkit-animation: rotateInUpRight 2s 0s ease-in 1 both;
+	animation: rotateInUpRight 2s 0s ease-in 1 both;
+}
+
+
+.flipInXCode {
+	-webkit-animation: flipInX 1s 0s ease-in 1 both;
+	animation: flipInX 1s 0s ease-in 1 both;
+}
+
+.flipOutXCode {
+	-webkit-animation: flipOutX 1s 0s ease-in 1 both;
+	animation: flipOutX 1s 0s ease-in 1 both;
+}
+
+
+.downIn {
+	-webkit-animation: fadeInDown 1s 0s ease-in 1 both;
+	animation: fadeInDown 1s 0s ease-in 1 both;
+}
+.avatar7 {
+	-webkit-animation: rotateInDownRight 2s 0s ease-in 1 both;
+	animation: rotateInDownRight 2s 0s ease-in 1 both;
+}
+
+.avatar8 {
+	-webkit-animation: rotateInUpLeft 2s 0s ease-in 1 both;
+	animation: rotateInUpLeft 2s 0s ease-in 1 both;
+}
+
+.avatar9 {
+	-webkit-animation: rotateInUpRight 2s 0s ease-in 1 both;
+	animation: rotateInUpRight 2s 0s ease-in 1 both;
+}
+

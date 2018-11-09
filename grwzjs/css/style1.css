@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*定义全局变量*/
+
+body {
+	font-family: Arial;
+	background: #d8e9f5 url(../img/bg.png) no-repeat top left;
+	/*背景颜色，图片且不重复填充*/
+}
+
+.title {
+	width: 548px;
+	/*title宽度*/
+	height: 119px;
+	/*title高度*/
+	position: absolute;
+	/*绝对定义*/
+	top: 400px;
+	/*距顶部的距离*/
+	left: 150px;
+	/*左边的距离*/
+	background: transparent url(title.png) no-repeat top left;
+	/*背景图片透明*/
+}
+
+a.back {
+	background: transparent url(back.png) no-repeat top left;
+	/*背景图片透明*/
+	position: fixed;
+	/*固定背景*/
+	width: 150px;
+	/*宽度*/
+	height: 27px;
+	/*高度*/
+	outline: none;
+	bottom: 0px;
+	left: 0px;
+}
+
+#content {
+	margin: 0 auto;
+	/*居中*/
+}
+
+.navigation {
+	margin: 0px auto;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bold;
+	letter-spacing: 1.4px;
+}
+
+.right {
+	position: absolute;
+	top: 50%;/*距离顶部的距离*/
+	bottom: 50%;
+	left: 65%;/*播放器的位置*/
+}
+
+.navigation .item {
+	position: absolute;
+}
+
+.user {
+	top: 125px;
+	left: 110px;/*第一个图片的位置*/
+}
+
+.home {
+	top: 50px;
+	left: 360px;/*第二张图片的位置*/
+}
+
+.fav {
+	top: 90px;
+	left: 625px;/*第三张图片的位置*/
+}
+
+.camera {
+	top: 230px;
+	left: 835px;/*第四张图片的位置*/
+}
+
+a.icon {
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+}
+
+.user a.icon {
+	background: transparent url(../img/user.png) no-repeat 0px 0px;/*背景图片*/
+}
+
+.home a.icon {
+	background: transparent url(../img/home.png) no-repeat 0px 0px;
+}
+
+.camera a.icon {
+	background: transparent url(../img/camera.png) no-repeat 0px 0px;
+}
+
+.fav a.icon {
+	background: transparent url(../img/fav.png) no-repeat 0px 0px;
+}
+
+.navigation .item a.active {
+	background-position: 0px -52px;
+}
+
+.item img.circle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 52px;
+	height: 52px;
+	opacity: 0.1;/*透明度90%*/
+}
+
+.item h2 {
+	position: absolute;
+	width: 147px;
+	height: 52px;
+	color: #222;
+	font-size: 18px;
+	top: 0px;
+	left: 52px;
+	text-indent: 10px;
+	line-height: 52px;
+	text-shadow: 1px 1px 1px #fff;
+	text-transform: uppercase;/*大写*/
+}
+
+.item h2.active {
+	color: #fff;
+	text-shadow: 1px 0px 1px #555;/*文本阴影*/
+}
+
+.item ul {
+	list-style: none;/*文本格式*/
+	position: absolute;
+	top: 60px;
+	left: 25px;
+	display: none;/*无块状显示*/
+}
+
+.item ul li a {
+	font-size: 15px;
+	text-decoration: none;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #222;
+	padding: 3px;
+	float: left;
+	clear: both;
+	width: 100px;
+	text-shadow: 1px 1px 1px #fff;/*文字阴影*/
+}
+
+.item ul li a:hover {
+	background-color: #fff;
+	color: #444;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 1px 1px 4px #666;
+	-webkit-box-shadow: 1px 1px 4px #666;
+	box-shadow: 1px 1px 4px #666;/*兼容代码*/
+}

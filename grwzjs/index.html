@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>导航</title>
+		<meta name="description" content="进入界面" />
+		<meta name="keywords" content="创意,圆形气泡,气泡效果导航,js特效" />
+		<meta name="author" content="杨玉印，洋芋，土豆，杨玉豆" />
+		<meta name="Copyright" content="js代码" />
+		<link rel="stylesheet" href="css/style1.css" type="text/css" media="screen" />
+
+	</head>
+<body>
+		<div id="content">
+			<div class="title"></div>
+			<div class="navigation" id="nav">
+				<div class="item user"> <img src="img/bg_user.png" alt="" width="199" height="199" class="circle" />
+					<a href="http://yangy.dev.dxdc.net/grwzjs/home.html"  target="_blank" class="icon"></a>
+					<h2>Home</h2>
+					<ul>
+						<li>
+							<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank">主页</a>
+						</li>
+					</ul>
+				</div>
+				<div class="item home"> <img src="img/bg_home.png" alt="" width="199" height="199" class="circle" />
+					<a href="http://yangy.dev.dxdc.net/grwzjs/about.html"target="_blank" class="icon"></a>
+					<h2>About</h2>
+					<ul>
+						<li>
+							<a href="http://yangy.dev.dxdc.net/grwzjs/about.html" target="_blank">关于</a>
+						</li>
+					</ul>
+				</div>
+				<div class="item fav"> <img src="img/bg_fav.png" alt="" width="199" height="199" class="circle" />
+					<a href="http://yangy.dev.dxdc.net/grwzjs/school.html" target="_blank" class="icon"></a>
+					<h2>Love</h2>
+					<ul>
+						<li>
+							<a href="http://yangy.dev.dxdc.net/grwzjs/school.html" target="_blank">Love</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="item camera"> <img src="img/bg_camera.png" alt="" width="199" height="199" class="circle" />
+					<a href="http://yangy.dev.dxdc.net/grwzjs/camera.html" target="_blank" class="icon"></a>
+					<h2>Photos</h2>
+					<ul>
+						<li>
+							<a href="http://yangy.dev.dxdc.net/grwzjs/camera.html" target="_blank">Photos</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461544139&auto=1&height=66"></iframe>
+			</div>
+</div>
+		<!-- The JavaScript -->
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#nav > div').hover(
+					function() {
+						var $this = $(this);
+						$this.find('img').stop().animate({
+							'width': '199px',
+							'height': '199px',
+							'top': '-25px',
+							'left': '-25px',
+							'opacity': '1.0'
+						}, 500, 'easeOutBack', function() {
+							$(this).parent().find('ul').fadeIn(700);
+						});
+
+						$this.find('a:first,h2').addClass('active');
+					},
+					function() {
+						var $this = $(this);
+						$this.find('ul').fadeOut(500);
+						$this.find('img').stop().animate({
+							'width': '52px',
+							'height': '52px',
+							'top': '0px',
+							'left': '0px',
+							'opacity': '0.1'
+						}, 5000, 'easeOutBack');
+
+						$this.find('a:first,h2').removeClass('active');
+					}
+				);
+			});
+	</script>
+	</body>
+
+</html>

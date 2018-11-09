@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>我的主頁</title>
+		<meta name="description" content="个人网站">
+		<meta name="keywords" content="主页，个人网站">
+		<meta name="myid" content="2016051603119" />
+		<meta http-equiv="refresh" content="3600" />
+		<link href="css/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style>#ib51,
+			#ib52,
+			#ib53,
+			#ib54,
+			#ib55,
+			#ib56,
+			#ib57,
+			#ib58 {
+				text-align:right;
+				opacity: 0;
+				-webkit-transition: opacity 3s, padding-top 1s, margin-top 1s;
+				;
+			}
+			/*文字左对齐，不透明度0%，变化有三秒过渡动画*/
+			
+			#ib51 {
+				font-size: 40px;
+				padding: 100px 70px 0px 300px;
+			}
+			/*字号40px，内边距：200px，0px，0px，300px*/
+			
+			#ib52,
+			#ib53,
+			#ib54,
+			#ib55,
+			#ib56,
+			#ib57,
+			#ib58 {
+				font-size: 24px;
+				margin-top: 50px;
+				text-align: center;
+				padding-left: 978px;
+			}
+			/*字号24px，外顶边距100px，文字居中，内右边距1050px*/
+			
+			#ic61,
+			#ic62,
+			#ic63,
+			#ic64,
+			#ic65,
+			#ic66,
+			#ic67,
+			#ic68 {
+				text-align:center;
+				opacity: 0;
+				-webkit-transition: opacity 3s, padding-top 1s, margin-top 1s;
+				;
+			}
+			#ic61,
+			#ic62,
+			#ic63,
+			#ic64,
+			#ic65,
+			#ic66,
+			#ic67,
+			#ic68 {
+				font-size: 24px;
+				text-align: center;
+			}
+			.tcopyright {
+				width: 960px;
+				margin: 0 auto;
+				padding: 8px 0;
+				font-size: 12px;
+				line-height: 28px;
+				color: #333;
+				text-align: center;
+				overflow: hidden;
+				clear: both;
+			}
+			
+			.tcopyright .en {
+				font-family: Arial;
+			}
+			
+			.tcopyright a {
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.tcopyright a:hover {
+				color: #bd0a01;
+				text-decoration: underline;
+			}
+			
+			.section2 {}
+			
+			.section2 .bigtxt {
+				text-align: left;
+				width: 100%;
+			}
+			
+			.notice {
+				background-image: url(img/me1.png);
+				top: 10px;
+			}
+			
+			.tcopyright {
+				width: 960px;
+				margin: 0 auto;
+				padding: 8px 0;
+				font-size: 12px;
+				line-height: 28px;
+				color: #333;
+				text-align: center;
+				overflow: hidden;
+				clear: both;
+			}
+			
+			.tcopyright .en {
+				font-family: Arial;
+			}
+			
+			.tcopyright a {
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.tcopyright a:hover {
+				color: #bd0a01;
+				text-decoration: underline;
+			}
+		</style>
+		<script>
+			(function($) {
+				$(document).ready(function() {
+					var pt2 = $(".section2").offset().top,
+						pt3 = $(".section3").offset().top,
+						pt4 = $(".section4").offset().top,
+						pt5 = $(".section5").offset().top,
+						h2 = $(".section2").height() / 2,
+						h3 = $(".section3").height(),
+						h4 = $(".section4").height() / 2,
+						h5 = $(".section5").height() / 2;
+					$(window).scroll(function() {
+						if(pt2 + h2 <= ($(window).scrollTop() + $(window).height())) {
+							$(".section2 .bigtxt").addClass("upIn").show();
+							setTimeout(function() {
+								$(".section2 .subtxt").addClass("downIn").show();
+							}, 0);
+							setTimeout(function() {
+								$(".section2 .paopao").addClass("rightIn").show();
+							}, 1500);
+
+						}
+						if(pt3 + h3 <= ($(window).scrollTop() + $(window).height())) {
+							$(".section3 .stars").addClass("leftInbounce").show();
+							$(".section3 .bigtxt").addClass("rightInbounce").show();
+							$(".section3 .subtxt").addClass("rightInbounce").show();
+						
+						}
+						if(pt4 + h4 <= ($(window).scrollTop() + $(window).height())) {
+							$(".section4 .bigtxt").addClass("rightIn").show();
+							$(".section4 .paopao").addClass("upIn").show();
+							setTimeout(function() {
+								$(".section4 .paopao").addClass("upIn");
+							}, 1000);
+						}
+						if(pt5 + h5 <= ($(window).scrollTop() + $(window).height())) {
+							$(".section5 .un1").addClass("upIn").show();
+							$(".section5 .un2,.section5 .un3").addClass("upIn").show();
+							$(".section5 .mark").addClass("rightIn").show();
+							$(".section5 .settings").addClass("pulseIn").show();
+						}
+					});
+
+				});
+			})(jQuery);
+
+			function tm5() {
+				for(i = 1; 1 < 9; i++) {
+					document.getElementById("ib5" + i).style.webkitTransitionDelay = i + "s"
+					document.getElementById("ib5" + i).style.opacity = 1
+					if(i == 1) {
+						document.getElementById("ib5" + i).style.paddingTop = "100px";
+					} else {
+						document.getElementById("ib5" + i).style.marginTop = "20px";
+					}
+				}
+			}
+			function tm6(){ for (i=1;1<9;i++) 
+								{ 	document.getElementById("ic6"+i).style.webkitTransitionDelay=i+"s"
+									document.getElementById("ic6"+i).style.opacity=1
+									if(i==1)
+										{document.getElementById("ic6"+i).style.paddingTop="100px";}
+									 else
+									 	{document.getElementById("ic6"+i).style.marginTop="20px";}}}
+
+		</script>
+	</head>
+
+	<body>
+		<div class="section1">
+			<div class="layout">
+				<div><img src="img/logo.png"></div>
+				<div class="thx">
+					<div class="txt">这个<span>是我！<br>没错就是我</span></div>
+					<div class="txt gxh">一个来自重师的大一计算机学生</div>
+					<div class="unsubscribe">
+						<a href="about.html" style="text-decoration: none;">关于</a>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="notice"></div>
+				</div>
+			</div>
+		</div>
+		<div class="section2">
+			<div class="layout1">
+				<div class="bigtxt">
+					<div>你还想了解了解我吗？</div>
+				</div>
+				<div class="paopao"></div>
+			</div>
+		</div>
+		<div class="section3">
+			<div class="bigtxt1">猜一猜我会一点什么呢？</div>
+			<div class="bigtxt2">我就知道你猜不到，看下面吧！</div>
+			<div class="layout">
+				<div class="stars">
+					<div class="pc_star">
+						<img src="img/web.png" />
+
+					</div>
+					<img class="avatar1" src="img/html5.png" width="70">
+					<img class="avatar2" src="img/js.png" width="70">
+					<img class="avatar3" src="img/css3.png" width="70">
+					<img class="avatar4" src="img/php.png" width="70">
+					<img class="avatar6" src="img/ms.png" width="70">
+				</div>
+				<div class="bigtxt">
+					<div>技能傍身</div>
+					<div class="subtxt">学习了css&nbsp;&nbsp;html<br>js&nbsp;&nbsp;JQ</div>
+				</div>
+			</div>
+		</div>
+		<div onmouseover="tm5()" class="section4">
+
+			<div id="ib51">未来·无限可能</div>
+			<div id="ib52">将来我要做什么呢？</div>
+			<div id="ib53">我觉得这个应该交给将来的我</div>
+			<div id="ib54">我的想法是，社会需要什么我就做什么</div>
+			<div id="ib55">什么有前景，我就做什么</div>
+			<div id="ib56">我从来不认为，也不想我将在某一个岗位工作到老</div>
+			<div id="ib57">我已经做好终生学习的准备</div>
+			
+
+		</div>
+			<div onmouseover="tm6()" class="section5">
+
+			<div id="ic61">旅途才真正开始</div>
+			<div id="ic62">大山正挡在你的面前</div>
+			<div id="ic63">等待你一座一座的推倒</div>
+			<div id="ic64">以后的路还有很远</div>
+			<div id="ic65">要靠自己一步一个脚印走出来</div>
+			<div id="ic66">没有努力哪里会有成功呢</div>
+			<div id="ic67">何况别人都在努力你怎能不努力呢</div>
+		</div>
+	<div id="tcopyright" class="tcopyright" bossZone="footer" role="contentinfo">
+			<div>
+				<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank" rel="nofollow">我的主页</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/about.html" target="_blank" rel="nofollow">About me</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/school.html" target="_blank" rel="nofollow">学校</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/camera.html" target="_blank" rel="nofollow">照片墙</a> |
+				<div class="en">Copyright &copy; 2016 - 2017 . 个人网站</div>
+				<div>
+					<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank" rel="nofollow">杨玉印</a> 版权所有
+				</div>
+			</div>
+
+		</div>
+		</div>
+	</body>
+	</html>

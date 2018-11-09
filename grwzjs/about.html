@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>关于</title>
+		<meta name="description" content="关于自己的一些事情和人物，杨玉印，。" />
+		<meta name="keywords" content="分年月,大事记,详细,时间轴,导航,jquery特效" />
+		<meta name="author" content="杨玉印，洋芋，土豆，" />
+		<meta name="Copyright" content="自己的一些事情,事迹" />
+		<meta name="myid" content="2016051603119" />
+		<meta http-equiv="refresh" content="3600" />
+		<link rel="stylesheet" href="css/about.css">
+<style>
+	a,img {
+				border: 0;
+				text-decoration: none;/*没有文本装饰*/
+			}
+		#box {
+				position: fixed;/*固定导航条，假如不固定导航条会在左边*/
+				top: 0;
+				right: 0;
+				width: 140px;
+				height: 50px;
+				cursor: pointer;
+				margin: 10px 0 0 0;/*外边距*/
+			}
+		#box a {
+				display: block;/*块状显示*/
+				position: relative;/*相对定位*/
+				height: 30px;
+				line-height: 50px;/*行高*/
+				margin-bottom: 2px;/*底部边距*/
+				margin-top: 50px;/*顶边距*/
+				background: #fff;
+				padding-right: 10px;
+				padding-bottom: 15px;
+				width: 130px;
+				overflow: hidden;/*隐藏*/
+				color: #333;
+				cursor: pointer;/*光标为手型*/
+				right: -110px;/*距离右边的距离*/
+			}
+			
+			#box a:hover {
+				text-decoration: none;
+				color: #1974A1;
+			}
+			
+			#box a:hover span {
+				background: #5FA429
+			}
+			
+			#box a span {
+				display: block;
+				float: left;
+				width: 30px;
+				background: #636871;
+				color: #fff;
+				font-size: 16px;
+				text-align: center;/*文本居中*/
+				margin-right: 10px;
+				font-style: normal;/*字体样式*/
+			}
+</style>
+	</head>
+	<body>
+		<div id="box">
+			<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank"><span>0</span>我的主頁</a>
+			<a href="http://yangy.dev.dxdc.net/grwzjs/about.html" target="_blank"><span>1</span>About me</a>
+			<a href="http://yangy.dev.dxdc.net/grwzjs/school.html" target="_blank"><span>2</span>学校</a>
+			<a href="http://yangy.dev.dxdc.net/grwzjs/camera.html" target="_blank"><span>3</span>照片墙</a>
+	</div>
+
+		<div class="box">
+			<ul class="event_year">
+				<li class="current"><label for="2016">2016</label></li>
+				<li><label for="2015">2015</label></li>
+				<li><label for="2009">2009</label></li>
+				<li><label for="1997">1997</label></li>
+				<li><label for="1974">1974</label></li>
+					<li><label for="1972">1972</label></li>
+			</ul>
+			<ul class="event_list">
+				<div>
+					<h3 id="2016">2016</h3>
+					<li><span>8月18日</span>
+						<p><span>重庆师范大学报到</span>
+							<img src="img/me.jpg"/>
+						</p>
+					</li>
+					<li><span>7月29日</span>
+						<p><span>被重庆师范大学录取</span>
+							<img src="img/重师.jpg" />
+						</p>
+					</li>
+					<li><span>6月23日</span>
+						<p><span>高考录取线出来</span>
+							<img src="img/happy.png"/>
+						</p>
+					</li>
+					<li><span>6月9日</span>
+						<p><span>结束英语口试</span></p>
+					</li>
+					<li><span>6月8日</span>
+						<p><span>高考结束,解放了</span>
+							<img src="img/glad.jpg" />
+						</p>
+					</li>
+					
+				</div>
+				<div>
+					<h3 id="2015">2015</h3>
+					<li><span>8月20日</span>
+						<p><span>走进丰中</span>
+							<img src="img/fdzx.png" />
+						</p>
+					</li>
+					<li><span>6月23日</span>
+						<p><span>高考落榜，打算复读</span>
+							<img src="img/ku.png" />
+						</p>
+					</li>
+					<li><span>6月8日</span>
+						<p><span>应届高考结束</span>
+							<img src="img/fdez.jpg" />
+						</p>
+					</li>
+					
+					
+				</div>
+				<div>
+					<h3 id="2009">2009</h3>
+					<li><span>8月24日</span>
+						<p><span>弟弟的出生</span>
+							<img src="img/didi2.jpg" />
+						</p>
+					</li>
+					
+				
+				</div>
+				<div>
+					<h3 id="1997">1997</h3>
+					<li><span>8月10日</span>
+						<p><span>我来到这个世界的日子</span></p>
+					</li>
+					
+				</div>
+				<div>
+					<h3 id="1974">1974</h3>
+					<li><span>4月16日</span>
+						<p><span>我爸爸的生日</span>
+							<img src="img/ba.png" />
+						</p>
+					</li>
+					
+				</div>
+				<div>
+					<h3 id="1972">1972</h3>
+					<li><span>6月6日</span>
+						<p><span>我妈妈的生日</span>
+							<img src="img/mom.png" />
+						</p>
+					</li>
+					
+				</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				$('label').click(function() {
+					$('.event_year>li').removeClass('current');//获取.event_year>li再去掉current
+				$(this).parent('li').addClass('current');
+					var year = $(this).attr('for');
+					$('#' + year).parent().prevAll('div').slideUp(800);
+					$('#' + year).parent().slideDown(800).nextAll('div').slideDown(800);
+				});
+			});
+			$(function() {
+				var timer = null;
+				$("#box").mouseenter(function() {
+					clearTimeout(timer);
+					var that = $(this);
+					timer = setTimeout(function() {
+						that.find("a").each(function(index, ele) {
+							setTimeout(function() {
+								$(ele).stop().animate({
+									right: 0
+								}, 200);
+							}, 50 * index);
+						})
+
+					}, 200)
+				}).mouseleave(function() {
+					if(timer) {
+						clearTimeout(timer);
+					}
+					$(this).find("a").each(function(index, ele) {
+						setTimeout(function() {
+							$(ele).stop().animate({
+								right: -110
+							}, 200);
+						}, 50 * index);
+					})
+				})
+
+			})
+		</script>
+
+	</body>
+</html>

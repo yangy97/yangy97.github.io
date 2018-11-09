@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<mate name="keywords" content="杨玉印,老杨,洋芋" />
+		<meta name="description" content="大学学校,中学,重庆师范大学,计算机" />
+		<meta http-equiv="refresh" content="600" />
+		<meta name="myname" content="杨玉印 ,大学照片" />
+		<meta name="myid" content="2016051603119" />
+		<meta http-equiv="refresh" content="3600" />
+		<title>CQNU</title>
+		<style>
+		body{background-color:#EEEEEE;
+		}
+			.tcopyright {
+				width: 960px;
+				margin: 0 auto;
+				padding: 8px 0;
+				font-size: 12px;
+				line-height: 28px;
+				color: #333;
+				text-align: center;
+				overflow: hidden;
+				clear: both;
+			}
+			
+			.tcopyright .en {
+				font-family: Arial;
+			}
+			
+			.tcopyright a {
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.tcopyright a:hover {
+				color: #bd0a01;
+				text-decoration: underline;
+			}
+			.izl-rmenu {
+				position: fixed;
+				/*位置固定*/
+				right: 0;
+				/*放在左下角*/
+				bottom: 0px;
+				padding-bottom: 0px;
+				/*background: url(../images/r_b.png) 0px bottom no-repeat;/*图片放的位置*/
+				z-index: 999;
+				/*显示在最上方*/
+			}
+			
+			.izl-rmenu .btn {
+				width: 72px;
+				/*下角图标的宽度*/
+				height: 73px;
+				/*下角图标的高度*/
+				margin-bottom: 1px;
+				cursor: pointer;
+				/*鼠标指定时*/
+				position: relative;
+				/*相对位置*/
+			}
+			
+			.izl-rmenu .btn-qq {
+				background: url(images/r_qq.png) 0px 0px no-repeat;
+				/*背景图片*/
+				background-color: #6da9de;
+				/*颜色*/
+				opacity: 1;
+				/*不透明*/
+			}
+			
+			.izl-rmenu .btn-qq:hover {
+				background-color: #488bc7;
+				/*鼠标移上图片后的颜色*/
+			}
+			
+			.izl-rmenu a.btn-qq,
+			.izl-rmenu a.btn-qq:visited {
+				background: url(images/r_qq.png) 0px 0px no-repeat;
+				background-color: #6da9de;
+				text-decoration: none;
+				display: block;
+				opacity: 1;
+				/*不透明*/
+			}
+			
+			.izl-rmenu .btn-wx {
+				background: url(images/r_wx1.png) 0px 0px no-repeat;
+				/*背景颜色*/
+				background-color: #78c340;
+				opacity: 0.9;
+				/*透明度为0.9*/
+			}
+			
+			.izl-rmenu .btn-wx:hover {
+				background-color: #58a81c;
+			}
+			
+			.izl-rmenu .btn-wx .pic {
+				position: absolute;
+				/*绝对位置*/
+				left: -160px;
+				/*向左移动160px,也就是左浮动*/
+				top: 0px;
+				display: none;
+				width: 160px;
+				/*宽度*/
+				height: 160px;
+				/*高度*/
+			}
+			
+			.izl-rmenu .btn-phone {
+				background: url(images/r_phone.png) 0px 0px no-repeat;
+				background-color: #fbb01f;
+				opacity: 0.9;
+			}
+			
+			.izl-rmenu .btn-phone:hover {
+				background-color: #ff811b;
+			}
+			
+			.izl-rmenu .btn-phone .phone {
+				background-color: #ff811b;
+				/*鼠标移动上去后的背景颜色*/
+				position: absolute;
+				width: 160px;
+				/*宽度*/
+				left: -160px;
+				/*向左移动160px,也就是左浮动*/
+				top: 0px;
+				line-height: 73px;
+				/*行高*/
+				color: #FFF;
+				font-size: 18px;
+				text-align: center;
+				display: none;
+				/*无块状显示*/
+			}
+			
+			.izl-rmenu .btn-top {
+				background: url(images/r_top.png) 0px 0px no-repeat;
+				background-color: #666666;
+				display: none;
+				opacity: 1;
+			}
+			
+			.izl-rmenu .btn-top:hover {
+				background-color: #444;
+			}
+			
+			.fan {
+				transition: 1s;
+				/*1s完成*/
+				transform-style: preserve-3d;
+				/*以三D视图显示*/
+				position: relative;
+				border-radius: 200px;
+			
+			}
+			
+			.front,
+			.back {
+				backface-visibility: hidden;
+				position: absolute;
+				top: 0;
+			  border-radius: 200px;
+			}
+			
+			.front {
+				z-index: 0;
+			}
+			
+			.back {
+				transform: rotateY(180deg);
+			}
+			/*旋转180度显示*/
+			
+			#fan-1 {
+				-webkit-animation: mymove5 8s infinite;
+				/*绑定动画*/
+			}
+			
+			@-webkit-keyframes mymove5 {
+				0% {}
+				50% {
+					transform: rotateY(180deg);
+				}
+				100% {}
+			}
+			
+			.front,
+			.back {
+				width: 200px;
+				height: 200px;
+				
+			}
+			
+			.fan-container {
+				width: 200px;
+				height: 200px;
+			}
+			
+			#content {
+				width: 1200px;
+				/*内容的宽度*/
+				
+				/*内容高度*/
+				margin: 0 auto;
+			}
+			
+			.chara1 td {
+				text-align: center;
+				/*表格文字居中*/
+			}
+			
+			.chara2 {
+				vertical-align: top;
+				/*垂直对齐*/
+				padding-top: 15px;
+				/*顶内边距*/
+				padding-left: 30px;
+				/*左内边距*/
+				font-size: 12px;
+				/*字号*/
+				padding-right: 15px;
+				/*右内边距*/
+			}
+			
+			.li1 {
+				float: left;
+				/*图片浮动*/
+				padding: 15px 20px;
+				/*左右内边距*/
+				border-radius: 200px;
+			}
+			
+			.li2 {
+				float: right;
+				/*图片浮动*/
+				/*左右内边距*/
+			}
+			
+		.tq{width: 200px;height: 200px;border-radius: 200px;margin: auto;display: inline;}
+			
+			h1 {
+				font-family: 华文行楷;
+				/*字体*/
+				font-size: 30px;
+				/*字体大小*/
+				text-decoration: underline;
+				/*下划线*/
+				color: #0078AA;
+				/*字体颜色*/
+			}
+			
+			h2 {
+				font-family: 华文彩云;
+				/*字体*/
+				font-size: 30px;
+				/*字体大小*/
+				color: #7bcda5;
+				/*字体颜色*/
+				padding-left: 15px;
+				/*左内边距*/
+			}
+			
+			h3 {
+				font-family: 幼圆;
+				/*字体*/
+				font-size: 18px;
+				/*字体大小*/
+				color: #000;
+				/*字体颜色*/
+				padding: 0px 20px 0px 20px;
+				/*顶右底左的内边距*/
+				text-align: justify;
+				/*两端对齐*/
+			}
+			
+			.b1:hover {
+				border-radius: 90px;
+			}
+			
+			a1:hover {
+				color: #538e72;
+			}
+			/*鼠标移上文字变成蓝色*/
+			
+			#t4 {
+				margin-top: 10px;
+				width: 1200px;
+				display: block;
+			}
+	
+			@-webkit-keyframes circle {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			.tp{width: 200px;height: 200px;border-radius: 200px;margin: auto;display: inline;}
+			.tp img {
+				transition: all 1.5s ease-in-out;
+				display: inline-block;
+			}
+			
+			.tp img:hover {
+				-webkit-transform: rotate(360deg) scale(1.2, 1.2);
+				-moz-transform: rotate(360deg) scale(1.2, 1.2);
+				-ms-transform: rotate(360deg) scale(1.2, 1.2);
+				-o-transform: rotate(360deg) scale(1.2, 1.2);
+				transform: rotate(360deg) scale(1.2, 1.2);
+			}
+			
+			#footer {margin: auto;
+				clear: both;
+				/*清除两边浮动*/
+				width: 500px;
+				/*宽度*/
+				height: 30px;
+				/*高度*/
+				text-align: center;
+				position: relative;
+				bottom: 100px;
+				/*相对定位*/
+			}
+			
+			input {
+				background: transparent;
+				/*透明*/
+				border: none;
+				color: ;
+				font-size: 20px;
+				font-weight: bold;
+				font-family: 黑体;
+				width: 200px;
+			
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jscss.js"></script>
+		<!--js应用-->
+
+	</head>
+
+	<body onload="LenScroll()">
+		<div id="content">
+			<table width="1000px" align="center" cellpadding="0" cellspacing="1">
+				<!--表格开始-->
+				<tr class="chara2">
+					<td style="text-align:center">
+						<div class="li1">
+								<div class="fan-container" style="float: left;">
+									<div class="fan" id="fan-1" style="">
+										<div class="front">
+											<img class="tq" src="img/重师.jpg" width="160">
+											<!-- 前面内容 -->
+										</div>
+										<div class="back">
+											<img class="tq" src="img/重师.jpg" width="170">
+											<!-- 背面内容 -->
+										</div>
+									</div>
+								</div>	
+						</div>
+						<h1><a href="http://www.cqnu.edu.cn/" target="_blank">重庆师范大学</a></h1>
+						<h3 align="left"><a1>&nbsp;&nbsp;&nbsp;&nbsp;重庆师范大学(英文简写CQNU)创办于1954年。是一所以文理为主,多学科协调发展的多科性高等学府,坐落在历史文化名城重庆,校园面积2804亩,包括大学城校区、沙坪坝校区和北碚校区。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;学校是重庆市依法治校示范校、重庆市文明单位、重庆市德育工作先进集体、重庆市园林式单位、重庆市十佳市容整洁单位、重庆市森林校园,国家首批卓越农林人才教育培养计划和卓越教师培养计划改革试点高校。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;学校拥有“国务院侨务办公室华文教育基地”、“教育部全国重点建设职教师资培训基地”两个国家级基地,重庆市普通中小学教师市级培训基地、重庆市幼儿教育教师市级研修培训基地、重庆市特殊教育教师市级培训基地、重庆市汉语国际推广培训基地、中德(重庆)职业教育示范基地、重庆市职教师资培训集团、重庆市管乐师资培训基地等多个市级基地。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;此外,“重庆旅游学院”、“重庆音乐学院”、“重庆幼儿师范学院”、“重庆特殊教育学院”也依托学校设立。<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;截止到2013年,学校图书馆拥有纸质图书总量226万册,全日制本专科生34000余人,在校研究生2000余人。下设有17个学院,1个独立二级学院,47个全日制本科专业,14个硕士学位一级学科授权、86个专业硕士学位授权。<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重师精神:自强不息 躬行师道<br/>       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重师校风:学高为师 身正为范<br/> 
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办学理念:立教无类 以文化人  <br/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重师教风:博学敬业 为人师表   <br/>  
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重师校训:厚德笃学  砺志创新  <br/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重师学风:勤学善思 求是致用  <br/>  </a1></h3>
+						<div id="t4" style="display:inline;"><div>
+					<div class="tp"><img src="img/cs3.jpg" style="border-radius: 200px; margin-left: 70px;"/></div>
+					<div class="tp"><img src="img/cs1.jpg" style="border-radius:200px;  margin-left: 70px;"/></div>
+					<div class="tp"><img src="img/tushug.png" style="border-radius: 200px; margin-left: 70px;" /></div>
+					
+				</div>
+						</div><hr>
+						<br><br><br>
+						
+						<div class="li1">
+
+							
+								<div class="fan-container" >
+									<div class="fan" id="fan-1" style="">
+										<div class="front">
+											<img src="img/fdez2.jpg" width="160">
+											<!-- 前面内容 -->
+										</div>
+										<div class="back">
+											<img  src="img/fdez.jpg" width="170">
+											<!-- 背面内容 -->
+										</div>
+									</div>
+								</div>
+						
+
+						</div>
+						<h1><a href="http://baike.baidu.com/link?url=SFnryPwVyXQkEAz-k4BA4sSxUTvybl0RfYz0DGVrAE4mHb42QuY0zH5INiwXkUqPmBd3symFnqZHEzp2VF1-9-kxV7MGICwOSKaEwU6GICXHczW-491Gzong3JHyWEwUn_wWBRFO7I6cOUjZbrROVQEdaFaawL1pL-xE2_dITFWWNha0924ZqNH1wcOos2dW" target="_blank">重庆市丰都第二中学校</a></h1>
+						<h3 align="left"><a1>&nbsp;&nbsp;&nbsp;&nbsp;丰都第二中学校创建于抗日烽火燃遍全国的1939年夏,时称“私立琢成中学”。学校践行“为人类谋幸福而努力做人”之宗旨,从条件简陋的校舍到现代化的新校园;从新学开启时80人的办学规模到今天拥有65个教学班、4563名学生、220名教职工之桃李葱茏的繁荣盛景。丰都二中走过了一条由创立、奠基、动乱,到调整并不断成长壮大的曲折之路。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;70年的风雨历程,蕴育了丰都二中深厚的文化底蕴和教育传统:铸就了“为人类谋幸福而努力做人”的办学理念;形成了“以德立校、依法治校、科研兴校、改革活校、质量强校”的办学思路;一代代二中人牢记“琢璞成玉”的校训,践行“严谨、勤奋、文明、诚信”的校风和“以人为本、求实创新”的教风,莘莘学子形成了“自立自强、求真求美”的学风。 <br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;二中的70年,是辛勤耕耘、不断进取的70年;是成绩斐然、硕果累累的70年。学校先后为国家培养了二万多名合格初、高中毕业生,为高等院校输送了近万名合格新生,不少校友在祖国的各条战线上已成为精英。学校先后荣获“国家体育锻炼标准达标优秀集体”、重庆市“体育传统项目学校”、国家教委命名的1000所“全国学习科学实验学校”、四川省首届“川惠杯”中小学生艺术节先进学校、“重庆市文明单位”、“重庆市文明礼仪示范学校”、第二届“全国十佳文学少年摇篮奖”、重庆市重点中学等 120多项殊荣。<br/>
+
+ &nbsp;&nbsp;&nbsp;&nbsp; “神女长袖舞,高峡出平湖。”三峡截流,举校搬迁,为丰都二中的腾飞带来了千载难逢的机遇。2004年,二中人乘移民迁校之惠风,以壮士断腕之气概,发扬 “负重创业、创优争先”的二中精神,高瞻远瞩、悉心规划建新校,传承文明、抢抓机遇促发展。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;新校区占地200余亩,总建筑面积129309.17m2。学校校园环境优美,建筑布局错落有致,风格独特。各校舍功能分区合理,四层主体教学楼宽敞明亮,设施齐全,设备先进,2007年秋学校建成了高速校园网,每个班级配置了微机和多媒体投影仪,宽带网接通教室、实验室、图书馆、办公室、会议室和教师宿舍,实现了教学资源信息化、教学过程现代化和办公设备数字化,为教育科研的深层次开展提供了坚实的物质基础,为全面推进素质教育、提高教育教学质量提供了新的契机;新建的男女生公寓、浴室和食堂全面启用,学生的学习、生活条件达到了现代化、标准化要求。如今的二中校园环境舒适,人文情怀充分彰显,设施设备先进,时代潮流尽情引领。独具特色的育人环境已悄然形成,是广大学子修业的佳处,圆梦的摇篮。<br/></a1>
+
+  </h3>
+						<hr>
+						<div class="li2">
+
+							<div class="fan-container" style="float: left;">
+									<div class="fan" id="fan-1" style="">
+										<div class="front">
+											<img  src="img/fdzx.png" width="160">
+											<!-- 前面内容 -->
+										</div>
+										<div class="back">
+											<img src="img/丰都中学.jpg" width="170">
+											<!-- 背面内容 -->
+										</div>
+									</div>
+								</div>	
+
+						</div>
+						<h1><a href="http://baike.baidu.com/link?url=tqDF0EZ412qb5xhQO6nttVYdINOQQzUF4UP_fGTiJC9D8HVV1HDy3lGW-teXNMjyevUU_YR-eJ3LcAHhIx_8EC3dOnk_VpqGVoOuto4x-djIHmVm9Vue-d9381Xraqf0" target="_blank">重庆市丰都中学校</a></h1>
+						<h3 align="left"><a1>&nbsp;&nbsp;&nbsp;&nbsp;丰都中学始建于清朝光绪十九年(1893年) ,由丰都知县蒋履泰创办的“五云书院”演变而来,跨越了三个历史世纪,历经了九个发展阶段,迄今已走过 110年的光辉历程,历史悠久, 驰名巴渝。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;丰都中学校地处闻名遐迩的旅游胜地“鬼城”——丰都县城,坐落在国家级森林公园双桂山南麓,是一所具有先进办学经验和光荣革命传统的百年老校。为了配合三峡工程建设和适应丰都县城的搬迁,丰都中学在2002年9月迁至丰都新县城。校园环境幽美,花木葱茏,丛林叠翠,绿荫护道,鸟语花香。<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;丰都中学由解放初十几个班级几百名学生已发展成为拥有72个教学班、5000多名学生、247名教 职工的大型高完中。<br/>
+						丰都中学地处重庆市丰都县城,始建于清朝光绪十九年(1893年)由丰都知县蒋履泰创办的“五云书院”演变而来,跨越了三个历史世纪,历经了九个发展阶段,迄今已走过 110年的光辉历程,历史悠久,驰名巴渝。悠悠
+
+岁月,漫漫征程。如今,丰都中学由解放初十几个班级几百名学生已发展成 为拥有72个教学班、5000多名学生、247名教 职工的大型高完中。多年来,丰都中学素以“ 治校严谨、全面发展”而享誉巴渝。学校坚持 以“ 振兴中华,服务桑梓”为办学宗旨,以 “创特色突出的巴渝名校”为办学目标,贯彻 “以人为本、依法治校、质量立校、科研兴校 ”的办学思想,取得了显著的办学效益。为国家培养了三万多名合格初、高中毕业生,为高 等院校输送了10000余名合格新生。不少校友在祖国的各条战线上已成为精英,全国“五一劳动奖章”获得者著名企业家吴应禄、享受国务院特殊津贴的著名学者湛垦华、蒋映光等就是其中的杰出代表。</a1></h3>
+
+					</td>
+				</tr>
+			</table>
+			<!--导航条结束-->
+		</div>
+		<div id="tcopyright" class="tcopyright" bossZone="footer" role="contentinfo">
+			<div>
+				<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank" rel="nofollow">我的主页</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/about.html" target="_blank" rel="nofollow">About me</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/school.html" target="_blank" rel="nofollow">学校</a> |
+				<a href="http://yangy.dev.dxdc.net/grwzjs/camera.html" target="_blank" rel="nofollow">照片墙</a> |
+				<div class="en">Copyright &copy; 2016 - 2017 . 个人网站</div>
+				<div>
+					<a href="http://yangy.dev.dxdc.net/grwzjs/home.html" target="_blank" rel="nofollow">杨玉印</a> 版权所有
+				</div>
+			</div>
+		
+		<center style="padding-top:100px;color:#000">
+			<div id="top"></div>
+			<!--右下角-->
+			<script type="text/javascript">
+				var msg = "欢迎来到我的网站";
+				var interval = 400; //跑动的速度
+				var seq = 0;
+
+				function LenScroll() {
+					document.nextForm.lenText.value = msg.substring(seq, msg.length) + "  " + msg;
+					seq++;
+					if(seq > msg.length)
+						seq = 0;
+					window.setTimeout("LenScroll();", interval);
+				}
+			</script>
+			<center>
+				<form name="nextForm">
+					<div id="footer"><input type="text" name="lenText" /></div>
+				</form>
+			</center>
+			</div>
+	</body>
+
+</html>

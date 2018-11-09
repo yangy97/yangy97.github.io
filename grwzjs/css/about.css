@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+/*= Reset =*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,p,blockquote,th,td,figure{margin:0;padding:0;}/*这些选择器初始化*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}/*块状显示*/
+table{border-collapse:collapse;border-spacing:0;}/*表格边距*/
+caption,th{font-weight:normal;text-align:left;}/*字号和文本左浮动*/
+fieldset,img{border:0;}
+ul li{list-style:none;}/*设置无样式*/
+h1,h2,h3,h4,h5,h6{font-size:100%;}/*几个选择器初始化字体100%*/
+h5{font-size:18px;margin-bottom:20px;color:#666;}
+h5 span{font-size:12px;color:#ccc;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+body{font:normal 14px/24px "Helvetica Neue",Helvetica,STheiti,"Microsoft Yahei",Arial,Tahoma,sans-serif,serif;word-wrap:break-word;background: #F0F0F0;}/*设置字体*/
+input,button,textarea,select,option,optiongroup{font-family:inherit;font-size:inherit;}
+code,pre{font-family:"Microsoft YaHei",Consolas,"Courier New",monospace;}
+.bw0{border: none !important;}
+*:focus{outline:0;}
+legend{color:#000;}
+input,select{vertical-align:middle;}/*垂直居中*/
+button{overflow:visible;}/*内容不会被修剪，会显示在元素框之外。*/
+input.button,button{cursor:pointer;}
+button,input,select,textarea{margin:0;}
+textarea{overflow:auto;resize:none;}
+label[for],input[type="button"],input[type="submit"],input[type="reset"]{cursor:pointer;}
+input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="reset"]::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0;}
+a { text-decoration:none;color:#1C3D72 }
+img{-ms-interpolation-mode:bicubic;}
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+.box { width:940px;margin:18px auto 0 auto; }
+.event_year { width:60px;border-bottom:2px solid #DDD;text-align:center;float:left;margin-top:10px; }
+.event_year li { height:40px;line-height:40px;background:#FFF;margin-bottom:1px;font-size:18px;color:#828282;cursor:pointer; }
+.event_year li.current { width:61px;background:#0066ff url(../img/jian.png) 60px 0 no-repeat;color:#FFF;text-align:left;padding-left:9px; }
+.event_list { width:850px;float:right;background:url(../img/dian3.png) 139px 0 repeat-y;margin:10px 0 20px 0; }
+.event_list h3 { margin:0 0 10px 132px;font-size:24px;font-family:Georgia;color:#0066ff;padding-left:25px;background:url(../img/jian.png) 0 -45px no-repeat;height:38px;line-height:30px;font-style:italic; }
+.event_list li { background:url(../img/jian.png) 136px -80px no-repeat; }
+.event_list li span { width:127px;text-align:right;display:block;float:left;margin-top:10px; }
+.event_list li p { width:680px;margin-left:24px;display:inline-block;padding-left:10px;background:url(../img/jian.png) -21px 0 no-repeat;line-height:25px;_float:left; }
+.event_list li p span { width:650px;text-align:left;border-bottom:2px solid #DDD;padding:10px 15px;background:#FFF;margin:0; }
+
+.titlelist{line-height:24px;color: #8C8C8C;padding-bottom:20px;}
+.titlelist dt { font-weight: bold;color:#666;white-space: nowrap;margin:10px;}
+.titlelist dd {padding-left: 13px;}
+.page { width:100%;background:#F0F0F0 url(../img/dian2.png) repeat-x; }
