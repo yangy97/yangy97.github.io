@@ -1,0 +1,243 @@
+<!--
+	作者：1597355434@qq.com
+	时间：2018-06-28
+	描述：个人网站 响应式
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="杨玉印 洋芋 老杨 bootstrap 响应式网站" content="趣味杂谈 博文 蛙 哈姆雷特">
+    <meta name="杨玉印" content="一个爱狗的男孩子  疼女孩子 会照顾人的大男孩">
+    <title>BLOG|杨玉印</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/profil.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">初学  Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">主页
+                
+              </a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="school.html">学校</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">博文</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="arctil.html">趣味杂谈</a>
+            </li>                    
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+  <h1 class="my-4">
+        <small>有关于web的博文</small>
+      </h1>
+</div>
+<hr />
+      <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto " >
+         
+            <h2>About Bootstrap(心得体会)</h2>
+            <p class="lead">
+            	初学bootstrap，还是有点陌生，以为是一个很难的框架，学了一学期，算是懂了一些，毕竟大部分都是一些css样式，js的框架，总体来说学起来还是很轻松，没有想象的那么难，不过里面的很多样式还是记不住，还是要去翻阅资料，查看文档，确实bootstrap框架是真的好用，很容易上手，很喜欢这样的感觉
+            </p>
+            <p class="lead">bootstrap主要是分为<strong>默认网格布局</strong>和<strong>流式布局</strong>，
+            	前者在我自己的理解，默认网格布局包含12列、940px宽，致辞响应式布局。加载响应式css文件后，网格布局会根据视口（viewport）宽度在724px和1170px之间伸缩。视口宽度小于767px时，说明是平板电脑，或者更小的设备，布局中的列会垂直堆叠起来。默认宽度下，每列宽60px，且向左平衡20px
+            	
+            </p>
+            <p class="lead">流式网格布局而是采用百分比，而不用像素，用.row-fluid就可以实现行的流式布局
+            	
+            </p>
+            <ul>
+              <li>行必须放置在 .container class 内，以便获得适当的对齐（alignment）和内边距（padding）</li>
+              <li>使用行来创建列的水平组</li>
+              <li>内容应该放置在列内，且唯有列可以是行的直接子元素。</li>
+              <li>预定义的网格类，比如 .row 和 .col-xs-4，可用于快速创建网格布局。LESS 混合类可用于更多语义布局。</li>
+              <li>列通过内边距（padding）来创建列内容之间的间隙。该内边距是通过 .rows 上的外边距（margin）取负，表示第一列和最后一列的行偏移。</li>
+            </ul>
+        
+          </div>
+      
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h3><strong>PHP</strong></h3>
+            <p class="lead">PHP我们主要用的是mysql数据库，还是只能说我学到了一些基础的东西，数据库设计下学期应该会开，我相信，学习了数据库设计，对于PHP会更加的熟悉，和精通。目前还打算学习laravel,多学习一个框架，毕竟现在主流的框架很多，学会一个，然后精通它就可以说是非常棒的了</p>
+          
+          <p class="lead">
+          <h3><strong>什么是 PHP 文件？</strong></h3>	
+          	PHP 文件能够包含文本、HTML、CSS 以及 PHP 代码
+PHP 代码在服务器上执行，而结果以纯文本返回浏览器
+PHP 文件的后缀是 ".php"
+          </p>
+              <h3><strong>
+          开始 PHP Session
+                   </strong></h3>
+                   <p><code>
+                   	$_SESSION['views']=1;
+                   	<p>
+                   		echo "Pageviews=". $_SESSION['views'];
+                   	</p>
+                   	<p>
+                   		unset($_SESSION['views']);
+                   	</p>
+                   </code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>什么是jquery</h2>
+            <p class="lead">Jquery是第二学期主要学习的一种语言</p>
+            <p class="lead">jQuery是一个快速、小且功能丰富的JavaScript库。它使HTML文档遍历和操作、事件处理、动画和Ajax等工作变得更加简单，它使用了一个易于使用的API，可以跨多种浏览器工作。通过多功能性和可扩展性的结合，jQuery已经改变了数百万人编写JavaScript的方式。</p>
+            <p><code>$( "button.continue" ).html( "Next Step..." )
+            <p>var hiddenBox = $( "#banner-message" );
+$( "#button-container button" ).on( "click", function( event ) {
+  hiddenBox.show();
+});</p></code></p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+      	<p class="m-0 text-center text-white">电话：18423516243</p>
+      	<p class="m-0 text-center text-white">qq:1597355434</p>
+        <p class="m-0 text-center text-white">Copyright &copy; 重庆师范大学计算机科学与技术杨玉印 2018</p>
+        <p class="m-0 text-center text-white"id="time" ></p>
+      </div>
+    </footer>
+   <script src="js/jquery1.min.js"></script>
+    <script src="../js/jquery.js">
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+			(function() {
+				var coreSocialistValues = ["images/3.png", "images/4.png", "images/2.png","images/1.png","images/5.png","images/6.png","images/7.png","images/8.png","images/9.png","images/10.png","images/11.png"],
+					index = Math.floor(Math.random() * coreSocialistValues.length);
+				document.body.addEventListener('click', function(e) {
+					if(e.target.tagName == 'A') {
+						return;
+					}
+					var x = e.pageX,
+						y = e.pageY,
+						img = document.createElement('img');
+					img.src = coreSocialistValues[index];
+					index = (index + 1) % coreSocialistValues.length;
+					img.style.cssText = ['z-index: 9999999; position: absolute; font-weight: bold; color: #ff6651; top: ', y - 20, 'px; left: ', x, 'px;'].join('');
+					document.body.appendChild(img);
+					animate(img);
+				});
+
+				function animate(el) {
+					var i = 0,
+						top = parseInt(el.style.top),
+						id = setInterval(frame, 16.7);
+
+					function frame() {
+						if(i > 180) {
+							clearInterval(id);
+							el.parentNode.removeChild(el);
+						} else {
+							i += 2;
+							el.style.top = top - i + 'px';
+							el.style.opacity = (180 - i) / 180;
+						}
+					}
+				}
+			}());
+		</script>
+   <!--
+   	作者：1597355434@qq.com
+   	时间：2018-06-28
+   	描述：
+  <script>
+	(function(){
+		var btnReadmore = $(".pal");
+		if(btnReadmore.length>0){
+			var winH = $(window).height();
+			var articleBox = $("div.article_content");
+			var artH = articleBox.height();
+			if(artH > winH*2){
+				articleBox.css({
+					'height':winH*2+'px',
+					'overflow':'hidden'
+				})
+				btnReadmore.click(function(){
+					articleBox.removeAttr("style");
+					$(this).parent().remove();
+				})
+			}else{
+				btnReadmore.parent().remove();
+			}
+		}
+	})()
+</script>   -->
+		<script type='text/javascript'>
+			window.onload = function() {
+				refreshTime(); //当页面加载完时运行时间函数
+			}
+
+			function checkTime(i) {
+				if(i < 10) {
+					i = '0' + i //定义当分钟，秒钟小于10时，使一位数显示为两位数
+				}
+				return i //大于10时，正常显示
+			}
+
+			function refreshTime() { //定义时间函数
+				var date = new Date(); //获取当前默认格式的当前时间
+				var myYear = date.getFullYear(); //在默认格式时间中提取四位数的年份
+				var myMonth = date.getMonth() + 1; //在默认格式时间中提取月份，（月份返回值是0-11，实际月份要返回值+1）
+				var myDate = date.getDate(); //在默认格式实践中提取日期
+				var myDay = date.getDay(); //在默认格式中提取星期（返回值0-6对应星期天-星期六）
+				var myHours = date.getHours(); //在默认格式实践中提取日期小时
+				var myMinutes = date.getMinutes(); //在默认格式实践中提取日期分钟
+				var mySeconds = date.getSeconds(); //在默认格式实践中提取日期分钟
+				var pushM = checkTime(myMinutes);
+				var pushS = checkTime(mySeconds); //用checkTime函数使时间为0~9时替换为00~09
+				//alert(myDay);//test
+				document.getElementById('time').innerHTML = myYear + '年' + myMonth + '月' + myDate + '日&nbsp&nbsp' + myHours + ':' + pushM + ':' + pushS + '<br/>' //使id为'time'的文本值替换为该格式的时间
+				setTimeout(refreshTime, 1000) //每1000毫秒运行一次refreshTime函数，即每秒刷新一次时间
+			}
+		</script>
+			
+	<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){	
+						
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);//hash指定id跳转
+				});
+			});
+			</script>
+  </body>
+
+</html>

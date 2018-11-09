@@ -1,0 +1,175 @@
+<!--
+	作者：1597355434@qq.com
+	时间：2018-06-28
+	描述：个人网站 响应式
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="杨玉印 洋芋 老杨 bootstrap 响应式网站" content="趣味杂谈 博文 蛙 哈姆雷特">
+    <meta name="杨玉印" content="一个爱狗的男孩子  疼女孩子 会照顾人的大男孩">
+    <title>ARCTILE|杨玉印</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/blog.css" rel="stylesheet">
+
+ </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">趣味杂谈</a>
+         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">主页</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="school.html">学校</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">博文</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="arctil.html">趣味杂谈</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+ <header class="masthead" style="background-image: url('images/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>趣味杂谈</h1>
+              <span class="subheading">A Blog  by celebrity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                The Tragedy of Hamlet, Prince of Denmark（哈姆雷特）
+              </h2>
+              <h3 class="post-subtitle">
+                一千人有一千个哈姆雷特
+              </h3>
+            </a>
+            <p class="post-meta">《哈姆雷特》William Shakespeare</a> was created from 1599 to 1602</p>
+          </div>
+          <hr>
+       
+          <div class="post-preview">
+            <a href="pos.html">
+              <h2 class="post-title">
+               一个有罪的人不能也没有权利去死，他必须活着，经受折磨，煎熬，像煎鱼一样翻来覆去地煎，像熬药一样咕嘟咕嘟地熬，用这样的方式来赎自己的罪，罪赎完了，才能一身轻松地去死
+              </h2>
+              <h3 class="post-subtitle">
+               这么多年来，我总结了一条经验，解决棘手问题的最上乘方法是：静观其变，顺水推舟。李手说。
+              </h3>
+            </a>
+            <p class="post-meta"> 《蛙》Posted by
+              莫言
+              on August 24, 2009</p>
+          </div>
+        
+
+          
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+    <p class="copyright text-muted">Copyright &copy;重庆师范大学杨玉印--计科    2018</p>
+    <p class="copyright text-muted" id="time"></p>
+     
+    </footer>
+ <script src="js/jquery1.min.js"></script>
+ <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/blog.js"></script>
+  <script type="text/javascript">
+			(function() {
+				var coreSocialistValues = ["images/3.png", "images/4.png", "images/2.png","images/1.png","images/5.png","images/6.png","images/7.png","images/8.png","images/9.png","images/10.png","images/11.png"],
+					index = Math.floor(Math.random() * coreSocialistValues.length);
+				document.body.addEventListener('click', function(e) {
+					if(e.target.tagName == 'A') {
+						return;
+					}
+					var x = e.pageX,
+						y = e.pageY,
+						img = document.createElement('img');
+					img.src = coreSocialistValues[index];
+					index = (index + 1) % coreSocialistValues.length;
+					img.style.cssText = ['z-index: 9999999; position: absolute; font-weight: bold; color: #ff6651; top: ', y - 20, 'px; left: ', x, 'px;'].join('');
+					document.body.appendChild(img);
+					animate(img);
+				});
+
+				function animate(el) {
+					var i = 0,
+						top = parseInt(el.style.top),
+						id = setInterval(frame, 16.7);
+
+					function frame() {
+						if(i > 180) {
+							clearInterval(id);
+							el.parentNode.removeChild(el);
+						} else {
+							i += 2;
+							el.style.top = top - i + 'px';
+							el.style.opacity = (180 - i) / 180;
+						}
+					}
+				}
+			}());
+	</script>
+			
+<script type='text/javascript'>
+			window.onload = function() {
+				refreshTime(); //当页面加载完时运行时间函数
+			}
+
+			function checkTime(i) {
+				if(i < 10) {
+					i = '0' + i //定义当分钟，秒钟小于10时，使一位数显示为两位数
+				}
+				return i //大于10时，正常显示
+			}
+
+			function refreshTime() { //定义时间函数
+				var date = new Date(); //获取当前默认格式的当前时间
+				var myYear = date.getFullYear(); //在默认格式时间中提取四位数的年份
+				var myMonth = date.getMonth() + 1; //在默认格式时间中提取月份，（月份返回值是0-11，实际月份要返回值+1）
+				var myDate = date.getDate(); //在默认格式实践中提取日期
+				var myDay = date.getDay(); //在默认格式中提取星期（返回值0-6对应星期天-星期六）
+				var myHours = date.getHours(); //在默认格式实践中提取日期小时
+				var myMinutes = date.getMinutes(); //在默认格式实践中提取日期分钟
+				var mySeconds = date.getSeconds(); //在默认格式实践中提取日期分钟
+				var pushM = checkTime(myMinutes);
+				var pushS = checkTime(mySeconds); //用checkTime函数使时间为0~9时替换为00~09
+				//alert(myDay);//test
+				document.getElementById('time').innerHTML = myYear + '年' + myMonth + '月' + myDate + '日&nbsp&nbsp' + myHours + ':' + pushM + ':' + pushS + '<br/>' //使id为'time'的文本值替换为该格式的时间
+				setTimeout(refreshTime, 1000) //每1000毫秒运行一次refreshTime函数，即每秒刷新一次时间
+			}
+		</script>
+
+  </body>
+</html>
+
