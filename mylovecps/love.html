@@ -1,0 +1,148 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+			.tcopyright {
+				width: 960px;/*图片的宽度*/
+				margin: 0 auto;/*居中设置*/
+				padding: 8px 0;/*内边距*/
+				font-size: 12px;
+				line-height: 28px;
+				color: #333;
+				text-align: center;
+				overflow: hidden;
+				clear: both;
+			}
+			
+			.tcopyright .en {
+				font-family: Arial;
+			}
+			
+			.tcopyright a {
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.tcopyright a:hover {
+				color: #bd0a01;
+				text-decoration: underline;/*下划线*/
+			}
+		</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/jq.snow.js"></script>
+
+</head> 
+
+<body>
+<!--下面是调用方法和参数说明-->
+	<script>
+	$(function(){
+		$.fn.snow({ 
+			minSize: 5,		//雪花的最小尺寸
+			maxSize: 50, 	//雪花的最大尺寸
+			newOn: 150		//雪花出现的频率 这个数值越小雪花越多
+		});
+	});
+	</script>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+        <span class="space"/><span class="comments">* 佩珊：</span><br />
+        <span class="space"/><span class="comments">* 嘿，那个美女，我跟你相识在朋友圈。 </span><br />
+        <span class="space"/><span class="comments">* 那个时候你还留着一袭长发，初识发觉这个女孩子漂亮，文雅。 </span><br />
+        <span class="space"/><span class="comments">* 后面发现不仅美丽，还有趣。</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"佩珊"</span>);<br/>
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"洋芋"</span>);<br />
+		
+				<span class="comments">// 你的经历我没体验过，我不确定未来能否给你幸福。</span><br />
+        <span class="comments">// 但我发誓，我会努力让你幸福</span><br />
+				<span class="comments">// 以后再累都不用害怕，因为你有我。</span><br />
+				<span class="comments">// 记得在你最需要的时候想起我。</span><br />
+        <span class="comments">// 一直陪着你，走过以后的日子。 </span><br />
+				因为我爱你;<br />
+				<span class="comments">//当初当我感受到我剧烈的心跳，我明白了：</span><br />
+				因为我想你;<br />
+				<span class="comments">// 你在我心中最美。 </span><br />
+				我想照顾你 <br />
+				<span class="comments">//尽管有时候我傻傻的，但都是爱你的，一定没变！</span><br />
+				<span class="comments">//往后余生，希望都是你</span><br />
+				<span class="keyword">我会</span> 永远  <span class="keyword">爱你</span>;<br />
+				<span class="keyword">一直</span> 爱你 <br />
+				<span class="placeholder"/>不要看我一天嬉皮笑脸，但我有一颗专一的心<br />
+				<span class="placeholder"/><span class="comments">// 我认为这是一个重要的决定。</span><br />
+				<span class="placeholder"/><span class="comments">// 我不能让这个如此好的女孩子跑掉了。</span><br />
+				<span class="placeholder"/>我要好好抓住你的手<br /><br />
+				我非常高兴能遇见你---佩珊<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						佩珊，我们相爱了：
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						<div class="signature">--洋芋</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+		<div id="tcopyright" class="tcopyright" bossZone="footer" role="contentinfo">
+			<div>
+				<a href="lovecps.html" rel="nofollow">LOVE</a> |
+				<a href=""  rel="nofollow">ASK LOVE</a> |
+				<a href="lovephoto.html" rel="nofollow">我❤她</a>
+				<div class="en">杨玉印❤佩珊版权所有Copyright &copy; 2019/1/14 . for--佩珊</div>
+				
+			</div>
+		</div>
+		
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 11, 29);
+		together.setHours(00);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	<embed src="music/love.mp3" autostart="true" loop="true" hidden="true"></embed>
+</body>
+</html>
