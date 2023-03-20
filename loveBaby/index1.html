@@ -1,0 +1,91 @@
+<!--
+ * @version: V1.0.0
+ * @Author: 小杨不吃土豆
+ * @Date: 2023-03-20 17:50:23
+ * @LastEditors: 小杨不吃土豆
+ * @LastEditTime: 2023-03-20 17:50:26
+ * @company: xxx
+ * @Mailbox: y1597355434@gamil.com
+ * @FilePath: /www/yangy97.github.io/loveBaby/index1.html
+ * @Descripttion: 
+ * @Params: 
+ * @Return: 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tank Game</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    // 获取画布  
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 定义坦克类  
+    class Tank {
+      constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.vx = 0;
+        this.vy = 0;
+        this.color = "red";
+      }
+
+      move() {
+        this.vx += 0.1;
+        this.vy += 0.1;
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      }
+    }
+
+    // 定义敌人类  
+    class Enemy {
+      constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.vx = 0;
+        this.vy = 0;
+        this.color = "white";
+      }
+
+      move() {
+        this.vx += 0.1;
+        this.vy += 0.1;
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      }
+    }
+
+    // 定义游戏主循环  
+    const gameLoop = () => {
+      // 清空画布  
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 坦克移动  
+      tank = new Tank(canvas.width / 2, canvas.height / 2, canvas.width, canvas.height);
+      tank.move();
+
+      // 敌人移动  
+      enemy = new Enemy(canvas.width / 2, canvas.height)// 在游戏主循环中，玩家可以控制坦克的移动，而敌人则会向坦克移动的方向移动。当坦克和敌人相遇时，游戏就会结束
+    }
+    gameLoop()
