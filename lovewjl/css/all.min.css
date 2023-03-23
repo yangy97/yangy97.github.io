@@ -232,7 +232,7 @@ img {
 html {
 	font-size:100%;
 	line-height:1.5rem;
-	background-color:#aaa;
+	background-color:pink;
 	color:#6e2d52;
 	text-shadow:1px 1px 0 rgba(255,255,255,0.4)
 }
@@ -268,8 +268,8 @@ body,button {
 	line-height:3.3rem
 }
 .flowtime h3 {
-	font-size:2.5rem;
-	line-height:3rem
+	font-size:2rem;
+	line-height:2.7rem
 }
 .flowtime h4,.flowtime h5,.flowtime h6 {
 	font-size:1.75rem;
@@ -1010,10 +1010,10 @@ body,button {
 	background-color:#febebe
 }
 .page-54 {
-	/* background:#d3d2d0 url(../img/319280_bg.jpg) repeat */
+	/* background: url(../img/319280_bg.jpg) repeat */
 }
 .page-54 .center-img {
-	/* background-image:url(../img/319280.jpg); */
+	background-image:url(../img/319280.jpg);
 	text-indent:-99999px
 }
 .page-54 h3 {
