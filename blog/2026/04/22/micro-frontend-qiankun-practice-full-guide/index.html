@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>微前端工程实践：qiankun 从脚手架到联调与上线（详版） | XiaoYang</title><meta name="author" content="杨,y1597355434@gmail.com"><meta name="copyright" content="杨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概念速览见《微前端实践：qiankun 生命周期、沙箱与数据通信》。本篇子应用打包以 Vite 为主；Webpack &#x2F; vue-cli 老项目 仅文末一句带过好。包版本以 qiankun 官方文档 与 vite-plugin-qiankun 为准。   一、准备与角色划分 主应用（基座）：负责 菜单、登录、子应用注册、容器 DOM；顶层路由 必须能落到同一 HTML（history">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微前端工程实践：qiankun 从脚手架到联调与上线（详版）">
+<meta property="og:url" content="https://yangy97.github.io/blog/2026/04/22/micro-frontend-qiankun-practice-full-guide/index.html">
+<meta property="og:site_name" content="XiaoYang">
+<meta property="og:description" content="概念速览见《微前端实践：qiankun 生命周期、沙箱与数据通信》。本篇子应用打包以 Vite 为主；Webpack &#x2F; vue-cli 老项目 仅文末一句带过好。包版本以 qiankun 官方文档 与 vite-plugin-qiankun 为准。   一、准备与角色划分 主应用（基座）：负责 菜单、登录、子应用注册、容器 DOM；顶层路由 必须能落到同一 HTML（history">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/id/1019/800/450">
+<meta property="article:published_time" content="2026-04-22T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-22T02:20:23.185Z">
+<meta property="article:author" content="杨">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Vite">
+<meta property="article:tag" content="微前端">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="前端架构">
+<meta property="article:tag" content="qiankun">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/id/1019/800/450"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://yangy97.github.io/blog/2026/04/22/micro-frontend-qiankun-practice-full-guide/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=4.8.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 杨","link":"链接: ","source":"来源: XiaoYang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '微前端工程实践：qiankun 从脚手架到联调与上线（详版）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-04-22 10:20:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog/img/avator.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://picsum.photos/id/1019/800/450')"><nav id="nav"><span id="blog-info"><a href="/blog/" title="XiaoYang"><span class="site-name">XiaoYang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微前端工程实践：qiankun 从脚手架到联调与上线（详版）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-04-22T02:00:00.000Z" title="发表于 2026-04-22 10:00:00">2026-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微前端工程实践：qiankun 从脚手架到联调与上线（详版）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>概念速览见《微前端实践：qiankun 生命周期、沙箱与数据通信》。本篇<strong>子应用打包以 Vite 为主</strong>；<strong>Webpack &#x2F; vue-cli 老项目</strong> 仅文末一句带过好。<strong>包版本</strong>以 <a target="_blank" rel="noopener" href="https://qiankun.umijs.org/">qiankun 官方文档</a> 与 <a target="_blank" rel="noopener" href="https://github.com/tengmaoqing/vite-plugin-qiankun">vite-plugin-qiankun</a> 为准。</p>
+</blockquote>
+<hr>
+<h3 id="一、准备与角色划分"><a href="#一、准备与角色划分" class="headerlink" title="一、准备与角色划分"></a>一、准备与角色划分</h3><ul>
+<li><strong>主应用（基座）</strong>：负责 <strong>菜单、登录、子应用注册、容器 DOM</strong>；<strong>顶层路由</strong> 必须能落到同一 HTML（history fallback）。  </li>
+<li><strong>子应用</strong>：可 <strong>独立开发、独立部署</strong>；必须导出 **<code>bootstrap</code> &#x2F; <code>mount</code> &#x2F; <code>unmount</code>**。  </li>
+<li><strong>建议约定</strong>：子应用 <strong>URL 前缀</strong> 如 <code>/app-order</code>，与 <strong><code>router</code> base、activeRule、base（Vite publicPath）</strong> 三处写同一个字符串。</li>
+</ul>
+<p><strong>端口示例</strong>：主应用 <code>8080</code>，子应用 A <code>8081</code>、B <code>8082</code>（<code>registerMicroApps</code> 里多一条即可）。</p>
+<hr>
+<h3 id="二、主应用：安装与启动-qiankun"><a href="#二、主应用：安装与启动-qiankun" class="headerlink" title="二、主应用：安装与启动 qiankun"></a>二、主应用：安装与启动 qiankun</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Vue / React 主应用内</span></span><br><span class="line">npm i qiankun</span><br></pre></td></tr></table></figure>
+
+<p>在 <strong>应用启动最早阶段</strong>（如 <code>src/main.ts</code> 或 <code>src/qiankun/index.ts</code>）写注册逻辑，<strong>不要</strong> 放在某个页面组件的 <code>onMounted</code> 里再 <code>start</code>（会反复注册或时序乱）。</p>
+<p><strong>最小注册代码（可直接改路径与端口联调）</strong>：</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; registerMicroApps, start &#125; <span class="keyword">from</span> <span class="string">&#x27;qiankun&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">registerMicroApps</span>([</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;app-order&#x27;</span>,</span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&#x27;//localhost:8081&#x27;</span>,</span><br><span class="line">    <span class="attr">container</span>: <span class="string">&#x27;#subapp-container&#x27;</span>,</span><br><span class="line">    <span class="attr">activeRule</span>: <span class="function">(<span class="params">location</span>) =&gt;</span> location.<span class="property">pathname</span>.<span class="title function_">startsWith</span>(<span class="string">&#x27;/order&#x27;</span>),</span><br><span class="line">    <span class="attr">props</span>: &#123; <span class="attr">routerBase</span>: <span class="string">&#x27;/order&#x27;</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="title function_">start</span>(&#123;</span><br><span class="line">  <span class="attr">prefetch</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">sandbox</span>: &#123; <span class="attr">experimentalStyleIsolation</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>entry</code>**：生产环境写 <strong>子应用 <code>index.html</code> 的绝对 URL</strong>；本地可 <code>//localhost:8081</code>（协议跟随主应用）。  </li>
+<li><strong><code>container</code><strong>：主应用布局里需存在该选择器，例如 <code>App.vue</code> 中 <code>&lt;div id=&quot;subapp-container&quot; /&gt;</code>；若用布局切换子路由，</strong>容器要在激活子应用时始终存在</strong>。  </li>
+<li><strong><code>activeRule</code></strong> 与主应用 <strong>Vue Router</strong> 的 path 要一致，否则子应用不挂载。  </li>
+<li><strong><code>props.routerBase</code></strong> 子应用在 mount 时读取，给 <strong>子应用 <code>createWebHistory(routerBase)</code></strong> 用。</li>
+</ul>
+<p>在 <strong><code>start()</code> 之前</strong> 确保主应用路由已能访问到带容器的布局页；若用 <strong>Hash 主应用</strong> 子应用，注意 <strong>activeRule</strong> 里要解析 <code>location.hash</code> 而不是只看 <code>pathname</code>（以你的路由模式为准）。</p>
+<hr>
+<h3 id="三、子应用：Vite-Vue3-vite-plugin-qiankun（主路径）"><a href="#三、子应用：Vite-Vue3-vite-plugin-qiankun（主路径）" class="headerlink" title="三、子应用：Vite + Vue3 + vite-plugin-qiankun（主路径）"></a>三、子应用：Vite + Vue3 + <code>vite-plugin-qiankun</code>（主路径）</h3><p><strong>1）创建子应用</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm create vite@latest child-order -- --template vue-ts</span><br><span class="line"><span class="built_in">cd</span> child-order</span><br><span class="line">npm i</span><br><span class="line">npm i vite-plugin-qiankun -D</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）<code>vite.config.ts</code> 要点</strong>（<code>name</code> 与主应用 <code>registerMicroApps</code> 的 <code>name</code> 一致；<code>base</code> 与线上子路径一致）</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> qiankun <span class="keyword">from</span> <span class="string">&#x27;vite-plugin-qiankun&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">APP_NAME</span> = <span class="string">&#x27;app-order&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> isProd = process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">8081</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">base</span>: isProd ? <span class="string">&#x27;/order/&#x27;</span> : <span class="string">`http://localhost:<span class="subst">$&#123;port&#125;</span>/`</span>,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="title function_">vue</span>(),</span><br><span class="line">    <span class="title function_">qiankun</span>(<span class="variable constant_">APP_NAME</span>, &#123;</span><br><span class="line">      <span class="attr">useDevMode</span>: !isProd, <span class="comment">// 开发时由插件配合热更新，以插件版本说明为准</span></span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">server</span>: &#123;</span><br><span class="line">    port,</span><br><span class="line">    <span class="attr">origin</span>: <span class="string">`http://localhost:<span class="subst">$&#123;port&#125;</span>`</span>,</span><br><span class="line">    <span class="attr">cors</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">headers</span>: &#123; <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="string">&#x27;*&#x27;</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>base</code><strong>：开发阶段常用 <strong>全量 URL</strong>，避免资源从主应用域错误解析；</strong>生产</strong> 多为 <strong><code>/order/</code></strong> 同域部署。以你 <strong>Nginx&#x2F;网关</strong> 实际为准调整。  </li>
+<li>插件的 <strong><code>useDevMode</code>、选项名</strong> 若与上游变更不一致，以 <a target="_blank" rel="noopener" href="https://github.com/tengmaoqing/vite-plugin-qiankun">vite-plugin-qiankun</a> README 为准。</li>
+</ul>
+<p>**3）<code>src/router/index.ts</code>**：basename 与主应用为子应用分配的路径一致，例如 <code>&#39;/order&#39;</code>。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">  <span class="attr">history</span>: <span class="title function_">createWebHistory</span>(</span><br><span class="line">    (<span class="variable language_">window</span> <span class="keyword">as</span> <span class="built_in">any</span>).<span class="property">__POWERED_BY_QIANKUN__</span> ? <span class="string">&#x27;/order&#x27;</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="attr">routes</span>: [<span class="comment">/* ... */</span>],</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+
+<p>独立打开子应用时用 **<code>/</code>**；被 qiankun 嵌入时走 **<code>/order</code>**（与主应用 <code>activeRule</code>、主应用子路由一致）。</p>
+<p><strong>4）<code>src/main.ts</code> 导出生命周期</strong></p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp, <span class="keyword">type</span> <span class="title class_">App</span> <span class="keyword">as</span> <span class="title class_">VueApp</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; renderWithQiankun, qiankunWindow &#125; <span class="keyword">from</span> <span class="string">&#x27;vite-plugin-qiankun/helper&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">app</span>: <span class="title class_">VueApp</span> | <span class="literal">null</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">render</span>(<span class="params">props: &#123; container?: HTMLElement &#125; = &#123;&#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> el =</span><br><span class="line">    props.<span class="property">container</span>?.<span class="title function_">querySelector</span>(<span class="string">&#x27;#app&#x27;</span>) ?? <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#app&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!el) <span class="keyword">return</span>;</span><br><span class="line">  app = <span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">  app.<span class="title function_">use</span>(router);</span><br><span class="line">  app.<span class="title function_">mount</span>(el);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">renderWithQiankun</span>(&#123;</span><br><span class="line">  <span class="title function_">bootstrap</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">mount</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="title function_">render</span>(props);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">unmount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    app?.<span class="title function_">unmount</span>();</span><br><span class="line">    app = <span class="literal">null</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">update</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!qiankunWindow.<span class="property">__POWERED_BY_QIANKUN__</span>) &#123;</span><br><span class="line">  <span class="title function_">render</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>helper</code></strong> 从 <strong><code>vite-plugin-qiankun/helper</code></strong> 引入 <code>renderWithQiankun</code> 与 <code>qiankunWindow</code>；若大版本调整导出路径，以 <strong>node_modules 内类型定义</strong> 为准。</p>
+<p><strong>5）<code>index.html</code></strong> 保留根节点 <code>#app</code>，与 <code>querySelector</code> 一致即可。</p>
+<p><strong>6）HMR 异常</strong>时，先用 <strong><code>npm run build &amp;&amp; npx serve dist</code></strong> 或静态服务器验证 <strong>生产形态</strong>，再对照 issue 中 <strong>useDevMode</strong> 说明。</p>
+<hr>
+<h3 id="四、子应用：Vite-React-18"><a href="#四、子应用：Vite-React-18" class="headerlink" title="四、子应用：Vite + React 18"></a>四、子应用：Vite + React 18</h3><p>思路与 Vue 相同：**<code>vite-plugin-qiankun</code> + <code>renderWithQiankun</code>（或同插件提供的 React 辅助）<strong>、</strong><code>createRoot</code> 挂到 <code>props.container</code>**、<code>unmount</code> 里 **<code>root.unmount()</code>**。模板可选用 **<code>@vitejs/plugin-react</code>**。</p>
+<p><strong>双份 React</strong>：子应用与主应用各打一份时易出现 <strong>Invalid hook call</strong>，需在 <strong><code>optimizeDeps</code> &#x2F; 外部化</strong> 或 <strong>Module Federation 共享</strong> 上定版本；见《Module Federation 详版》的 <strong><code>shared: &#123; singleton: true &#125;</code></strong> 思路。</p>
+<hr>
+<h3 id="五、老项目用-Webpack-时（一句带过）"><a href="#五、老项目用-Webpack-时（一句带过）" class="headerlink" title="五、老项目用 Webpack 时（一句带过）"></a>五、老项目用 Webpack 时（一句带过）</h3><p><strong>vue-cli</strong> 子应用需 <strong><code>output.library</code> UMD</strong>、在入口最前 <strong>动态 <code>__webpack_public_path__</code><strong>（<code>window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__</code>），与官方示例一致；</strong>create-react-app 需 eject 或 <code>craco</code> 改配置</strong>。<strong>新项目优先 Vite + 上节</strong>。</p>
+<hr>
+<h3 id="六、数据通信：initGlobalState-与-props"><a href="#六、数据通信：initGlobalState-与-props" class="headerlink" title="六、数据通信：initGlobalState 与 props"></a>六、数据通信：<code>initGlobalState</code> 与 <code>props</code></h3><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; initGlobalState, <span class="title class_">MicroAppStateActions</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;qiankun&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = &#123; <span class="attr">user</span>: <span class="literal">null</span> <span class="keyword">as</span> &#123; <span class="attr">id</span>: <span class="built_in">string</span> &#125; | <span class="literal">null</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">actions</span>: <span class="title class_">MicroAppStateActions</span> = <span class="title function_">initGlobalState</span>(state);</span><br><span class="line"></span><br><span class="line">actions.<span class="title function_">onGlobalStateChange</span>(<span class="function">(<span class="params">newState, prev</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(newState, prev);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主应用里更新</span></span><br><span class="line">actions.<span class="title function_">setGlobalState</span>(&#123; <span class="attr">user</span>: &#123; <span class="attr">id</span>: <span class="string">&#x27;1&#x27;</span> &#125; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>子应用在 <strong><code>mount(props)</code></strong> 中通过 <strong><code>props.setGlobalState</code> &#x2F; <code>onGlobalStateChange</code><strong>（若主应用从 <code>getGlobalState</code> 注入，以你封装为准）与基座同步。</strong>建议</strong>：<strong>权限、用户摘要</strong> 可放；<strong>大表单&#x2F;列表</strong> 仍走 <strong>接口 + BFF</strong>。</p>
+<hr>
+<h3 id="七、预加载、性能与-prefetch"><a href="#七、预加载、性能与-prefetch" class="headerlink" title="七、预加载、性能与 prefetch"></a>七、预加载、性能与 <code>prefetch</code></h3><ul>
+<li><strong><code>start(&#123; prefetch: true &#125;)</code></strong> 会在空闲时拉子应用资源，具体策略见文档。  </li>
+<li>子应用 <strong>包体</strong> 仍要做 <strong>code split、路由懒加载</strong>；微前端不替你砍体积。  </li>
+<li>若子应用极多，可评估 <strong>只 prefetch 下一屏</strong> 的自定义策略，避免无差别打满带宽。</li>
+</ul>
+<hr>
+<h3 id="八、部署清单"><a href="#八、部署清单" class="headerlink" title="八、部署清单"></a>八、部署清单</h3><table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>子应用 <code>index.html</code> 可公网访问</td>
+<td><code>entry</code> 用 <strong>https</strong> 绝对地址（或主应用同域反代后路径）</td>
+</tr>
+<tr>
+<td>子应用 <strong><code>base</code> 与静态资源</strong> 正确</td>
+<td>避免 <code>chunk</code> 从错误根路径 404</td>
+</tr>
+<tr>
+<td>主应用 <strong>history fallback</strong></td>
+<td><code>/order/**</code> 回主 <code>index.html</code></td>
+</tr>
+<tr>
+<td><strong>CORS</strong></td>
+<td>若 <code>entry</code> 与主应用不同源，<strong>子应用资源响应头</strong> 需允许主域（或由网关统一加）</td>
+</tr>
+<tr>
+<td><strong>Cookie 域</strong></td>
+<td>同站策略与 <strong>SameSite</strong>；跨子域时让 <strong>BFF&#x2F;网关</strong> 定策略</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="九、常见问题与排错"><a href="#九、常见问题与排错" class="headerlink" title="九、常见问题与排错"></a>九、常见问题与排错</h3><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>白屏，子应用 <strong>js&#x2F;css 404</strong></td>
+<td><strong><code>base</code> 与网关前缀不一致</strong>；开发期 <strong><code>//localhost</code> 与 <code>https</code> 混用</strong></td>
+<td>先 <strong>单开子站</strong> 确认 <code>index.html</code> 引用的 <strong>chunk URL</strong> 能 200；生产 <strong><code>base: &#39;/子路径/&#39;</code></strong> 与 Nginx 一致</td>
+</tr>
+<tr>
+<td>子应用 <strong>永远不挂载</strong></td>
+<td><strong>activeRule</strong> 与真实 <strong>pathname</strong> 不符；<code>#subapp</code> <strong>未出现在 DOM</strong></td>
+<td><code>console</code> 里打印 <strong>location</strong>；用 <strong><code>registerMicroApps</code> 的 <code>activeRule</code> 打日志</strong>；保证 <strong>主路由先渲染出容器</strong> 再 <code>start</code></td>
+</tr>
+<tr>
+<td><strong><code>vite-plugin-qiankun</code> HMR 乱 &#x2F; 白屏</strong></td>
+<td>插件与 <strong>Vite 大版本</strong> 不兼容、**<code>useDevMode</code>** 与场景不符</td>
+<td>用 <strong><code>npm run build</code> + 静态服</strong> 复现；对照插件 issue 升版或关 HMR 试产线形态</td>
+</tr>
+<tr>
+<td><strong><code>__POWERED_BY_QIANKUN__</code> 与独立运行逻辑打架</strong></td>
+<td><code>router</code> basename、**<code>render</code> 双入口** 写反</td>
+<td>独立访问走 **<code>/</code>，嵌入走 <code>/order</code>**；<code>qiankunWindow</code> 或全局标记分支要 <strong>单一真源</strong></td>
+</tr>
+<tr>
+<td><strong><code>initGlobalState</code> 不触发</strong></td>
+<td>子应用未 <strong>订阅</strong> 或主应用未 <strong>在 mount 后 set</strong></td>
+<td>主应用在 **<code>mount</code> 完成后再 <code>setGlobalState</code>**；子应用 <strong>onGlobalStateChange</strong> 要在 <strong>mount 内</strong> 注册并在 <strong>unmount 取消</strong></td>
+</tr>
+<tr>
+<td><strong>qiankun 与 cookie</strong></td>
+<td>跨站 <strong>SameSite</strong>、<strong>third-party cookie</strong> 被禁</td>
+<td>尽量 <strong>同站 + 反代</strong> 子应用入口；<strong>鉴权</strong> 以 <strong>BFF + HttpOnly</strong> 为优先</td>
+</tr>
+</tbody></table>
+<p><strong>仍搞不定</strong>时，按顺序：<strong>子应用单站 OK → 主应用只注册一条子应用 → 关沙箱&#x2F;关样式隔离对比</strong> 缩小范围。</p>
+<hr>
+<h3 id="十、收束"><a href="#十、收束" class="headerlink" title="十、收束"></a>十、收束</h3><p>qiankun 落地 <strong>&#x3D; 子应用生命周期 + 主应用正确注册 + <code>base</code> &#x2F; 路由与 activeRule 一致</strong>。<strong>Vite 子应用</strong> 以 <strong><code>vite-plugin-qiankun</code> + 双模式 <code>main</code>&#x2F;<code>router</code></strong> 为当前主流写法；<strong>Webpack 仅维护老栈时</strong>再翻官方 UMD 示例。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog">杨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog/2026/04/22/micro-frontend-qiankun-practice-full-guide/">https://yangy97.github.io/blog/2026/04/22/micro-frontend-qiankun-practice-full-guide/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yangy97.github.io/blog" target="_blank">XiaoYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/Vue/">Vue</a><a class="post-meta__tags" href="/blog/tags/Vite/">Vite</a><a class="post-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><a class="post-meta__tags" href="/blog/tags/React/">React</a><a class="post-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a><a class="post-meta__tags" href="/blog/tags/qiankun/">qiankun</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/id/1019/800/450" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/blog/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2026/04/22/enterprise-cicd-pipeline-deep/" title="企业级 CI/CD：流水线设计、门禁与发布治理"><img class="cover" src="https://picsum.photos/id/1015/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">企业级 CI/CD：流水线设计、门禁与发布治理</div></div></a></div><div class="next-post pull-right"><a href="/blog/2026/04/21/frontend-performance-devtools/" title="用 DevTools 与 Lighthouse 做性能排查（操作流程）"><img class="cover" src="https://picsum.photos/id/1019/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">用 DevTools 与 Lighthouse 做性能排查（操作流程）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/" title="微前端工程实践：Garfish 子应用表、沙箱与插件（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：Garfish 子应用表、沙箱与插件（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-wujie-practice-full-guide/" title="微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-icestark-practice-full-guide/" title="微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-micro-app-practice-full-guide/" title="微前端工程实践：micro-app 标签化接入与数据传递（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：micro-app 标签化接入与数据传递（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-module-federation-practice-full-guide/" title="微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）"><img class="cover" src="https://picsum.photos/id/1036/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）</div></div></a></div><div><a href="/blog/2026/04/20/micro-frontend-qiankun-sandbox-lifecycle/" title="微前端实践：qiankun 生命周期、沙箱与数据通信"><img class="cover" src="https://picsum.photos/id/1036/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-20</div><div class="title">微前端实践：qiankun 生命周期、沙箱与数据通信</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog/img/avator.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨</div><div class="author-info__description">一个菜鸟前端的自我救赎</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yangy97"><i class="fab fa-github"></i><span>小杨的github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%87%86%E5%A4%87%E4%B8%8E%E8%A7%92%E8%89%B2%E5%88%92%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">一、准备与角色划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BB%E5%BA%94%E7%94%A8%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8-qiankun"><span class="toc-number">2.</span> <span class="toc-text">二、主应用：安装与启动 qiankun</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AD%90%E5%BA%94%E7%94%A8%EF%BC%9AVite-Vue3-vite-plugin-qiankun%EF%BC%88%E4%B8%BB%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">三、子应用：Vite + Vue3 + vite-plugin-qiankun（主路径）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AD%90%E5%BA%94%E7%94%A8%EF%BC%9AVite-React-18"><span class="toc-number">4.</span> <span class="toc-text">四、子应用：Vite + React 18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%80%81%E9%A1%B9%E7%9B%AE%E7%94%A8-Webpack-%E6%97%B6%EF%BC%88%E4%B8%80%E5%8F%A5%E5%B8%A6%E8%BF%87%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">五、老项目用 Webpack 时（一句带过）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%EF%BC%9AinitGlobalState-%E4%B8%8E-props"><span class="toc-number">6.</span> <span class="toc-text">六、数据通信：initGlobalState 与 props</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E9%A2%84%E5%8A%A0%E8%BD%BD%E3%80%81%E6%80%A7%E8%83%BD%E4%B8%8E-prefetch"><span class="toc-number">7.</span> <span class="toc-text">七、预加载、性能与 prefetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E9%83%A8%E7%BD%B2%E6%B8%85%E5%8D%95"><span class="toc-number">8.</span> <span class="toc-text">八、部署清单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8E%92%E9%94%99"><span class="toc-number">9.</span> <span class="toc-text">九、常见问题与排错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E6%94%B6%E6%9D%9F"><span class="toc-number">10.</span> <span class="toc-text">十、收束</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 杨</div><div class="footer_custom_text">Hi, welcome to my Blog This is XiaoYang</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=4.8.1"></script><script src="/blog/js/main.js?v=4.8.1"></script><script src="/blog/js/tw_cn.js?v=4.8.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script>
+(function () {
+  var PIC = 'https://picsum.photos';
+  function randSeed(prefix) {
+    return prefix + Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+  function applyBanner() {
+    var el = document.getElementById('page-header');
+    if (!el || el.classList.contains('not-top-img')) return;
+    var bg = el.style.backgroundImage || (window.getComputedStyle && getComputedStyle(el).backgroundImage) || '';
+    // 若使用本地 /img/ 自定义顶图，则不覆盖
+    if (/url\([^\)]*\/img\//i.test(bg)) return;
+    var w = Math.max(320, Math.floor(window.innerWidth || 1200));
+    var h = Math.max(400, Math.floor((window.innerHeight || 800) * 0.45));
+    var url = PIC + '/seed/' + encodeURIComponent(randSeed('banner')) + '/' + w + '/' + h;
+    el.style.backgroundImage = "url('" + url + "')";
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+  }
+  function applyCovers() {
+    var imgs = document.querySelectorAll('img.post-bg');
+    imgs.forEach(function (img) {
+      var s = img.getAttribute('src') || img.src || '';
+      // 仅刷新「默认外链封面」：picsum 或历史失效 CDN；不动本地 /img/ 自定义封面
+      if (s.indexOf('/img/') !== -1 && s.indexOf('picsum.photos') === -1) return;
+      if (s.indexOf('picsum.photos') === -1 && s.indexOf('crazywong') === -1 && s.indexOf('file.crazywong') === -1 && s.indexOf('loli.net') === -1) return;
+      var url = PIC + '/seed/' + encodeURIComponent(randSeed('cover')) + '/800/450';
+      img.src = url;
+      img.referrerPolicy = 'no-referrer';
+    });
+  }
+  function run() {
+    applyBanner();
+    applyCovers();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>微前端工程实践：Garfish 子应用表、沙箱与插件（详版） | XiaoYang</title><meta name="author" content="杨,y1597355434@gmail.com"><meta name="copyright" content="杨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Garfish 是字节开源的 微前端框架，能力覆盖 子应用管理、预加载、沙箱、插件、路由 等。本篇按 能开工 的粒度写主应用、子应用、插件思路；具体 API 名称与参数 以 Garfish 官方文档 为准（版本升级较快）。子应用新建推荐 npm create vite@latest + 官方 @garfish&#x2F;bridge-* 文档；Webpack 子项目 仅按官档 同构改造，不展开独立小节。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微前端工程实践：Garfish 子应用表、沙箱与插件（详版）">
+<meta property="og:url" content="https://yangy97.github.io/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/index.html">
+<meta property="og:site_name" content="XiaoYang">
+<meta property="og:description" content="Garfish 是字节开源的 微前端框架，能力覆盖 子应用管理、预加载、沙箱、插件、路由 等。本篇按 能开工 的粒度写主应用、子应用、插件思路；具体 API 名称与参数 以 Garfish 官方文档 为准（版本升级较快）。子应用新建推荐 npm create vite@latest + 官方 @garfish&#x2F;bridge-* 文档；Webpack 子项目 仅按官档 同构改造，不展开独立小节。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/id/1018/800/450">
+<meta property="article:published_time" content="2026-04-22T05:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-22T02:20:23.151Z">
+<meta property="article:author" content="杨">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Vite">
+<meta property="article:tag" content="微前端">
+<meta property="article:tag" content="Garfish">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="前端架构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/id/1018/800/450"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://yangy97.github.io/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=4.8.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 杨","link":"链接: ","source":"来源: XiaoYang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '微前端工程实践：Garfish 子应用表、沙箱与插件（详版）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-04-22 10:20:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog/img/avator.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://picsum.photos/id/1018/800/450')"><nav id="nav"><span id="blog-info"><a href="/blog/" title="XiaoYang"><span class="site-name">XiaoYang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微前端工程实践：Garfish 子应用表、沙箱与插件（详版）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-04-22T05:00:00.000Z" title="发表于 2026-04-22 13:00:00">2026-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微前端工程实践：Garfish 子应用表、沙箱与插件（详版）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://www.garfishjs.org/">Garfish</a> 是字节开源的 <strong>微前端框架</strong>，能力覆盖 <strong>子应用管理、预加载、沙箱、插件、路由</strong> 等。本篇按 <strong>能开工</strong> 的粒度写主应用、子应用、插件思路；<strong>具体 API 名称与参数</strong> 以 <a target="_blank" rel="noopener" href="https://www.garfishjs.org/">Garfish 官方文档</a> 为准（版本升级较快）。<strong>子应用</strong>新建推荐 <strong><code>npm create vite@latest</code> + 官方 <code>@garfish/bridge-*</code></strong> 文档；<strong>Webpack 子项目</strong> 仅按官档 <strong>同构改造</strong>，不展开独立小节。</p>
+<hr>
+<h3 id="一、主应用：安装与-Garfish-run"><a href="#一、主应用：安装与-Garfish-run" class="headerlink" title="一、主应用：安装与 Garfish.run"></a>一、主应用：安装与 <code>Garfish.run</code></h3><p><strong>1）安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i garfish</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）入口中初始化</strong>（以下结构与官方 <strong>快速开始</strong> 一致，细项以文档为准）：</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Garfish</span> <span class="keyword">from</span> <span class="string">&#x27;garfish&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Garfish</span>.<span class="title function_">setGlobalValue</span>(<span class="string">&#x27;appName&#x27;</span>, <span class="string">&#x27;main-dashboard&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Garfish</span>.<span class="title function_">run</span>(&#123;</span><br><span class="line">  <span class="attr">basename</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">domGetter</span>: <span class="string">&#x27;#subApp&#x27;</span>,</span><br><span class="line">  <span class="attr">apps</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;reactApp&#x27;</span>,</span><br><span class="line">      <span class="attr">activeWhen</span>: <span class="string">&#x27;/react-app&#x27;</span>,</span><br><span class="line">      <span class="attr">entry</span>: <span class="string">&#x27;http://localhost:8080&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;vueApp&#x27;</span>,</span><br><span class="line">      <span class="attr">activeWhen</span>: <span class="string">&#x27;/vue-app&#x27;</span>,</span><br><span class="line">      <span class="attr">entry</span>: <span class="string">&#x27;http://localhost:8081&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>domGetter</code>**：子应用 <strong>挂载的容器</strong>；可以是 <strong>选择器字符串</strong> 或 <strong>函数</strong>。  </li>
+<li>**<code>activeWhen</code>**：子应用 <strong>激活路径</strong>，支持 <strong>字符串前缀</strong> 或 <strong>函数</strong>（以文档类型为准）。  </li>
+<li>**<code>entry</code>**：子应用 <strong>HTML 入口</strong>（同 qiankun 的 HTML Entry 思路）。  </li>
+<li>**<code>basename</code>**：Garfish 作为 <strong>基座</strong> 的 <strong>总 basename</strong>，与主应用 <strong>顶层路由</strong> 配合。</li>
+</ul>
+<p><strong>3）在页面中准备容器</strong>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;subApp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>子应用 <strong>激活时</strong> Garfish 会把 <strong>子应用根</strong> 挂进该节点（具体是 <strong>全量替换</strong> 还是 <strong>内嵌</strong> 以文档与版本为准，联调时观察 DOM 树即可确认）。</p>
+<hr>
+<h3 id="二、子应用：需要导出什么"><a href="#二、子应用：需要导出什么" class="headerlink" title="二、子应用：需要导出什么"></a>二、子应用：需要导出什么</h3><p>Garfish 要求子应用以 <strong>子应用包</strong> 形式被加载，<strong>生命周期</strong> 与 qiankun 体系类似，常见包括：</p>
+<ul>
+<li><strong><code>provider</code></strong> 函数：创建 <strong>根组件 &#x2F; 根实例</strong> 的工厂；  </li>
+<li>或在文档所述的 <strong><code>export</code></strong> 中提供 <strong>render</strong> 与 <strong>destroy</strong> 配对。</li>
+</ul>
+<p><strong>典型 React 子应用</strong>（仅逻辑示意）：</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createRoot &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createRouter &#125; <span class="keyword">from</span> <span class="string">&#x27;@garfish/bridge-react&#x27;</span>; <span class="comment">// 以官方 bridge 包名为准</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">provider</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params">&#123; dom, basename &#125;</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> root = <span class="title function_">createRoot</span>(dom);</span><br><span class="line">      root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="function">() =&gt;</span> root.<span class="title function_">unmount</span>();</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>要点</strong>：**<code>destroy</code> 可逆<strong>、</strong>basename** 与主应用给的路径一致。<strong>Vue 子应用</strong> 用 <strong><code>@garfish/bridge-vue</code></strong> 等（包名以文档为准）。</p>
+<p><strong>强烈建议</strong>：用官方 <strong>create-garfish &#x2F; 模板</strong> 生成一版子项目，对 <strong>ts 类型、bridge 包版本</strong> 最省事。</p>
+<hr>
+<h3 id="三、预加载"><a href="#三、预加载" class="headerlink" title="三、预加载"></a>三、预加载</h3><p>Garfish 提供 <strong>预加载 API</strong>（如 <code>preloadApp</code> 或 <code>run</code> 的选项，名称以文档为准）：</p>
+<ul>
+<li>在 <strong>主应用</strong> 的 <strong>用户登录后</strong> 或 <strong>菜单数据返回后</strong> 对 <strong>高优子应用</strong> 预取；  </li>
+<li>与 <strong>路由懒加载</strong> 结合，避免 <strong>一次性 preload 全站</strong> 造成 <strong>首包膨胀</strong>。</li>
+</ul>
+<hr>
+<h3 id="四、插件体系（扩展点）"><a href="#四、插件体系（扩展点）" class="headerlink" title="四、插件体系（扩展点）"></a>四、插件体系（扩展点）</h3><p>插件可用于：</p>
+<ul>
+<li><strong>统一错误处理</strong>：子应用 <strong>加载失败</strong> 时，主应用 <strong>兜底页 + 埋点</strong>；  </li>
+<li><strong>改造 fetch</strong>：在子应用请求头里 <strong>自动带 traceId</strong>；  </li>
+<li><strong>沙箱前&#x2F;后钩子</strong>：在 <strong>mount 前后</strong> 做 <strong>A&#x2F;B、主题注入</strong>（见文档 <strong>Plugin</strong> 章）。</li>
+</ul>
+<p><strong>实践</strong>：<strong>第一版别写太多插件</strong>，先 <strong>跑通主 + 1 子应用</strong>；稳定后再加 <strong>可观测性</strong> 插件。</p>
+<hr>
+<h3 id="五、与集团基建"><a href="#五、与集团基建" class="headerlink" title="五、与集团基建"></a>五、与集团基建</h3><p>Garfish 在 <strong>字节内</strong> 与 <strong>发布、监控</strong> 有深度结合；<strong>开源</strong> 使用时要自行对接 <strong>Sentry&#x2F;ARMS&#x2F;自研</strong> 的 <strong>子应用名、版本、sourcemap</strong>。在 <strong>RUM</strong> 中建议上报字段：<code>garfish.appName</code>、<strong>子应用 <code>entry</code> 版本</strong>（可来自 <strong>子应用 <code>package.json</code> 的 build id</strong> 注入 <code>window</code>）。</p>
+<hr>
+<h3 id="六、联调与部署"><a href="#六、联调与部署" class="headerlink" title="六、联调与部署"></a>六、联调与部署</h3><ul>
+<li><strong>联调</strong>：主 <strong>Garfish 基座</strong> 与 子 <strong>devServer</strong> 同时起，<strong>CORS</strong> 在子 <strong>devServer</strong> 打开（或主应用走 <strong>dev proxy</strong> 把 <code>entry</code> 指到同域 path）。  </li>
+<li><strong>部署</strong>：子应用 <strong>独立静态资源</strong>；<code>entry</code> 为 <strong>可缓存的 <code>index.html</code></strong> 地址；<strong>子应用发版</strong> 不强制 <strong>主应用重发</strong>（与 qiankun 同模型）。</li>
+</ul>
+<hr>
+<h3 id="七、常见问题与处理"><a href="#七、常见问题与处理" class="headerlink" title="七、常见问题与处理"></a>七、常见问题与处理</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><code>run</code> 后子区仍空白</strong></td>
+<td><strong><code>domGetter</code> 节点未就绪</strong> 或 <code>entry</code> <strong>404 &#x2F; CORS</strong></td>
+<td><code>domGetter</code> 在 <strong>能取到 #node</strong> 的时序后执行；<strong>Network 验 <code>index.html</code> 与 chunk</strong></td>
+</tr>
+<tr>
+<td><strong>bridge 报版本&#x2F;React 不兼容</strong></td>
+<td><strong><code>@garfish/bridge-*</code></strong> 与 <strong>React 18 &#x2F; Vue3</strong> 未按表对齐</td>
+<td>用 <strong>官方模板</strong> 锁 <strong>peer 依赖</strong>；少跨大版本手搓</td>
+</tr>
+<tr>
+<td><strong>子应用发版后白屏、老逻辑</strong></td>
+<td><strong>CDN 长缓存了旧 <code>index.html</code></strong> 或 <strong>entry 指错</strong></td>
+<td><code>index.html</code> <strong>短缓存</strong>；<code>entry</code> <strong>目录发版</strong> 或 <strong>query 带版本</strong></td>
+</tr>
+<tr>
+<td><strong>预加载压垮首包</strong></td>
+<td><strong>无差别 preload 全部子应用</strong></td>
+<td>只 <strong>预加载下一屏&#x2F;高频</strong>；用 performance 看 <strong>LCP&#x2F;带宽</strong> 再开</td>
+</tr>
+<tr>
+<td><strong>插件改 <code>fetch</code> 后静态资源 404</strong></td>
+<td>插件 <strong>误改 js&#x2F;css 请求</strong></td>
+<td>插件内 <strong>只匹配 API 域</strong> 或 <strong>path 白名单</strong></td>
+</tr>
+<tr>
+<td><strong>RUM 无法区分子应用</strong></td>
+<td>未在上报里带 <strong>子应用名&#x2F;entry 版本</strong></td>
+<td>见上文 <strong>RUM 字段</strong>；<code>package.json</code> <strong>buildId</strong> 写进子应用 <code>window</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="八、收束"><a href="#八、收束" class="headerlink" title="八、收束"></a>八、收束</h3><p>Garfish 落地 <strong>&#x3D; <code>run</code> 里配清 <code>activeWhen</code> 与 <code>entry</code> + 子应用 bridge 生命周期写对 + 再考虑插件与预加载</strong>。与 <strong>qiankun</strong> 选型时，更多看 <strong>团队已有样例、维护节奏与文档</strong>；技术差距没有「代际」那么大，<strong>工程纪律</strong> 决定成败。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog">杨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/">https://yangy97.github.io/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yangy97.github.io/blog" target="_blank">XiaoYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/Vue/">Vue</a><a class="post-meta__tags" href="/blog/tags/Vite/">Vite</a><a class="post-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><a class="post-meta__tags" href="/blog/tags/Garfish/">Garfish</a><a class="post-meta__tags" href="/blog/tags/React/">React</a><a class="post-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/id/1018/800/450" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/blog/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2026/04/22/micro-frontend-module-federation-practice-full-guide/" title="微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）"><img class="cover" src="https://picsum.photos/id/1036/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）</div></div></a></div><div class="next-post pull-right"><a href="/blog/2026/04/22/micro-frontend-micro-app-practice-full-guide/" title="微前端工程实践：micro-app 标签化接入与数据传递（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">微前端工程实践：micro-app 标签化接入与数据传递（详版）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/2026/04/22/micro-frontend-qiankun-practice-full-guide/" title="微前端工程实践：qiankun 从脚手架到联调与上线（详版）"><img class="cover" src="https://picsum.photos/id/1019/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：qiankun 从脚手架到联调与上线（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-wujie-practice-full-guide/" title="微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-icestark-practice-full-guide/" title="微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-micro-app-practice-full-guide/" title="微前端工程实践：micro-app 标签化接入与数据传递（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：micro-app 标签化接入与数据传递（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-module-federation-practice-full-guide/" title="微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）"><img class="cover" src="https://picsum.photos/id/1036/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）</div></div></a></div><div><a href="/blog/2026/04/28/eggjs-fullstack-vue-vite-bff-from-zero/" title="从 0 到 1 实战：pnpm 同仓 + Vue3 Vite + Egg.js BFF 联调（含完整目录与代码）"><img class="cover" src="https://picsum.photos/id/1043/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-28</div><div class="title">从 0 到 1 实战：pnpm 同仓 + Vue3 Vite + Egg.js BFF 联调（含完整目录与代码）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog/img/avator.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨</div><div class="author-info__description">一个菜鸟前端的自我救赎</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yangy97"><i class="fab fa-github"></i><span>小杨的github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BB%E5%BA%94%E7%94%A8%EF%BC%9A%E5%AE%89%E8%A3%85%E4%B8%8E-Garfish-run"><span class="toc-number">1.</span> <span class="toc-text">一、主应用：安装与 Garfish.run</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%90%E5%BA%94%E7%94%A8%EF%BC%9A%E9%9C%80%E8%A6%81%E5%AF%BC%E5%87%BA%E4%BB%80%E4%B9%88"><span class="toc-number">2.</span> <span class="toc-text">二、子应用：需要导出什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%A2%84%E5%8A%A0%E8%BD%BD"><span class="toc-number">3.</span> <span class="toc-text">三、预加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%92%E4%BB%B6%E4%BD%93%E7%B3%BB%EF%BC%88%E6%89%A9%E5%B1%95%E7%82%B9%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">四、插件体系（扩展点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%B8%8E%E9%9B%86%E5%9B%A2%E5%9F%BA%E5%BB%BA"><span class="toc-number">5.</span> <span class="toc-text">五、与集团基建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%81%94%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-number">6.</span> <span class="toc-text">六、联调与部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E5%A4%84%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">七、常见问题与处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%94%B6%E6%9D%9F"><span class="toc-number">8.</span> <span class="toc-text">八、收束</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 杨</div><div class="footer_custom_text">Hi, welcome to my Blog This is XiaoYang</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=4.8.1"></script><script src="/blog/js/main.js?v=4.8.1"></script><script src="/blog/js/tw_cn.js?v=4.8.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script>
+(function () {
+  var PIC = 'https://picsum.photos';
+  function randSeed(prefix) {
+    return prefix + Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+  function applyBanner() {
+    var el = document.getElementById('page-header');
+    if (!el || el.classList.contains('not-top-img')) return;
+    var bg = el.style.backgroundImage || (window.getComputedStyle && getComputedStyle(el).backgroundImage) || '';
+    // 若使用本地 /img/ 自定义顶图，则不覆盖
+    if (/url\([^\)]*\/img\//i.test(bg)) return;
+    var w = Math.max(320, Math.floor(window.innerWidth || 1200));
+    var h = Math.max(400, Math.floor((window.innerHeight || 800) * 0.45));
+    var url = PIC + '/seed/' + encodeURIComponent(randSeed('banner')) + '/' + w + '/' + h;
+    el.style.backgroundImage = "url('" + url + "')";
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+  }
+  function applyCovers() {
+    var imgs = document.querySelectorAll('img.post-bg');
+    imgs.forEach(function (img) {
+      var s = img.getAttribute('src') || img.src || '';
+      // 仅刷新「默认外链封面」：picsum 或历史失效 CDN；不动本地 /img/ 自定义封面
+      if (s.indexOf('/img/') !== -1 && s.indexOf('picsum.photos') === -1) return;
+      if (s.indexOf('picsum.photos') === -1 && s.indexOf('crazywong') === -1 && s.indexOf('file.crazywong') === -1 && s.indexOf('loli.net') === -1) return;
+      var url = PIC + '/seed/' + encodeURIComponent(randSeed('cover')) + '/800/450';
+      img.src = url;
+      img.referrerPolicy = 'no-referrer';
+    });
+  }
+  function run() {
+    applyBanner();
+    applyCovers();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>微前端补充方案：icestark、EMP、Piral 与 Nx 联邦 | XiaoYang</title><meta name="author" content="杨,y1597355434@gmail.com"><meta name="copyright" content="杨"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前文已覆盖 qiankun、wujie、Garfish、micro-app、Module Federation。本篇补 飞冰 icestark、腾讯 EMP、Piral、Nx + MF 等常见选项：各是什么、何时看它们、落地时要动哪几块。  一、icestark（飞冰微前端） 定位：与 ice.js、微模块（icestark module） 同一套叙事，提供 子应用注册、缓存、加载策略，文档入口见">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微前端补充方案：icestark、EMP、Piral 与 Nx 联邦">
+<meta property="og:url" content="https://yangy97.github.io/blog/2026/04/21/micro-frontend-icestark-emp-piral-nx/index.html">
+<meta property="og:site_name" content="XiaoYang">
+<meta property="og:description" content="前文已覆盖 qiankun、wujie、Garfish、micro-app、Module Federation。本篇补 飞冰 icestark、腾讯 EMP、Piral、Nx + MF 等常见选项：各是什么、何时看它们、落地时要动哪几块。  一、icestark（飞冰微前端） 定位：与 ice.js、微模块（icestark module） 同一套叙事，提供 子应用注册、缓存、加载策略，文档入口见">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/id/1019/800/450">
+<meta property="article:published_time" content="2026-04-21T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-22T02:20:23.156Z">
+<meta property="article:author" content="杨">
+<meta property="article:tag" content="微前端">
+<meta property="article:tag" content="前端架构">
+<meta property="article:tag" content="icestark">
+<meta property="article:tag" content="Module Federation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/id/1019/800/450"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://yangy97.github.io/blog/2026/04/21/micro-frontend-icestark-emp-piral-nx/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=4.8.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 杨","link":"链接: ","source":"来源: XiaoYang","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1.2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '微前端补充方案：icestark、EMP、Piral 与 Nx 联邦',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-04-22 10:20:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog/img/avator.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://picsum.photos/id/1019/800/450')"><nav id="nav"><span id="blog-info"><a href="/blog/" title="XiaoYang"><span class="site-name">XiaoYang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微前端补充方案：icestark、EMP、Piral 与 Nx 联邦</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-04-21T04:00:00.000Z" title="发表于 2026-04-21 12:00:00">2026-04-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微前端补充方案：icestark、EMP、Piral 与 Nx 联邦"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>前文已覆盖 <strong>qiankun、wujie、Garfish、micro-app、Module Federation</strong>。本篇补 <strong>飞冰 icestark、腾讯 EMP、Piral、Nx + MF</strong> 等常见选项：<strong>各是什么、何时看它们、落地时要动哪几块</strong>。</p>
+<hr>
+<h3 id="一、icestark（飞冰微前端）"><a href="#一、icestark（飞冰微前端）" class="headerlink" title="一、icestark（飞冰微前端）"></a>一、icestark（飞冰微前端）</h3><ul>
+<li><strong>定位</strong>：与 <strong>ice.js</strong>、<strong>微模块（icestark module）</strong> 同一套叙事，提供 <strong>子应用注册、缓存、加载策略</strong>，文档入口见 <a target="_blank" rel="noopener" href="https://micro-frontends.ice.work/">iceworks &#x2F; micro-frontends</a>。  </li>
+<li><strong>何时优先考虑</strong>：新项目已选 <strong>ice.js</strong>，或团队希望 <strong>布局、权限、子应用配置</strong> 都在飞冰约定内完成。  </li>
+<li><strong>实际操作要点</strong>：  <ul>
+<li>主应用按文档安装 **<code>@ice/stark</code>**（包名以官方为准），配置 <strong>子应用列表</strong>（name、url、activePath 等）。  </li>
+<li>子应用需按 <strong>icestark 子应用规范</strong> 导出生命周期（与 qiankun 思路相近：<strong>bootstrap&#x2F;mount&#x2F;unmount</strong>）。  </li>
+<li>与 <strong>微模块</strong> 混用时，先分清：<strong>整页子 SPA</strong> vs <strong>页面内区块模块</strong>，避免两套概念抢同一 URL。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="二、EMP（基于-Module-Federation-的增强工具链）"><a href="#二、EMP（基于-Module-Federation-的增强工具链）" class="headerlink" title="二、EMP（基于 Module Federation 的增强工具链）"></a>二、EMP（基于 Module Federation 的增强工具链）</h3><ul>
+<li><strong>定位</strong>：在 <strong>Module Federation 能力</strong> 之上提供 <strong>CLI、共享依赖分析、多项目模板</strong>（实现层多为 <strong>Webpack 5</strong> 系），官网 <a target="_blank" rel="noopener" href="https://empjs.dev/">empjs.dev</a>。<strong>业务子工程</strong> 若可自选，<strong>联邦消费侧&#x2F;供应侧</strong> 也可对照 <strong>Vite 联邦</strong> 的 <code>shared</code> 思路，不必绑死一种打包器。  </li>
+<li><strong>何时优先考虑</strong>：多个 <strong>同栈</strong> 应用要 <strong>高频共享业务组件</strong>，且希望 <strong>依赖版本治理</strong> 有工具支持，而不是手写 <code>shared</code> 字典。  </li>
+<li><strong>实际操作要点</strong>：  <ul>
+<li>用 <strong><code>emp init</code></strong> 或官方模板起 <strong>host &#x2F; remote</strong> 双端（命令以当前文档为准）。  </li>
+<li>重点检查生成的 <strong><code>ModuleFederationPlugin</code></strong> 里 <strong><code>exposes</code> &#x2F; <code>remotes</code> &#x2F; <code>shared</code></strong> 是否与内网 <strong>CDN 路径</strong> 一致。  </li>
+<li><strong>应用级隔离</strong>（独立路由 basename）仍要在 <strong>host 路由层</strong> 设计好；EMP 不替代 <strong>壳应用</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="三、Piral（插件化微前端壳）"><a href="#三、Piral（插件化微前端壳）" class="headerlink" title="三、Piral（插件化微前端壳）"></a>三、Piral（插件化微前端壳）</h3><ul>
+<li><strong>定位</strong>：<strong>feed 服务</strong> 下发 <strong>pilets</strong>（小应用片段），适合 <strong>SaaS 扩展、合作伙伴插件</strong> 类产品形态，<a target="_blank" rel="noopener" href="https://piral.io/">piral.io</a>。  </li>
+<li><strong>何时优先考虑</strong>：产品是 <strong>平台 + 第三方扩展</strong>，需要 <strong>API 契约、版本化 pilet、权限模型</strong> 一等公民能力。  </li>
+<li><strong>实际操作要点</strong>：  <ul>
+<li>先跑官方 <strong>quick start</strong>，理解 <strong>App shell</strong> 与 <strong>pilet 发布管道</strong>。  </li>
+<li>评估 <strong>feed 服务</strong> 是自建还是云；国内网络与 <strong>合规</strong> 需纳入架构评审。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="四、Nx-Module-Federation"><a href="#四、Nx-Module-Federation" class="headerlink" title="四、Nx + Module Federation"></a>四、Nx + Module Federation</h3><ul>
+<li><strong>定位</strong>：在 <strong>monorepo</strong> 里维护 host&#x2F;remote，<strong>依赖图、缓存、受影响分析</strong> 由 Nx 负责，<a target="_blank" rel="noopener" href="https://nx.dev/concepts/module-federation">Nx Module Federation</a>。  </li>
+<li><strong>何时优先考虑</strong>：代码已在 <strong>Nx workspace</strong>，希望 <strong>远程模块</strong> 与 <strong>CI 增量</strong> 同一套工具链。  </li>
+<li><strong>实际操作要点</strong>：  <ul>
+<li>使用 <strong><code>@nx/react</code> 等生成器</strong> 创建 <strong>host</strong> 与 <strong>remote</strong> 应用。  </li>
+<li><strong>部署</strong> 仍按 <strong>静态资源 + remoteEntry</strong> 拆分 CDN；Nx 解决 <strong>开发体验</strong>，不自动解决 <strong>跨团队运维流程</strong>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="五、和-qiankun-x2F-wujie-怎么并存（常见组合）"><a href="#五、和-qiankun-x2F-wujie-怎么并存（常见组合）" class="headerlink" title="五、和 qiankun &#x2F; wujie 怎么并存（常见组合）"></a>五、和 qiankun &#x2F; wujie 怎么并存（常见组合）</h3><table>
+<thead>
+<tr>
+<th>组合</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>壳 qiankun + 子应用内 MF</strong></td>
+<td>子应用独立发版，内部再拉 <strong>设计系统 remote</strong></td>
+</tr>
+<tr>
+<td><strong>壳 Garfish + EMP 仓库</strong></td>
+<td>字节系壳 + 腾讯系联邦工具（需评估 <strong>构建与锁版本</strong>）</td>
+</tr>
+<tr>
+<td><strong>Nx MF + 外层无 qiankun</strong></td>
+<td>单域 <strong>模块联邦</strong> 为主，无「多 SPA」诉求</td>
+</tr>
+</tbody></table>
+<p>组合越多 <strong>排错越难</strong>：POC 阶段就定下 <strong>「谁负责 React 单例」</strong> 的唯一责任方。</p>
+<hr>
+<h3 id="六、常见问题与处理"><a href="#六、常见问题与处理" class="headerlink" title="六、常见问题与处理"></a>六、常见问题与处理</h3><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>典型问题</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>icestark</strong></td>
+<td>子应用 <strong>entry 配错环境</strong>、与 <strong>ice 主版本</strong> 不匹配</td>
+<td><strong>子站单开</strong> 验 URL；<strong>严格跟 ice3 + icestark 当前文档</strong>，勿混 ice2</td>
+</tr>
+<tr>
+<td><strong>EMP</strong></td>
+<td><strong>共享依赖</strong> 与线上涨 <strong>版本冲突</strong></td>
+<td>用 EMP <strong>依赖分析</strong> + <strong>锁大版本</strong>；与 <strong>仅 Vite 联邦</strong> 方案对比是否值得多一把锁</td>
+</tr>
+<tr>
+<td><strong>Piral</strong></td>
+<td><strong>feed 服务</strong> 不可用、网络环境差</td>
+<td>评估 <strong>自建 feed</strong> 与 <strong>合规</strong>；国内项目先算 <strong>可用性 SLA</strong></td>
+</tr>
+<tr>
+<td><strong>Nx + MF</strong></td>
+<td><strong>图里 remote 多</strong>，改一处 <strong>全图重编</strong> 误解</td>
+<td>用 Nx <strong>affected</strong> 做 <strong>CI 增量</strong>；<strong>发布</strong> 仍按 <strong>remote 独立目录</strong> 走 CDN</td>
+</tr>
+<tr>
+<td><strong>混用</strong></td>
+<td>壳是 qiankun、子内又是 MF，<strong>双份 React</strong></td>
+<td>定 <strong>单例由谁提供</strong>、<strong>UAT 全链路</strong> 点菜单与回退</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="七、收束"><a href="#七、收束" class="headerlink" title="七、收束"></a>七、收束</h3><p><strong>icestark &#x2F; EMP &#x2F; Piral &#x2F; Nx</strong> 不是「比 qiankun 更强」，而是 <strong>解决不同主矛盾</strong>：飞冰一体化、联邦工具链、插件平台、Monorepo 联邦。先看 <strong>团队现有栈与发布模型</strong>，再选 <strong>最少新零件</strong> 的路径。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog">杨</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yangy97.github.io/blog/2026/04/21/micro-frontend-icestark-emp-piral-nx/">https://yangy97.github.io/blog/2026/04/21/micro-frontend-icestark-emp-piral-nx/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yangy97.github.io/blog" target="_blank">XiaoYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><a class="post-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a><a class="post-meta__tags" href="/blog/tags/icestark/">icestark</a><a class="post-meta__tags" href="/blog/tags/Module-Federation/">Module Federation</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/id/1019/800/450" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/blog/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/blog/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/blog/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2026/04/21/micro-frontend-iframe-postmessage-bff/" title="微前端静默方案：iframe + postMessage 与 BFF 协同"><img class="cover" src="https://picsum.photos/id/1015/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">微前端静默方案：iframe + postMessage 与 BFF 协同</div></div></a></div><div class="next-post pull-right"><a href="/blog/2026/04/21/cursor-project-rules-and-workflow/" title="Cursor 项目规则与工作流：把「默认行为」写进仓库"><img class="cover" src="https://picsum.photos/id/1019/800/450" onerror="onerror=null;src='https://picsum.photos/id/1060/400/250'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Cursor 项目规则与工作流：把「默认行为」写进仓库</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/2026/04/22/micro-frontend-icestark-practice-full-guide/" title="微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-module-federation-practice-full-guide/" title="微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）"><img class="cover" src="https://picsum.photos/id/1036/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-garfish-practice-full-guide/" title="微前端工程实践：Garfish 子应用表、沙箱与插件（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：Garfish 子应用表、沙箱与插件（详版）</div></div></a></div><div><a href="/blog/2026/04/21/micro-frontend-iframe-postmessage-bff/" title="微前端静默方案：iframe + postMessage 与 BFF 协同"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-21</div><div class="title">微前端静默方案：iframe + postMessage 与 BFF 协同</div></div></a></div><div><a href="/blog/2026/04/22/micro-frontend-micro-app-practice-full-guide/" title="微前端工程实践：micro-app 标签化接入与数据传递（详版）"><img class="cover" src="https://picsum.photos/id/1018/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-22</div><div class="title">微前端工程实践：micro-app 标签化接入与数据传递（详版）</div></div></a></div><div><a href="/blog/2026/04/21/micro-frontend-mainstream-landscape-and-choice-2026/" title="微前端主流方案版图与选型（2026）"><img class="cover" src="https://picsum.photos/id/1015/800/450" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-21</div><div class="title">微前端主流方案版图与选型（2026）</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog/img/avator.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨</div><div class="author-info__description">一个菜鸟前端的自我救赎</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yangy97"><i class="fab fa-github"></i><span>小杨的github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81icestark%EF%BC%88%E9%A3%9E%E5%86%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">一、icestark（飞冰微前端）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81EMP%EF%BC%88%E5%9F%BA%E4%BA%8E-Module-Federation-%E7%9A%84%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7%E9%93%BE%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">二、EMP（基于 Module Federation 的增强工具链）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Piral%EF%BC%88%E6%8F%92%E4%BB%B6%E5%8C%96%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%A3%B3%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">三、Piral（插件化微前端壳）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Nx-Module-Federation"><span class="toc-number">4.</span> <span class="toc-text">四、Nx + Module Federation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%92%8C-qiankun-x2F-wujie-%E6%80%8E%E4%B9%88%E5%B9%B6%E5%AD%98%EF%BC%88%E5%B8%B8%E8%A7%81%E7%BB%84%E5%90%88%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">五、和 qiankun &#x2F; wujie 怎么并存（常见组合）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E5%A4%84%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">六、常见问题与处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%94%B6%E6%9D%9F"><span class="toc-number">7.</span> <span class="toc-text">七、收束</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 杨</div><div class="footer_custom_text">Hi, welcome to my Blog This is XiaoYang</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=4.8.1"></script><script src="/blog/js/main.js?v=4.8.1"></script><script src="/blog/js/tw_cn.js?v=4.8.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script>
+(function () {
+  var PIC = 'https://picsum.photos';
+  function randSeed(prefix) {
+    return prefix + Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+  function applyBanner() {
+    var el = document.getElementById('page-header');
+    if (!el || el.classList.contains('not-top-img')) return;
+    var bg = el.style.backgroundImage || (window.getComputedStyle && getComputedStyle(el).backgroundImage) || '';
+    // 若使用本地 /img/ 自定义顶图，则不覆盖
+    if (/url\([^\)]*\/img\//i.test(bg)) return;
+    var w = Math.max(320, Math.floor(window.innerWidth || 1200));
+    var h = Math.max(400, Math.floor((window.innerHeight || 800) * 0.45));
+    var url = PIC + '/seed/' + encodeURIComponent(randSeed('banner')) + '/' + w + '/' + h;
+    el.style.backgroundImage = "url('" + url + "')";
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+  }
+  function applyCovers() {
+    var imgs = document.querySelectorAll('img.post-bg');
+    imgs.forEach(function (img) {
+      var s = img.getAttribute('src') || img.src || '';
+      // 仅刷新「默认外链封面」：picsum 或历史失效 CDN；不动本地 /img/ 自定义封面
+      if (s.indexOf('/img/') !== -1 && s.indexOf('picsum.photos') === -1) return;
+      if (s.indexOf('picsum.photos') === -1 && s.indexOf('crazywong') === -1 && s.indexOf('file.crazywong') === -1 && s.indexOf('loli.net') === -1) return;
+      var url = PIC + '/seed/' + encodeURIComponent(randSeed('cover')) + '/800/450';
+      img.src = url;
+      img.referrerPolicy = 'no-referrer';
+    });
+  }
+  function run() {
+    applyBanner();
+    applyCovers();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+<script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

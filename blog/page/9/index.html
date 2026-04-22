@@ -55,7 +55,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2026-04-21 11:22:25'
+  postUpdate: '2026-04-22 10:21:37'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -166,215 +166,228 @@
 document.addEventListener('pjax:send', () => {
   Pace.restart()
 })
-</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog/img/avator.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">121</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">109</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://picsum.photos/id/1018/1920/1080')"><nav id="nav"><span id="blog-info"><a href="/blog/" title="XiaoYang"><span class="site-name">XiaoYang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">XiaoYang</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/10/frontend-performance-js-bundle/" title="JavaScript 与加载：主线程、分包与长任务"><img class="post-bg" src="https://picsum.photos/id/1019/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="JavaScript 与加载：主线程、分包与长任务"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/10/frontend-performance-js-bundle/" title="JavaScript 与加载：主线程、分包与长任务">JavaScript 与加载：主线程、分包与长任务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-10T08:30:00.000Z" title="发表于 2026-04-10 16:30:00">2026-04-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">主线程负责：解析&#x2F;编译 JS、执行、样式计算、布局、部分绘制协调。Chrome 把 &gt;50ms 的连续任务标为 Long Task（经验值，以浏览器实现为准），会直接影响 INP 与 可交互时间。本篇补：任务从哪来、怎么拆、Worker 边界、第三方、Profile 读法。
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog/img/avator.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://picsum.photos/id/1018/1920/1080')"><nav id="nav"><span id="blog-info"><a href="/blog/" title="XiaoYang"><span class="site-name">XiaoYang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 回顾</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">XiaoYang</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/20/micro-frontend-wujie-garfish-comparison/" title="微前端框架对比与实践：wujie、Garfish、micro-app 与方案选型"><img class="post-bg" src="https://picsum.photos/id/1043/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="微前端框架对比与实践：wujie、Garfish、micro-app 与方案选型"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/20/micro-frontend-wujie-garfish-comparison/" title="微前端框架对比与实践：wujie、Garfish、micro-app 与方案选型">微前端框架对比与实践：wujie、Garfish、micro-app 与方案选型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-20T10:00:00.000Z" title="发表于 2026-04-20 18:00:00">2026-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/micro-app/">micro-app</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/wujie/">wujie</a></span></div><div class="content">国内常见微前端方案除 qiankun 外，还有 腾讯 wujie（无界）、字节 Garfish、京东 micro-app 等；底层差异集中在 沙箱实现、样式隔离、对子应用（Vite 为主、Webpack 老栈）的适配、预加载策略。下面做 能力向对比 与 选型建议（以公开文档为准，版本迭代快，接入前请对照官方）。
 
-一、一次冷启动主线程在忙什么（简化）
-下载 script（Network）  
-Parse + Compile（大文件更明显，尤其移动设备）  
-执行 顶层代码（注册路由、初始化框架）  
-首屏渲染 触发的业务逻辑
+wujie &#x2F; micro-app &#x2F; Garfish 的独立详版见：《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》《micro-app 标签化接入与数据传递（详版）》《Garfish 子应用表、沙箱与插件（详版）》。
 
-所以：减少首包 KB 与 减少顶层同步工作 同样重要。
 
-二、长任务典型来源
+一、能力轴：怎么对比
 
 
-来源
-例子
+维度
+关注点
 
 
 
-大包
-单 chunk 2MB+，parse+compile 占满几十 ms～几百 ms
+隔离
+JS &#x2F; 样式 &#x2F; 路由是否 可逆、第三方弹层 是否翻车
 
 
-同步 CPU
-大数组排序、复杂正则、巨型 JSON.parse
+性能
+首屏、切换子应用、多实例内存
 
 
-框架
-超大虚拟 DOM diff、错误导致的重复渲染
+工程
+子应用无改造 vs 必须导出生命周期、Vite 支持
 
 
-第三方
-统计脚本、A&#x2F;B SDK 同步执行
+通信
+props、全局 store、window 代理 边界
 
 
+生态
+文档、社区插件、长期维护
 
-三、路由分包 + 组件异步（Vue）&#123; path: &quot;/dash&quot;, compo ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/03/21/frontend-performance-ssr-hydration-basics/" title="SSR 与注水（Hydration）：首屏与可交互时间的权衡"><img class="post-bg" src="https://picsum.photos/id/1019/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="SSR 与注水（Hydration）：首屏与可交互时间的权衡"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/03/21/frontend-performance-ssr-hydration-basics/" title="SSR 与注水（Hydration）：首屏与可交互时间的权衡">SSR 与注水（Hydration）：首屏与可交互时间的权衡</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-21T09:40:00.000Z" title="发表于 2026-03-21 17:40:00">2026-03-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/Vue/">Vue</a></span></div><div class="content">SSR 解决 首屏 HTML 与 SEO；Hydration 解决 把静态 DOM 变成可交互应用。代价是：数据一致性、注水主线程成本、运维复杂度。本篇写：mismatch 根因、数据单次来源、流式与 TTI、选型。
 
-一、Hydration mismatch 常见根因
 
+二、qiankun（简述定位）
+成熟、案例多；single-spa  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/04/20/frontend-performance-budget-ci/" title="性能预算与 CI：体积阈值、回归与团队协作"><img class="post-bg" src="https://picsum.photos/id/1018/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="性能预算与 CI：体积阈值、回归与团队协作"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/20/frontend-performance-budget-ci/" title="性能预算与 CI：体积阈值、回归与团队协作">性能预算与 CI：体积阈值、回归与团队协作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-20T09:20:00.000Z" title="发表于 2026-04-20 17:20:00">2026-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">性能预算 &#x3D; 把 体验目标 翻译成 构建产物与流程约束：超线要么 解释，要么 拆分 PR。CI 里 gzip 体积 稳定可复现；Lighthouse 分数 波动大，更适合 定时任务 或 发布后 RUM。本篇写：为何卡体积、size-limit、LHCI、Monorepo、流程。
 
-根因
-例子
+一、为何优先「体积门禁」
 
 
+门禁类型
+稳定性
+适合 PR
 
-时间&#x2F;时区
-服务端 UTC vs 客户端本地
 
 
-随机
-Math.random()、Date.now() 直接渲染
+产物 gzip 大小
+高
+是
 
 
-环境 API
-服务端无 window &#x2F; localStorage，客户端补值
+第三方 script 数量
+中高
+是
 
 
-数据不一致
-SSR 请求结果与 CSR 再请求不一致
+Lighthouse LCP
+中
+谨慎（阈值宽松）
 
 
-缓解：
+真实 RUM P95
+高（业务）
+否（走监控告警）
 
-强依赖浏览器的信息 放 onMounted 再渲染；  
-或 服务端序列化 state 注入 HTML，pinia&#x2F;store hydrate 同一快照。
 
 
-二、TTI &#x2F; INP：LCP 好也不够用户要的是 能点。主包 2MB → parse+hydrate 仍可能 数秒。手段：
+二、size-limit 配置（多 chunk）npm i -D size-limit @size-limit/file
+&#123;  &quot;size-limit&quot;: [    &#123;      &quot;name&quot;: &quot;entry&quot;,      &quot;path&quot;: [&quot;dist/assets/index-*.js&quot;, &quot;dist/assets/i ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/20/micro-frontend-webpack-module-federation/" title="微前端与 Webpack Module Federation：共享依赖、远程容器与版本"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="微前端与 Webpack Module Federation：共享依赖、远程容器与版本"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/20/micro-frontend-webpack-module-federation/" title="微前端与 Webpack Module Federation：共享依赖、远程容器与版本">微前端与 Webpack Module Federation：共享依赖、远程容器与版本</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-20T09:00:00.000Z" title="发表于 2026-04-20 17:00:00">2026-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/Vite/">Vite</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/Module-Federation/">Module Federation</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/Webpack/">Webpack</a></span></div><div class="content">Module Federation（MF） 最初是 Webpack 5 特性：运行时 从 remote 容器 加载 exposes 的模块，**shared 做依赖单例。现在落地新项目更常用 Vite 联邦插件（@originjs/vite-plugin-federation 等），字段语义与下述 Webpack 一致**，差别只在写在 vite.config.ts 还是 **webpack.config.js**。与 qiankun 应用级 不同，MF 更偏 模块&#x2F;组件级集成。
 
-路由&#x2F;组件分包，首屏只 hydrate 当前路由；  
-懒 hydration（框架支持时）；  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/02/21/frontend-performance-vue-practice/" title="Vue 项目中的性能实践：组件、列表与状态"><img class="post-bg" src="https://picsum.photos/id/1019/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="Vue 项目中的性能实践：组件、列表与状态"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/02/21/frontend-performance-vue-practice/" title="Vue 项目中的性能实践：组件、列表与状态">Vue 项目中的性能实践：组件、列表与状态</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-21T09:00:00.000Z" title="发表于 2026-02-21 17:00:00">2026-02-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/">前端进阶</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/Vue/">Vue</a></span></div><div class="content">Vue 3 的响应式 + 编译器已经很快，但 误用响应式边界、巨型列表、错误 key、首屏瀑布请求 仍会把主线程和内存打满。下面按 响应式粒度、列表、异步、路由、构建 写深一层。
+Vite 双仓库从 vite.config、联调到缓存 见《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》。
 
-一、ref &#x2F; reactive &#x2F; shallowRef &#x2F; markRaw 怎么选
 
+一、Remote 与 Host 角色
 
-场景
-建议
 
+角色
+职责
 
 
-标量、替换引用
-ref
 
+Remote
+exposes 对外暴露 ./Button、./Page
 
-结构固定、多处修改的对象
-reactive（注意解构丢响应）
 
+Host
+remotes 声明远程入口，**import(‘remoteName&#x2F;exposed’)&#96;
 
-第三方大实例（地图、图表、编辑器）
-shallowRef 或存实例用 markRaw
 
+运行时：Host 加载 remoteEntry.js，再 异步拉取 chunk。
 
-仅防止被代理
-markRaw
+二 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/04/20/micro-frontend-qiankun-sandbox-lifecycle/" title="微前端实践：qiankun 生命周期、沙箱与数据通信"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="微前端实践：qiankun 生命周期、沙箱与数据通信"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/20/micro-frontend-qiankun-sandbox-lifecycle/" title="微前端实践：qiankun 生命周期、沙箱与数据通信">微前端实践：qiankun 生命周期、沙箱与数据通信</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-20T08:00:00.000Z" title="发表于 2026-04-20 16:00:00">2026-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/qiankun/">qiankun</a></span></div><div class="content">qiankun 基于 single-spa，在蚂蚁场景打磨：HTML Entry、JS 沙箱、样式隔离、预加载。下面写 注册参数、子应用导出协议、沙箱类型与限制、全局状态，并带 配置示例。
 
+需要 分步骤脚手架、Vite 子应用（主路径）、部署与排错 的完整过程，见《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》。
 
-&lt;script setup lang=&quot;ts&quot;&gt;import &#123; shallowRef, onMounted, onUnmounted &#125; from &quot;vue&quot;;import &#123; createMap &#125; from &quot;./mapVendor&quot;;const map = shallowRef&lt;ReturnType&lt;typeof create ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2023/05/19/interview/" title="面试"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="面试"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/19/interview/" title="面试">面试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-19T12:24:27.000Z" title="发表于 2023-05-19 20:24:27">2023-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E9%9D%A2%E7%BB%8F/">面经</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E9%9D%A2%E7%BB%8F/">面经</a></span></div><div class="content">雷打不动的就是一来就是自我介绍 下面我省略,加粗为重点 基本上每次必问,大多数为八股文,一部分是开放性问题 根据自己项目来回答
-微众银行一面
-说一些flex布局 
-选择几个常用的属性解释一下
 
+一、本地从零跑通（推荐顺序）
+先起一个纯子应用：推荐 npm create vite@latest；老项目可继续 vue create。单独访问子应用 http://localhost:8081 正常。  
+再建主应用（Vue3&#x2F;React 均可），安装 qiankun，在布局里留出 #subapp-viewport。  
+子应用改 router base 与主应用 activeRule 一致，例如 basename /vue。  
+子应用入口导出 bootstrap/mount/unmount（见下文；Vite 用 vite-plugin-qiankun 的 renderWithQiankun），npm run dev 两端口联调。
 
-js中常见的数组 并说一下区别
-cookie localStorage sessionStorage的区别 - 怎么利用localStorage做一个指定过期时间的缓存
-app内嵌h5是如何通信的、jsbriage了解吗
-前端性能优化相关
-移动端适配
-uniapp原理 - uniapp怎么实现多端打包的
-对我有个项目比较感兴趣 -扯了一会项目里面的东西
-跨域怎么解决
-headless用来做什么的,做了些什么(项目里面的)
-移动端兼容性问题  - 遇到过什么兼容性问题 如何解决的  - 怎么在客户端适配 异形屏呢
-websocket有用过吗
-vue相关  - 原理  - 区别  - 指令内部做了些什么操作  - 实现一个eventBus 说思路
-webpack相关的问题
-打包优化
-分析
-loader执行顺序
+**e ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/20/micro-frontend-theory-boundaries-routing/" title="微前端从理论到边界：拆分维度、路由与通信模型"><img class="post-bg" src="https://picsum.photos/id/1043/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="微前端从理论到边界：拆分维度、路由与通信模型"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/20/micro-frontend-theory-boundaries-routing/" title="微前端从理论到边界：拆分维度、路由与通信模型">微前端从理论到边界：拆分维度、路由与通信模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-20T07:00:00.000Z" title="发表于 2026-04-20 15:00:00">2026-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">微前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84/">前端架构</a></span></div><div class="content">微前端不是「把一个大 SPA 拆成多个仓库」这么简单，而是 在浏览器里组合多个独立交付的前端应用，同时处理 路由、样式、JS 全局污染、版本共存、发布节奏。下面从 何时值得做、拆分维度、路由策略、应用间通信 写理论层，并给 决策表。
 
+一、为什么需要：组织与技术的交汇
 
-问了一些es6+的一些问题
-项目相关的问题
-互相了解用人部门
 
-shein(希音)1 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2023/05/17/js-learn-array/" title="数组那些事"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="数组那些事"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/17/js-learn-array/" title="数组那些事">数组那些事</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-17T01:33:42.000Z" title="发表于 2023-05-17 09:33:42">2023-05-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E6%95%B0%E7%BB%84/">数组</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E6%95%B0%E7%BB%84/">数组</a></span></div><div class="content">数组那些事Array.prototype.at()参数 index
-at() 方法接收一个整数值并返回该索引对应的元素，允许正数和负数。负整数从数组中的最后一个元素开始倒数负数这样理解 index + array.length 
+驱动
+说明
 
-返回值
-要返回的数组元素的索引（从零开始），会被转换为整数。负数索引从数组末尾开始计数——如果 index &lt; 0，则会访问 index + array.length 位置的元素
 
-在非数组对象上调用 at()
-at() 方法读取 this 的 length 属性并计算需要访问的索引。
 
-const arrayLike = &#123;  length: 2,  0: &quot;a&quot;,  1: &quot;b&quot;,&#125;;console.log(Array.prototype.at.call(arrayLike, -1)); // &quot;b&quot;
-Array.prototype.concat()
-concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+团队规模
+多团队 并行发版，不想共用一个巨型仓库流水线
 
 
-如果任何源数组是稀疏数组 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2023/05/09/compatibility-css/" title="CSS相关"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="CSS相关"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/09/compatibility-css/" title="CSS相关">CSS相关</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-09T06:27:04.000Z" title="发表于 2023-05-09 14:27:04">2023-05-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/CSS%E7%9B%B8%E5%85%B3/">CSS相关</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/CSS/">CSS</a></span></div><div class="content">CSS问题padding
-如果容器可以滚动 在IE和FireFox下 ``padding-bottom会被忽略,chrome不会
+技术异构
+老系统 Vue2、新模块 React18，短期无法统一栈
 
 
-chrome是子元素超过content box触发滚动条显示,在IE和FireFox,是padding box会触发滚动条
+增量迁移
+绞杀者模式：一块块替换遗留页面
 
 
-建议: 页面底部留白不建议用padding
+反模式：团队 &lt;2 个前端**、发布 **周更同步** 仍上微前端 → **复杂度 &gt; 收益。
 
-margin 合并规则
-正正取最大,正负值相加,负负最负值
+二、拆分维度：按路由 vs 按业务域
 
-margin=&gt;auto
-auto是平分剩余空间eg:
 
-.demo&#123;  width:100px;&#125;.demo-son&#123;  width:20px;  margin-left:10px;  margin-right:auto&#125;/* margin-right:auto是平分 100-20-10=70px,也就是铺满70px */
-border绘制与color变色eg:上传图片按钮 hover后变色
+方式
+优点
+代价
 
-可以利用border不设置颜色,直接修改color来实现
 
-&lt;a href class=&quot;add&quot; title=&quot;继续上传&quot;&gt;  添 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2023/05/09/js-learn-es/" title="es6+"><img class="post-bg" src="https://picsum.photos/id/1015/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="es6+"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/09/js-learn-es/" title="es6+">es6+</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-09T05:20:27.000Z" title="发表于 2023-05-09 13:20:27">2023-05-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86/">红宝书整理</a></span></div><div class="content">es6+部分方法数组打平方法递归function flatten(sourceArray, flattenedArray = []) &#123;  for (const element of sourceArray) &#123;  if (Array.isArray(element)) &#123;  flatten(element, flattenedArray);  &#125; else &#123;  flattenedArray.push(element);  &#125;  &#125;  return flattenedArray; &#125; const arr = [[0], 1, 2, [3, [4, 5]], 6]; console.log(flatten(arr))
-用falt新方法了 Array.prototype.flat(),返回一个对要打平 Array 实例的浅复制副本falt 默认参数1 表示展开的层
-const arr = [[0], 1, 2, [3, [4, 5]], 6]; console.log(arr.flat(2)); // [0, ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2023/05/08/js-learn-rule/" title="规范与优化"><img class="post-bg" src="https://picsum.photos/id/1015/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="规范与优化"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/08/js-learn-rule/" title="规范与优化">规范与优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-08T08:29:42.000Z" title="发表于 2023-05-08 16:29:42">2023-05-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86/">红宝书整理</a></span></div><div class="content">规范化可维护的代码
-容易理解,符合常识,容易适配,容易扩展,容易调试
 
-编码规范可读性
-函数和方法 尽可能写清楚用途参数、写清楚注释 常见的一些兼容性问题注释等
-变量和函数命名 尽可能见名知意  ii. 变量名应该是名词  ii. 函数名应该以动词开  ii 使用驼峰写法(camelCase)
-变量类型透明化 let found = false; // 布尔值let count = -1; // 数值let name = &quot;&quot;; // 字符串let person = null; // 对象
-一个函数尽可能只完成一件事情
+子路径 /app-a/*
+与网关路由一致，SEO&#x2F;书签友好
+需统一 basename
 
-编码习惯
-不要给实例或原型添加属性。
-不要给实例或原型添加方法。
-不要重定义已有的方法
 
-不声明全局变量不要比较 nul如果函数参数是数组尽可能这样
+子域名 a.xxx.com
+天然 cookie 域 隔离
+跨域、登录态同步麻烦
 
-如果值应该是引用类型，则使用 instanceof 操作符检查其构造函数。
-如果值应该是原始类型，则使用 typeof 检查其类型。
-如果希望值是有特定方法名的对象，则使用 typeof 操作符确保对象上存在给定名字的方法// function sortArray(values) &#123; // ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2023/05/07/js-learn-storage/" title="存储相关"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="存储相关"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/07/js-learn-storage/" title="存储相关">存储相关</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-07T08:52:41.000Z" title="发表于 2023-05-07 16:52:41">2023-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86/">红宝书整理</a></span></div><div class="content">存储cookie
-不超过4kb,4096 字节，上下可以有一个字节的误差。(单个)
 
-特点 部分
+同一页多挂载点
+细粒度嵌入
+协调布局、z-index 战争
 
-不区分大小写 mycookie 和MYCookie 一样
-值：存储在 cookie 里的字符串值。这个值必须经过 URL 编码
-可以设置过期时间Set-Cookie: name=value; expires=Mon, 07-Jan-23 07:10:24 GMT; domain=.wrox.com这个头部设置一个名为”name”的 cookie，这个 cookie 在 2023 年 1 月 07 日 7:10:24 过期，对www.wrox.com 及其他 wrox.com 的子域（如 p2p.wrox.com）有效
 
-Storage
-clear()：删除所有值；不在 Firefox 中实现。
-getItem(name)：取得给定 name 的值。
-key(index)：取得给定数值位置的名称。
-removeItem(name)：删除给定 name 的名&#x2F;值对。
-setItem(name, value)：设置给定 name 的值。
 
-sessionStorage
-session ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2023/05/06/js-learn-xhr/" title="XHR"><img class="post-bg" src="https://picsum.photos/id/1015/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="XHR"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2023/05/06/js-learn-xhr/" title="XHR">XHR</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-06T07:46:36.000Z" title="发表于 2023-05-06 15:46:36">2023-05-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86/">红宝书整理</a></span></div><div class="content">XHRreadyState
-0：未初始化（Uninitialized）。尚未调用 open()方法。
-1：已打开（Open）。已调用 open()方法，尚未调用 send()方法。
-2：已发送（Sent）。已调用 send()方法，尚未收到响应。
-3：接收中（Receiving）。已经收到部分响应。
-4：完成（Complete）。已经收到所有响应，可以使用了。每次 readyState 从一个值变成另一个值，都会触发 readystatechange 事件let xhr = new XMLHttpRequest(); xhr.onreadystatechange = function() &#123;  if (xhr.readyState == 4) &#123;  if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) &#123;  alert(xhr.responseText);  &#125; else &#123;  alert(&quot;Request was uns ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/blog/page/8/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/#content-inner">8</a><span class="page-number current">9</span><a class="page-number" href="/blog/page/10/#content-inner">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/13/#content-inner">13</a><a class="extend next" rel="next" href="/blog/page/10/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog/img/avator.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨</div><div class="author-info__description">一个菜鸟前端的自我救赎</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">121</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">109</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yangy97"><i class="fab fa-github"></i><span>小杨的github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+三、路由：主应用与子应用谁「拥有」URL方案 A：主应用统一路由（推荐常见）
+
+主应用 Vue Rout ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/04/19/frontend-performance-list-image/" title="长列表与图片：虚拟滚动、懒加载与格式优化"><img class="post-bg" src="https://picsum.photos/id/1036/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="长列表与图片：虚拟滚动、懒加载与格式优化"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/19/frontend-performance-list-image/" title="长列表与图片：虚拟滚动、懒加载与格式优化">长列表与图片：虚拟滚动、懒加载与格式优化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-19T08:40:00.000Z" title="发表于 2026-04-19 16:40:00">2026-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">长列表的本质矛盾：DOM 数量 ∝ 数据行数，而布局&#x2F;绘制&#x2F; diff 成本随 DOM 涨。图片则是 字节 × 解码 × 优先级：LCP 候选若被排到队尾，首屏体验直接崩。下面写 虚拟滚动原理、变高行、图片与 CLS、Vue 注意点。
+
+一、虚拟滚动：固定行高（最易实现）视口高 H，行高 h，缓冲 b，总行数 N：
+function range(scrollTop, H, h, b, N) &#123;  const start = Math.max(0, Math.floor(scrollTop / h) - b);  const visible = Math.ceil(H / h) + 2 * b;  const end = Math.min(N, start + visible);  return &#123; start, end &#125;;&#125;
+
+列表容器用 padding-top + padding-bottom 或 transform 平移 制造「总长滚动条」，中间只挂载 end-start 个节点。
+库：vue-virtual-scrol ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/18/frontend-performance-memory-leaks/" title="内存与泄漏：事件监听、闭包与 SPA 常见坑"><img class="post-bg" src="https://picsum.photos/id/1015/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="内存与泄漏：事件监听、闭包与 SPA 常见坑"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/18/frontend-performance-memory-leaks/" title="内存与泄漏：事件监听、闭包与 SPA 常见坑">内存与泄漏：事件监听、闭包与 SPA 常见坑</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-18T09:30:00.000Z" title="发表于 2026-04-18 17:30:00">2026-04-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">泄漏 &#x3D; 应被回收的对象仍被 GC Root 可达。SPA 里常见：事件未解绑、定时器未清、全局 Map 无限涨、闭包抓住已卸下的 DOM、ObjectURL 未 revoke。本篇补：Vue 模式、第三方 dispose、WeakMap、验证步骤。
+
+一、监听与定时器：同一函数引用&lt;script setup lang=&quot;ts&quot;&gt;import &#123; onMounted, onUnmounted, ref &#125; from &quot;vue&quot;;const x = ref(0);const onScroll = () =&gt; &#123;  x.value = window.scrollY;&#125;;let timer: ReturnType&lt;typeof setInterval&gt; | undefined;onMounted(() =&gt; &#123;  window.addEventListener(&quot;scroll&quot;, onScroll, &#123; passive: tru ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/04/17/frontend-performance-network-assets/" title="网络与静态资源：请求、缓存与体积实践"><img class="post-bg" src="https://picsum.photos/id/1019/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="网络与静态资源：请求、缓存与体积实践"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/17/frontend-performance-network-assets/" title="网络与静态资源：请求、缓存与体积实践">网络与静态资源：请求、缓存与体积实践</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-17T08:10:00.000Z" title="发表于 2026-04-17 16:10:00">2026-04-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">首屏时间 ≈ 下载时间 + 解析&#x2F;执行时间（仍简化，但足够指导排期）。网络层优化的核心是：更少字节、更少关键路径往返、更合理的缓存与优先级，以及 别把「可异步」的东西放在关键路径上。下面分 原理 → 反例&#x2F;正例 → 构建与网关 → 排障。
+
+一、关键请求链（Critical Request Chain）在说什么Lighthouse 里的 CRC 指：HTML → 再拉 CSS&#x2F;JS → JS 再动态 import 另一坨……串行深度 越大，首屏越晚。优化方向：
+
+减少链长度：合并「首屏真需要」的资源，或 inline 极小关键 CSS（注意缓存策略）。  
+拓宽并行度：HTTP&#x2F;2 多路复用、域名分片（HTTP&#x2F;2 下通常 不再推荐 盲目拆域，除非有独立 CDN 或证书限制）。  
+提高关键资源优先级：preload、fetchpriority、别把 LCP 图 lazy。
+
+
+二、HTTP&#x2F;1.1 vs HTTP&#x2F;2 vs HTTP&#x2F;3（选型直觉）
+
+
+协议
+直觉
+
+
+
+HTTP&#x2F;1.1
+同域  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/blog/2026/04/16/frontend-performance-overview/" title="前端常见性能问题总览：现象、原因与对策索引"><img class="post-bg" src="https://picsum.photos/id/1043/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="前端常见性能问题总览：现象、原因与对策索引"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/16/frontend-performance-overview/" title="前端常见性能问题总览：现象、原因与对策索引">前端常见性能问题总览：现象、原因与对策索引</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-16T08:00:00.000Z" title="发表于 2026-04-16 16:00:00">2026-04-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">性能不是「某个组件写坏了」这一种病，而是横跨 网络、运行时、框架、业务数据形态、发布与观测 的 系统问题。这篇站在 架构师视角：先给 约束与目标，再给 因果链与杠杆，最后落到 优先级与治理；实现细节仍在同系列分篇。
+
+一、先把话说清：性能是哪一种「质量属性」在架构文档里，性能通常和 可用性、安全、成本 同一层级讨论。对前端而言，建议显式写出三类 约束（数字按业务定，这里只给结构）：
+
+体验约束：关键路径的 Web Vitals 或等价指标（如 LCP&#x2F;INP&#x2F;CLS 的 P75&#x2F;P95），以及 业务特有 的「首屏可操作时间」。  
+资源约束：首包&#x2F;总包 gzip&#x2F;brotli 上限、第三方脚本个数上限、图片单页总字节上限。  
+成本约束：CDN 流量、构建耗时、客户端 CPU（低端机占比）——优化不是无限投入，要在 体验增益 vs 工程复杂度 间折中。
+
+没有约束的「优化」容易变成 局部炫技：某页 Lighthouse 满分，但 核心业务路径 仍慢。
+
+二、系统视图：浏览器不是世界的全部现代页面性能 &#x3D; 浏览器主线程 + 网络 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/blog/2026/04/15/frontend-performance-render-paint/" title="渲染与绘制：重排、合成与滚动性能"><img class="post-bg" src="https://picsum.photos/id/1043/800/450" onerror="this.onerror=null;this.src='https://picsum.photos/id/1060/400/250'" alt="渲染与绘制：重排、合成与滚动性能"></a></div><div class="recent-post-info"><a class="article-title" href="/blog/2026/04/15/frontend-performance-render-paint/" title="渲染与绘制：重排、合成与滚动性能">渲染与绘制：重排、合成与滚动性能</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-04-15T08:20:00.000Z" title="发表于 2026-04-15 16:20:00">2026-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/">大前端</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a></span></div><div class="content">渲染管线（再简化仍有用）：Style → Layout → Paint → Composite。Layout（重排） 最贵：几何信息变了就要重新排版；Paint 次之；Composite 常由 GPU 完成，成本相对可控。下面写 强制布局、层与合成、contain、滚动与动画 的深度与例子。
+
+一、哪些属性会触发布局 &#x2F; 绘制 &#x2F; 合成（直觉表）
+
+
+你改了什么
+常触发
+
+
+
+width&#x2F;height&#x2F;top&#x2F;left、文字内容
+Layout → Paint → Composite
+
+
+color、background（非 transform 动画）
+Paint → Composite
+
+
+transform、opacity（多数情况）
+Composite（理想路径）
+
+
+经验：动画优先 **transform + opacity**；避免每帧改 **width&#x2F;height&#x2F;top**。
+
+二、强制同步布局（Forced Layout）详解浏览器本可 批量 提交 DOM&#x2F;CSS 变更，再在下一帧统一算布局 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/blog/page/8/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/#content-inner">8</a><span class="page-number current">9</span><a class="page-number" href="/blog/page/10/#content-inner">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/14/#content-inner">14</a><a class="extend next" rel="next" href="/blog/page/10/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog/img/avator.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨</div><div class="author-info__description">一个菜鸟前端的自我救赎</div></div><div class="card-info-data site-data is-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">131</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">116</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yangy97"><i class="fab fa-github"></i><span>小杨的github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yangy97" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:y1597355434@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/brilliant_yw/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/C/"><span class="card-category-list-name">C#</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/CSS%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">CSS相关</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/vue2%E6%BA%90%E7%A0%81/"><span class="card-category-list-name">vue2源码</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/webpack/"><span class="card-category-list-name">webpack</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%AE%9E%E8%B7%B5/"><span class="card-category-list-name">企业级实践</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%85%A8%E6%A0%88/"><span class="card-category-list-name">全栈</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">前端基础</span><span class="card-category-list-count">18</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><span class="card-category-list-name">前端进阶</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%89%8D%E7%AB%AF%E9%80%82%E9%85%8D/"><span class="card-category-list-name">前端适配</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">小程序</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%B0%8F%E8%AF%B4/"><span class="card-category-list-name">小说</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"><span class="card-category-list-name">工程化</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">微前端</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E6%95%B0%E7%BB%84/"><span class="card-category-list-name">数组</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E7%AE%A1%E7%90%86%E5%AE%9E%E8%B7%B5/"><span class="card-category-list-name">管理实践</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E9%9D%A2%E7%BB%8F/"><span class="card-category-list-name">面经</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%E4%B8%80/" style="font-size: 1.15em; color: rgb(154, 145, 155)">移动端适配方案一</a><a href="/blog/tags/AI/" style="font-size: 1.41em; color: rgb(184, 199, 96)">AI</a><a href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/" style="font-size: 1.3em; color: rgb(27, 168, 159)">工程实践</a><a href="/blog/tags/Code-Review/" style="font-size: 1.15em; color: rgb(91, 148, 25)">Code Review</a><a href="/blog/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.19em; color: rgb(42, 118, 4)">工具</a><a href="/blog/tags/RAG/" style="font-size: 1.19em; color: rgb(153, 54, 17)">RAG</a><a href="/blog/tags/Agent/" style="font-size: 1.15em; color: rgb(38, 8, 149)">Agent</a><a href="/blog/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.19em; color: rgb(84, 136, 98)">安全</a><a href="/blog/tags/%E6%9F%AF%E9%87%8C%E5%8C%96%E5%87%BD%E6%95%B0/" style="font-size: 1.15em; color: rgb(140, 15, 87)">柯里化函数</a><a href="/blog/tags/C/" style="font-size: 1.15em; color: rgb(165, 156, 190)">C#</a><a href="/blog/tags/Cursor/" style="font-size: 1.19em; color: rgb(21, 97, 130)">Cursor</a><a href="/blog/tags/API/" style="font-size: 1.15em; color: rgb(66, 15, 166)">API</a><a href="/blog/tags/%E7%BD%91%E5%85%B3/" style="font-size: 1.19em; color: rgb(95, 80, 115)">网关</a><a href="/blog/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7/" style="font-size: 1.34em; color: rgb(130, 47, 31)">企业级</a><a href="/blog/tags/SRE/" style="font-size: 1.15em; color: rgb(8, 170, 184)">SRE</a><a href="/blog/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.19em; color: rgb(162, 126, 73)">运维</a><a href="/blog/tags/%E5%AE%B9%E7%81%BE/" style="font-size: 1.15em; color: rgb(170, 187, 130)">容灾</a><a href="/blog/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(37, 81, 68)">备份</a><a href="/blog/tags/CSS/" style="font-size: 1.19em; color: rgb(119, 34, 85)">CSS</a><a href="/blog/tags/CI-CD/" style="font-size: 1.15em; color: rgb(170, 55, 68)">CI/CD</a><a href="/blog/tags/DevOps/" style="font-size: 1.19em; color: rgb(28, 104, 172)">DevOps</a><a href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 1.3em; color: rgb(38, 47, 95)">工程化</a><a href="/blog/tags/Kubernetes/" style="font-size: 1.22em; color: rgb(54, 144, 49)">Kubernetes</a><a href="/blog/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 1.15em; color: rgb(193, 29, 111)">负载均衡</a><a href="/blog/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/" style="font-size: 1.15em; color: rgb(0, 91, 8)">配置管理</a><a href="/blog/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 1.15em; color: rgb(53, 72, 183)">下载</a><a href="/blog/tags/Stream/" style="font-size: 1.19em; color: rgb(101, 61, 114)">Stream</a><a href="/blog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.45em; color: rgb(186, 111, 60)">前端</a><a href="/blog/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/" style="font-size: 1.15em; color: rgb(33, 75, 115)">可观测性</a><a href="/blog/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 1.15em; color: rgb(14, 158, 114)">监控</a><a href="/blog/tags/Prometheus/" style="font-size: 1.15em; color: rgb(5, 145, 0)">Prometheus</a><a href="/blog/tags/%E5%8F%91%E5%B8%83/" style="font-size: 1.15em; color: rgb(86, 157, 64)">发布</a><a href="/blog/tags/%E4%B8%8A%E4%BC%A0/" style="font-size: 1.15em; color: rgb(199, 143, 56)">上传</a><a href="/blog/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" style="font-size: 1.15em; color: rgb(188, 181, 134)">对象存储</a><a href="/blog/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 1.38em; color: rgb(62, 73, 69)">性能优化</a><a href="/blog/tags/CDP/" style="font-size: 1.15em; color: rgb(155, 164, 64)">CDP</a><a href="/blog/tags/Puppeteer/" style="font-size: 1.15em; color: rgb(192, 46, 138)">Puppeteer</a><a href="/blog/tags/%E6%97%A0%E5%A4%B4%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 1.22em; color: rgb(95, 128, 61)">无头浏览器</a><a href="/blog/tags/Vue/" style="font-size: 1.26em; color: rgb(72, 153, 172)">Vue</a><a href="/blog/tags/Playwright/" style="font-size: 1.19em; color: rgb(107, 149, 47)">Playwright</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/04/"><span class="card-archive-list-date">四月 2026</span><span class="card-archive-list-count">81</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/03/"><span class="card-archive-list-date">三月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">121</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-01-01T09:20:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-21T03:22:24.432Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 杨</div><div class="footer_custom_text">Hi, welcome to my Blog This is XiaoYang</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=4.8.1"></script><script src="/blog/js/main.js?v=4.8.1"></script><script src="/blog/js/tw_cn.js?v=4.8.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%85%A8%E6%A0%88/"><span class="card-category-list-name">全栈</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%85%B6%E4%BB%96/"><span class="card-category-list-name">其他</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">大前端</span><span class="card-category-list-count">70</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"><span class="card-category-list-name">工程化</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E8%81%8C%E5%9C%BA%E4%B8%8E%E5%85%B6%E4%BB%96/"><span class="card-category-list-name">职场与其他</span><span class="card-category-list-count">4</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/blog/tags/AI/" style="font-size: 1.38em; color: rgb(19, 138, 118)">AI</a><a href="/blog/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.19em; color: rgb(94, 16, 190)">工具</a><a href="/blog/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%E4%B8%80/" style="font-size: 1.15em; color: rgb(7, 105, 41)">移动端适配方案一</a><a href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/" style="font-size: 1.26em; color: rgb(170, 128, 94)">工程实践</a><a href="/blog/tags/Code-Review/" style="font-size: 1.15em; color: rgb(141, 38, 99)">Code Review</a><a href="/blog/tags/RAG/" style="font-size: 1.19em; color: rgb(143, 82, 49)">RAG</a><a href="/blog/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.22em; color: rgb(49, 143, 43)">安全</a><a href="/blog/tags/Agent/" style="font-size: 1.15em; color: rgb(164, 170, 188)">Agent</a><a href="/blog/tags/CSS/" style="font-size: 1.19em; color: rgb(102, 129, 17)">CSS</a><a href="/blog/tags/%E6%9F%AF%E9%87%8C%E5%8C%96%E5%87%BD%E6%95%B0/" style="font-size: 1.15em; color: rgb(10, 154, 30)">柯里化函数</a><a href="/blog/tags/C/" style="font-size: 1.15em; color: rgb(32, 136, 48)">C#</a><a href="/blog/tags/Cursor/" style="font-size: 1.19em; color: rgb(71, 103, 29)">Cursor</a><a href="/blog/tags/Egg-js/" style="font-size: 1.3em; color: rgb(194, 185, 88)">Egg.js</a><a href="/blog/tags/Node/" style="font-size: 1.26em; color: rgb(59, 33, 3)">Node</a><a href="/blog/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.15em; color: rgb(64, 199, 180)">后端</a><a href="/blog/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 1.15em; color: rgb(8, 196, 173)">配置</a><a href="/blog/tags/%E5%85%A8%E6%A0%88/" style="font-size: 1.41em; color: rgb(108, 188, 70)">全栈</a><a href="/blog/tags/Vue/" style="font-size: 1.34em; color: rgb(89, 3, 157)">Vue</a><a href="/blog/tags/Vite/" style="font-size: 1.45em; color: rgb(119, 53, 138)">Vite</a><a href="/blog/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 1.15em; color: rgb(99, 148, 108)">中间件</a><a href="/blog/tags/Service/" style="font-size: 1.15em; color: rgb(49, 15, 163)">Service</a><a href="/blog/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.19em; color: rgb(111, 57, 157)">运维</a><a href="/blog/tags/API/" style="font-size: 1.15em; color: rgb(46, 183, 50)">API</a><a href="/blog/tags/%E7%BD%91%E5%85%B3/" style="font-size: 1.19em; color: rgb(73, 44, 143)">网关</a><a href="/blog/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7/" style="font-size: 1.34em; color: rgb(6, 61, 173)">企业级</a><a href="/blog/tags/%E8%B7%AF%E7%94%B1/" style="font-size: 1.15em; color: rgb(161, 72, 176)">路由</a><a href="/blog/tags/CI-CD/" style="font-size: 1.15em; color: rgb(44, 130, 87)">CI/CD</a><a href="/blog/tags/DevOps/" style="font-size: 1.19em; color: rgb(164, 102, 67)">DevOps</a><a href="/blog/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 1.3em; color: rgb(47, 168, 120)">工程化</a><a href="/blog/tags/SRE/" style="font-size: 1.15em; color: rgb(168, 151, 57)">SRE</a><a href="/blog/tags/%E5%AE%B9%E7%81%BE/" style="font-size: 1.15em; color: rgb(107, 119, 48)">容灾</a><a href="/blog/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 1.15em; color: rgb(185, 41, 132)">备份</a><a href="/blog/tags/%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/" style="font-size: 1.15em; color: rgb(18, 169, 45)">配置管理</a><a href="/blog/tags/Kubernetes/" style="font-size: 1.22em; color: rgb(175, 119, 35)">Kubernetes</a><a href="/blog/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 1.15em; color: rgb(138, 91, 186)">负载均衡</a><a href="/blog/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/" style="font-size: 1.15em; color: rgb(66, 93, 47)">可观测性</a><a href="/blog/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 1.15em; color: rgb(73, 111, 3)">监控</a><a href="/blog/tags/Prometheus/" style="font-size: 1.15em; color: rgb(194, 33, 36)">Prometheus</a><a href="/blog/tags/%E5%8F%91%E5%B8%83/" style="font-size: 1.15em; color: rgb(179, 162, 132)">发布</a><a href="/blog/tags/%E4%B8%8B%E8%BD%BD/" style="font-size: 1.15em; color: rgb(55, 77, 0)">下载</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/04/"><span class="card-archive-list-date">四月 2026</span><span class="card-archive-list-count">91</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/03/"><span class="card-archive-list-date">三月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">131</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-01-01T09:20:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-22T02:21:36.961Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 杨</div><div class="footer_custom_text">Hi, welcome to my Blog This is XiaoYang</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=4.8.1"></script><script src="/blog/js/main.js?v=4.8.1"></script><script src="/blog/js/tw_cn.js?v=4.8.1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.15/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
