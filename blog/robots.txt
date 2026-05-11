@@ -1,0 +1,3 @@
+Sitemap: https://yangy97.github.io/blog/sitemap.xml
+User-agent:*
+Disallow:
