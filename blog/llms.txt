@@ -9,7 +9,6 @@
 
 ### Others
 
-- [砚雪札记](/blog/index.md)
 - [C#遇到的部分坑](/blog/2019/03/05/c-object/index.md)
 - [C# 随笔：LINQ、集合与可空类型](/blog/2019/07/12/csharp-linq-collections-and-nullable-notes/index.md)
 - [C# 入门备忘：Visual Studio、MSBuild 与 NuGet](/blog/2019/11/18/csharp-visual-studio-msbuild-and-nuget/index.md)
