@@ -84,6 +84,6 @@ exports.sequelize = { enable: true, package: 'egg-sequelize' };
 
 ***
 
-### 八、收束
+### 八、小结
 
 记四层：**Loader 挂载 → 中间件洋葱 → router → controller/service**。新人按目录找文件；老人改需求时先问 **该动 extend / 中间件 / service 哪一层**，避免在 controller 里堆业务。同仓前后端目录约定见《从 0 到 1 实战：pnpm 同仓 + Vue3 Vite + Egg.js BFF》。

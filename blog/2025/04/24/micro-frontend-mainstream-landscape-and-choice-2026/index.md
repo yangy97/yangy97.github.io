@@ -81,6 +81,6 @@ url: /blog/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/index.
 
 ***
 
-### 六、收束
+### 六、小结
 
 **没有一张表能替你做决定**：同一公司不同 BU 也可能 **壳用 qiankun + 业务内 MF 拉设计系统**。把 **「应用级」与「模块级」** 分层设计，比争论「哪个框架最好」更有产出。

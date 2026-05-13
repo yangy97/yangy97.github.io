@@ -48,6 +48,6 @@ url: /blog/2024/07/08/node-async-error-unhandled-rejection/index.md
 
 ***
 
-### 六、收束
+### 六、小结
 
 异步错误三件套：**await 链有 catch**、**Emitter 有 error**、**Promise 无漂浮**。再配 **统一日志与告警**，排障才有抓手；否则只剩 **「偶现 500」** 和 **「进程没了」**。

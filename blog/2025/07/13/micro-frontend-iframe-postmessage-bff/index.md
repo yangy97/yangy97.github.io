@@ -105,6 +105,6 @@ new ResizeObserver(notifyHeight).observe(document.body);
 
 ***
 
-### 七、收束
+### 七、小结
 
 iframe 方案 **工程量在上层协议与 BFF**，不在 iframe 本身。与 **wujie** 等「强隔离」框架对比时：若 **完全不能掌控子应用脚本**，iframe 仍是底线；若能改一点构建，再评估 **wujie / qiankun** 换体验。

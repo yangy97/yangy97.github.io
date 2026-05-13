@@ -116,6 +116,6 @@ remotes: {
 
 ***
 
-### 九、收束
+### 九、小结
 
 Module Federation = **远程模块 + shared 单例**。先 **锁 React/Vue 版本契约**，再 **拆 remote**；**运维上要能灰度 remoteEntry**。应用级集成可继续读 **qiankun / single-spa** 系列，把 **「整应用」** 与 **「远程组件」** 分层设计。

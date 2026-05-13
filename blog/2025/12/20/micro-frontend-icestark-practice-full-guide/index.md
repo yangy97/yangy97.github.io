@@ -93,6 +93,6 @@ npm i @ice/stark
 
 ***
 
-### 八、收束
+### 八、小结
 
 icestark 落地 **= 按官方脚手架与 `@ice/stark` 配子应用表 + 子应用 basename/entry 一致 + 先模板再自研 SPA**。**不要照抄** 网上旧版 ice2 的示例与 ice3/ icestark 新 API 混用，以 **你项目里 `package.json` 的 major 版本** 对应的文档为准。

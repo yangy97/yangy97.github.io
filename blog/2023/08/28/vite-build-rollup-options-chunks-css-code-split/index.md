@@ -49,6 +49,6 @@ export default defineConfig({
 
 ***
 
-### 五、收束
+### 五、小结
 
 Rollup 题：**先 waterfall 与体积** → **再 manualChunks** → **最后看 CSS 拆分是否符合部署**。与《optimizeDeps》区分：**那是 dev 预构建**，这是 **prod 输出**。

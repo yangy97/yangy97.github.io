@@ -50,6 +50,6 @@ new webpack.DefinePlugin({
 
 ***
 
-### 五、收束
+### 五、小结
 
 生产三件事：**map 策略与隐私**、**压缩与兼容性**、**缓存与 chunk 哈希**。与《splitChunks》篇一起看 **线上缓存是否因 runtime 抖动而失效**。

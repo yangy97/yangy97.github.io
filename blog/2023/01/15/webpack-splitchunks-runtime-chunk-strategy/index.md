@@ -93,6 +93,6 @@ cacheGroups: {
 
 ***
 
-### 七、收束
+### 七、小结
 
 代码分割 = **`import()` 划界 + splitChunks 抽公共 + runtime 保缓存**。先 **量体积与请求数**，再微调 **cacheGroups**，避免 **为拆而拆**。

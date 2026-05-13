@@ -97,6 +97,6 @@ module.exports = UserController;
 
 ***
 
-### 六、收束
+### 六、小结
 
 路由 = **METHOD+PATH → controller 方法** 的表；controller = **HTTP 适配层**。下一篇《Service 层》讲 **事务与复用** 怎么落在 `ctx.service` 上。

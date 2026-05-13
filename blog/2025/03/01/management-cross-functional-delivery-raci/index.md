@@ -80,6 +80,6 @@ url: /blog/2025/03/01/management-cross-functional-delivery-raci/index.md
 
 ***
 
-### 七、收束
+### 七、小结
 
 跨团队交付 = **依赖表 + 单一 A + 契约先行 + 早集成**。管理动作的价值是 **减少信息不对称**，不是 **多开会**。

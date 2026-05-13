@@ -65,6 +65,6 @@ export default defineConfig({
 
 ***
 
-### 五、收束
+### 五、小结
 
 目录没有唯一标准，但 **全项目统一命名**（views 还是 pages、api 还是 services）比「个人喜好」重要；新同学看目录就能猜到哪类文件该放哪，维护成本最低。

@@ -67,6 +67,6 @@ optimization: {
 
 ***
 
-### 五、收束
+### 五、小结
 
 调优顺序：**先 analyzer 看体积** → **runtimeChunk** → **vendor 组** → **业务公共** → **路由懒加载**。别在未测 **首屏 waterfall** 前盲目 `maxAsyncRequests: 999`。

@@ -179,6 +179,6 @@ declare module 'order_remote/OrderPage' {
 
 ***
 
-### 八、收束
+### 八、小结
 
 Module Federation **落地 = remote exposes + host remotes + shared 锁版本 + 搞对 `remoteEntry` 的真实 URL**。**本文以 Vite 联邦插件为主**；Webpack 5 仅作**概念等价的旧栈入口**。

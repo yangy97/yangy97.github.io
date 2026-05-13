@@ -73,6 +73,6 @@ export default defineConfig({
 
 ***
 
-### 五、收束
+### 五、小结
 
 从 0 到 1：**根 `index.html` + `type=module` + `vite.config` 插件**。下一篇写 **`optimizeDeps` 与预构建踩坑**。

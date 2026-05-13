@@ -136,6 +136,6 @@ actions.setGlobalState({ user: { id: 1 } });
 
 ***
 
-### 八、收束
+### 八、小结
 
 qiankun = **single-spa + 工程化沙箱 + HTML Entry**。落地成本在 **子应用构建适配** 与 **样式/全局单例**；**先规范 unmount**，再谈 **prefetch**。更底层的 **single-spa 注册模型** 见同系列《微前端实践：single-spa 从零到注册子应用》。

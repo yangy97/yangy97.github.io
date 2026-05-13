@@ -71,6 +71,6 @@ url: /blog/2025/06/17/micro-frontend-icestark-emp-piral-nx/index.md
 
 ***
 
-### 七、收束
+### 七、小结
 
 **icestark / EMP / Piral / Nx** 不是「比 qiankun 更强」，而是 **解决不同主矛盾**：飞冰一体化、联邦工具链、插件平台、Monorepo 联邦。先看 **团队现有栈与发布模型**，再选 **最少新零件** 的路径。

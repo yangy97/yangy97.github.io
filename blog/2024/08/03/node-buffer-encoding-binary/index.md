@@ -49,6 +49,6 @@ url: /blog/2024/08/03/node-buffer-encoding-binary/index.md
 
 ***
 
-### 六、收束
+### 六、小结
 
 Buffer 题：**字节 ≠ 字符**；**slice 共享**；**allocUnsafe 要初始化**。协议题：**先定字节布局再写代码**，不要先 `JSON.stringify` 再拍脑袋补二进制头。

@@ -109,6 +109,6 @@ for await (const chunk of iterateChunks(file)) {
 
 ***
 
-### 九、收束
+### 九、小结
 
 大文件上传 = **分片 + 可恢复状态 + 合并顺序正确**；上规模后 **直传 OSS + STS** 几乎是标配。先 **把 init/part/complete 状态机画清**，再写 UI。

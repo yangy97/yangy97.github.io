@@ -148,6 +148,6 @@ function safeAreaBottomFallback() {
 
 ***
 
-### 八、收束
+### 八、小结
 
 安全区 = **`viewport-fit=cover`** + **`env(safe-area-inset-*)`** + **正确的层叠结构**。和《viewport》篇连读：**先保证视口模型对，再谈 inset**；和《键盘》篇连读：**键盘弹起后底部 inset 与可视区会一起变**，必要时 **VisualViewport** 补刀。

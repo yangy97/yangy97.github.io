@@ -129,6 +129,6 @@ window.dispatchEvent(new CustomEvent('subapp:ready', { detail: { name: 'order' }
 
 ***
 
-### 十一、收束
+### 十一、小结
 
 微前端理论层 = **拆分是否值得 + 路由归谁 + 通信与全局单例策略**；落地时还要补上 **网关路径、publicPath、团队契约**。**主流方案索引** 见《微前端主流方案版图与选型（2026）》；实操系列见 **qiankun**、**single-spa**、**Module Federation**、**iframe + postMessage** 各篇。

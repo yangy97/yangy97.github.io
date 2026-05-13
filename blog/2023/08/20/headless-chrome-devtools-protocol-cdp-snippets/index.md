@@ -91,6 +91,6 @@ const resp = await respPromise;
 
 ***
 
-### 六、收束
+### 六、小结
 
 CDP 是 **无头浏览器的普通话**：要 **深度定制网络与调试**，用 CDP；日常 E2E **优先高阶 API**，减少与 Chromium 版本绑死的维护成本。

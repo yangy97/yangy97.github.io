@@ -113,6 +113,6 @@ url: /blog/2023/07/02/frontend-performance-devtools/index.md
 
 ***
 
-### 十、收束
+### 十、小结
 
 DevTools 的目标是把问题变成 **文件路径 + 函数名 + 资源 URL**；再结合《网络与静态资源》《JavaScript 与加载》落地修改。

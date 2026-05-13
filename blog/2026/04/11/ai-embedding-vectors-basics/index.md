@@ -54,6 +54,6 @@ url: /blog/2026/04/11/ai-embedding-vectors-basics/index.md
 
 ***
 
-### 六、收束
+### 六、小结
 
 向量是 **语义检索的坐标系**；选对 **同一套 Embedding + 合理的 chunk 与混合检索**，比盲目换大模型更有效。

@@ -79,6 +79,6 @@ const Button = React.lazy(() => import('remote_app/Button'));
 
 ***
 
-### 六、收束
+### 六、小结
 
 MF = **运行时依赖拼接**；成本在 **版本协商、缓存、观测**。与《微前端与 Module Federation》一文互补：应用级微前端还可选 **qiankun** 等，**技术选型不互斥**。

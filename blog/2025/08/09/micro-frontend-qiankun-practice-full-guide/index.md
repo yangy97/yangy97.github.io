@@ -230,6 +230,6 @@ actions.setGlobalState({ user: { id: '1' } });
 
 ***
 
-### 十、收束
+### 十、小结
 
 qiankun 落地 **= 子应用生命周期 + 主应用正确注册 + `base` / 路由与 activeRule 一致**。**Vite 子应用** 以 **`vite-plugin-qiankun` + 双模式 `main`/`router`** 为当前主流写法；**Webpack 仅维护老栈时**再翻官方 UMD 示例。

@@ -81,6 +81,6 @@ npx create-single-spa
 
 ***
 
-### 六、收束
+### 六、小结
 
 single-spa = **生命周期协议 + 路由驱动挂载**。**qiankun** 在协议之上解决 **HTML 入口与沙箱**；选型时若团队 **只想用协议、自研加载器**，可评估 **pure single-spa + import map**；否则多数国内项目仍 **qiankun / Garfish / micro-app** 起步更快。

@@ -69,6 +69,6 @@ url: /blog/2025/09/14/enterprise-release-strategies-canary-bluegreen/index.md
 
 ***
 
-### 八、收束
+### 八、小结
 
 选策略看 **RTO/RPO 要求、资源预算、团队成熟度**。**小步金丝雀 + 强监控** 往往是企业里 **性价比最高** 的默认路径；蓝绿留给 **强合规或强回滚** 场景。

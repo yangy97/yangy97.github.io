@@ -93,6 +93,6 @@ Node/Webpack 解析 **`package.json#exports`** 时，**子路径** 与 **develop
 
 ***
 
-### 七、收束
+### 七、小结
 
 Loader = **资源转换管道 + 可选 pitch 短路**；Tree shaking = **ESM + 真实 sideEffects 声明 + 避免假 barrel**。生产问题 **先查是否 CJS 混用** 与 **sideEffects 撒谎**。

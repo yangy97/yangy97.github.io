@@ -143,6 +143,6 @@ const shown = computed(() => filterList(list.value));
 
 ***
 
-### 十一、收束
+### 十一、小结
 
 Vue 优化 = **响应式边界** + **列表策略** + **异步与取消** + **通用 Web 性能**。先用 Performance 判断是 **Script** 还是 **Layout** 瓶颈。

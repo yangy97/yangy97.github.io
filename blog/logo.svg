@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <rect width="120" height="120" rx="24" fill="#3eaf7c"/>
-  <text x="60" y="60" text-anchor="middle" dominant-baseline="central" fill="white" font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700">砚雪札记</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+  <rect width="120" height="120" rx="22" fill="#0c0c0c"/>
+  <circle cx="60" cy="40" r="10" fill="#fafafa"/>
+  <rect x="34" y="58" width="52" height="10" rx="5" fill="#fafafa"/>
+  <rect x="34" y="76" width="38" height="10" rx="5" fill="#fafafa"/>
 </svg>

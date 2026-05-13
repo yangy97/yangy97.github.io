@@ -60,6 +60,6 @@ resolve: {
 
 ***
 
-### 六、收束
+### 六、小结
 
 resolve 题 = **「最终解析到哪个物理文件」**。出现 **两份 React**、**样式丢了**，先 **`npm ls`** 再 **`webpack --stats`** 看 **resolved 路径**。

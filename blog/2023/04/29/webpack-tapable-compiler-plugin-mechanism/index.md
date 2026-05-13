@@ -91,6 +91,6 @@ module.exports = BuildMetaPlugin;
 
 ***
 
-### 六、收束
+### 六、小结
 
 Webpack 插件 = **找对 Hook + 理解 Tapable 语义 + 分清 Compiler/Compilation**。日常业务 **优先配置 + loader**；只有 **流程级** 需求再上插件。

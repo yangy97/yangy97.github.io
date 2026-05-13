@@ -106,6 +106,6 @@ export default defineConfig({
 
 ***
 
-### 七、收束
+### 七、小结
 
 无头 Playwright 深入点 = **Context 隔离 + 语义化选择器 + Trace 排障 + CI 去 sleep**。先把 **失败可观测** 做好，再谈用例数量翻倍。

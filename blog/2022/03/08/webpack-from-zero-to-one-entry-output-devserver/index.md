@@ -92,6 +92,6 @@ module.exports = {
 
 ***
 
-### 六、收束
+### 六、小结
 
 从 0 到 1 只需四件事：**entry 进图**、**output 命名**、**HtmlWebpackPlugin 注入**、**devServer 起服务**。下一篇接 **resolve 与 loader 规则**，把 `.ts`、`.css` 接进管线。

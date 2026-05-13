@@ -83,6 +83,6 @@ export default defineConfig({
 
 ***
 
-### 五、收束
+### 五、小结
 
 写插件前问：**改路径？改文件内容？只 dev？** 对应 **resolveId / load / transform / configureServer**。复杂需求优先搜 **unplugin** 生态是否已有轮子。

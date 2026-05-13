@@ -159,6 +159,6 @@ const io = new IntersectionObserver(
 
 ***
 
-### 十一、收束
+### 十一、小结
 
 卡顿优先查：**强制布局循环**、**每帧改布局属性动画**、**scroll 高频重活**。用 Performance **紫色条** 与 **Paint flashing** 验证，再改代码。

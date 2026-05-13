@@ -86,6 +86,6 @@ url: /blog/2025/05/11/enterprise-incident-oncall-runbook/index.md
 
 ***
 
-### 八、收束
+### 八、小结
 
 企业级事故响应 = **分级清晰 + 角色明确 + Runbook 可执行 + 复盘可落地**。技术栈会变，**时间线与行动项闭环** 不变。

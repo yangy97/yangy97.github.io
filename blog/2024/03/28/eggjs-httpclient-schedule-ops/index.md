@@ -110,6 +110,6 @@ class HealthController extends Controller {
 
 ***
 
-### 六、收束
+### 六、小结
 
 **ctx.curl + 显式超时 + 可观测字段** 是 BFF 的底线；**schedule** 先想清楚 **多实例语义**，再写业务。线上 **70%** 的「偶发慢」来自 **下游无超时** 与 **重试风暴**。
