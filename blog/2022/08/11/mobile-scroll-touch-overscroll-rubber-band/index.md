@@ -125,7 +125,7 @@ document.addEventListener(
 当 **内部滚动到顶** 仍继续下拉，**整页** 可能被 **整体拉动**。缓解思路：
 
 * **内部滚动容器** 使用 **`overscroll-behavior: contain`**；
-* **避免** 在 **`body` 上叠过多 `transform`**（会改变 **fixed 参照**，副作用见《安全区》篇）。
+* **避免** 在 **`body` 上叠过多 `transform`**（会改变 **fixed 参照**，副作用见[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)篇）。
 
 ***
 
@@ -156,4 +156,4 @@ Web 侧 **无法 100% 禁用系统手势**，不要承诺 **「完全不会误�
 
 ### 十、小结
 
-穿透 = **锁谁滚 + 是否链式滚动**；橡皮筋 = **边界行为 + overscroll**。优先 **结构 + CSS（overscroll-behavior）**，**JS 只补洞**；与《键盘》《viewport》交叉时，**同一页面模板** 做 **一次完整回归**。
+穿透 = **锁谁滚 + 是否链式滚动**；橡皮筋 = **边界行为 + overscroll**。优先 **结构 + CSS（overscroll-behavior）**，**JS 只补洞**；与[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)[《viewport》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)交叉时，**同一页面模板** 做 **一次完整回归**。

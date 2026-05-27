@@ -1,6 +1,8 @@
 ---
 url: /blog/2020/08/26/weixin-jump/index.md
 ---
+> **过时提示（2020 笔记）**：私密消息 / 分享能力以 [微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/framework/) 当期说明为准。相关路由与参数见 [生命周期与路由](/2026/05/24/miniprogram-lifecycle-routing-navigation/)。
+
 目前在开发中遇到这种需求，就是分享到消息列表不能允许用户二次转发分享，==控制安卓以及ios端==
 
 点击跳转到微信小程序开发者平台->[微信私密消息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share/private-message.html)

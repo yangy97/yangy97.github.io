@@ -72,12 +72,12 @@ url: /blog/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/index.
 
 **详版工程实践（可照着搭）**（分类在 **「大前端」** 下、可用标签 **`微前端`** 筛选；站点生成后 URL 为 `https://yangy97.github.io/blog/2026/04/22/<文件名去后缀>/`）：
 
-* 《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》
-* 《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》
-* 《微前端工程实践：micro-app 标签化接入与数据传递（详版）》
-* 《微前端工程实践：Garfish 子应用表、沙箱与插件（详版）》
-* 《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》
-* 《微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）》
+* [《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)
+* [《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》](/2025/09/05/micro-frontend-wujie-practice-full-guide/)
+* [《微前端工程实践：micro-app 标签化接入与数据传递（详版）》](/2025/10/01/micro-frontend-micro-app-practice-full-guide/)
+* [《微前端工程实践：Garfish 子应用表、沙箱与插件（详版）》](/2025/10/28/micro-frontend-garfish-practice-full-guide/)
+* [《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)
+* [《微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）》](/2025/12/20/micro-frontend-icestark-practice-full-guide/)
 
 ***
 

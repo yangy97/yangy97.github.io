@@ -3,7 +3,7 @@ url: /blog/2025/03/29/micro-frontend-wujie-garfish-comparison/index.md
 ---
 国内常见微前端方案除 ==qiankun== 外，还有 **腾讯 wujie（无界）**、**字节 Garfish**、**京东 micro-app** 等；底层差异集中在 **沙箱实现、样式隔离、对子应用（**Vite 为主**、Webpack 老栈）的适配、预加载策略**。下面做 **能力向对比** 与 **选型建议**（以公开文档为准，版本迭代快，接入前请对照官方）。
 
-> **wujie / micro-app / Garfish** 的独立详版见：《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》《micro-app 标签化接入与数据传递（详版）》《Garfish 子应用表、沙箱与插件（详版）》。
+> **wujie / micro-app / Garfish** 的独立详版见：[《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》](/2025/09/05/micro-frontend-wujie-practice-full-guide/)《micro-app 标签化接入与数据传递（详版）》《Garfish 子应用表、沙箱与插件（详版）》。
 
 ***
 
@@ -129,7 +129,7 @@ Garfish.run({
 | **Nx Module Federation** | Monorepo | 在 **Nx** 里生成 host/remote，**图依赖 + CI** |
 | **iframe + BFF** | 非框架 | **最强隔离**，用 **postMessage** 与 **同源网关** 补体验 |
 
-更全的对比与选型流程见同系列《微前端主流方案版图与选型（2026）》。
+更全的对比与选型流程见同系列[《微前端主流方案版图与选型（2026）》](/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/)。
 
 ***
 

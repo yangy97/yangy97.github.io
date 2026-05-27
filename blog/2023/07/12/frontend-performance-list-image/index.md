@@ -112,7 +112,7 @@ CDN 常见：`?w=800&q=75` 动态裁切，注意 **缓存键** 与 **签名**。
 <img src="/below.jpg" alt="" loading="lazy" width="800" height="600" />
 ```
 
-**首屏 Hero / LCP 候选** 不要用 `lazy`，否则浏览器 **降低优先级**，LCP 变差。应对：**`fetchpriority="high"`**（支持时）+ `preload`（见《网络与静态资源》）。
+**首屏 Hero / LCP 候选** 不要用 `lazy`，否则浏览器 **降低优先级**，LCP 变差。应对：**`fetchpriority="high"`**（支持时）+ `preload`（见[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)）。
 
 ***
 

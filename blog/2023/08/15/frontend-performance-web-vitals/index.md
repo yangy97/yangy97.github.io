@@ -97,7 +97,7 @@ onCLS(send);
 
 ### 七、与 CI
 
-CI 里 **LCP 波动大**，更适合 **bundle size** 硬闸（见《性能预算与 CI》）；指标可用 **定时任务** 或 **发布后监控**。
+CI 里 **LCP 波动大**，更适合 **bundle size** 硬闸（见[《性能预算与 CI》](/2025/10/16/frontend-performance-budget-ci/)）；指标可用 **定时任务** 或 **发布后监控**。
 
 ***
 

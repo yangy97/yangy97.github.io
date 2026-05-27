@@ -47,7 +47,7 @@ SSR 解决 ==首屏 HTML 与 SEO==；Hydration 解决 **把静态 DOM 变成可�
 
 ### 五、与静态资源
 
-SSR 不减免 **图片/字体/JS 分包**；LCP 仍可能被 **大图** 卡住——继续走《网络与静态资源》《长列表与图片》。
+SSR 不减免 **图片/字体/JS 分包**；LCP 仍可能被 **大图** 卡住——继续走[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)。
 
 ***
 

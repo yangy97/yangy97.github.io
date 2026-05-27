@@ -155,7 +155,7 @@ const io = new IntersectionObserver(
 
 ### 十、与列表
 
-大 DOM + 滚动 = Layout 高频：请 **虚拟列表**（见《长列表与图片》）。
+大 DOM + 滚动 = Layout 高频：请 **虚拟列表**（见[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)）。
 
 ***
 

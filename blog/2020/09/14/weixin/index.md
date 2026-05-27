@@ -1,12 +1,11 @@
 ---
 url: /blog/2020/09/14/weixin/index.md
 ---
-\*\*
+> **过时提示（2020 笔记）**：微信基础库、隐私接口与参数规则已多次更新。实操请优先阅读 [小程序导读](/2026/05/24/miniprogram-learning-path-index/) 与 [生命周期与路由](/2026/05/24/miniprogram-lifecycle-routing-navigation/)。下文保留原始踩坑记录。
 
 ## 微信卡包跳转小程序
 
 \==先梳理小程序生命周期==
-\*\*
 **小程序生命周期**
 
 ```javascript

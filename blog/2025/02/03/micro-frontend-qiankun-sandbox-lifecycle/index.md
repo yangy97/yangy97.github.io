@@ -3,7 +3,7 @@ url: /blog/2025/02/03/micro-frontend-qiankun-sandbox-lifecycle/index.md
 ---
 [qiankun](https://qiankun.umijs.org/) 基于 ==single-spa==，在蚂蚁场景打磨：**HTML Entry**、**JS 沙箱**、**样式隔离**、**预加载**。下面写 **注册参数、子应用导出协议、沙箱类型与限制、全局状态**，并带 **配置示例**。
 
-> 需要 **分步骤脚手架、Vite 子应用（主路径）、部署与排错** 的完整过程，见《**微前端工程实践：qiankun 从脚手架到联调与上线（详版）**》。
+> 需要 **分步骤脚手架、Vite 子应用（主路径）、部署与排错** 的完整过程，见[《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)。
 
 ***
 
@@ -45,7 +45,7 @@ start({
 
 ### 三、子应用必须导出的生命周期
 
-**当前更常见：Vite 子应用** —— 用 **`vite-plugin-qiankun`**：在 `vite.config.ts` 中配置 **`base` / `server.cors` / 插件**（`qiankun('子应用名', { useDevMode })`），在 `main` 里用 **helper** 的 **`renderWithQiankun`** 注册 **`bootstrap` / `mount` / `unmount` / `update`**（与打包器无关的协议一致）。**详版**见《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》**第三节**。
+**当前更常见：Vite 子应用** —— 用 **`vite-plugin-qiankun`**：在 `vite.config.ts` 中配置 **`base` / `server.cors` / 插件**（`qiankun('子应用名', { useDevMode })`），在 `main` 里用 **helper** 的 **`renderWithQiankun`** 注册 **`bootstrap` / `mount` / `unmount` / `update`**（与打包器无关的协议一致）。**详版**见[《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)**第三节**。
 
 **老项目用 Webpack / vue-cli** 时：在入口最前设 **`__webpack_public_path__`**，**`vue.config.js` 的 `output.library` UMD** 对齐 qiankun；一句带过即可，不展开。
 

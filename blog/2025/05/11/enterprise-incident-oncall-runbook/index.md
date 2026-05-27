@@ -80,9 +80,9 @@ url: /blog/2025/05/11/enterprise-incident-oncall-runbook/index.md
 
 ### 七、与系列其它文章的关系
 
-* **告警与 SLO**：见《企业级流量监控与可观测性：指标、日志、追踪与 SLO》。
-* **回滚与发布**：见《企业级发布策略：蓝绿、金丝雀、滚动与特性开关》。
-* **流水线与变更审计**：见《企业级 CI/CD：流水线设计、门禁与发布治理》。
+* **告警与 SLO**：见[《企业级流量监控与可观测性：指标、日志、追踪与 SLO》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
+* **回滚与发布**：见[《企业级发布策略：蓝绿、金丝雀、滚动与特性开关》](/2025/09/14/enterprise-release-strategies-canary-bluegreen/)。
+* **流水线与变更审计**：见[《企业级 CI/CD：流水线设计、门禁与发布治理》](/2025/04/09/enterprise-cicd-pipeline-deep/)。
 
 ***
 

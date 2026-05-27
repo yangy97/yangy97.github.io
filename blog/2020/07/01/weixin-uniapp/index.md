@@ -1,6 +1,8 @@
 ---
 url: /blog/2020/07/01/weixin-uniapp/index.md
 ---
+> **过时提示（2020 笔记）**：uni-app 版本、Vue2/Vue3 模板与 iOS 网络策略已变化。系统阅读见 [uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/)、[小程序导读](/2026/05/24/miniprogram-learning-path-index/)。
+
 ### 初识微信+uniapp 以及遇到的部分坑
 
 ## 小程序iOS端轮播图不能正常显示

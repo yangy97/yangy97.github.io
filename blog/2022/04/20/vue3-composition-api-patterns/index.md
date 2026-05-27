@@ -85,4 +85,4 @@ export function useUserList() {
 
 ### 六、小结
 
-组合式的核心是 **按逻辑聚合 + 复用 composable**，而不是把选项式换个写法。下一步可看《Vue + Vite：项目目录怎么摆》了解工程侧组织。
+组合式的核心是 **按逻辑聚合 + 复用 composable**，而不是把选项式换个写法。下一步可看[《Vue + Vite：项目目录怎么摆》](/2022/05/09/vue-vite-project-structure/)了解工程侧组织。

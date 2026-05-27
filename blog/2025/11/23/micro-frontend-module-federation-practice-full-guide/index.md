@@ -1,7 +1,7 @@
 ---
 url: /blog/2025/11/23/micro-frontend-module-federation-practice-full-guide/index.md
 ---
-> 概念与 `shared` 见《微前端与 Webpack Module Federation：共享依赖、远程容器与版本》（该文仍以 ==Webpack 5 语法== 讲清原理）。**本文实操以 Vite 为主**；**Webpack 5 的 `ModuleFederationPlugin`** 仅作一句对照。
+> 概念与 `shared` 见[《微前端与 Webpack Module Federation：共享依赖、远程容器与版本》](/2025/03/02/micro-frontend-webpack-module-federation/)（该文仍以 ==Webpack 5 语法== 讲清原理）。**本文实操以 Vite 为主**；**Webpack 5 的 `ModuleFederationPlugin`** 仅作一句对照。
 
 ***
 

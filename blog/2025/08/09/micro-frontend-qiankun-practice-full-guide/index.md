@@ -1,7 +1,7 @@
 ---
 url: /blog/2025/08/09/micro-frontend-qiankun-practice-full-guide/index.md
 ---
-> 概念速览见《微前端实践：qiankun 生命周期、沙箱与数据通信》。本篇==子应用打包以 Vite 为主==；**Webpack / vue-cli 老项目** 仅文末一句带过好。**包版本**以 [qiankun 官方文档](https://qiankun.umijs.org/) 与 [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qiankun) 为准。
+> 概念速览见[《微前端实践：qiankun 生命周期、沙箱与数据通信》](/2025/02/03/micro-frontend-qiankun-sandbox-lifecycle/)。本篇==子应用打包以 Vite 为主==；**Webpack / vue-cli 老项目** 仅文末一句带过好。**包版本**以 [qiankun 官方文档](https://qiankun.umijs.org/) 与 [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qiankun) 为准。
 
 ***
 
@@ -165,7 +165,7 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 
 思路与 Vue 相同：**`vite-plugin-qiankun` + `renderWithQiankun`（或同插件提供的 React 辅助）**、**`createRoot` 挂到 `props.container`**、`unmount` 里 **`root.unmount()`**。模板可选用 **`@vitejs/plugin-react`**。
 
-**双份 React**：子应用与主应用各打一份时易出现 **Invalid hook call**，需在 **`optimizeDeps` / 外部化** 或 **Module Federation 共享** 上定版本；见《Module Federation 详版》的 **`shared: { singleton: true }`** 思路。
+**双份 React**：子应用与主应用各打一份时易出现 **Invalid hook call**，需在 **`optimizeDeps` / 外部化** 或 **Module Federation 共享** 上定版本；见[《Module Federation 详版》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)的 **`shared: { singleton: true }`** 思路。
 
 ***
 

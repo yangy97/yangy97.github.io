@@ -42,7 +42,7 @@ url: /blog/2026/04/11/ai-embedding-vectors-basics/index.md
 4. 把 Top-K 文本 **拼进提示**，要求模型 **引用来源** 再回答。
 5. **评估**：固定问题集上看召回率 / 人工打分，再调 chunk 大小与元数据。
 
-更完整的流水线与 Agent 组合见《检索增强与 Agent：工具调用在干什么》。
+更完整的流水线与 Agent 组合见[《检索增强与 Agent：工具调用在干什么》](/2026/05/11/ai-rag-and-agent-tools/)。
 
 ***
 

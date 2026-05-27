@@ -7,9 +7,9 @@ url: /blog/2026/04/21/ai-team-collaboration-and-governance/index.md
 
 ### 一、建议有的「三份东西」
 
-1. \==项目规则（Rules）==：栈、目录、测试命令、禁止项——随仓库走，见《Cursor 项目规则与工作流》。
-2. **任务手册（Skill）**：发版、迁移、On-call——按场景加载，见《Cursor Skill 怎么写、放哪、怎么用》。
-3. **评审清单**：合并前看什么，见《与 AI 结对写代码时：审查清单与防翻车习惯》。
+1. \==项目规则（Rules）==：栈、目录、测试命令、禁止项——随仓库走，见[《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)。
+2. **任务手册（Skill）**：发版、迁移、On-call——按场景加载，见[《Cursor Skill 怎么写、放哪、怎么用》](/2026/01/29/cursor-skills/)。
+3. **评审清单**：合并前看什么，见[《与 AI 结对写代码时：审查清单与防翻车习惯》](/2026/02/28/ai-assisted-code-review/)。
 
 三份都 **短、可版本化**，比写一份一百页的「AI 总则」更易执行。
 
@@ -43,7 +43,7 @@ url: /blog/2026/04/21/ai-team-collaboration-and-governance/index.md
 * **日志**里默认不把完整 prompt/PII 打明文。
 * 对外产品若用第三方模型 API，合同里 **数据留存与训练用途** 要核对。
 
-更技术向的 **提示注入** 见《提示注入与安全：接入 LLM 时要注意什么》。
+更技术向的 **提示注入** 见[《提示注入与安全：接入 LLM 时要注意什么》](/2026/03/31/ai-prompt-injection-security/)。
 
 ***
 

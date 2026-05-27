@@ -84,6 +84,8 @@ url: /blog/2019/11/18/csharp-visual-studio-msbuild-and-nuget/index.md
 url: /blog/2020/07/01/weixin-uniapp/index.md
 ---
 # 微信+uniapp
+> **过时提示（2020 笔记）**：uni-app 版本、Vue2/Vue3 模板与 iOS 网络策略已变化。系统阅读见 [uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/)、[小程序导读](/2026/05/24/miniprogram-learning-path-index/)。
+
 ### 初识微信+uniapp 以及遇到的部分坑
 
 ## 小程序iOS端轮播图不能正常显示
@@ -641,6 +643,8 @@ var list = [{"id" : 5, "name": "小明", "age" : 5},
 url: /blog/2020/08/26/weixin-jump/index.md
 ---
 # 微信小程序禁止二次转发
+> **过时提示（2020 笔记）**：私密消息 / 分享能力以 [微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/framework/) 当期说明为准。相关路由与参数见 [生命周期与路由](/2026/05/24/miniprogram-lifecycle-routing-navigation/)。
+
 目前在开发中遇到这种需求，就是分享到消息列表不能允许用户二次转发分享，==控制安卓以及ios端==
 
 点击跳转到微信小程序开发者平台->[微信私密消息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share/private-message.html)
@@ -668,12 +672,11 @@ url: /blog/2020/08/26/weixin-jump/index.md
 url: /blog/2020/09/14/weixin/index.md
 ---
 # 微信卡包跳转小程序
-\*\*
+> **过时提示（2020 笔记）**：微信基础库、隐私接口与参数规则已多次更新。实操请优先阅读 [小程序导读](/2026/05/24/miniprogram-learning-path-index/) 与 [生命周期与路由](/2026/05/24/miniprogram-lifecycle-routing-navigation/)。下文保留原始踩坑记录。
 
 ## 微信卡包跳转小程序
 
 \==先梳理小程序生命周期==
-\*\*
 **小程序生命周期**
 
 ```javascript
@@ -5489,7 +5492,7 @@ export function useUserList() {
 
 ### 六、小结
 
-组合式的核心是 **按逻辑聚合 + 复用 composable**，而不是把选项式换个写法。下一步可看《Vue + Vite：项目目录怎么摆》了解工程侧组织。
+组合式的核心是 **按逻辑聚合 + 复用 composable**，而不是把选项式换个写法。下一步可看[《Vue + Vite：项目目录怎么摆》](/2022/05/09/vue-vite-project-structure/)了解工程侧组织。
 
 ---
 
@@ -5659,7 +5662,7 @@ export default defineConfig({
 
 ### 四、与 Monorepo 的关系
 
-若 UI 与 BFF 在同一仓库，常见把 `apps/web`、`packages/ui` 拆开，见《Monorepo 与 pnpm：目录与依赖怎么管》。单仓单应用时保持 `src` 内清晰即可。
+若 UI 与 BFF 在同一仓库，常见把 `apps/web`、`packages/ui` 拆开，见[《Monorepo 与 pnpm：目录与依赖怎么管》](/2025/12/18/monorepo-pnpm-workspace/)。单仓单应用时保持 `src` 内清晰即可。
 
 ***
 
@@ -5693,7 +5696,7 @@ H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏�
 
 **直接推论**：
 
-1. **1 CSS px 的边框** 在 **DPR=3** 的屏上，至少要占 **3 个物理像素宽**，肉眼容易觉得「粗」——这是 hairline 问题的根源（见《1px》篇）。
+1. **1 CSS px 的边框** 在 **DPR=3** 的屏上，至少要占 **3 个物理像素宽**，肉眼容易觉得「粗」——这是 hairline 问题的根源（见[《1px》](/2022/07/04/mobile-hairline-1px-border-transform/)篇）。
 2. **截图 / 设计工具** 里标的「px」要先问：**是设计稿坐标还是物理像素**。移动端常见 **750 宽设计稿** 往往对应 **2× 稿**（相对 375 CSS 宽），切图与 **postcss 换算** 要统一基准。
 
 ***
@@ -5707,7 +5710,7 @@ H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏�
 | **布局视口（Layout Viewport）** | **document** 整体布局的「画布宽度」；**`position: fixed` 常以它为参照**（实现细节随浏览器略有差异，但排障时先按这个模型理解）。 |
 | **视觉视口（Visual Viewport）** | 用户 **当前屏幕上能看到的那一块**；**缩放、地址栏收起、软键盘** 会动它。 |
 
-**键盘弹出**时：布局视口未必立刻等于「可见高度」，于是出现 **底部输入框被挡、整页被顶飞**——这需要 **VisualViewport API** 单独处理（见《键盘》篇）。
+**键盘弹出**时：布局视口未必立刻等于「可见高度」，于是出现 **底部输入框被挡、整页被顶飞**——这需要 **VisualViewport API** 单独处理（见[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)篇）。
 
 ```mermaid
 flowchart LR
@@ -5739,7 +5742,7 @@ flowchart LR
 | **width=device-width** | 让 **布局视口宽度** 跟随 **设备在竖屏下的 CSS 宽度**（近似 `window.innerWidth` 在未缩放时）。不写时，移动 Safari 可能用 **980px 级** 的默认布局视口，页面像「缩小版桌面站」。 |
 | **initial-scale=1** | 初始缩放为 1；与 **width** 共同决定 **首屏 CSS 宽度**。二者冲突时以浏览器规则为准，**不要依赖未文档化的组合**。 |
 | **maximum-scale=1 / user-scalable=no** | **禁止用户双指缩放**，对 **弱视用户不友好**，也可能影响 **部分系统字体放大** 场景；若业务强依赖，建议 **仅关键页** 使用并留 **无障碍出口**。 |
-| **viewport-fit=cover** | 告诉浏览器 **页面可延伸到刘海/圆角区域**，**`env(safe-area-inset-*)` 才有非零值**（见《安全区》篇）。 |
+| **viewport-fit=cover** | 告诉浏览器 **页面可延伸到刘海/圆角区域**，**`env(safe-area-inset-*)` 才有非零值**（见[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)篇）。 |
 
 ***
 
@@ -5809,7 +5812,7 @@ setRootFontSize();
 
 ### 八、小结
 
-适配的本质是：**先锁定布局视口（viewport）→ 再选比例系（rem 或 vw）→ 再处理特例（安全区、键盘、hairline）**。下文《安全区》《1px》《键盘》《滚动》四篇把特例拆开写深。
+适配的本质是：**先锁定布局视口（viewport）→ 再选比例系（rem 或 vw）→ 再处理特例（安全区、键盘、hairline）**。下文[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)[《1px》](/2022/07/04/mobile-hairline-1px-border-transform/)[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)[《滚动》](/2022/08/11/mobile-scroll-touch-overscroll-rubber-band/)四篇把特例拆开写深。
 
 ---
 
@@ -5966,7 +5969,7 @@ function safeAreaBottomFallback() {
 
 ### 八、小结
 
-安全区 = **`viewport-fit=cover`** + **`env(safe-area-inset-*)`** + **正确的层叠结构**。和《viewport》篇连读：**先保证视口模型对，再谈 inset**；和《键盘》篇连读：**键盘弹起后底部 inset 与可视区会一起变**，必要时 **VisualViewport** 补刀。
+安全区 = **`viewport-fit=cover`** + **`env(safe-area-inset-*)`** + **正确的层叠结构**。和[《viewport》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)篇连读：**先保证视口模型对，再谈 inset**；和[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)篇连读：**键盘弹起后底部 inset 与可视区会一起变**，必要时 **VisualViewport** 补刀。
 
 ---
 
@@ -6265,7 +6268,7 @@ if (window.visualViewport) {
 }
 ```
 
-**说明**：上面是 **思路演示**，真实项目要处理 **无 vv 的降级**、**节流**、**与 iOS 橡皮筋冲突**（见《滚动》篇）。
+**说明**：上面是 **思路演示**，真实项目要处理 **无 vv 的降级**、**节流**、**与 iOS 橡皮筋冲突**（见[《滚动》](/2022/08/11/mobile-scroll-touch-overscroll-rubber-band/)篇）。
 
 ***
 
@@ -6334,7 +6337,7 @@ H5 **以桥接数据为准**，比 **纯 Web 猜键盘** 稳得多。
 
 ### 九、小结
 
-键盘问题没有 **一行万能代码**，但有 **稳定策略**：**优先结构** → **再用 VisualViewport 补** → **最后才上 focus/blur 黑魔法**。与《viewport》《安全区》连读：**100vh、safe-area、键盘** 三者会 **叠加**，上线前用 **同一套页面模板** 做 **回归**。
+键盘问题没有 **一行万能代码**，但有 **稳定策略**：**优先结构** → **再用 VisualViewport 补** → **最后才上 focus/blur 黑魔法**。与[《viewport》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)连读：**100vh、safe-area、键盘** 三者会 **叠加**，上线前用 **同一套页面模板** 做 **回归**。
 
 ---
 
@@ -6466,7 +6469,7 @@ document.addEventListener(
 当 **内部滚动到顶** 仍继续下拉，**整页** 可能被 **整体拉动**。缓解思路：
 
 * **内部滚动容器** 使用 **`overscroll-behavior: contain`**；
-* **避免** 在 **`body` 上叠过多 `transform`**（会改变 **fixed 参照**，副作用见《安全区》篇）。
+* **避免** 在 **`body` 上叠过多 `transform`**（会改变 **fixed 参照**，副作用见[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)篇）。
 
 ***
 
@@ -6497,7 +6500,7 @@ Web 侧 **无法 100% 禁用系统手势**，不要承诺 **「完全不会误�
 
 ### 十、小结
 
-穿透 = **锁谁滚 + 是否链式滚动**；橡皮筋 = **边界行为 + overscroll**。优先 **结构 + CSS（overscroll-behavior）**，**JS 只补洞**；与《键盘》《viewport》交叉时，**同一页面模板** 做 **一次完整回归**。
+穿透 = **锁谁滚 + 是否链式滚动**；橡皮筋 = **边界行为 + overscroll**。优先 **结构 + CSS（overscroll-behavior）**，**JS 只补洞**；与[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)[《viewport》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)交叉时，**同一页面模板** 做 **一次完整回归**。
 
 ---
 
@@ -8846,7 +8849,7 @@ url: /blog/2023/07/02/frontend-performance-devtools/index.md
 
 ### 十、小结
 
-DevTools 的目标是把问题变成 **文件路径 + 函数名 + 资源 URL**；再结合《网络与静态资源》《JavaScript 与加载》落地修改。
+DevTools 的目标是把问题变成 **文件路径 + 函数名 + 资源 URL**；再结合[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)《JavaScript 与加载》落地修改。
 
 ---
 
@@ -9109,7 +9112,7 @@ CDN 常见：`?w=800&q=75` 动态裁切，注意 **缓存键** 与 **签名**。
 <img src="/below.jpg" alt="" loading="lazy" width="800" height="600" />
 ```
 
-**首屏 Hero / LCP 候选** 不要用 `lazy`，否则浏览器 **降低优先级**，LCP 变差。应对：**`fetchpriority="high"`**（支持时）+ `preload`（见《网络与静态资源》）。
+**首屏 Hero / LCP 候选** 不要用 `lazy`，否则浏览器 **降低优先级**，LCP 变差。应对：**`fetchpriority="high"`**（支持时）+ `preload`（见[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)）。
 
 ***
 
@@ -9465,7 +9468,7 @@ location = /index.html {
 
 * 主线程：《JavaScript 与加载》
 * 指标：《Web Vitals 与监控》
-* 图片：《长列表与图片》
+* 图片：[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)
 
 ***
 
@@ -9651,7 +9654,7 @@ flowchart LR
 
 ### 十二、小结
 
-架构师视角下的性能：**先定义 SLO 与关键路径，再在全链路找瓶颈，用可逆的、可度量的手段迭代，并用预算与观测把它变成工程习惯。** 细节实现请从《网络与静态资源》按关键路径逐项落地。
+架构师视角下的性能：**先定义 SLO 与关键路径，再在全链路找瓶颈，用可逆的、可度量的手段迭代，并用预算与观测把它变成工程习惯。** 细节实现请从[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)按关键路径逐项落地。
 
 ---
 
@@ -9813,7 +9816,7 @@ const io = new IntersectionObserver(
 
 ### 十、与列表
 
-大 DOM + 滚动 = Layout 高频：请 **虚拟列表**（见《长列表与图片》）。
+大 DOM + 滚动 = Layout 高频：请 **虚拟列表**（见[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)）。
 
 ***
 
@@ -9826,7 +9829,9 @@ const io = new IntersectionObserver(
 ---
 url: /blog/2023/08/04/interview/index.md
 ---
-# 面试
+# 面试原始记录（微众 / SHEIN / CVTE / 富途）
+> **阅读提示**：本题单为 2023 年前后 **原始面经记录**，未展开标准答案。建议先看 **[面经导读](/2026/05/25/interview-guide-index/)**，按主题阅读带答法指引的专题文。
+
 雷打不动的就是一来就是自我介绍 下面我省略,加粗为重点 基本上每次必问,大多数为八股文,一部分是开放性问题 根据自己项目来回答
 
 ### 微众银行
@@ -10027,7 +10032,7 @@ SSR 解决 ==首屏 HTML 与 SEO==；Hydration 解决 **把静态 DOM 变成可�
 
 ### 五、与静态资源
 
-SSR 不减免 **图片/字体/JS 分包**；LCP 仍可能被 **大图** 卡住——继续走《网络与静态资源》《长列表与图片》。
+SSR 不减免 **图片/字体/JS 分包**；LCP 仍可能被 **大图** 卡住——继续走[《网络与静态资源》](/2023/07/21/frontend-performance-network-assets/)[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)。
 
 ***
 
@@ -10300,7 +10305,7 @@ onCLS(send);
 
 ### 七、与 CI
 
-CI 里 **LCP 波动大**，更适合 **bundle size** 硬闸（见《性能预算与 CI》）；指标可用 **定时任务** 或 **发布后监控**。
+CI 里 **LCP 波动大**，更适合 **bundle size** 硬闸（见[《性能预算与 CI》](/2025/10/16/frontend-performance-budget-ci/)）；指标可用 **定时任务** 或 **发布后监控**。
 
 ***
 
@@ -10817,7 +10822,7 @@ exports.sequelize = { enable: true, package: 'egg-sequelize' };
 
 ### 八、小结
 
-记四层：**Loader 挂载 → 中间件洋葱 → router → controller/service**。新人按目录找文件；老人改需求时先问 **该动 extend / 中间件 / service 哪一层**，避免在 controller 里堆业务。同仓前后端目录约定见《从 0 到 1 实战：pnpm 同仓 + Vue3 Vite + Egg.js BFF》。
+记四层：**Loader 挂载 → 中间件洋葱 → router → controller/service**。新人按目录找文件；老人改需求时先问 **该动 extend / 中间件 / service 哪一层**，避免在 controller 里堆业务。同仓前后端目录约定见[《从 0 到 1 实战：pnpm 同仓 + Vue3 Vite + Egg.js BFF》](/2024/03/03/eggjs-fullstack-vue-vite-bff-from-zero/)。
 
 ---
 
@@ -12727,7 +12732,7 @@ window.dispatchEvent(new CustomEvent('subapp:ready', { detail: { name: 'order' }
 
 ### 十一、小结
 
-微前端理论层 = **拆分是否值得 + 路由归谁 + 通信与全局单例策略**；落地时还要补上 **网关路径、publicPath、团队契约**。**主流方案索引** 见《微前端主流方案版图与选型（2026）》；实操系列见 **qiankun**、**single-spa**、**Module Federation**、**iframe + postMessage** 各篇。
+微前端理论层 = **拆分是否值得 + 路由归谁 + 通信与全局单例策略**；落地时还要补上 **网关路径、publicPath、团队契约**。**主流方案索引** 见[《微前端主流方案版图与选型（2026）》](/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/)；实操系列见 **qiankun**、**single-spa**、**Module Federation**、**iframe + postMessage** 各篇。
 
 ---
 
@@ -12737,7 +12742,7 @@ url: /blog/2025/02/03/micro-frontend-qiankun-sandbox-lifecycle/index.md
 # 微前端实践：qiankun 生命周期、沙箱与数据通信
 [qiankun](https://qiankun.umijs.org/) 基于 ==single-spa==，在蚂蚁场景打磨：**HTML Entry**、**JS 沙箱**、**样式隔离**、**预加载**。下面写 **注册参数、子应用导出协议、沙箱类型与限制、全局状态**，并带 **配置示例**。
 
-> 需要 **分步骤脚手架、Vite 子应用（主路径）、部署与排错** 的完整过程，见《**微前端工程实践：qiankun 从脚手架到联调与上线（详版）**》。
+> 需要 **分步骤脚手架、Vite 子应用（主路径）、部署与排错** 的完整过程，见[《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)。
 
 ***
 
@@ -12779,7 +12784,7 @@ start({
 
 ### 三、子应用必须导出的生命周期
 
-**当前更常见：Vite 子应用** —— 用 **`vite-plugin-qiankun`**：在 `vite.config.ts` 中配置 **`base` / `server.cors` / 插件**（`qiankun('子应用名', { useDevMode })`），在 `main` 里用 **helper** 的 **`renderWithQiankun`** 注册 **`bootstrap` / `mount` / `unmount` / `update`**（与打包器无关的协议一致）。**详版**见《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》**第三节**。
+**当前更常见：Vite 子应用** —— 用 **`vite-plugin-qiankun`**：在 `vite.config.ts` 中配置 **`base` / `server.cors` / 插件**（`qiankun('子应用名', { useDevMode })`），在 `main` 里用 **helper** 的 **`renderWithQiankun`** 注册 **`bootstrap` / `mount` / `unmount` / `update`**（与打包器无关的协议一致）。**详版**见[《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)**第三节**。
 
 **老项目用 Webpack / vue-cli** 时：在入口最前设 **`__webpack_public_path__`**，**`vue.config.js` 的 `output.library` UMD** 对齐 qiankun；一句带过即可，不展开。
 
@@ -12960,9 +12965,9 @@ routes:
 
 ### 七、与系列其它文章的关系
 
-* **入口拓扑与 Header**：见《企业级应用接入与流量转发：网关、负载均衡与灰度》。
-* **流水线里安全门禁**：见《企业级 CI/CD：流水线设计、门禁与发布治理》。
-* **异常流量在指标上的表现**：见《企业级流量监控与可观测性：指标、日志、追踪与 SLO》。
+* **入口拓扑与 Header**：见[《企业级应用接入与流量转发：网关、负载均衡与灰度》](/2025/06/11/enterprise-ingress-traffic-forwarding/)。
+* **流水线里安全门禁**：见[《企业级 CI/CD：流水线设计、门禁与发布治理》](/2025/04/09/enterprise-cicd-pipeline-deep/)。
+* **异常流量在指标上的表现**：见[《企业级流量监控与可观测性：指标、日志、追踪与 SLO》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
 
 ***
 
@@ -13067,7 +13072,7 @@ url: /blog/2025/03/02/micro-frontend-webpack-module-federation/index.md
 # 微前端与 Webpack Module Federation：共享依赖、远程容器与版本
 \==Module Federation（MF）== 最初是 **Webpack 5** 特性：**运行时** 从 **remote 容器** 加载 **exposes** 的模块，**`shared` 做依赖单例**。**现在落地新项目更常用 Vite 联邦插件**（`@originjs/vite-plugin-federation` 等），**字段语义与下述 Webpack 一致**，差别只在写在 **`vite.config.ts`** 还是 **`webpack.config.js`**。与 **qiankun 应用级** 不同，MF 更偏 **模块/组件级集成**。
 
-> **Vite 双仓库从 `vite.config`、联调到缓存** 见《**微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）**》。
+> **Vite 双仓库从 `vite.config`、联调到缓存** 见[《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)。
 
 ***
 
@@ -13084,7 +13089,7 @@ url: /blog/2025/03/02/micro-frontend-webpack-module-federation/index.md
 
 ### 二、最小配置：Vite（推荐新项目）
 
-`remote` 与 `host` 均安装 `@originjs/vite-plugin-federation` 后，在 `vite.config.ts` 的 `plugins` 里各写 **federation({ ... })** —— `name`、`filename: 'remoteEntry.js'`、`exposes`（仅 remote）或 `remotes`（仅 host）与 `shared`。**消费侧** 使用 **`import('remoteName/暴露路径')` + `React.lazy` / `defineAsyncComponent`** 即可。完整片段与端口联调见《**Module Federation 双仓库从初始化到生产部署（详版）**》。
+`remote` 与 `host` 均安装 `@originjs/vite-plugin-federation` 后，在 `vite.config.ts` 的 `plugins` 里各写 **federation({ ... })** —— `name`、`filename: 'remoteEntry.js'`、`exposes`（仅 remote）或 `remotes`（仅 host）与 `shared`。**消费侧** 使用 **`import('remoteName/暴露路径')` + `React.lazy` / `defineAsyncComponent`** 即可。完整片段与端口联调见[《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)。
 
 #### 本地双项目联调（Vite）
 
@@ -13273,7 +13278,7 @@ url: /blog/2025/03/29/micro-frontend-wujie-garfish-comparison/index.md
 # 微前端框架对比与实践：wujie、Garfish、micro-app 与方案选型
 国内常见微前端方案除 ==qiankun== 外，还有 **腾讯 wujie（无界）**、**字节 Garfish**、**京东 micro-app** 等；底层差异集中在 **沙箱实现、样式隔离、对子应用（**Vite 为主**、Webpack 老栈）的适配、预加载策略**。下面做 **能力向对比** 与 **选型建议**（以公开文档为准，版本迭代快，接入前请对照官方）。
 
-> **wujie / micro-app / Garfish** 的独立详版见：《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》《micro-app 标签化接入与数据传递（详版）》《Garfish 子应用表、沙箱与插件（详版）》。
+> **wujie / micro-app / Garfish** 的独立详版见：[《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》](/2025/09/05/micro-frontend-wujie-practice-full-guide/)《micro-app 标签化接入与数据传递（详版）》《Garfish 子应用表、沙箱与插件（详版）》。
 
 ***
 
@@ -13399,7 +13404,7 @@ Garfish.run({
 | **Nx Module Federation** | Monorepo | 在 **Nx** 里生成 host/remote，**图依赖 + CI** |
 | **iframe + BFF** | 非框架 | **最强隔离**，用 **postMessage** 与 **同源网关** 补体验 |
 
-更全的对比与选型流程见同系列《微前端主流方案版图与选型（2026）》。
+更全的对比与选型流程见同系列[《微前端主流方案版图与选型（2026）》](/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/)。
 
 ***
 
@@ -13495,7 +13500,7 @@ url: /blog/2025/04/09/enterprise-cicd-pipeline-deep/index.md
 | **Canary** | 小比例流量新版本 | 风险敏感、有指标支撑 |
 | **Feature Flag** | 按用户/百分比开功能 | 与部署解耦，降低发版频率压力 |
 
-金丝雀需要 **入口层权重** + **监控阈值自动晋升/回滚**（见《应用接入与流量转发》篇）。
+金丝雀需要 **入口层权重** + **监控阈值自动晋升/回滚**（见[《应用接入与流量转发》](/2025/06/11/enterprise-ingress-traffic-forwarding/)篇）。
 
 ***
 
@@ -13532,8 +13537,8 @@ jobs:
 
 ### 九、与「企业级」其它能力的关系
 
-* **流量怎么进服务**：网关、Ingress、负载均衡 → 见《企业级应用接入与流量转发》。
-* **上线后怎么知道健康**：指标、日志、追踪 → 见《企业级流量监控与可观测性实践》。
+* **流量怎么进服务**：网关、Ingress、负载均衡 → 见[《企业级应用接入与流量转发》](/2025/06/11/enterprise-ingress-traffic-forwarding/)。
+* **上线后怎么知道健康**：指标、日志、追踪 → 见[《企业级流量监控与可观测性实践》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
 
 ***
 
@@ -13618,12 +13623,12 @@ url: /blog/2025/04/24/micro-frontend-mainstream-landscape-and-choice-2026/index.
 
 **详版工程实践（可照着搭）**（分类在 **「大前端」** 下、可用标签 **`微前端`** 筛选；站点生成后 URL 为 `https://yangy97.github.io/blog/2026/04/22/<文件名去后缀>/`）：
 
-* 《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》
-* 《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》
-* 《微前端工程实践：micro-app 标签化接入与数据传递（详版）》
-* 《微前端工程实践：Garfish 子应用表、沙箱与插件（详版）》
-* 《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》
-* 《微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）》
+* [《微前端工程实践：qiankun 从脚手架到联调与上线（详版）》](/2025/08/09/micro-frontend-qiankun-practice-full-guide/)
+* [《微前端工程实践：wujie（无界）主应用、子应用与 bus 通信（详版）》](/2025/09/05/micro-frontend-wujie-practice-full-guide/)
+* [《微前端工程实践：micro-app 标签化接入与数据传递（详版）》](/2025/10/01/micro-frontend-micro-app-practice-full-guide/)
+* [《微前端工程实践：Garfish 子应用表、沙箱与插件（详版）》](/2025/10/28/micro-frontend-garfish-practice-full-guide/)
+* [《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)
+* [《微前端工程实践：icestark 与 ice.js 主应用、子应用配置（详版）》](/2025/12/20/micro-frontend-icestark-practice-full-guide/)
 
 ***
 
@@ -13716,9 +13721,9 @@ url: /blog/2025/05/11/enterprise-incident-oncall-runbook/index.md
 
 ### 七、与系列其它文章的关系
 
-* **告警与 SLO**：见《企业级流量监控与可观测性：指标、日志、追踪与 SLO》。
-* **回滚与发布**：见《企业级发布策略：蓝绿、金丝雀、滚动与特性开关》。
-* **流水线与变更审计**：见《企业级 CI/CD：流水线设计、门禁与发布治理》。
+* **告警与 SLO**：见[《企业级流量监控与可观测性：指标、日志、追踪与 SLO》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
+* **回滚与发布**：见[《企业级发布策略：蓝绿、金丝雀、滚动与特性开关》](/2025/09/14/enterprise-release-strategies-canary-bluegreen/)。
+* **流水线与变更审计**：见[《企业级 CI/CD：流水线设计、门禁与发布治理》](/2025/04/09/enterprise-cicd-pipeline-deep/)。
 
 ***
 
@@ -13953,7 +13958,7 @@ spec:
 
 ### 十、与监控的关系
 
-入口层指标（QPS、延迟、5xx、限流命中）是 **SLO 的第一现场**；详见《企业级流量监控与可观测性实践》。
+入口层指标（QPS、延迟、5xx、限流命中）是 **SLO 的第一现场**；详见[《企业级流量监控与可观测性实践》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
 
 ***
 
@@ -14223,9 +14228,9 @@ app:
 
 ### 七、与系列其它文章的关系
 
-* **流水线与制品晋升**：见《企业级 CI/CD：流水线设计、门禁与发布治理》。
-* **入口与灰度**：见《企业级应用接入与流量转发：网关、负载均衡与灰度》。
-* **上线后指标**：见《企业级流量监控与可观测性：指标、日志、追踪与 SLO》。
+* **流水线与制品晋升**：见[《企业级 CI/CD：流水线设计、门禁与发布治理》](/2025/04/09/enterprise-cicd-pipeline-deep/)。
+* **入口与灰度**：见[《企业级应用接入与流量转发：网关、负载均衡与灰度》](/2025/06/11/enterprise-ingress-traffic-forwarding/)。
+* **上线后指标**：见[《企业级流量监控与可观测性：指标、日志、追踪与 SLO》](/2025/08/14/enterprise-observability-traffic-monitoring/)。
 
 ***
 
@@ -14352,7 +14357,7 @@ iframe 方案 **工程量在上层协议与 BFF**，不在 iframe 本身。与 *
 ---
 url: /blog/2025/08/09/micro-frontend-qiankun-practice-full-guide/index.md
 ---
-> 概念速览见《微前端实践：qiankun 生命周期、沙箱与数据通信》。本篇==子应用打包以 Vite 为主==；**Webpack / vue-cli 老项目** 仅文末一句带过好。**包版本**以 [qiankun 官方文档](https://qiankun.umijs.org/) 与 [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qiankun) 为准。
+> 概念速览见[《微前端实践：qiankun 生命周期、沙箱与数据通信》](/2025/02/03/micro-frontend-qiankun-sandbox-lifecycle/)。本篇==子应用打包以 Vite 为主==；**Webpack / vue-cli 老项目** 仅文末一句带过好。**包版本**以 [qiankun 官方文档](https://qiankun.umijs.org/) 与 [vite-plugin-qiankun](https://github.com/tengmaoqing/vite-plugin-qiankun) 为准。
 
 ***
 
@@ -14516,7 +14521,7 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 
 思路与 Vue 相同：**`vite-plugin-qiankun` + `renderWithQiankun`（或同插件提供的 React 辅助）**、**`createRoot` 挂到 `props.container`**、`unmount` 里 **`root.unmount()`**。模板可选用 **`@vitejs/plugin-react`**。
 
-**双份 React**：子应用与主应用各打一份时易出现 **Invalid hook call**，需在 **`optimizeDeps` / 外部化** 或 **Module Federation 共享** 上定版本；见《Module Federation 详版》的 **`shared: { singleton: true }`** 思路。
+**双份 React**：子应用与主应用各打一份时易出现 **Invalid hook call**，需在 **`optimizeDeps` / 外部化** 或 **Module Federation 共享** 上定版本；见[《Module Federation 详版》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)的 **`shared: { singleton: true }`** 思路。
 
 ***
 
@@ -14693,7 +14698,7 @@ Google SRE 常提四类，对 ==入口流量== 尤其贴切：
 * 发布后 **自动对比** 关键指标（错误率、延迟）→ **自动回滚或人工确认**。
 * **金丝雀** 阶段看 **对比曲线**，再 **全量**。
 
-见《企业级 CI/CD：流水线设计、门禁与发布治理》。
+见[《企业级 CI/CD：流水线设计、门禁与发布治理》](/2025/04/09/enterprise-cicd-pipeline-deep/)。
 
 ***
 
@@ -15554,7 +15559,7 @@ export default defineConfig({
 ---
 url: /blog/2025/11/23/micro-frontend-module-federation-practice-full-guide/index.md
 ---
-> 概念与 `shared` 见《微前端与 Webpack Module Federation：共享依赖、远程容器与版本》（该文仍以 ==Webpack 5 语法== 讲清原理）。**本文实操以 Vite 为主**；**Webpack 5 的 `ModuleFederationPlugin`** 仅作一句对照。
+> 概念与 `shared` 见[《微前端与 Webpack Module Federation：共享依赖、远程容器与版本》](/2025/03/02/micro-frontend-webpack-module-federation/)（该文仍以 ==Webpack 5 语法== 讲清原理）。**本文实操以 Vite 为主**；**Webpack 5 的 `ModuleFederationPlugin`** 仅作一句对照。
 
 ***
 
@@ -15815,7 +15820,7 @@ pnpm 默认 **严格**：子包只能访问 **自己 package.json 声明的依�
 
 ### 六、小结
 
-Monorepo 解决的是 **协作与复用**；成本是 **工具链与纪律**。从小仓库两块 `apps` + 一两个 `packages` 起步，比一上来大而全更可持续。Vue 单应用目录习惯见《Vue + Vite：项目目录怎么摆》；Egg 分层见《Egg.js：目录、Loader 与分层在干什么》。
+Monorepo 解决的是 **协作与复用**；成本是 **工具链与纪律**。从小仓库两块 `apps` + 一两个 `packages` 起步，比一上来大而全更可持续。Vue 单应用目录习惯见[《Vue + Vite：项目目录怎么摆》](/2022/05/09/vue-vite-project-structure/)；Egg 分层见[《Egg.js：目录、Loader 与分层在干什么》](/2024/01/12/eggjs-architecture-guide/)。
 
 ---
 
@@ -15986,7 +15991,7 @@ url: /blog/2026/01/08/ai-coding-assistant/index.md
 ### 六、和 Agent、RAG 的关系（避免概念混成一团）
 
 * **助手模式**：多数时候是「你问—它答/改」，回合由你驱动。
-* **Agent 模式**：模型在多步里自己规划、调工具、再观察结果（见另文《检索增强与 Agent：工具调用在干什么》）。
+* **Agent 模式**：模型在多步里自己规划、调工具、再观察结果（见另文[《检索增强与 Agent：工具调用在干什么》](/2026/05/11/ai-rag-and-agent-tools/)）。
 * **RAG**：从知识库检索片段再生成，缓解「胡编文档」——但检索质量决定上限。
 
 三者可以组合；**不是越自动越好**，自动越多，越需要 **权限边界与可观测性**。
@@ -16212,7 +16217,7 @@ url: /blog/2026/01/29/cursor-skills/index.md
 
 ***
 
-一句话：**Skill 是把「口头经验」固化成「Agent 可读」的短文档**；维护成本低于每次长篇手打，长期更省时间。与 **MCP**、**提示词工程** 的配合方式，见《提示词与上下文工程》与《MCP 是什么》两篇。
+一句话：**Skill 是把「口头经验」固化成「Agent 可读」的短文档**；维护成本低于每次长篇手打，长期更省时间。与 **MCP**、**提示词工程** 的配合方式，见[《提示词与上下文工程》](/2026/02/08/prompt-context-engineering/)与[《MCP 是什么》](/2026/01/18/mcp-intro/)两篇。
 
 ---
 
@@ -16316,7 +16321,7 @@ url: /blog/2026/02/08/prompt-context-engineering/index.md
 * 是否 **引用或执行了** 工具结果，而不是纯编？
 * 若重来，你会 **删掉** 哪些附件、**补充** 哪一句约束？
 
-把每次高效对话里 **重复的前置块** 挪进 Skill，把 **重复要查的数据** 挪进 MCP，下一轮就会更轻松。更偏 **Agent 多步与工具调用** 的内容，见《检索增强与 Agent：工具调用在干什么》。
+把每次高效对话里 **重复的前置块** 挪进 Skill，把 **重复要查的数据** 挪进 MCP，下一轮就会更轻松。更偏 **Agent 多步与工具调用** 的内容，见[《检索增强与 Agent：工具调用在干什么》](/2026/05/11/ai-rag-and-agent-tools/)。
 
 ---
 
@@ -16324,7 +16329,7 @@ url: /blog/2026/02/08/prompt-context-engineering/index.md
 url: /blog/2026/02/18/mcp-config-and-security/index.md
 ---
 # MCP 实践：配置、传输方式与安全清单
-上一篇《MCP 是什么》偏概念；这篇偏 ==动手==：客户端里大概怎么配、stdio 与远程各适合什么、**安全与排障** 时盯哪些点。具体 JSON 字段名以你所用客户端与 MCP 版本为准，这里给的是 **结构级** 示例，便于你对照文档改。
+上一篇[《MCP 是什么》](/2026/01/18/mcp-intro/)偏概念；这篇偏 ==动手==：客户端里大概怎么配、stdio 与远程各适合什么、**安全与排障** 时盯哪些点。具体 JSON 字段名以你所用客户端与 MCP 版本为准，这里给的是 **结构级** 示例，便于你对照文档改。
 
 ***
 
@@ -16429,7 +16434,7 @@ url: /blog/2026/02/18/mcp-config-and-security/index.md
 
 ### 七、小结
 
-MCP 的价值在 **标准契约 + 可审计的动作边界**。配置阶段把 **启动方式、环境、权限** 想清，比纠结「提示词怎么写」更能避免线上事故。概念篇见《MCP 是什么》；和 Agent、RAG 的配合见《检索增强与 Agent：工具调用在干什么》。
+MCP 的价值在 **标准契约 + 可审计的动作边界**。配置阶段把 **启动方式、环境、权限** 想清，比纠结「提示词怎么写」更能避免线上事故。概念篇见[《MCP 是什么》](/2026/01/18/mcp-intro/)；和 Agent、RAG 的配合见[《检索增强与 Agent：工具调用在干什么》](/2026/05/11/ai-rag-and-agent-tools/)。
 
 ---
 
@@ -16580,7 +16585,7 @@ Skill 偏「某一类任务的说明书」；==Project Rules（项目规则）==
 
 ### 六、小结
 
-Project Rules 是 **把默认上下文压缩成可版本化文本**；Skill 是 **任务型手册**；MCP 是 **外接事实与动作**。三者叠好以后，你在对话里只需要写 **本次任务的 delta**，这才是长期最省力的用法。更细的 Skill 写法见《Cursor Skill 怎么写、放哪、怎么用》。
+Project Rules 是 **把默认上下文压缩成可版本化文本**；Skill 是 **任务型手册**；MCP 是 **外接事实与动作**。三者叠好以后，你在对话里只需要写 **本次任务的 delta**，这才是长期最省力的用法。更细的 Skill 写法见[《Cursor Skill 怎么写、放哪、怎么用》](/2026/01/29/cursor-skills/)。
 
 ---
 
@@ -16629,9 +16634,9 @@ url: /blog/2026/03/21/ai-llm-streaming-and-production/index.md
 
 ***
 
-### 五、与《AI 编程助手》系列的关系
+### 五、与[《AI 编程助手》](/2026/01/08/ai-coding-assistant/)系列的关系
 
-编辑器里用模型多是产品封装好的；**自己接 API** 时上面这些才会变成工单。更偏 **安全与注入** 见《提示注入与安全：接入 LLM 时要注意什么》；偏 **向量与检索** 见《向量与相似度：做 RAG 前的最小概念集》。
+编辑器里用模型多是产品封装好的；**自己接 API** 时上面这些才会变成工单。更偏 **安全与注入** 见[《提示注入与安全：接入 LLM 时要注意什么》](/2026/03/31/ai-prompt-injection-security/)；偏 **向量与检索** 见[《向量与相似度：做 RAG 前的最小概念集》](/2026/04/11/ai-embedding-vectors-basics/)。
 
 ---
 
@@ -16674,7 +16679,7 @@ url: /blog/2026/03/31/ai-prompt-injection-security/index.md
 
 ### 四、与 MCP、Agent 的关系
 
-MCP 和 Agent **放大**了「模型 + 工具」的能力，也放大了 **误调用** 面：**工具层鉴权、审计、幂等** 比提示词技巧更重要。参考《MCP 是什么》《MCP 实践：配置、传输方式与安全清单》。
+MCP 和 Agent **放大**了「模型 + 工具」的能力，也放大了 **误调用** 面：**工具层鉴权、审计、幂等** 比提示词技巧更重要。参考[《MCP 是什么》](/2026/01/18/mcp-intro/)《MCP 实践：配置、传输方式与安全清单》。
 
 ***
 
@@ -16729,7 +16734,7 @@ url: /blog/2026/04/11/ai-embedding-vectors-basics/index.md
 4. 把 Top-K 文本 **拼进提示**，要求模型 **引用来源** 再回答。
 5. **评估**：固定问题集上看召回率 / 人工打分，再调 chunk 大小与元数据。
 
-更完整的流水线与 Agent 组合见《检索增强与 Agent：工具调用在干什么》。
+更完整的流水线与 Agent 组合见[《检索增强与 Agent：工具调用在干什么》](/2026/05/11/ai-rag-and-agent-tools/)。
 
 ***
 
@@ -16757,9 +16762,9 @@ url: /blog/2026/04/21/ai-team-collaboration-and-governance/index.md
 
 ### 一、建议有的「三份东西」
 
-1. \==项目规则（Rules）==：栈、目录、测试命令、禁止项——随仓库走，见《Cursor 项目规则与工作流》。
-2. **任务手册（Skill）**：发版、迁移、On-call——按场景加载，见《Cursor Skill 怎么写、放哪、怎么用》。
-3. **评审清单**：合并前看什么，见《与 AI 结对写代码时：审查清单与防翻车习惯》。
+1. \==项目规则（Rules）==：栈、目录、测试命令、禁止项——随仓库走，见[《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)。
+2. **任务手册（Skill）**：发版、迁移、On-call——按场景加载，见[《Cursor Skill 怎么写、放哪、怎么用》](/2026/01/29/cursor-skills/)。
+3. **评审清单**：合并前看什么，见[《与 AI 结对写代码时：审查清单与防翻车习惯》](/2026/02/28/ai-assisted-code-review/)。
 
 三份都 **短、可版本化**，比写一份一百页的「AI 总则」更易执行。
 
@@ -16793,7 +16798,7 @@ url: /blog/2026/04/21/ai-team-collaboration-and-governance/index.md
 * **日志**里默认不把完整 prompt/PII 打明文。
 * 对外产品若用第三方模型 API，合同里 **数据留存与训练用途** 要核对。
 
-更技术向的 **提示注入** 见《提示注入与安全：接入 LLM 时要注意什么》。
+更技术向的 **提示注入** 见[《提示注入与安全：接入 LLM 时要注意什么》](/2026/03/31/ai-prompt-injection-security/)。
 
 ***
 
@@ -17355,9 +17360,9 @@ url: /blog/2026/05/11/ai-rag-and-agent-tools/index.md
 
 ### 六、和本系列其它文章的关系
 
-* 《AI 编程助手》讲 **单轮/少轮** 的心智模型与协作节奏。
-* 《MCP 是什么》《MCP 实践》讲 **工具怎么标准交付与收口权限**。
-* 《提示词与上下文工程》讲 **你怎么喂上下文**；本篇讲 **系统怎么替你补上下文与闭环**。
+* [《AI 编程助手》](/2026/01/08/ai-coding-assistant/)讲 **单轮/少轮** 的心智模型与协作节奏。
+* [《MCP 是什么》](/2026/01/18/mcp-intro/)[《MCP 实践》](/2026/02/18/mcp-config-and-security/)讲 **工具怎么标准交付与收口权限**。
+* [《提示词与上下文工程》](/2026/02/08/prompt-context-engineering/)讲 **你怎么喂上下文**；本篇讲 **系统怎么替你补上下文与闭环**。
 
 一句话：**RAG 补「知识」，工具补「事实与动作」，Agent 补「多步闭环」**——三者都不是魔法，**边界与验收** 仍在你手里。
 
@@ -19729,3 +19734,4683 @@ async function buildParserTable(protoPath: string) {
 ### 小结
 
 **RPC 客户端运行时** 不是「又一个 axios」，而是 **把 Protobuf 契约、订阅标签与调用上下文绑在一起** 的 **出站适配层**。BFF 团队应熟练掌握：**callee/tags 的路由语义**、**header/body 的分工**、**流式场景的 parser 单例**，并把 **版本对齐** 纳入发布 checklist。**本文示意代码不得对齐任一真实仓库字段名**；落地请参考你们内部 mesh 文档与 lockfile 中的主版本。
+
+---
+
+---
+url: /blog/2026/05/17/miniprogram-custom-component-skyline-package/index.md
+---
+# 小程序组件化深入：自定义组件、分包异步化与 Skyline
+组件化能降 **setData 面、提复用**，但小程序的 **组件树、样式隔离、分包引用** 和 Web 不同。本篇讲 **自定义组件设计、分包异步组件、Skyline 渲染** 的适用边界与写法。
+
+***
+
+### 一、自定义组件基础
+
+```javascript
+// components/order-card/index.js
+Component({
+  properties: {
+    order: { type: Object, value: {} },
+  },
+  data: {
+    expanded: false,
+  },
+  methods: {
+    toggle() {
+      this.setData({ expanded: !this.data.expanded });
+    },
+  },
+});
+```
+
+```xml
+<!-- index.wxml -->
+<view class="card" bindtap="toggle">
+  <text>{{order.title}}</text>
+  <view wx:if="{{expanded}}">{{order.detail}}</view>
+</view>
+```
+
+**样式隔离**：默认 `isolated`；需要穿透用 `externalClasses` 或 `::v-deep` 类写法（视基础库文档）。
+
+***
+
+### 二、组件通信
+
+| 方式 | 场景 |
+|------|------|
+| `properties` | 父 → 子 |
+| `triggerEvent` | 子 → 父 |
+| `relations` | 复杂父子（如 form + field） |
+| 全局 store / mobx-miniprogram | 跨多层 |
+
+```javascript
+this.triggerEvent('change', { id: this.data.order.id });
+```
+
+避免滥用 `getApp().globalData` 传大对象。
+
+***
+
+### 三、分包异步化（按需注入组件）
+
+大组件放分包，主包 **用时再下载**：
+
+```json
+{
+  "usingComponents": {
+    "heavy-chart": "/packageCharts/chart/index"
+  },
+  "componentPlaceholder": {
+    "heavy-chart": "view"
+  }
+}
+```
+
+`componentPlaceholder` 在组件未加载前显示占位，避免白块。
+
+***
+
+### 四、Skyline 渲染引擎
+
+Skyline 是微信新一代渲染方案，**更贴近原生性能**，但：
+
+* 需在 `app.json` 或页面 json 开启 `"renderer": "skyline"`
+* 部分 CSS（如某些 float 老写法）不支持
+* 与 **glass-easel** 组件框架配合
+
+**适用**：动画多、列表复杂的新页面；**不适用**：老页面一次性全量迁移。
+
+```json
+{
+  "navigationStyle": "custom",
+  "renderer": "skyline",
+  "componentFramework": "glass-easel"
+}
+```
+
+迁移前用官方 **兼容检测** 扫一遍 WXML/WXSS。
+
+***
+
+### 五、性能建议
+
+1. 组件 `data` 只放 **模板绑定字段**
+2. 纯展示组件设 `"virtualHost": true`（基础库支持时）减少节点
+3. 列表项组件避免在 `observers` 里频繁 setData
+4. 与[《小程序性能优化与审核踩坑》](/2026/05/26/miniprogram-performance-audit-practice/)中的 setData 策略一起用
+
+***
+
+### 六、小结
+
+**自定义组件** 管复用与隔离；**分包异步化** 管主包体积；**Skyline** 管渲染性能上限。三者按页面阶段选用，不要 Skyline 全开增加维护成本。
+
+---
+
+---
+url: /blog/2026/05/17/miniprogram-payment-flow-and-reconciliation/index.md
+---
+# 小程序支付深入：下单、回调、对账与 iOS 虚拟商品边界
+小程序支付不是「调一个 wx.requestPayment 就完事」，而是 **商户单号 → 预下单 → 拉起收银台 → 异步通知 → 对账** 一整条链路。本篇按 **时序、幂等、安全、iOS 规则** 讲清，并给出可落地的代码骨架。
+
+***
+
+### 一、标准时序（必须服务端参与）
+
+```text
+小程序                你的 BFF/API              微信支付
+  │                        │                        │
+  │──① 创建业务订单────────►│                        │
+  │                        │──② unifiedorder ──────►│
+  │                        │◄─ prepay_id ───────────│
+  │◄─ ③ 签名参数 ──────────│                        │
+  │──④ wx.requestPayment ──────────────────────────►│
+  │                        │◄─ ⑤ notify（异步）──────│
+  │◄─ ⑥ 轮询/推送结果 ──────│                        │
+```
+
+\==关键==：**永远不要在前端用 appSecret 签名**；`paySign` 等参数由服务端用商户密钥生成。
+
+***
+
+### 二、小程序端代码骨架
+
+```javascript
+// services/pay.js
+export async function payOrder(orderId) {
+  const { timeStamp, nonceStr, package: pkg, signType, paySign } =
+    await request({ url: '/pay/prepay', method: 'POST', data: { orderId } });
+
+  await wx.requestPayment({
+    timeStamp,
+    nonceStr,
+    package: pkg,
+    signType: signType || 'RSA',
+    paySign,
+  });
+
+  // 支付结果以服务端 notify + 订单查询为准，不要只信 success 回调
+  return request({ url: `/orders/${orderId}/status` });
+}
+```
+
+**success / fail / complete**：用户取消、密码错误、网络中断都会走不同分支；**业务状态以服务端订单表为准**。
+
+***
+
+### 三、服务端：幂等与 notify
+
+| 环节 | 要点 |
+|------|------|
+| 预下单 | 同一 `orderId` 重复请求应返回同一 `prepay_id` 或明确拒绝 |
+| notify | 验签 → 更新订单（仅 `WAIT_PAY → PAID`）→ 返回 SUCCESS |
+| 重复 notify | 微信可能重试；更新语句带 **状态条件**，已 PAID 直接 SUCCESS |
+| 主动查单 | notify 丢失时用 `orderquery` 补偿 |
+
+```javascript
+// 伪代码：notify 处理
+async function onWechatNotify(xml) {
+  const data = verifyAndParse(xml);
+  if (data.result_code !== 'SUCCESS') return failXml();
+
+  const updated = await db.order.update(
+    { id: data.out_trade_no, status: 'WAIT_PAY' },
+    { status: 'PAID', transactionId: data.transaction_id, paidAt: new Date() }
+  );
+  // updated 为 0 也可能是已处理过，仍返回 SUCCESS
+  return successXml();
+}
+```
+
+***
+
+### 四、对账与差错
+
+* **T+1 下载对账单**，与本地 `PAID` 订单比对金额、笔数；
+* 常见差错：**notify 未到但用户已扣款** → 查单补单；**重复退款** → 退款单独立幂等；
+* 日志保留：`out_trade_no`、`transaction_id`、notify 原文（脱敏存）。
+
+***
+
+### 五、iOS 虚拟支付边界
+
+| 商品类型 | 小程序内支付 |
+|----------|--------------|
+| 实物电商 | 可用微信支付 |
+| 虚拟会员、游戏币、数字内容 | **iOS 通常禁止小程序内直接微信支付**，需走苹果 IAP 或引导到合规 H5/公众号（以平台当期规则为准） |
+
+提审前核对 **类目 + 商品描述**；文案避免出现「充值钻石」却在 iOS 走微信支付——高概率拒审。
+
+***
+
+### 六、联调清单
+
+1. 沙箱/真实商户号环境分离
+2. 0.01 元走通 notify
+3. 断网支付后查单补偿
+4. 重复点击支付按钮（前端 debounce + 后端幂等）
+5. 退款流程与对账字段一致
+
+***
+
+### 七、小结
+
+支付链路的本质是 **分布式事务**：前端只负责拉起；**状态机、幂等、验签、对账** 都在服务端。
+
+**延伸阅读**：[《小程序深入：网络请求、登录态与本地缓存》](/2026/05/25/miniprogram-network-storage-subscription/)、[《小程序性能优化与审核踩坑清单》](/2026/05/26/miniprogram-performance-audit-practice/)。
+
+---
+
+---
+url: /blog/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/index.md
+---
+# uni-app 与 Taro 选型：能力边界、踩坑与迁移建议
+一套代码多端（微信/支付宝/H5/App）很诱人，但 **编译层差异** 会在 iOS、分包、样式、API 上埋坑。本篇对比 **uni-app vs Taro** 的适用场景，并汇总 **高频踩坑**（含你旧文里 TLS/轮播类问题的升级版排查思路）。
+
+***
+
+### 一、快速对比
+
+| 维度 | uni-app | Taro |
+|------|---------|------|
+| 语法 | Vue 为主（也支持 nvue、uts） | React 为主（Vue3 支持在演进） |
+| 生态 | DCloud 插件市场、HBuilderX | 京东系、React 组件生态 |
+| 编译 | 自有编译器到各端 | 编译到各端小程序 + H5 |
+| 适合 | Vue 团队、要快出多端 MVP | React 团队、组件化强 |
+| 学习成本 | Vue 开发者低 | 需熟悉 Taro 运行时差异 |
+
+\==选型原则==：**主栈是什么就选什么**；不要为了「多端」强行换框架。
+
+***
+
+### 二、uni-app 常见坑
+
+**1. 条件编译漏写**
+
+```javascript
+// #ifdef MP-WEIXIN
+wx.requestSubscribeMessage({ tmplIds: ['xxx'] });
+// #endif
+```
+
+**2. 样式差异**：`rpx` 在 H5 与小程序表现不同；fixed 底部栏要配合 `safe-area`。
+
+**3. iOS 网络/证书**：请求域名 TLS 1.2+、证书链完整（参见旧文 uni-app 轮播 SSL 案例）——**先查 HTTPS，再查业务**。
+
+**4. 图片路径**：小程序端本地大图应走 CDN，不要假设 `static/` 路径各端一致。
+
+**5. Vue2/Vue3 项目混用文档**：确认 `manifest.json` 与依赖版本一致。
+
+***
+
+### 三、Taro 常见坑
+
+**1. 运行时与 React 版本**：Taro 3/4 对应不同 React 版本，升级要全量回归。
+
+**2. 样式**：默认 **px 转 rpx** 规则与 Design 稿要统一；第三方 UI 库需选 Taro 适配版。
+
+**3. 生命周期**：`useLoad` / `useDidShow` 与 React `useEffect` 不要混用同一份副作用。
+
+**4. 分包**：`app.config.ts` 的 `subPackages` 与页面路径大小写严格一致。
+
+***
+
+### 四、多端 API 抽象建议
+
+```javascript
+// utils/platform.js
+export const pay = (params) => {
+  // #ifdef MP-WEIXIN
+  return wxPay(params);
+  // #endif
+  // #ifdef H5
+  return h5Pay(params);
+  // #endif
+};
+```
+
+**支付、登录、分享、定位** 一律走适配层，页面不写平台 API 裸调用。
+
+***
+
+### 五、从原生小程序迁移
+
+1. 先 **单端微信** 跑通，再开 `#ifdef`
+2. 路由表与分包 **一对一映射**
+3. 原生自定义组件评估是否需重写（Web 组件不能直接搬）
+4. 性能：Taro/uni 包体积通常大于原生，关注 **主包体积**
+
+***
+
+### 六、小结
+
+uni-app 适合 **Vue 系快速多端**；Taro 适合 **React 系**。无论选谁，**条件编译 + HTTPS + 分包 + 平台 API 适配层** 是四条保命绳。旧笔记《微信+uniapp》可作案例参考；系统阅读见[《小程序导读与学习路径》](/2026/05/24/miniprogram-learning-path-index/)。
+
+---
+
+---
+url: /blog/2026/05/17/mobile-hybrid-app-architecture-schemes/index.md
+---
+# 混合 App 架构：WebView 容器、离线包与选型
+「App 里嵌 H5」听起来像过渡方案，但在 **活动、会员、支付结果、中后台移动端** 等场景仍会长期存在。问题不是 WebView 过不过时，而是 **容器怎么建、资源怎么发、和 Native 怎么分工**。
+
+本篇对比 **纯 WebView、离线包、Cordova 类壳、RN/Flutter 内嵌 H5** 几种形态，并给出 **决策树**。
+
+***
+
+### 一、典型架构分层
+
+```text
+┌─────────────────────────────────────┐
+│  Native Shell：启动、登录、Tab、推送   │
+├─────────────────────────────────────┤
+│  Container：WebView / RN WebView     │
+│  JSBridge、Cookie 同步、文件访问       │
+├─────────────────────────────────────┤
+│  H5：Vue/React 活动页、表单、报表      │
+├─────────────────────────────────────┤
+│  BFF / API                           │
+└─────────────────────────────────────┘
+```
+
+\==Shell 厚、H5 薄== 还是反过来，取决于 **谁掌握导航与登录态**。
+
+***
+
+### 二、纯在线 WebView
+
+**做法**：App 打开 `https://m.example.com/activity`。
+
+| 优点 | 缺点 |
+|------|------|
+| 发版与 Web 同步 | 首屏依赖网络 |
+| 无包体积压力 | 弱网体验差 |
+| 审核简单 | WebView 与系统浏览器行为差异 |
+
+**适用**：低频页、强运营、需 **分钟级** 改文案。
+
+**要点**
+
+* Universal Link / App Link 统一外链；
+* Cookie **`SameSite=None; Secure`** 与 **ITP**（iOS）下登录态设计；
+* 见[《JSBridge 原理与实战》](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/)接 Native 能力。
+
+***
+
+### 三、离线包 / 预置包（Hybrid 常见）
+
+**做法**：Native 启动时带 **zip 资源包**（或 CDN 差量更新），WebView 加载 `file://` 或 `https://app.local/` 映射到本地。
+
+| 优点 | 缺点 |
+|------|------|
+| 首屏快、可弱网 | 发版链路复杂 |
+| 接口仍走线上 | 包签名、回滚、灰度要做 |
+
+**发版流程（简化）**
+
+1. CI 构建 H5 → 产出 `dist.zip` + `manifest.json`（version、md5、minAppVersion）；
+2. 上传 CDN；App 启动或定时 **比对 version**；
+3. 下载 → 校验 md5 → 解压到沙箱 → 切换指针；
+4. 失败 **保留上一版**，禁止半包。
+
+```json
+{
+  "version": "20260527.1",
+  "md5": "abc...",
+  "minNativeVersion": "3.2.0",
+  "entry": "index.html"
+}
+```
+
+**坑**
+
+* `file://` 下 **CORS、路由 history** 要测；常改用 **自定义 scheme 域** 或 local HTTP server；
+* 离线包内 **不要写死 API 环境**，用 Native 注入 `window.__ENV__`。
+
+***
+
+### 四、Cordova / Capacitor 类「Web 即 App」
+
+整 App 主体是 H5，Native 插件提供相机、推送。适合 **内部工具、轻量 B 端**；C 端高性能动画、复杂手势仍吃力。
+
+与 **内嵌 WebView** 的差别：这里是 **H5 为主应用**，不是 Native Tab 里开一页。
+
+***
+
+### 五、RN / Flutter 里嵌 H5
+
+大型 App 常见 **Native 主框架 + 部分 WebView 容器**（如 RN `react-native-webview`）。
+
+| 场景 | 建议 |
+|------|------|
+| 活动页、协议页 | WebView + Bridge |
+| 核心交易链 | Native 或 RN/Flutter |
+| 复杂列表、地图 | Native 组件 |
+
+**通信**：RN 侧 `postMessage` ↔ H5 `window.ReactNativeWebView`，与 JSBridge 同一套 **id + method** 模型即可复用。
+
+***
+
+### 六、登录态三种模式
+
+| 模式 | 描述 | 风险 |
+|------|------|------|
+| **Cookie 共享** | WebView 与 Native 同域 Cookie | iOS ITP、第三方 Cookie 限制 |
+| **Header 注入** | Native 代发请求或注入 token 到 H5 | token 泄露面 |
+| **Ticket 换 Session** | H5 拿短期 ticket 调 BFF 换 session | 推荐，可控 |
+
+推荐：**BFF 统一鉴权**，H5 只持 **HttpOnly Cookie** 或 **短期 access token**；刷新由 Native 或 silent refresh 完成。
+
+***
+
+### 七、性能与体验
+
+* **预连接** `preconnect` 到 API 域；
+* 离线包 **按页分包**，避免一个 zip 全站；
+* WebView **硬件加速**、避免透明 WebView 叠太多层；
+* 动画-heavy 页 **降级 Native** 或 Lottie 限帧；
+* 移动端适配系列（viewport、safe-area、键盘）在 WebView 里 **同样生效**。
+
+***
+
+### 八、选型决策树（简版）
+
+```text
+需要 App Store 独立上架且核心体验要强？
+  ├─ 是 → Native / RN / Flutter 为主，H5 只承担运营页
+  └─ 否 → 继续
+      是否强依赖发版速度、活动频繁？
+        ├─ 是 → 在线 WebView + 好 CDN
+        └─ 否 → 是否弱网/首屏敏感？
+            ├─ 是 → 离线包 Hybrid
+            └─ 否 → 在线 WebView 即可
+```
+
+***
+
+### 九、与小程序、微前端的关系
+
+* **小程序**：运行在微信容器，不是 WebView 自由加载；能力走 `wx.*`，见小程序系列文。
+* **微前端**：解决 **Web 站内** 多团队；App 内 H5 若多团队，可用 **qiankun 等**，但要评估 **WebView 内存** 与 **JSBridge 单例**。
+
+***
+
+### 十、小结
+
+混合架构没有银弹：**运营要快 → 在线 H5**；**体验要稳 → 离线包 + Native Shell**；**核心链路 → Native**。Bridge 协议、发版回滚、登录态三件套写进平台组规范，业务页才能少踩坑。
+
+上一篇：[《H5 与 App 原生交互：JSBridge 原理与实战》](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/)。
+
+---
+
+---
+url: /blog/2026/05/18/miniprogram-cloudbase-cloud-function-debug/index.md
+---
+# 小程序云开发：云函数、本地调试与生产边界
+云开发（CloudBase）适合 **轻后端**：鉴权、CRUD、触发器，不用自建 Egg 也能上线。但 **环境隔离、权限规则、冷启动、本地调试** 若没理清，容易出现「开发能跑、上线 403」。
+
+***
+
+### 一、架构一眼
+
+```text
+小程序 wx.cloud ──► 云函数 / 云数据库 / 云存储
+                      │
+                      └── 环境 ID：dev / prod 分离
+```
+
+`wx.cloud.init({ env: 'xxx-dev' })` **不要写死 prod**；用 ext 配置或 CI 注入。
+
+***
+
+### 二、云函数最小示例
+
+```javascript
+// cloudfunctions/login/index.js
+const cloud = require('wx-server-sdk');
+cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
+
+exports.main = async (event, context) => {
+  const wxContext = cloud.getWXContext();
+  return {
+    openid: wxContext.OPENID,
+    appid: wxContext.APPID,
+  };
+};
+```
+
+小程序端：
+
+```javascript
+wx.cloud.callFunction({ name: 'login' }).then(console.log);
+```
+
+***
+
+### 三、数据库权限规则
+
+\==默认拒绝==，按集合写规则：
+
+```json
+{
+  "read": "doc._openid == auth.openid",
+  "write": "doc._openid == auth.openid"
+}
+```
+
+**管理端写全员数据** 应走 **云函数 + 管理员校验**，不要放宽客户端 write 规则。
+
+***
+
+### 四、本地调试
+
+1. 安装 **微信开发者工具** + 云开发控制台
+2. `cloud functions` 目录右键 **上传并部署**（云端安装依赖）
+3. 本地调试：工具里选 **云函数本地调试**，断点打在 `index.js`
+4. 环境变量：控制台配置 **环境变量**，不要硬编码密钥
+
+**冷启动**：合并小函数、减少依赖体积；高频接口考虑 **固定并发**（按套餐）。
+
+***
+
+### 五、与自建 BFF 混用
+
+| 场景 | 建议 |
+|------|------|
+| 简单 CRUD、用户私有数据 | 云数据库 |
+| 复杂事务、对接 ERP、支付 notify | 自建 BFF（Egg 等） |
+| 统一登录 | 云函数换 openid → BFF 换 JWT |
+
+支付 notify **必须在公网 HTTPS 服务端**，不要只放云函数而不验签。
+
+***
+
+### 六、上线 checklist
+
+* \[ ] dev/prod 环境 ID 分离
+* \[ ] 数据库规则 reviewed
+* \[ ] 云函数权限最小化
+* \[ ] 日志脱敏（openid 可留，手机号不可）
+* \[ ] 费用与调用量告警
+
+***
+
+### 七、小结
+
+云开发是 **快速 MVP 利器**，不是万能后端。复杂业务仍建议 **云函数 + 自建 BFF 分工**，支付与对账见[《小程序支付深入》](/2026/05/17/miniprogram-payment-flow-and-reconciliation/)。
+
+---
+
+---
+url: /blog/2026/05/18/mobile-h5-app-login-session-cookie-itp/index.md
+---
+# App 内 H5 登录态实战：Cookie、ITP 与 Ticket 换 Session
+App 内 WebView 打开 H5 时，**登录态怎么同步** 是第一天就要定的事。Cookie 共享、Header 注入、Ticket 换 Session 三种模式各有坑——尤其 **iOS ITP** 会让「看起来对的 Cookie 方案」 silently 失效。
+
+***
+
+### 一、三种模式对比
+
+| 模式 | 做法 | 优点 | 风险 |
+|------|------|------|------|
+| **Cookie 共享** | WebView 与 Native 同域 Cookie | H5 无感 | ITP、第三方 Cookie 限制 |
+| **Header 注入** | Native 代发请求或 JSBridge 带 token | 可控 | token 泄露面 |
+| **Ticket 换 Session** | H5 拿短期 ticket 调 BFF 换 HttpOnly Cookie | **推荐** | 多一次跳转 |
+
+\==推荐==：**Ticket 换 Session + HttpOnly Cookie**；H5 不长期持有 refresh token。
+
+***
+
+### 二、Ticket 换 Session 时序
+
+```text
+1. 用户 App 已登录（Native 持 refresh）
+2. Native 打开 WebView： https://m.example.com/entry?ticket=ONE_TIME_xxx
+3. H5 entry 页 POST /auth/exchange { ticket }
+4. BFF Set-Cookie: session=...; HttpOnly; Secure; SameSite=None
+5. 302 到业务页（URL 去掉 ticket）
+6. 后续 H5 请求自动带 Cookie
+```
+
+**ticket 特性**：一次性、60s 过期、绑定 openid/userId。
+
+***
+
+### 三、BFF 示例（Set-Cookie）
+
+```javascript
+// POST /auth/exchange
+async function exchange(ctx) {
+  const { ticket } = ctx.request.body;
+  const userId = await redis.getdel(`ticket:${ticket}`);
+  if (!userId) ctx.throw(401, 'invalid ticket');
+
+  const sessionId = await createSession(userId);
+  ctx.set('Set-Cookie', [
+    `sid=${sessionId}; Path=/; HttpOnly; Secure; SameSite=None; Max-Age=86400`,
+  ]);
+  ctx.body = { ok: true };
+}
+```
+
+`SameSite=None` **必须** 配 `Secure`；WebView 加载 HTTPS 页面。
+
+***
+
+### 四、iOS ITP 要点
+
+* **跨站 Cookie** 在 WebView 里受限；尽量 **H5 与 API 同站**（如 `m.example.com` + `m.example.com/api`）
+* 避免 iframe 嵌第三方登录
+* 若 Cookie 仍丢失：改 **首屏同域 fetch + credentials: 'include'** 验证，不要假设 `document.cookie` 可见（HttpOnly 本就不该可见）
+
+***
+
+### 五、Android 差异
+
+* CookieManager 与 WebView 实例要 **同一套**
+* 清除缓存时 Cookie 可能被清——Native 侧监听登录态变化，必要时 **重新发 ticket**
+
+***
+
+### 六、与 JSBridge 配合
+
+Native 登录成功后：
+
+```javascript
+Bridge.openWebView({
+  url: `https://m.example.com/entry?ticket=${encodeURIComponent(ticket)}`,
+});
+```
+
+H5 **不要** 把 ticket 存 localStorage；换完 session 立即 `history.replaceState` 清 URL 参数。
+
+***
+
+### 七、小结
+
+App 内 H5 登录优先 **短期 ticket + HttpOnly session**；少把长期 token 暴露给 JavaScript。Bridge 协议见[《JSBridge 原理与实战》](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/)；架构选型见[《混合 App 架构》](/2026/05/17/mobile-hybrid-app-architecture-schemes/)。
+
+---
+
+---
+url: /blog/2026/05/18/mobile-h5-offline-package-release-rollback/index.md
+---
+# H5 离线包发版实战：manifest、灰度、校验与回滚
+离线包让 H5 **首屏不依赖实时网络**，但发版链路比纯 CDN 多一层：**版本 manifest、差量更新、签名校验、灰度与回滚**。本篇给一套可落地的目录约定与流程。
+
+***
+
+### 一、产物结构
+
+```text
+dist/
+  index.html
+  assets/
+manifest.json
+dist.zip
+```
+
+```json
+{
+  "version": "20260604.3",
+  "minNativeVersion": "3.2.0",
+  "md5": "a1b2c3...",
+  "entry": "index.html",
+  "force": false,
+  "gray": { "percent": 10, "whitelist": ["tester001"] }
+}
+```
+
+***
+
+### 二、Native 更新流程
+
+```text
+App 启动
+  → GET https://cdn.example.com/h5/manifest.json
+  → 比较 version / minNativeVersion
+  → 下载 zip（或 bsdiff 差包）
+  → 校验 md5
+  → 解压到 sandbox/h5/{version}/
+  → 原子切换 current 指针
+  → WebView 加载 file:// 或 https://app.local/index.html
+```
+
+**原子切换**：新包解压完毕后再改 `current` 软链/配置文件，避免半包。
+
+***
+
+### 三、灰度策略
+
+| 策略 | 实现 |
+|------|------|
+| 百分比 | `hash(userId) % 100 < gray.percent` |
+| 白名单 | 测试账号强制新版本 |
+| 强更 | `force: true` 且版本低于 manifest 则阻断旧包 |
+
+服务端可在 manifest 接口按 **App 版本 + 用户 ID** 返回不同 JSON。
+
+***
+
+### 四、回滚
+
+1. CDN 上保留 **最近 N 个 version 的 zip**
+2. manifest 的 `version` 指回上一稳定版（或下发 `rollbackTo` 字段）
+3. Native 检测到本地已有该 version 缓存则 **跳过下载**
+4. 线上事故：**先回滚 manifest，再查因**
+
+***
+
+### 五、H5 侧注意
+
+* `import.meta.env` / API 基址由 Native 注入 `window.__ENV__`，不要写死在包内
+* 路由 history 模式要配合 **local server 或 hash 模式**
+* 离线包内资源引用用 **相对路径** 或注入的 `publicPath`
+
+***
+
+### 六、CI 集成
+
+```bash
+pnpm build
+node scripts/hash-dist.mjs > manifest.json
+zip -r dist.zip dist manifest.json
+aws s3 cp dist.zip s3://bucket/h5/20260604.3/dist.zip
+aws s3 cp manifest.json s3://bucket/h5/manifest.json
+```
+
+构建机产出 **md5 与版本号**，避免人工改错。
+
+***
+
+### 七、小结
+
+离线包发版 = **manifest 为单一真相源 + 校验 + 原子切换 + 可回滚 CDN**。与[《混合 App 架构》](/2026/05/17/mobile-hybrid-app-architecture-schemes/)《JSBridge》组成 App 内 H5 三板斧。
+
+---
+
+---
+url: /blog/2026/05/18/mobile-webview-ios-android-debug-guide/index.md
+---
+# iOS 与 Android WebView 排障手册：差异、工具与常见白屏
+同一套 H5 在 **Safari WebView** 与 **Android System WebView** 上表现不一致是常态。本篇按 **调试工具 → 平台差异表 → 白屏/卡顿/键盘/Cookie** 给排障路径。
+
+***
+
+### 一、调试工具
+
+| 平台 | 工具 |
+|------|------|
+| Android | Chrome `chrome://inspect` → Remote devices |
+| iOS 模拟器 | Safari → 开发 → Simulator |
+| iOS 真机 | 设置 → Safari → 高级 → Web 检查器 + Mac Safari |
+| 通用 | vConsole / Eruda（仅内测包） |
+
+生产包尽量 **远程日志 + 截图上报**，不要依赖 vConsole。
+
+***
+
+### 二、高频差异表
+
+| 现象 | iOS | Android |
+|------|-----|---------|
+| 软键盘顶起布局 | visualViewport 必看 | 部分机型 `resize` 行为不同 |
+| fixed 底栏 | 键盘弹出易错位 | 相对少 |
+| 日期 input | 原生 picker | 各厂商 WebView 不一 |
+| 滚动穿透 | 橡皮筋 | overscroll 行为不同 |
+| Cookie 第三方 | ITP 更严 | 相对宽松 |
+| 视频自动播放 | 常需 muted + playsinline | 策略各异 |
+| ES 新特性 | 随系统 WebKit | 随 Chrome 内核版本 |
+
+***
+
+### 三、白屏排查顺序
+
+1. **URL 是否加载成功**（Native 监听 `onReceivedError`）
+2. **Mixed Content**（HTTPS 页请求 HTTP 资源）
+3. **JS 语法错误**（旧 WebView 不支持可选链等——看 minify target）
+4. **CSP 拦截**（见[《XSS/CSP》](/2026/05/22/frontend-security-xss-csp-iframe-sandbox/)篇）
+5. **离线包半包 / 路径错误**
+6. **localStorage 满**（少见但存在）
+
+Native 侧打开 `WebView.setWebContentsDebuggingEnabled(true)`（Android）便于第一时间看 Console。
+
+***
+
+### 四、键盘与输入框
+
+* 使用 **VisualViewport API** 调整底部输入区（见[《软键盘与 VisualViewport》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)）
+* `input` 聚焦时避免整页 `position: fixed` 大改 layout
+* iOS 上 `font-size < 16px` 可能 **自动 zoom**——表单建议 ≥16px
+
+***
+
+### 五、Cookie / 登录态
+
+* 换 Session 后 **用接口探活**，不要只测 `document.cookie`
+* Android 多 WebView 实例时确认 **CookieManager.flush()**
+* 详见[《App 内 H5 登录态实战》](/2026/05/18/mobile-h5-app-login-session-cookie-itp/)
+
+***
+
+### 六、性能
+
+* 避免多层 **透明 WebView 叠放**
+* 长列表用虚拟滚动；离线包控制 **单页 JS 体积**
+* 动画优先 CSS transform；减少主线程 Long Task
+
+***
+
+### 七、小结
+
+WebView 排障 = **远程调试 + 平台差异表 + 分层排除（网络 → CSP → JS → 包）**。与移动端 CSS 系列、JSBridge 系列配合使用。
+
+---
+
+---
+url: /blog/2026/05/19/ai-assisted-testing-vitest-playwright/index.md
+---
+# AI 辅助写测试：Vitest、MSW 与 Playwright 的边界
+AI 写测试 **快但不准**——边界条件、异步时序、mock 范围常错。正确姿势是：**人定验收清单，AI 出草稿，CI 裁决**。本篇给 **单测 / 集成 / E2E** 三类提示模板与审查要点。
+
+***
+
+### 一、三层别混
+
+| 层 | 工具 | AI 适合生成 |
+|----|------|-------------|
+| 单元 | Vitest | 纯函数、util、store action |
+| 集成 | Vitest + MSW | API 层、composable |
+| E2E | Playwright | 关键路径 smoke（需人工审 selector） |
+
+不要叫 AI 「写一个测一切的文件」。
+
+***
+
+### 二、Vitest 提示模板
+
+```text
+目标：为 src/utils/formatMoney.ts 写 Vitest 单测
+范围：只新建 tests/formatMoney.test.ts
+用例必须包含：0、负数、NaN、超大数、非数字字符串
+禁止：改 src/ 下实现，除非测试暴露明确 bug 并说明
+验收：pnpm test formatMoney 全绿
+```
+
+**审查清单**
+
+* \[ ] 是否 **假阳性**（没 assert 行为）
+* \[ ] mock 是否 **过宽**（mock 了整个 axios）
+* \[ ] 异步是否 `await` / `flushPromises`
+
+***
+
+### 三、MSW + 组件
+
+```text
+为 OrderList.vue 写测试：MSW mock GET /api/orders
+覆盖：空列表、loading、错误 toast、分页下一页
+使用 @vue/test-utils，不要 snapshot 整页
+```
+
+AI 常错：**没 reset handlers** → 加 `afterEach(() => server.resetHandlers())`。
+
+***
+
+### 四、Playwright 提示
+
+```text
+写 e2e/login.spec.ts：登录成功进入 /dashboard
+用 data-testid，不要脆弱 CSS
+不要 hardcode 真实密码，用 process.env.E2E_USER
+```
+
+**必须人审**：selector 是否稳定、是否测了 **关键断言** 而非只 `toHaveURL`。
+
+***
+
+### 五、AI 在 CI 里的位置
+
+```yaml
+- run: pnpm test
+- run: pnpm exec playwright test --grep @smoke
+```
+
+可选 job：`claude -p "fix failing tests from attached log"` **仅在测试 job 失败后** 触发，且 PR 需人 merge。
+
+***
+
+### 六、反模式
+
+* 让 AI **删失败测试** 换绿
+* 无断言的 `expect(true).toBe(true)`
+* E2E 测 **第三方** 不可控页面
+* 把 AI 生成的 mock 当 **API 契约**
+
+***
+
+### 七、小结
+
+AI 是 **测试草稿机**；**测什么、测多深** 是人定的。细节见[《Vitest + Vue Test Utils 从 0 到 1》](/2026/05/21/vitest-vue-test-utils-zero-to-one/)[《测试策略：单测、集成与 E2E》](/2026/05/22/frontend-testing-strategy-unit-integration-e2e/)。
+
+---
+
+---
+url: /blog/2026/05/19/ai-coding-tools-cursor-claude-copilot-comparison/index.md
+---
+# Cursor、Claude Code 与 Copilot：怎么分工、怎么叠用
+AI 编程工具越来越多，**不是选一个弃其他**，而是 **按任务形态分工**。本篇基于日常工程流，对比 **Cursor、Claude Code、GitHub Copilot** 的强项与叠用方式。
+
+***
+
+### 一、一张表先对齐
+
+| 维度 | Cursor | Claude Code | GitHub Copilot |
+|------|--------|-------------|----------------|
+| 主场景 | IDE 里边写边改 | 终端/Agent 长任务 | 补全 + 轻量 Chat |
+| 上下文 | 仓库索引、选中代码 | 全仓库 + 命令 | 当前文件/邻近文件 |
+| 多文件 | Agent 模式强 | 原生强项 | 相对弱 |
+| 终端 | 集成 | 原生 | 视 IDE 插件 |
+| MCP/扩展 | 支持 | 支持 | 生态偏 Copilot Chat |
+| 适合任务 | 小步迭代、UI 微调 | 迁移、批量测试、大 refactor | 行级补全、写样板 |
+
+***
+
+### 二、推荐分工（个人/小团队）
+
+**Cursor**：日常开发主力——改组件、写 hook、调样式、解释报错。
+
+**Claude Code**：**大颗粒任务**——「给 User 模块补测试到 80%」「把 axios 调用迁到 api/ 层」「按 RFC 拆 PR」。
+
+**Copilot**：在 **VS Code/JetBrains 非 Cursor 环境** 或 **只想要补全** 时开着；Chat 作备用。
+
+***
+
+### 三、叠用示例
+
+**上午（Cursor）**
+
+* 写业务页面，Tab 补全 + 小范围 Agent 改 2～3 文件
+* Rules 约束栈与目录
+
+**下午（Claude Code）**
+
+```text
+读 CLAUDE.md → 跑 pnpm test 看失败列表 → 逐个修到绿 → 不要改 package.json
+```
+
+**Review（人 + 任意工具）**
+
+* 重点看 **权限、并发、边界**；AI 不背锅
+
+***
+
+### 四、不要叠用的坑
+
+* 三个工具 **同时改同一分支** 无 commit → 冲突地狱
+* 应用 **同一套 Rules/CLAUDE.md**，否则输出风格分裂
+* Secrets 不要进任一工具的云端上下文
+
+***
+
+### 五、选型决策树
+
+```text
+主要是行级补全？
+  └─ Copilot 即可
+
+要 Agent 改仓库 + IDE 体验？
+  └─ Cursor
+
+要长时间终端任务 / 脚本化 / 大迁移？
+  └─ Claude Code
+
+团队已标准化 GitHub + VS Code？
+  └─ Copilot Enterprise + 可选 Claude Code 跑 CI 修复 job
+```
+
+***
+
+### 六、和「程序员何去何从」的关系
+
+工具变，**验收标准不变**：测试、lint、Code Review、线上责任。见[《AI 背景下，程序员何去何从》](/2026/05/23/ai-era-programmer-career-outlook/)。
+
+***
+
+### 七、延伸阅读
+
+* [《Claude Code 从 0 到 1》](/2026/05/21/claude-code-zero-to-one-tutorial/)
+* [《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)
+* [《AI 辅助写测试：Vitest 与 Playwright》](/2026/05/19/ai-assisted-testing-vitest-playwright/)
+
+---
+
+---
+url: /blog/2026/05/19/claude-code-advanced-mcp-rules-ci/index.md
+---
+[《Claude Code 从 0 到 1》](/2026/05/21/claude-code-zero-to-one-tutorial/)解决「能用」；进阶要解决 **和团队仓库、外部系统、CI 怎么闭环**。本篇串 **MCP 接事实源 → Rules 定边界 → CI 当验收闸** 的完整流水线。
+
+***
+
+### 一、目标架构
+
+```text
+Claude Code
+  ├── CLAUDE.md（硬规则）
+  ├── MCP Servers（数据库/文档/工单/监控）
+  └── 终端命令 = 与 CI 相同的 pnpm check
+         │
+         ▼
+    GitHub Actions（同一套 check）
+```
+
+**单一真相源**：Rules 里写的命令 = `package.json` = CI yaml。
+
+***
+
+### 二、MCP 接入示例
+
+`.cursor/mcp.json` 或 Claude Code 对应配置（路径以产品文档为准）：
+
+```json
+{
+  "mcpServers": {
+    "postgres-readonly": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://readonly@..."]
+    }
+  }
+}
+```
+
+**原则**
+
+* 生产库只读；写操作走 **迁移 PR**
+* MCP 返回的是 **事实**；模型总结是第二层
+* 密钥不进仓库，走环境变量
+
+详见[《MCP 配置与安全》](/2026/02/18/mcp-config-and-security/)。
+
+***
+
+### 三、CLAUDE.md 进阶片段
+
+```markdown
+## 验收（与 CI 一致）
+合并前必须绿：pnpm lint && pnpm typecheck && pnpm test
+
+## MCP
+- 查表结构用 postgres-readonly，不要猜字段
+- 不要执行 DROP/DELETE 除非我明确说「迁移 PR」
+
+## 禁止
+- 不要改 .github/workflows 除非任务标题含 ci:
+```
+
+***
+
+### 四、典型工作流
+
+**1. 修 bug**
+
+```text
+用 MCP 查 orders 表结构 → 读 src/orders → 写复现测试 → 修代码 → pnpm test orders
+```
+
+**2. 小功能**
+
+```text
+先列 plan → 我确认 → 分 2 个 commit → 每个 commit 后 pnpm check
+```
+
+**3. 对接外部 API**
+
+```text
+MCP 拉 OpenAPI / 内部 wiki → 生成 client → 不要手写 URL 字符串散落
+```
+
+***
+
+### 五、CI 联动
+
+```yaml
+# .github/workflows/check.yml  excerpt
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+```
+
+Claude Code 会话里 **最后一句话固定**：「跑 pnpm check，贴失败日志，修到绿为止。」
+
+可选：PR 模板要求 **AI 辅助说明**（改了啥、测了啥）。
+
+***
+
+### 六、团队治理
+
+* MCP 与 Rules 变更 **走 Code Review**
+* 定期删 Rules 里过时的栈描述
+* 敏感目录 `.claudeignore`：`.env*`、`secrets/`
+
+***
+
+### 七、小结
+
+进阶用法 = **MCP 供事实 + Rules 供边界 + CI 供信任**。入门见[《Claude Code 从 0 到 1》](/2026/05/21/claude-code-zero-to-one-tutorial/)；工具对比见[《Cursor / Claude Code / Copilot 怎么分工》](/2026/05/19/ai-coding-tools-cursor-claude-copilot-comparison/)。
+
+---
+
+---
+url: /blog/2026/05/19/vue3-pinia-state-design-patterns/index.md
+---
+# Vue 3 + Pinia：状态设计、持久化与路由守卫配合
+Pinia 是 Vue 3 官方推荐的状态库：**无 mutations、TS 友好、可按 store 拆模块**。本篇讲 **怎么拆 store、何时持久化、如何与路由守卫/权限** 配合，避免「一个大 store 装天下」。
+
+***
+
+### 一、按领域拆 store
+
+```text
+stores/
+  user.ts      # 登录态、profile
+  permission.ts # 路由权限、按钮码
+  app.ts       # 侧栏折叠、主题、locale
+  order.ts     # 业务域（按需）
+```
+
+\==原则==：**跨页共享且非服务端真相** 的放 Pinia；服务端真相 **仍以 API 为准**，store 是缓存。
+
+***
+
+### 二、Setup Store 示例
+
+```typescript
+// stores/user.ts
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
+import { loginApi, fetchProfile } from '@/api/auth';
+
+export const useUserStore = defineStore('user', () => {
+  const token = ref<string | null>(null);
+  const profile = ref<{ name: string; roles: string[] } | null>(null);
+
+  const isLoggedIn = computed(() => !!token.value);
+
+  async function login(payload: { username: string; password: string }) {
+    const { accessToken } = await loginApi(payload);
+    token.value = accessToken;
+    await loadProfile();
+  }
+
+  async function loadProfile() {
+    profile.value = await fetchProfile();
+  }
+
+  function logout() {
+    token.value = null;
+    profile.value = null;
+  }
+
+  return { token, profile, isLoggedIn, login, loadProfile, logout };
+});
+```
+
+***
+
+### 三、持久化
+
+```typescript
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+
+// 只持久化 token 等必要字段，不要持久化大列表
+persist: {
+  pick: ['token'],
+}
+```
+
+**敏感 token**：更推荐 **HttpOnly Cookie**（BFF 场景）；若必须 localStorage，配合 **短过期 + 刷新**。
+
+***
+
+### 四、与路由守卫
+
+```typescript
+router.beforeEach(async (to) => {
+  const user = useUserStore();
+  if (to.meta.requiresAuth && !user.isLoggedIn) return '/login';
+  if (to.meta.roles && !to.meta.roles.some((r) => user.profile?.roles.includes(r))) {
+    return '/403';
+  }
+});
+```
+
+权限码与 **RBAC 后台** 对齐，见[《Vue Router 4 权限路由》](/2026/05/20/vue-router4-permission-dynamic-menu/)与 RBAC 系列。
+
+***
+
+### 五、反模式
+
+* 在 store 里 **直接操作 DOM**
+* 把 **分页列表全量** 常驻内存不清理
+* 组件里 `watch` store 再发重复请求——用 **action 内聚** 或 `pinia colada`/请求层去重
+
+***
+
+### 六、小结
+
+Pinia = **领域 store + setup 语法 +  selective persist + 守卫联动**。项目结构见[《Vue + Vite 项目目录约定》](/2022/05/09/vue-vite-project-structure/)。
+
+---
+
+---
+url: /blog/2026/05/20/typescript-frontend-project-setup-strict/index.md
+---
+# TypeScript 中后台项目：tsconfig、严格模式与路径别名
+TypeScript 的价值在 **编译期拦住接口漂移**，不是堆 `any`。本篇给 Vue + Vite 中后台项目的 **tsconfig 分层、strict 取舍、paths 与 CI typecheck**。
+
+***
+
+### 一、推荐 tsconfig 分层
+
+```text
+tsconfig.json          # references 入口
+tsconfig.app.json      # 前端 src
+tsconfig.node.json     # vite.config.ts
+tsconfig.vitest.json   # 测试（可选）
+```
+
+```json
+// tsconfig.app.json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "preserve",
+    "paths": { "@/*": ["./src/*"] },
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
+```
+
+***
+
+### 二、strict 子项怎么选
+
+| 选项 | 建议 |
+|------|------|
+| `strict` | 新项目全开 |
+| `noUncheckedIndexedAccess` | 开，数组/Record 访问更安全 |
+| `exactOptionalPropertyTypes` | 大项目可暂缓 |
+| `skipLibCheck` | `true` 加速 CI |
+
+老项目迁移：`strict` 分模块开，**新目录先 strict**。
+
+***
+
+### 三、与 Vite 对齐
+
+`vite.config.ts` alias 与 `paths` **必须一致**（见[《Vue + Vite 项目结构》](/2022/05/09/vue-vite-project-structure/)）。
+
+`vue-tsc --noEmit` 作为 CI 一步：
+
+```json
+"scripts": {
+  "typecheck": "vue-tsc --noEmit -p tsconfig.app.json"
+}
+```
+
+***
+
+### 四、环境变量类型
+
+```typescript
+// env.d.ts
+interface ImportMetaEnv {
+  readonly VITE_API_BASE: string;
+}
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
+```
+
+***
+
+### 五、常见坑
+
+* `.vue` 未纳入 include → 模板类型不检
+* 双 package.json types 冲突 → 锁 `@types/node` 版本
+* API 响应用 `any` → 用 **生成类型或 zod 校验**
+
+***
+
+### 六、小结
+
+TS 工程化 = **分层 tsconfig + strict + vue-tsc CI**。进阶见[《泛型与工具类型》](/2026/05/21/typescript-generics-utility-types-practice/)[《Vue + TS 组件类型》](/2026/05/21/vue-typescript-props-emit-component-types/)。
+
+---
+
+---
+url: /blog/2026/05/20/vue-router4-permission-dynamic-menu/index.md
+---
+# Vue Router 4：动态路由、权限菜单与微前端 base
+中后台常见需求：**登录后按权限生成菜单和路由**。Vue Router 4 用 **动态 addRoute + meta** 即可实现；微前端场景还要对齐 **base / activeRule**。本篇给可落地模式。
+
+***
+
+### 一、静态 + 动态路由分离
+
+```typescript
+// router/routes.static.ts
+export const staticRoutes = [
+  { path: '/login', component: () => import('@/views/Login.vue') },
+  { path: '/403', component: () => import('@/views/Forbidden.vue') },
+];
+
+// router/routes.async.ts —— 可由后端菜单 JSON 转换
+export function buildAsyncRoutes(menu: MenuDto[]): RouteRecordRaw[] {
+  return menu.map((m) => ({
+    path: m.path,
+    name: m.name,
+    component: () => import(`@/views/${m.component}.vue`),
+    meta: { title: m.title, roles: m.roles, inSidebar: true },
+    children: m.children ? buildAsyncRoutes(m.children) : undefined,
+  }));
+}
+```
+
+***
+
+### 二、登录后注入路由
+
+```typescript
+let dynamicAdded = false;
+
+router.beforeEach(async (to, from, next) => {
+  const user = useUserStore();
+  if (!user.isLoggedIn && to.path !== '/login') return next('/login');
+
+  if (user.isLoggedIn && !dynamicAdded) {
+    const menu = await fetchMenu();
+    const routes = buildAsyncRoutes(menu);
+    routes.forEach((r) => router.addRoute(r));
+    dynamicAdded = true;
+    return next({ ...to, replace: true });
+  }
+  next();
+});
+```
+
+**logout** 时：`router.removeRoute(name)` 或 **整页 reload** 清动态路由（简单可靠）。
+
+***
+
+### 三、按钮级权限
+
+```typescript
+// directives/permission.ts
+app.directive('permission', {
+  mounted(el, binding) {
+    const codes = usePermissionStore().codes;
+    if (!codes.includes(binding.value)) el.remove();
+  },
+});
+```
+
+```vue
+<el-button v-permission="'order:export'">导出</el-button>
+```
+
+***
+
+### 四、微前端 base
+
+子应用：
+
+```typescript
+createWebHistory(window.__POWERED_BY_QIANKUN__ ? '/app-order/' : '/');
+```
+
+主应用 **activeRule** 与 **router base、Vite base** 三处字符串一致（见 qiankun 详版文）。
+
+***
+
+### 五、路由即菜单
+
+侧栏递归 `router.getRoutes()` 过滤 `meta.inSidebar`，与[《OA 模板 Monorepo 架构》](/2026/05/15/oa-template-monorepo-frontend-architecture/)思路一致——**单一真相源**。
+
+***
+
+### 六、小结
+
+动态路由 = **静态骨架 + addRoute + meta.roles + 退出清理**。Pinia 见前一篇；后台模型见 RBAC 系列。
+
+---
+
+---
+url: /blog/2026/05/20/vue2-to-vue3-migration-checklist/index.md
+---
+# Vue 2 迁 Vue 3：渐进式清单与常见 Breaking 对照
+Vue 2 EOL 后，存量项目迁移是 **渐进过程**，不是一夜重写。本篇给 **分阶段 checklist** 与 **高频 Breaking 对照表**，适合 Options API 老项目。
+
+***
+
+### 一、阶段规划
+
+| 阶段 | 动作 | 风险 |
+|------|------|------|
+| 1 | 升 Vue 2.7 + `@vue/composition-api` 试水 | 低 |
+| 2 | 换构建链 vue-cli → Vite | 中 |
+| 3 | `@vue/compat` 跑 Vue 3 兼容模式 | 中 |
+| 4 | 去 compat，Composition API 新代码 | 中 |
+| 5 | 删 Vue 2 依赖、全量回归 | 高 |
+
+\==策略==：**新功能用 Vue 3 写法；老模块触达时再改**。
+
+***
+
+### 二、Breaking 对照（精选）
+
+| Vue 2 | Vue 3 |
+|-------|-------|
+| `new Vue()` | `createApp()` |
+| `Vue.prototype.$x` | `app.config.globalProperties` |
+| `filters` | 方法 / computed |
+| `$listeners` | 合并进 `$attrs` |
+| `v-model` 组件默认 `value` + `input` | `modelValue` + `update:modelValue` |
+| 事件 API `$on/$off` | 用 mitt / pinia |
+| `$children` | ref / provide |
+
+***
+
+### 三、UI 库
+
+* Element UI → **Element Plus**
+* Vuetify 2 → 3 大改
+* 先查 **组件库迁移指南**，再动业务代码
+
+***
+
+### 四、Vuex → Pinia
+
+按模块逐个迁；`mapState` 改 `storeToRefs`。见[《Pinia 状态设计》](/2026/05/19/vue3-pinia-state-design-patterns/)。
+
+***
+
+### 五、测试与类型
+
+* `@vue/test-utils` v2
+* 逐步加 `lang="ts"`；不必一次全 TS
+
+***
+
+### 六、回归清单
+
+* \[ ] 路由守卫与动态路由
+* \[ ] 全局组件/指令
+* \[ ] 第三方图表、富文本
+* \[ ] 微前端生命周期（若子应用）
+* \[ ] E2E 核心路径
+
+***
+
+### 七、小结
+
+迁移靠 **compat + 分模块 + UI 库官方指南**。Vue2 源码笔记仍可作原理阅读，见[《Vue 学习路径导读》](/2026/05/24/vue-learning-path-index/)。
+
+---
+
+---
+url: /blog/2026/05/20/vue3-composables-design-patterns-deep/index.md
+---
+# Vue 3 Composables 设计模式：复用、边界与测试
+`useXxx` 是 Vue 3 组合式 API 的核心复用单元。写得好的 composable **像小型服务**；写得坏的会变成 **隐式全局状态泥球**。本篇在[《组合式 API 常用写法》](/2022/04/20/vue3-composition-api-patterns/)基础上加深 **命名、参数、副作用、测试**。
+
+***
+
+### 一、何时抽 composable
+
+| 适合 | 不适合 |
+|------|--------|
+| 2+ 组件重复的逻辑 | 只用一次的 5 行代码 |
+| 有明确输入输出 | 强绑定某页面 DOM 结构 |
+| 可单测的纯逻辑 | 到处读写 unrelated store |
+
+***
+
+### 二、标准结构
+
+```typescript
+// composables/usePagination.ts
+import { ref, computed } from 'vue';
+
+export function usePagination(fetchPage: (page: number, size: number) => Promise<{ total: number; list: unknown[] }>) {
+  const page = ref(1);
+  const pageSize = ref(20);
+  const total = ref(0);
+  const list = ref<unknown[]>([]);
+  const loading = ref(false);
+
+  const totalPages = computed(() => Math.ceil(total.value / pageSize.value) || 1);
+
+  async function load() {
+    loading.value = true;
+    try {
+      const res = await fetchPage(page.value, pageSize.value);
+      list.value = res.list;
+      total.value = res.total;
+    } finally {
+      loading.value = false;
+    }
+  }
+
+  async function go(p: number) {
+    page.value = p;
+    await load();
+  }
+
+  return { page, pageSize, total, list, loading, totalPages, load, go };
+}
+```
+
+**约定**：返回值用对象；异步错误 **要么 throw 要么返回 Result**，组件内统一 toast。
+
+***
+
+### 三、依赖注入式 composable
+
+```typescript
+// composables/useAuth.ts
+import { inject, provide, type InjectionKey } from 'vue';
+
+const AuthKey: InjectionKey<ReturnType<typeof createAuth>> = Symbol('auth');
+
+export function provideAuth() {
+  const auth = createAuth();
+  provide(AuthKey, auth);
+  return auth;
+}
+
+export function useAuth() {
+  const auth = inject(AuthKey);
+  if (!auth) throw new Error('useAuth() without provider');
+  return auth;
+}
+```
+
+适合 **Storybook / 测试替换 mock**。
+
+***
+
+### 四、副作用与清理
+
+```typescript
+import { onScopeDispose } from 'vue';
+
+export function useEventListener(target: EventTarget, event: string, handler: EventListener) {
+  target.addEventListener(event, handler);
+  onScopeDispose(() => target.removeEventListener(event, handler));
+}
+```
+
+凡 **定时器、订阅、DOM 监听** 必须 onScopeDispose。
+
+***
+
+### 五、测试
+
+```typescript
+import { usePagination } from './usePagination';
+import { flushPromises } from '@vue/test-utils';
+
+it('loads page 1', async () => {
+  const fetchPage = vi.fn().mockResolvedValue({ total: 1, list: [{ id: 1 }] });
+  const { load, list } = usePagination(fetchPage);
+  await load();
+  expect(list.value).toHaveLength(1);
+});
+```
+
+Composable **不 mount 组件也能测**——这是相对 mixin 的优势。
+
+***
+
+### 六、小结
+
+Composable = **单一职责 + 显式依赖 + 清理副作用 + 可单测**。与 Pinia 分工：跨页持久态 Pinia，页面内复用 composable。
+
+---
+
+---
+url: /blog/2026/05/21/claude-code-zero-to-one-tutorial/index.md
+---
+**Claude Code** 是 Anthropic 推出的终端/IDE 编程 Agent：能读仓库、改多文件、跑命令、按任务拆步执行。它和「网页聊天写代码」最大的差别是：**默认拥有项目上下文与工具权限**——你要学会的是 **怎么给边界、怎么验收**，而不是把它当搜索引擎。
+
+本篇按 **安装 → 首次跑通 → 日常工作流 → 进阶配置 → 常见坑** 的顺序，带你从 0 到能稳定用在真实仓库里。
+
+***
+
+### 一、它是什么、和 Cursor 怎么选
+
+| 维度 | Claude Code | Cursor（Agent 模式） |
+|------|-------------|----------------------|
+| 运行形态 | 终端 CLI + 可选 IDE 插件 | 以 IDE 为主 |
+| 模型 | Claude 系列（Sonnet / Opus 等） | 多模型可选 |
+| 强项 | 长任务、多文件 refactor、脚本化流水线 | 编辑体验、内联补全、可视化 diff |
+| 适合 | 喜欢终端、CI/脚本集成、大改动 | 日常编码、小步迭代 |
+
+**不是二选一**：很多团队 **Cursor 写小改、Claude Code 跑大任务**（迁移、批量重命名、补测试）。下文假设你已有 Node 18+ 环境。
+
+***
+
+### 二、安装与首次启动
+
+**1. 安装 CLI**
+
+```bash
+# 官方推荐：npm 全局安装（版本以官网为准）
+npm install -g @anthropic-ai/claude-code
+
+# 验证
+claude --version
+```
+
+**2. 登录 / API Key**
+
+首次运行 `claude` 会引导 OAuth 或粘贴 API Key（视你账号类型而定）。企业环境常见做法：
+
+* 用 **组织分配的 Key**，不要写进仓库；
+* 在 shell 配置里 export，或走 **密钥管理器**。
+
+**3. 在项目根目录启动**
+
+```bash
+cd your-project
+claude
+```
+
+进入交互后，可以用自然语言描述任务，例如：
+
+> 读一下 `package.json` 和 `src/router`，列出所有路由及其懒加载方式，不要改文件。
+
+**原则**：第一轮先 **只读探索**，确认它理解目录再开写。
+
+***
+
+### 三、核心概念（5 分钟建立心智模型）
+
+1. \==工作区==：当前目录及子目录；通过 `.gitignore` 与 ignore 规则决定哪些文件不可见。
+2. **工具调用**：读文件、搜索、编辑、执行终端命令——每次调用你通常需要 **确认或放行**（视设置而定）。
+3. **Plan / Act**：复杂任务会先列计划再动手；你可以在中途 **打断、修正方向**。
+4. **上下文窗口**：超大仓库要 **指定路径**，否则检索会漏模块。
+
+和[《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)同理：把 **栈、测试命令、禁止目录** 写进项目说明，Claude Code 也会稳定很多。
+
+***
+
+### 四、推荐工作流（可复用的四步）
+
+**Step 1 — 写清任务边界**
+
+好的提示包含：**目标、范围、验收、禁止项**。
+
+```text
+目标：给 UserService 补单元测试，覆盖率到 80%+
+范围：只改 tests/ 和 src/services/user.ts，不动 API 层
+验收：pnpm test user 全绿；pnpm lint 无新增 error
+禁止：不要改 package.json 依赖版本
+```
+
+**Step 2 — 让它先读再改**
+
+```text
+先阅读 src/services/user.ts 和现有 tests/user.test.ts，
+列出缺失的分支，等我确认后再写测试。
+```
+
+**Step 3 — 小步提交**
+
+每完成一个子目标就 **git commit**（或至少 `git diff` 审一遍）。Agent 一次改太多文件时，回滚成本很高。
+
+**Step 4 — 用 CI 命令验收**
+
+规则里写死的命令和本地一致，例如：
+
+```bash
+pnpm check   # lint + typecheck + test
+```
+
+***
+
+### 五、项目级配置：CLAUDE.md
+
+在仓库根目录放 **`CLAUDE.md`**（或官方文档指定的规则文件名），相当于 Project Rules：
+
+```markdown
+# 项目约定
+
+- 包管理：pnpm，Node 20
+- 测试：vitest，`pnpm test`
+- 目录：业务逻辑在 src/modules/，禁止在 components 里直接 fetch
+- 提交前必须：`pnpm lint && pnpm test`
+```
+
+**写什么**：栈版本、目录含义、测试/lint 命令、敏感目录禁止修改。**别写**：长篇历史——链到 wiki 即可。
+
+***
+
+### 六、常见任务示例
+
+**1. 批量重构**
+
+```text
+把所有 axios 直接调用迁移到 src/api/ 下的封装函数，
+保持行为不变，每改一个模块跑对应测试。
+```
+
+**2. 读不懂的遗留代码**
+
+```text
+解释 src/legacy/billing/ 的调用链，输出 mermaid 序列图，
+不要改代码。
+```
+
+**3. 写迁移脚本**
+
+```text
+写一个 scripts/migrate-user-avatar.ts：
+从旧表读 avatar_url，上传到 OSS，写回新字段；
+加 --dry-run，默认不写入。
+```
+
+**4. 修 CI 失败**
+
+把 **完整失败日志** 贴进去，并指明 **哪条 workflow、哪个 job**。
+
+***
+
+### 七、权限与安全
+
+* **命令执行**：生产库连接串、`.env` 不要被 Agent 读进上下文；用 `.claudeignore` / `.gitignore` 排除。
+* **依赖升级**：单独 PR，不要和业务改动混在一个 Agent 会话里。
+* **Secrets**：禁止把 Key 写进 CLAUDE.md 或对话；CI 用 OIDC / 密钥注入。
+
+更系统的威胁模型见[《AI 提示词注入与安全》](/2026/03/31/ai-prompt-injection-security/)。
+
+***
+
+### 八、常见问题
+
+| 现象 | 处理 |
+|------|------|
+| 改错文件 | 缩小范围；在提示里写 **绝对路径** |
+| 测试通过但逻辑错 | 补充 **边界用例** 到验收标准 |
+| 上下文丢失 | 新开会话，粘贴 **任务摘要 + 当前 diff** |
+| 和团队规范冲突 | 维护 CLAUDE.md，变更走 PR |
+
+***
+
+### 九、小结
+
+Claude Code 的价值不在「替你想」，而在 **把读仓库、改多文件、跑命令串成一条可验收的流水线**。从 0 到 1 只需：**装好 CLI → 项目根启动 → 写清边界 → 小步 diff → 用同一套 test/lint 兜底**。
+
+下一步可配合[《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)统一 Rules，以及《AI 背景下程序员何去何从》想清楚 **哪些事交给 Agent、哪些必须自己把关**。
+
+---
+
+---
+url: /blog/2026/05/21/frontend-admin-table-form-testing-msw/index.md
+---
+# 中后台表格与表单测试：MSW、假数据与异步断言
+中后台测试难点在 **请求 + 表格 + 表单校验** 叠在一起。用 **MSW（Mock Service Worker）** 在 Vitest 里拦截 HTTP，比 mock 整个 axios 更接近真实。
+
+***
+
+### 一、MSW  setup
+
+```bash
+pnpm add -D msw
+```
+
+```typescript
+// tests/msw/server.ts
+import { setupServer } from 'msw/node';
+import { http, HttpResponse } from 'msw';
+
+export const handlers = [
+  http.get('/api/orders', () =>
+    HttpResponse.json({ code: 0, data: { list: [{ id: '1', amount: 100 }], total: 1 } }),
+  ),
+];
+
+export const server = setupServer(...handlers);
+```
+
+```typescript
+// tests/setup.ts
+import { server } from './msw/server';
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+```
+
+***
+
+### 二、测列表页
+
+```typescript
+import { mount, flushPromises } from '@vue/test-utils';
+import OrderList from '@/views/OrderList.vue';
+
+it('renders rows from api', async () => {
+  const w = mount(OrderList);
+  await flushPromises();
+  expect(w.text()).toContain('100');
+});
+```
+
+***
+
+### 三、测表单提交
+
+```typescript
+it('submits valid form', async () => {
+  let posted: unknown;
+  server.use(
+    http.post('/api/orders', async ({ request }) => {
+      posted = await request.json();
+      return HttpResponse.json({ code: 0, data: { id: '2' } });
+    }),
+  );
+
+  const w = mount(OrderForm);
+  await w.get('[data-testid=name]').setValue('foo');
+  await w.get('form').trigger('submit');
+  await flushPromises();
+  expect(posted).toMatchObject({ name: 'foo' });
+});
+```
+
+***
+
+### 四、实践建议
+
+* 用 **data-testid**，少依赖 CSS 类名
+* 错误分支：MSW 返回 500，断言 toast
+* 不要 snapshot 整张 Element Plus 表格
+
+***
+
+### 五、小结
+
+中后台测试 = **MSW 管 HTTP + flushPromises + testid**。策略分层见下一篇。
+
+---
+
+---
+url: /blog/2026/05/21/typescript-generics-utility-types-practice/index.md
+---
+# TypeScript 实用泛型与工具类型：API 层与组件 Props
+「类型体操」不必为炫技；在中后台里 **最常用的是接口约束、Partial/Pick/Omit、ReturnType**。本篇用 **API 封装与表格列配置** 两个场景讲透。
+
+***
+
+### 一、API 响应泛型
+
+```typescript
+type ApiResult<T> = { code: number; data: T; message: string };
+
+async function get<T>(url: string): Promise<T> {
+  const res = await fetch(url);
+  const json = (await res.json()) as ApiResult<T>;
+  if (json.code !== 0) throw new Error(json.message);
+  return json.data;
+}
+
+type User = { id: string; name: string };
+const user = await get<User>('/api/user/1');
+```
+
+***
+
+### 二、工具类型日常
+
+```typescript
+type UserForm = Omit<User, 'id'>;
+type UserPatch = Partial<Pick<User, 'name'>>;
+type ReadonlyUser = Readonly<User>;
+
+// 从函数推断
+type FetchUser = typeof fetchUser;
+type UserReturn = Awaited<ReturnType<FetchUser>>;
+```
+
+***
+
+### 三、表格列类型安全
+
+```typescript
+type Column<T> = {
+  key: keyof T;
+  title: string;
+  render?: (row: T) => string;
+};
+
+function defineColumns<T>(cols: Column<T>[]): Column<T>[] {
+  return cols;
+}
+
+defineColumns<User>([
+  { key: 'name', title: '姓名' },
+  // { key: 'nmae', title: '错' }  // TS 报错
+]);
+```
+
+***
+
+### 四、联合与收窄
+
+```typescript
+type State =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'error'; message: string };
+
+function handle(s: State) {
+  if (s.status === 'error') console.log(s.message);
+}
+```
+
+***
+
+### 五、别过度
+
+* 三层以上嵌套 conditional type 除非库作者，否则拆 **具名类型**
+* 运行时边界用 **zod/io-ts** 校验外部 JSON
+
+***
+
+### 六、小结
+
+实用 TS = **泛型 API + keyof 约束 + 工具类型减重复**。项目配置见前一篇。
+
+---
+
+---
+url: /blog/2026/05/21/vitest-vue-test-utils-zero-to-one/index.md
+---
+# Vitest + Vue Test Utils：从 0 到 1 配置与第一个组件测试
+Vitest 与 Vite 同生态，**配置复用、HMR 测起来快**。本篇搭好 **Vitest + @vue/test-utils + jsdom**，写第一个组件测试并接进 CI。
+
+***
+
+### 一、安装
+
+```bash
+pnpm add -D vitest @vue/test-utils jsdom @vitest/coverage-v8
+```
+
+```typescript
+// vite.config.ts
+export default defineConfig({
+  plugins: [vue()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./tests/setup.ts'],
+  },
+});
+```
+
+```typescript
+// tests/setup.ts
+import { config } from '@vue/test-utils';
+config.global.stubs = { transition: false };
+```
+
+***
+
+### 二、第一个测试
+
+```vue
+<!-- Counter.vue -->
+<script setup lang="ts">
+import { ref } from 'vue';
+const n = ref(0);
+</script>
+<template>
+  <button @click="n++">{{ n }}</button>
+</template>
+```
+
+```typescript
+// Counter.spec.ts
+import { mount } from '@vue/test-utils';
+import Counter from './Counter.vue';
+
+it('increments', async () => {
+  const w = mount(Counter);
+  await w.get('button').trigger('click');
+  expect(w.get('button').text()).toBe('1');
+});
+```
+
+***
+
+### 三、mock 模块
+
+```typescript
+vi.mock('@/api/user', () => ({
+  fetchUser: vi.fn(() => Promise.resolve({ name: 'test' })),
+}));
+```
+
+***
+
+### 四、CI
+
+```json
+"scripts": {
+  "test": "vitest run",
+  "test:watch": "vitest"
+}
+```
+
+```yaml
+- run: pnpm test
+```
+
+***
+
+### 五、与 Playwright 分工
+
+Vitest 管 **组件/逻辑**；E2E 见[《Playwright 架构》](/2025/11/16/headless-playwright-architecture-tracing-ci/)与[《测试策略》](/2026/05/22/frontend-testing-strategy-unit-integration-e2e/)。
+
+***
+
+### 六、小结
+
+Vitest 上手 = **vite test 块 + mount + vi.mock + CI run**。AI 辅助见[《AI 辅助写测试》](/2026/05/19/ai-assisted-testing-vitest-playwright/)。
+
+---
+
+---
+url: /blog/2026/05/21/vue-typescript-props-emit-component-types/index.md
+---
+# Vue 3 + TypeScript：defineProps/emit 与组件库类型导出
+`<script setup lang="ts">` 里 **Props/Emits 类型** 写对了，IDE 才能在整个仓库里传导约束。本篇覆盖 **defineProps、defineEmits、组件库 publish types**。
+
+***
+
+### 一、Props（Vue 3.4+ 推荐）
+
+```vue
+<script setup lang="ts">
+type Props = {
+  title: string;
+  count?: number;
+};
+const props = withDefaults(defineProps<Props>(), { count: 0 });
+</script>
+```
+
+运行时声明 + 类型（需兼容老工具时）：
+
+```typescript
+const props = defineProps({
+  title: { type: String, required: true },
+  count: { type: Number, default: 0 },
+});
+```
+
+***
+
+### 二、Emits
+
+```typescript
+const emit = defineEmits<{
+  change: [id: string];
+  submit: [payload: { name: string }];
+}>();
+
+emit('change', '42');
+```
+
+***
+
+### 三、模板 ref 类型
+
+```vue
+<script setup lang="ts">
+import type { ComponentPublicInstance } from 'vue';
+import MyChart from './MyChart.vue';
+
+const chartRef = ref<InstanceType<typeof MyChart> | null>(null);
+</script>
+```
+
+***
+
+### 四、组件库导出类型
+
+```typescript
+// packages/ui/src/button/index.ts
+export { default as UiButton } from './Button.vue';
+export type { ButtonProps } from './types';
+```
+
+`package.json`：
+
+```json
+{
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  }
+}
+```
+
+Monorepo 用 **vite-plugin-dts** 或 **vue-tsc --declaration** 生成。
+
+***
+
+### 五、与 API 类型共享
+
+```typescript
+// packages/shared/src/user.ts
+export type UserDto = { id: string; name: string };
+```
+
+前后端同仓时 **DTO 单一来源**（见 BFF/protobuf 文）。
+
+***
+
+### 六、小结
+
+Vue + TS = **script setup 泛型 Props/Emits + 组件库 d.ts 导出**。配合 strict tsconfig 与 Pinia 类型推断。
+
+---
+
+---
+url: /blog/2026/05/22/frontend-auth-token-storage-refresh-xss/index.md
+---
+# 前端鉴权：Token 存哪、刷新策略与防 XSS 偷会话
+SPA 鉴权核心矛盾：**JavaScript 能读到的 token 就能被 XSS 偷走**。本篇对比 **localStorage / sessionStorage / Cookie / 内存**，并给 **双 token 刷新** 流程。
+
+***
+
+### 一、存储对比
+
+| 方式 | XSS | CSRF | 刷新页面 |
+|------|-----|------|----------|
+| localStorage | 高危 | 低 | 仍在 |
+| 内存变量 | 中（XSS 当期可窃） | 低 | 丢失 |
+| HttpOnly Cookie | **JS 不可读** | 需 SameSite/CSRF token | 可持久 |
+
+\==推荐==：**access 短期内存或 Cookie；refresh HttpOnly + 服务端轮转**。
+
+***
+
+### 二、双 token 刷新（BFF 友好）
+
+```text
+登录 → Set-Cookie refresh (HttpOnly)
+     → body 返回 access (短，如 15min)
+
+请求 → Authorization: Bearer access
+401   → POST /auth/refresh（Cookie 自动带 refresh）
+     → 新 access
+```
+
+前端 **axios 拦截器** 401 队列单飞（同小程序 401 队列思路）。
+
+***
+
+### 三、Pinia 里放什么
+
+* 放 **user profile、permissions**
+* **不要** 长期把 refresh token 放 localStorage
+* access 若放内存，刷新页需 **silent refresh** 或跳登录
+
+***
+
+### 四、JWT 注意
+
+* 前端 **不解密验签** 当权威；权限以 **服务端 + 接口** 为准
+* JWT 过大放 header 有性能问题；敏感声明别放 payload
+
+与《RBAC + JWT + Redis》后台文配合阅读。
+
+***
+
+### 五、App WebView
+
+见[《App 内 H5 登录态》](/2026/05/18/mobile-h5-app-login-session-cookie-itp/)；**ticket 换 session** 优于把 refresh 交给 H5。
+
+***
+
+### 六、小结
+
+防偷会话 = **HttpOnly + 短 access + 刷新单飞 + 治 XSS**。CORS/Cookie 见下一篇。
+
+---
+
+---
+url: /blog/2026/05/22/frontend-cors-credentials-cookie-guide/index.md
+---
+# 前端跨域与凭证：CORS、Cookie SameSite 一张图讲清
+「跨域失败」在 Network 里表现为 CORS 红字，但根因可能是 **Cookie 没带、预检失败、SameSite 不对**。本篇用 **简单模型 + 配置对照** 讲清。
+
+***
+
+### 一、同源 vs 跨域
+
+同源 = **协议 + 域名 + 端口** 全同。\
+`https://a.com` 请求 `https://api.a.com` → **跨域**。
+
+***
+
+### 二、简单请求 vs 预检
+
+带自定义头 `Authorization`、 `Content-Type: application/json`（非简单类型）→ 浏览器先 **OPTIONS 预检**。
+
+服务端需：
+
+```http
+Access-Control-Allow-Origin: https://a.com
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Headers: Authorization, Content-Type
+Access-Control-Allow-Credentials: true
+```
+
+**不能** `Allow-Origin: *` 与 `Credentials: true` 同用。
+
+***
+
+### 三、前端 fetch/axios
+
+```typescript
+axios.defaults.withCredentials = true;
+```
+
+跨域带 Cookie **必须** 双方配对：前端 credentials + 服务端 Allow-Credentials + 具体 Origin。
+
+***
+
+### 四、SameSite
+
+| 值 | 行为 |
+|----|------|
+| Strict | 跨站几乎不发 Cookie |
+| Lax | 顶级导航 GET 可带 |
+| None | 跨站可带，**必须 Secure** |
+
+App WebView / 子域 API 常需 `SameSite=None; Secure`。
+
+***
+
+### 五、开发环境 Vite 代理
+
+```typescript
+server: {
+  proxy: {
+    '/api': { target: 'http://localhost:7001', changeOrigin: true },
+  },
+},
+```
+
+浏览器视角 **同源**，无 CORS；生产仍要正确 CORS。
+
+见[《Vite devServer 代理与 BFF 联调》](/2024/11/05/vite-server-proxy-hmr-bff-integration/)。
+
+***
+
+### 六、排障顺序
+
+1. 是否跨域？
+2. 是否预检？预检 404/405？
+3. `withCredentials` 与 Allow-Origin 是否具体域名？
+4. Cookie SameSite/Domain/Path？
+
+***
+
+### 七、小结
+
+CORS = **Origin 白名单 + 预检 + 凭证配对 + SameSite**。Egg CSRF 见 Node 系列。
+
+---
+
+---
+url: /blog/2026/05/22/frontend-security-xss-csp-iframe-sandbox/index.md
+---
+# 前端安全深入：XSS、CSP 与 iframe sandbox
+XSS 仍是前端 **最常见安全事故**。CSP、输出编码、iframe sandbox 不是「运维配置」，而是 **和模板、富文本、微前端** 绑在一起的工程决策。
+
+***
+
+### 一、XSS 类型
+
+| 类型 | 来源 | 防御 |
+|------|------|------|
+| 存储型 | 后端存的用户内容 | 出库编码 + CSP |
+| 反射型 | URL 参数 | 不 `v-html` 插 URL |
+| DOM 型 | 前端拼 HTML | 禁止 innerHTML 插不可信串 |
+
+Vue 默认 **转义文本插值**；危险在 `v-html`、富文本编辑器、`dangerouslySetInnerHTML`（React）。
+
+***
+
+### 二、输出编码
+
+```vue
+<!-- 安全：文本 -->
+<div>{{ user.name }}</div>
+
+<!-- 危险：不可信 HTML -->
+<div v-html="userBio"></div>
+```
+
+富文本：**DOMPurify** 白名单消毒后再 `v-html`。
+
+***
+
+### 三、CSP 示例
+
+```http
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' https: data:;
+  frame-ancestors 'self';
+  base-uri 'self';
+```
+
+**注意**：`'unsafe-inline'` 削弱 script 防护；逐步改 **nonce/hash**。微前端多脚本源时要 **统一 CSP 策略**（见 iframe 微前端文）。
+
+***
+
+### 四、iframe sandbox
+
+```html
+<iframe
+  src="https://child.example.com"
+  sandbox="allow-scripts allow-same-origin"
+></iframe>
+```
+
+* 不加 `allow-top-navigation` 防 **钓鱼跳转**
+* 不可信第三方：**尽量 sandbox 全开拒绝，只放必要权限**
+
+***
+
+### 五、微前端注意
+
+子应用脚本注入、**全局变量污染**、postMessage **origin 校验**——见[《iframe + postMessage + BFF》](/2025/07/13/micro-frontend-iframe-postmessage-bff/)。
+
+***
+
+### 六、checklist
+
+* \[ ] 无不可信 `v-html`
+* \[ ] CSP 上报 `report-uri`
+* \[ ] Cookie `HttpOnly`（XSS 偷不到 session）
+* \[ ] 依赖 `npm audit` + 供应链
+
+***
+
+### 七、小结
+
+前端安全 = **默认转义 + 富文本消毒 + CSP + iframe 最小权限**。鉴权见下一篇。
+
+---
+
+---
+url: /blog/2026/05/22/frontend-testing-strategy-unit-integration-e2e/index.md
+---
+# 前端测试策略：单测、集成与 E2E 怎么分层
+测试不是越多越好，而是 **在对的层花对的成本**。本篇给 **测试金字塔（前端版）**、各层职责、与现有 Playwright/Vitest 文的衔接。
+
+***
+
+### 一、金字塔
+
+```text
+        ┌ E2E ┐          少：登录、下单、核心审批
+       ┌─集成─┐         中：页面 + MSW API
+      ┌──单测──┐        多：util、store、composable
+```
+
+***
+
+### 二、各层定义
+
+| 层 | 测什么 | 工具 | 速度 |
+|----|--------|------|------|
+| 单测 | 纯函数、Pinia action、composable | Vitest | 毫秒 |
+| 集成 | 组件 + mock API | Vitest + MSW | 秒级 |
+| E2E | 真浏览器、真环境 | Playwright | 分钟 |
+
+***
+
+### 三、选型原则
+
+* **bug 贵在哪层**，就在哪层补测试
+* flaky E2E → 先下沉到 MSW 集成
+* **性能预算 CI** 与 smoke E2E 并行，不互相替代
+
+***
+
+### 四、PR 闸口建议
+
+```text
+PR 必过：lint + typecheck + unit（Vitest）
+ nightly：E2E @smoke
+ 发版前：核心 E2E 全量 + 性能预算
+```
+
+***
+
+### 五、覆盖率
+
+* 不追求 100%；**核心域 80%+** 更有性价比
+* 覆盖 **分支** 而非行数刷绿
+
+***
+
+### 六、与 AI 协作
+
+AI 生成单测草稿 → 人删假测试 → CI 绿才 merge。见[《AI 辅助写测试》](/2026/05/19/ai-assisted-testing-vitest-playwright/)。
+
+***
+
+### 七、延伸阅读
+
+* [《Vitest + Vue Test Utils 从 0 到 1》](/2026/05/21/vitest-vue-test-utils-zero-to-one/)
+* [《中后台表格与表单测试》](/2026/05/21/frontend-admin-table-form-testing-msw/)
+* [《Headless Playwright 架构与 CI》](/2025/11/16/headless-playwright-architecture-tracing-ci/)
+
+---
+
+---
+url: /blog/2026/05/23/admin-dynamic-form-protable-patterns/index.md
+---
+# 中后台动态表单与 ProTable：schema 驱动与权限字段
+中后台大量页面是 **「表格 + 搜索 + 弹窗表单」**。用 **schema 驱动** 可以少写重复 CRUD。本篇讲 **字段 schema、联动、权限隐藏** 的可维护写法（不绑定某一 UI 库，示意为主）。
+
+***
+
+### 一、Schema 示例
+
+```typescript
+type FieldSchema = {
+  key: string;
+  label: string;
+  component: 'input' | 'select' | 'date';
+  props?: Record<string, unknown>;
+  visible?: (ctx: { roles: string[] }) => boolean;
+  rules?: Array<{ required?: boolean; message: string }>;
+};
+
+const orderSearchSchema: FieldSchema[] = [
+  { key: 'orderNo', label: '单号', component: 'input' },
+  { key: 'status', label: '状态', component: 'select', props: { options: [] } },
+];
+```
+
+***
+
+### 二、渲染器模式
+
+```vue
+<template>
+  <component
+    v-for="f in visibleFields"
+    :key="f.key"
+    :is="componentMap[f.component]"
+    v-model="model[f.key]"
+    v-bind="f.props"
+  />
+</template>
+```
+
+**componentMap** 注册 Input/Select/DatePicker，新增类型只扩 map。
+
+***
+
+### 三、表格列 schema
+
+```typescript
+type ColumnSchema<T> = {
+  key: keyof T;
+  title: string;
+  width?: number;
+  sortable?: boolean;
+  permission?: string;
+};
+```
+
+与 `v-permission` 指令结合（见 Router 权限文）。
+
+***
+
+### 四、联动
+
+```typescript
+watch(() => model.type, (t) => {
+  if (t === 'VIP') schema.push(vipField);
+});
+```
+
+复杂联动抽 **useFormSchema composable**，避免页面里堆 watch。
+
+***
+
+### 五、与低代码边界
+
+* schema 适合 **80% 标准 CRUD**
+* 极复杂交互仍 **手写页面**
+* schema 存 JSON 时要做 **版本迁移**
+
+***
+
+### 六、小结
+
+ProTable/动态表单 = **schema + 渲染器 + 权限 + composable 联动**。RBAC 见 07 目录系列。
+
+---
+
+---
+url: /blog/2026/05/23/ai-era-programmer-career-outlook/index.md
+---
+# AI 背景下，程序员何去何从
+每隔几年就会有一波「程序员要失业了」的讨论；2024–2026 这轮不同的是：**代码生成已经嵌进日常 IDE**，而不只是 demo。焦虑可以理解，但把问题换成一句更可操作的话——
+
+> **哪些工作会被压缩，哪些会因为 AI 反而更缺人？我接下来该练什么？**
+
+这篇不贩卖鸡汤，只从 **岗位本质、能力结构、可执行动作** 三块聊。
+
+***
+
+### 一、先拆清：AI 在替什么、替不了什么
+
+**被明显压缩的**
+
+* 样板代码、CRUD 脚手架、简单脚本、格式转换；
+* 「只背 API、不理解链路」的纯搬运式开发；
+* 不读代码、不跑测试的「复制粘贴式修 bug」。
+
+**短期仍难替代的**
+
+* \==对业务与约束的理解==：钱从哪来、合规边界、SLA、组织里谁拍板；
+* **跨系统排障**：线上 500 是网关、缓存、DB 还是发布顺序——模型能猜，**责任不能猜**；
+* **架构取舍**：单体 vs 拆分、一致性与成本的 trade-off，需要 **背锅与复盘**；
+* **安全与质量闸**：权限模型、注入、供应链——AI 会 **自信地写错**。
+
+结论不是「程序员没了」，而是 **「只写代码」的定义在变窄**，「把系统交付并对结果负责」的定义在变宽。
+
+***
+
+### 二、岗位地图：四条仍在扩招的线
+
+| 方向 | 典型职责 | 和 AI 的关系 |
+|------|----------|--------------|
+| **产品型工程师** | 需求澄清、原型到上线、指标与迭代 | AI 加速实现，**判断力**更值钱 |
+| **平台 / 基建** | CI、观测、网关、DevEx、内部工具 | Agent 需要 **稳定工具链** |
+| **质量与安全** | 测试策略、混沌、审计、SDL | AI 产出越多，**闸口**越重要 |
+| **领域专家 + 工程** | 金融、医疗、工业软件等 | 领域规则 **喂不进通用模型** |
+
+「全栈」不会消失，但 **浅全栈**（前后端都会一点、都不深）压力最大；**T 型**（一深多广）更稳。
+
+***
+
+### 三、能力栈：建议刻意练的六件事
+
+**1. 问题定义**
+
+学会写：**背景、目标、非目标、验收、风险**。Agent 执行的是定义；定义模糊，输出就漂。
+
+**2. 读代码与读系统**
+
+比写代码更重要的是 **在陌生仓库里 30 分钟定位入口**。AI 可以帮你搜，但 **该信哪条链路** 要你判。
+
+**3. 测试与可观测**
+
+会写「Agent 跑完必须绿的命令」：单测、契约测、e2e 抽样、日志/trace 字段。这是 **人机协作的合约**。
+
+**4. 数据与 API 思维**
+
+表结构、幂等、并发、缓存失效——这些在 CRUD 之上，**决定系统能不能活过促销季**。
+
+**5. 沟通与文档**
+
+PR 描述、RFC、复盘、onboarding——**可版本化的上下文** 会让整个团队 AI 用得更好（见 Project Rules / CLAUDE.md）。
+
+**6. AI 工程化本身**
+
+RAG、MCP、Skill、权限与审计——**会搭 Agent 工作流的人** 正在变成新一类「工具链工程师」。
+
+***
+
+### 四、日常习惯：和 AI 共事而不是被替代
+
+**Do**
+
+* 小步提交；每轮 Agent 改动 **可 review、可回滚**；
+* 让 AI **先列计划再改**；复杂任务拆 PR；
+* 把团队约定写进 **Rules / CLAUDE.md**，减少重复提示；
+* 对安全、权限、钱相关逻辑 **人工终审**。
+
+**Don't**
+
+* 不跑测试就 merge「看起来对」的 diff；
+* 把密钥、客户数据丢进云端对话；
+* 用 AI 输出直接当 **合规或法律** 依据；
+* 停止学底层——**不会 debug 的人最先被甩下车**。
+
+***
+
+### 五、职业路径：三个可落地的 90 天计划
+
+**路径 A — 深化当前栈**
+
+选一条主线（如 Node BFF + Vue 中后台），目标：**独立负责一个模块从需求到上线**，并补上观测与测试。AI 用来 **补测试、写文档、探索方案**，你不外包 **架构与验收**。
+
+**路径 B — 横向补「交付面」**
+
+若你偏前端：补 **HTTP、鉴权、部署、简单 SQL**；偏后端：补 **性能、一个现代前端栈、无障碍 basics**。目标是 **少依赖「转交」才能闭环**。
+
+**路径 C — 转向 AI 工程 / 平台**
+
+从 **Cursor Rules、MCP、内部知识库 RAG** 切入，帮团队 \*\* measurable 地省时间\*\*（如 review 时间、onboarding 天数）。用数据说话，比简历写「熟悉 ChatGPT」有用。
+
+***
+
+### 六、心态：长期仍稀缺的是什么
+
+* **信任**：客户和用户信的是 **组织与你的名字**，不是模型版本号；
+* **责任**：线上事故要有人 **写复盘、改流程**；
+* **审美与品味**：交互、文案、性能体感的 **最后一公里**；
+* **学习速度**：技术半衰期在变短，**学新工具的方法** 比会某一工具更持久。
+
+AI 是 **杠杆**，不是 **替代品**。会用杠杆的人，单位时间交付更多；不会用的人，不是被 AI 淘汰，而是被 **会用 AI 的同行** 拉开差距。
+
+***
+
+### 七、小结
+
+程序员这个职业 **不会 overnight 消失**，但 **「只会照文档写页面」的区间** 会被持续压缩。出路在于：**更靠近问题与结果，更会用测试与工具链约束 AI，更深或更广地理解系统**。
+
+工具入门可从[《Claude Code 从 0 到 1》](/2026/05/21/claude-code-zero-to-one-tutorial/)和[《Cursor 项目规则与工作流》](/2026/03/11/cursor-project-rules-and-workflow/)开始；能力打底仍离不开 **代码阅读、系统设计、线上排障**——这些才是下一 decade 的硬通货。
+
+---
+
+---
+url: /blog/2026/05/23/css-tailwind-modules-scoped-selection/index.md
+---
+# Tailwind、CSS Modules 与 Scoped：中后台样式选型
+样式方案没有银弹：**Tailwind 快、CSS Modules 隔离强、Vue Scoped 省心**。本篇按 **团队规模、设计系统、是否多框架** 给选型建议。
+
+***
+
+### 一、对比
+
+| 方案 | 优点 | 缺点 |
+|------|------|------|
+| **Tailwind** | 迭代快、少命名 | HTML 类名长、需设计 token 约束 |
+| **CSS Modules** | 类名隔离、可 TS | 文件分散 |
+| **Vue Scoped** | SFC 一体 | 深层穿透麻烦；难跨组件共享 |
+| **BEM + Sass** | 老项目熟悉 | 易全局污染 |
+
+***
+
+### 二、Tailwind 中后台注意
+
+* 用 `@apply` **适度**，别再造一层 CSS
+* 主题色进 `tailwind.config` **与设计 token 统一**
+* 与 Element Plus 并存：注意 **preflight 冲突**（可 `corePlugins: { preflight: false }` 视情况）
+
+***
+
+### 三、CSS Modules
+
+```vue
+<style module>
+.title { font-size: 18px; }
+</style>
+<template>
+  <h1 :class="$style.title">...</h1>
+</template>
+```
+
+适合 **组件库内部** 不泄漏类名。
+
+***
+
+### 四、混合策略（常见）
+
+* 布局/间距：**Tailwind**
+* 组件库主题：**Design Token**（见下一篇）
+* 第三方覆盖：**:deep()** 少量隔离
+
+***
+
+### 五、微前端
+
+子应用 **样式隔离** 靠 qiankun shadow/CSS 前缀；Tailwind preflight 可能 **影响主应用**——子应用单独构建、注意 scope。
+
+***
+
+### 六、小结
+
+选型 = **速度 vs 隔离 vs 设计系统**。移动端 CSS 见 mobile 系列；兼容性见 compatibility-css。
+
+---
+
+---
+url: /blog/2026/05/23/frontend-error-monitoring-sentry-reporting/index.md
+---
+# 前端错误监控：Sentry 接入、Source Map 与告警降噪
+线上白屏用户不会提 bug，要靠 **错误监控 + 性能指标**。本篇以 Sentry 为例讲 **接入、release、source map、告警策略**，与后端 observability 文呼应。
+
+***
+
+### 一、接入（Vue 3）
+
+```typescript
+import * as Sentry from '@sentry/vue';
+
+Sentry.init({
+  app,
+  dsn: import.meta.env.VITE_SENTRY_DSN,
+  integrations: [Sentry.browserTracingIntegration({ router })],
+  tracesSampleRate: 0.1,
+  environment: import.meta.env.MODE,
+  release: import.meta.env.VITE_APP_RELEASE,
+});
+```
+
+***
+
+### 二、Source Map
+
+* 构建上传 map 到 Sentry，**CDN 不公开 map**
+* `release` 与 CI 版本号一致
+
+```bash
+sentry-cli releases new "$VERSION"
+sentry-cli releases files "$VERSION" upload-sourcemaps ./dist/assets
+```
+
+***
+
+### 三、上下文
+
+```typescript
+Sentry.setUser({ id: user.id });
+Sentry.setTag('tenant', tenantId);
+```
+
+**勿上报** 密码、token、完整手机号。
+
+***
+
+### 四、降噪
+
+* 忽略 **浏览器插件**、已知第三方脚本
+* `beforeSend` 过滤网络离线类噪音
+* 合并同一 issue，设 **阈值告警**
+
+***
+
+### 五、与后端 trace 关联
+
+传递 **trace id**（请求头 `x-trace-id`），Sentry tag 带上，便于和 Egg 日志串联。
+
+***
+
+### 六、小结
+
+监控 = **Sentry + release/map + 采样 + 降噪 + trace 关联**。企业流量监控见 enterprise observability 文。
+
+---
+
+---
+url: /blog/2026/05/23/frontend-file-preview-watermark-permission-download/index.md
+---
+# 前端文件预览、水印与权限下载链路
+中后台常要 **预览 PDF/Office、带水印、按权限下载**。前端不能「隐藏按钮就安全」，必须 **服务端鉴权 + 短期 URL**。本篇串完整链路。
+
+***
+
+### 一、架构
+
+```text
+浏览器 → GET /files/:id/preview（鉴权）
+       ← 302 到 OSS 签名 URL（60s）
+       或 ← 流式 proxy（敏感文件）
+```
+
+**禁止** 把永久 OSS 公网 URL 写进前端 JSON。
+
+***
+
+### 二、预览
+
+| 类型 | 方案 |
+|------|------|
+| PDF | pdf.js / 浏览器 embed |
+| Office | 服务端转 PDF 或微软/OnlyOffice 预览服务 |
+| 图片 | img + 水印 canvas 叠加（仅防君子） |
+
+***
+
+### 三、水印
+
+* **真水印**在服务端转码或 PDF 层写入
+* 前端 canvas 水印 **可被 F12 去掉**，只作辅助
+
+***
+
+### 四、下载
+
+```typescript
+async function download(fileId: string) {
+  const { url } = await api.getDownloadTicket(fileId);
+  window.open(url, '_blank');
+}
+```
+
+大文件：**Range 断点续传**（见[《大文件下载 stream blob》](/2023/06/22/frontend-download-stream-blob-range/)）。
+
+***
+
+### 五、权限
+
+* 列表接口就不返回 **无权限 fileId**
+* 每次 preview/download **服务端查 RBAC**
+* 审计日志：谁、何时、哪个文件
+
+***
+
+### 六、小结
+
+文件链路 = **ticket + 短签名 + 服务端水印 + 审计**。上传见[《分片上传 OSS》](/2023/06/27/frontend-large-file-upload-chunk-oss/)。
+
+---
+
+---
+url: /blog/2026/05/24/design-token-theme-dark-mode-practice/index.md
+---
+# Design Token 与主题换肤：CSS 变量、暗色与中后台实践
+换肤不是「多写一套 CSS」，而是 **Token 语义化 + CSS 变量运行时切换**。本篇给 **颜色/间距/圆角 token 层** 与 **暗色模式** 落地方式（与 Plume 博客换肤思路相通）。
+
+***
+
+### 一、Token 分层
+
+```css
+:root {
+  --color-brand: #2563eb;
+  --color-bg: #ffffff;
+  --color-text: #1f2937;
+  --radius-md: 8px;
+  --space-md: 16px;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0f172a;
+  --color-text: #e2e8f0;
+}
+```
+
+组件只用 **语义变量**，不写死 `#2563eb`。
+
+***
+
+### 二、与 UI 库集成
+
+Element Plus：
+
+```scss
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': ('base': var(--color-brand)),
+  ),
+);
+```
+
+***
+
+### 三、切换实现
+
+```typescript
+function setTheme(mode: 'light' | 'dark') {
+  document.documentElement.dataset.theme = mode;
+  localStorage.setItem('theme', mode);
+}
+```
+
+监听 `prefers-color-scheme` 作 **跟随系统** 选项。
+
+***
+
+### 四、Design Token 仓库
+
+Monorepo 中 `packages/tokens` 导出 JSON + CSS：
+
+```json
+{
+  "color": { "brand": { "light": "#2563eb", "dark": "#3b82f6" } }
+}
+```
+
+CI 生成各端产物（Web/小程序 rpx 换算另议）。
+
+***
+
+### 五、无障碍
+
+对比度 **WCAG AA**；暗色不只反转颜色，要 **单独调 border/shadow**。
+
+***
+
+### 六、小结
+
+换肤 = **语义 token + CSS 变量 + data-theme**。Tailwind 选型见前一篇。
+
+---
+
+---
+url: /blog/2026/05/24/miniprogram-learning-path-index/index.md
+---
+# 小程序导读与学习路径：从原生到云开发
+小程序文章分散在多篇里，本篇是 **阅读顺序索引**：先建立生命周期与网络层，再组件化与性能，最后支付与云开发；旧笔记标注 **考古参考**。
+
+***
+
+### 一、推荐路径（2024+ 实战向）
+
+| 顺序 | 文章 | 说明 |
+|------|------|------|
+| 1 | [生命周期、路由与页面栈](/2026/05/24/miniprogram-lifecycle-routing-navigation/) | 基础中的基础 |
+| 2 | [网络请求、登录态与本地缓存](/2026/05/25/miniprogram-network-storage-subscription/) | request 封装 |
+| 3 | [性能优化与审核踩坑](/2026/05/26/miniprogram-performance-audit-practice/) | 上线前必读 |
+| 4 | [自定义组件、分包与 Skyline](/2026/05/17/miniprogram-custom-component-skyline-package/) | 组件化 |
+| 5 | [支付、回调与对账](/2026/05/17/miniprogram-payment-flow-and-reconciliation/) | 商业闭环 |
+| 6 | [云开发与云函数](/2026/05/18/miniprogram-cloudbase-cloud-function-debug/) | 轻后端 |
+| 7 | [uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/) | 多端 |
+| 8 | [隐私合规与接口申请](/2026/05/26/miniprogram-privacy-compliance-guide/) | 提审必备 |
+| 9 | [跨小程序与半屏](/2026/05/26/miniprogram-navigate-miniprogram-half-screen/) | 跳转 |
+| 10 | [直播与视频号概览](/2026/05/27/miniprogram-live-channels-overview/) | 带货/活动 |
+
+***
+
+### 二、移动端延伸（微信外）
+
+* App 内 H5：[JSBridge](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/) → [登录态](/2026/05/18/mobile-h5-app-login-session-cookie-itp/) → [离线包](/2026/05/18/mobile-h5-offline-package-release-rollback/)
+
+***
+
+### 三、考古参考（2020 笔记）
+
+以下文章 **思路仍有用**，但代码/截图较旧，读时注意平台规则已更新：
+
+* [微信卡包跳转小程序](/2020/09/14/weixin/)
+* [微信+uniapp 踩坑](/2020/07/01/weixin-uniapp/)
+* [禁止二次转发](/2020/08/26/weixin-jump/)
+
+参数缓存、SSL/ATS 等问题在新文中已有覆盖。
+
+***
+
+### 四、还缺什么（可自行实践后补文）
+
+* **视频号 deep link** 更多组合玩法（随官方能力迭代）
+* **小程序与企微** 互通场景
+* 某垂直类目 **证照清单**（医疗/金融需法务把关，本站不写死）
+
+***
+
+### 五、小结
+
+按 **生命周期 → 网络 → 性能 → 组件 → 支付 → 云 → 多端** 读下来，能覆盖大多数业务小程序。有问题欢迎按标签 [小程序](/posts/tags/?tag=%E5%B0%8F%E7%A8%8B%E5%BA%8F) 浏览全站。
+
+---
+
+---
+url: /blog/2026/05/24/miniprogram-lifecycle-routing-navigation/index.md
+---
+# 小程序深入：生命周期、路由与页面栈
+小程序和 H5 最大的结构差异之一是：**页面由客户端托管的「栈」管理**，生命周期分 **App 级** 与 **Page 级**，参数传递还有 **冷启动 / 热启动** 之分。搞不清这三块，很容易出现 **参数丢失、返回刷新异常、分享进错页**。
+
+本篇以微信小程序为主（其他平台概念相近），把 **生命周期 → 路由 API → 参数与场景值 → 常见坑** 串成一条线。
+
+***
+
+### 一、App 级生命周期
+
+```javascript
+// app.js
+App({
+  onLaunch(options) {
+    // 冷启动，全局只触发一次
+    // options: path, query, scene, referrerInfo 等
+  },
+  onShow(options) {
+    // 从后台切前台、或从其他小程序返回
+  },
+  onHide() {
+    // 切后台
+  },
+  onError(msg) {
+    // 脚本错误、API 失败等
+  },
+  globalData: {},
+});
+```
+
+| 钩子 | 何时触发 | 排障要点 |
+|------|----------|----------|
+| `onLaunch` | 冷启动 | 做 **一次性的** 初始化：更新检查、登录态恢复 |
+| `onShow` | 前台可见 | 从分享/扫码进入时 **也会走**；参数在 `options.query` |
+| `onHide` | 进后台 | 暂停计时器、音视频 |
+| `onError` | 未捕获错误 | 上报 Sentry/自建监控 |
+
+\==坑==：`App.onShow` 的 `options` **不等于** 页面 `onLoad` 的 `options`——App 层参数在 `options.query` 里；页面层是路径 query 解析结果。从卡包/外链进小程序时，**以页面 onLoad 为准更稳**（旧文[《微信卡包跳转小程序》](/2020/09/14/weixin/)里的经验仍适用）。
+
+***
+
+### 二、Page 级生命周期
+
+```javascript
+Page({
+  data: { id: '' },
+  onLoad(options) {
+    // 页面首次加载，options 为路由参数
+  },
+  onShow() {
+    // 每次显示（含 navigateBack 返回）
+  },
+  onReady() {
+    // 首屏渲染完成，适合拿节点信息
+  },
+  onHide() {},
+  onUnload() {
+    // 页面被销毁（redirectTo / navigateBack 出栈等）
+  },
+});
+```
+
+**顺序（首次打开）**：`onLoad` → `onShow` → `onReady`。
+
+**从 B 页 navigateBack 回 A**：A 的 `onShow` 触发，**不会** 再触发 A 的 `onLoad`——若你在 `onLoad` 里拉数据，返回时 **不会自动刷新**，需要在 `onShow` 里判断或使用 **事件总线 / 全局 store**。
+
+***
+
+### 三、路由 API 与页面栈
+
+| API | 行为 | 栈 |
+|-----|------|-----|
+| `wx.navigateTo` | 压栈打开新页 | 最多 **10 层** |
+| `wx.redirectTo` | 替换当前页 | 不增加层数 |
+| `wx.reLaunch` | 清空栈，打开新页 | 重置 |
+| `wx.switchTab` | 切 tabBar 页 | 各 tab 栈独立 |
+| `wx.navigateBack` | 出栈 | `delta` 可一次退多层 |
+
+```javascript
+wx.navigateTo({ url: '/pages/detail/index?id=42&from=list' });
+
+// 带复杂对象：用全局/store，或 encodeURIComponent(JSON.stringify(obj))
+// 不推荐 query 过长——有长度限制
+```
+
+**设计建议**
+
+* 列表 → 详情 → 编辑：用 `navigateTo`；编辑完成 **返回列表要刷新** 时，在列表 `onShow` 读标志位或 emit 事件。
+* 登录成功进首页：用 `reLaunch` 或 `switchTab`，避免用户 **手势返回** 回到登录页。
+
+***
+
+### 四、场景值 scene 与启动参数
+
+`onLaunch` / `onShow` 的 `options.scene` 表示 **进入方式**（扫码、分享、搜索等）。分享卡片、二维码可在 **后台配置 path + query**。
+
+```javascript
+onLoad(options) {
+  const { id, channel } = options;
+  if (!id) {
+    wx.showToast({ title: '参数缺失', icon: 'none' });
+    return;
+  }
+  this.loadDetail(id, channel);
+},
+```
+
+**测试清单**
+
+* 冷启动带参 / 热启动带参；
+* 分享进二级页（非首页）；
+* 从另一小程序 `navigateToMiniProgram` 返回；
+* Android / iOS 各测一遍（部分 API 行为差异）。
+
+***
+
+### 五、与 uni-app / Taro 的对应关系
+
+| 原生 | uni-app | 说明 |
+|------|---------|------|
+| `onLoad` | `onLoad` | 一致 |
+| `navigateTo` | `uni.navigateTo` | 注意 `url` 不要带多余 `/` |
+| 全局数据 | `pinia` / `vuex` | 跨页状态优先 store，少滥用 `globalData` |
+
+编译到多端时，**路由栈上限、tabBar 规则** 以 **微信约束** 为底线做设计。
+
+***
+
+### 六、常见坑小结
+
+1. **只在 onLoad 请求数据** → 返回不刷新；改 `onShow` 或事件通知。
+2. **App.onShow 与 Page.onLoad 参数混用** → 统一在 Page 解析。
+3. **栈满仍 navigateTo** → 改 `redirectTo` 或 `reLaunch`。
+4. **query 传大 JSON** → 改 id + 服务端拉详情。
+5. **tab 页用 navigateTo 打开** → 必须 `switchTab`，且 tab 页 path 不能带参数（需全局存）。
+
+***
+
+### 七、延伸阅读
+
+* [《小程序网络请求、缓存与订阅消息》](/2026/05/25/miniprogram-network-storage-subscription/)——登录态与接口层
+* [《小程序性能优化与审核踩坑》](/2026/05/26/miniprogram-performance-audit-practice/)——包体积与 setData
+* 旧笔记[《微信卡包跳转小程序》](/2020/09/14/weixin/)——外链参数缓存问题
+
+---
+
+---
+url: /blog/2026/05/24/react-vite-project-structure-basics/index.md
+---
+# React + Vite：项目结构与可维护约定（Vue 读者向）
+本站主栈是 **Vue**，但微前端、招聘、协作常遇到 React 项目。本篇用 Vue 读者 familiar 的类比，给 **React + Vite** 目录约定——对标[《Vue + Vite 项目结构》](/2022/05/09/vue-vite-project-structure/)。
+
+***
+
+### 一、推荐目录
+
+```text
+src/
+  app/              # 路由、Provider 组合
+  pages/            # 路由页（对标 views）
+  components/       # 展示组件
+  features/         # 按业务域（order/user）
+  hooks/            # 对标 composables
+  api/              # 请求封装
+  stores/           # Zustand/Jotai（若需要）
+  utils/
+  types/
+  main.tsx
+  App.tsx
+```
+
+***
+
+### 二、创建项目
+
+```bash
+pnpm create vite my-app --template react-ts
+cd my-app && pnpm install
+```
+
+***
+
+### 三、状态与路由
+
+| Vue | React 常见 |
+|-----|------------|
+| Pinia | Zustand / Jotai |
+| Vue Router | React Router 6+ |
+| composable | custom hook |
+
+***
+
+### 四、与微前端
+
+React 子应用 **Module Federation / qiankun** 导出 bootstrap 生命周期；见微前端系列 **React 子应用** 章节。
+
+***
+
+### 五、何时深入 React
+
+* 主职栈转 React → 另开系列
+* 仅维护子应用 → 本篇 + 官方文档足够
+
+***
+
+### 六、小结
+
+React 项目 = **features 分层 + hooks + api 层**，原则与 Vue 工程化相同。构建链仍看 Vite/Webpack 工程化目录。
+
+---
+
+---
+url: /blog/2026/05/24/vue-learning-path-index/index.md
+---
+# Vue 学习路径导读：从红宝书到 Vue 3 工程化
+`01-前端核心` 里既有 **js-learn 红宝书笔记**，也有 **Vue2 源码**，还有 **Vue3 工程化** 新文。本篇帮你 **按目标选读**，避免在源码里迷路或重复读同一知识点。
+
+***
+
+### 一、三条线
+
+```text
+A. JavaScript 基础 ──► js-learn / ES6 系列
+B. Vue 原理       ──► vue-learn-* 源码笔记
+C. Vue 3 工程     ──► composition / pinia / router / TS
+```
+
+可以 **A → C 并行**；B 适合想搞懂响应式时按需翻。
+
+***
+
+### 二、路径 A：JavaScript（面试 + 日常）
+
+| 阶段 | 推荐 |
+|------|------|
+| 语法基础 | js-learn 系列、ES6 模块/Promise 四篇 |
+| 异步 | promise、paralle-request |
+| DOM/BOM | js-learn-DOM、js-learn-event |
+
+标签：[红宝书整理](/posts/tags/?tag=%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86)
+
+***
+
+### 三、路径 B：Vue 2 源码（理解用）
+
+顺序建议：**init → Dep/响应式 → render → mounted → build**
+
+* [vue-learn-init](/2020/11/28/vue-learn-init/)
+* [defineProperty / Dep](/2020/12/17/vue-learn-defineProperty/)
+* [render](/2020/10/03/vue-learn-render/)
+* [mounted](/2020/11/10/vue-learn-mounted/)
+
+\==不必== 全背；配合 Vue 3 文档对照 **迁移差异**（见 [Vue2→3 迁移清单](/2026/05/20/vue2-to-vue3-migration-checklist/)）。
+
+***
+
+### 四、路径 C：Vue 3 工程（工作直接用）
+
+| 顺序 | 文章 |
+|------|------|
+| 1 | [Vue + Vite 项目结构](/2022/05/09/vue-vite-project-structure/) |
+| 2 | [组合式 API 模式](/2022/04/20/vue3-composition-api-patterns/) |
+| 3 | [Composables 深入](/2026/05/20/vue3-composables-design-patterns-deep/) |
+| 4 | [Pinia](/2026/05/19/vue3-pinia-state-design-patterns/) |
+| 5 | [Router 权限](/2026/05/20/vue-router4-permission-dynamic-menu/) |
+| 6 | [TypeScript 配置](/2026/05/20/typescript-frontend-project-setup-strict/) + [Vue+TS](/2026/05/21/vue-typescript-props-emit-component-types/) |
+| 7 | [Vitest 测试](/2026/05/21/vitest-vue-test-utils-zero-to-one/) |
+
+***
+
+### 五、与全站其他目录的衔接
+
+* **构建**： [构建与工程化专题目录](/posts/categories/?id=cce9da)
+* **性能**：[性能优化标签](/posts/tags/?tag=%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+* **微前端**：[微前端标签](/posts/tags/?tag=%E5%BE%AE%E5%89%8D%E7%AB%AF)
+* **中后台架构**：[08-架构](/posts/categories/) 下 RBAC + 动态表单
+
+***
+
+### 六、React 读者
+
+仅维护 React 子应用时读 [React + Vite 结构](/2026/05/24/react-vite-project-structure-basics/) 即可。
+
+***
+
+### 七、小结
+
+**上班写 Vue 3 → 走路径 C**；**补 JS 底子 → 路径 A**；\*\* curiosity 驱动 → 路径 B 挑章读\*\*。
+
+---
+
+---
+url: /blog/2026/05/25/interview-guide-index/index.md
+---
+# 面经导读：怎么读、考什么、去哪复习
+原先《面试》一篇堆了多家公司的 raw 题单，不好检索。本篇是 **阅读地图**：按主题拆成 5 篇 **带答法指引** 的专题；原始公司记录保留在 [面试原始记录](/2023/08/04/interview/)。
+
+***
+
+### 一、专题拆分（推荐顺序）
+
+| 专题 | 覆盖 | 链接 |
+|------|------|------|
+| JS / CSS / 浏览器基础 | 类型、数组、原型、BFC、事件循环 | [基础八股精讲](/2026/05/25/interview-javascript-css-fundamentals/) |
+| Vue / React | 响应式、生命周期、hooks、vuex/pinia | [框架高频](/2026/05/25/interview-vue-react-framework-questions/) |
+| 网络 / 缓存 / 安全 | 状态码、强协商缓存、CORS、XSS | [网络与安全](/2026/05/25/interview-network-security-cache/) |
+| 工程化 / 移动端 / Node | Webpack、uni-app、适配、JSBridge、Node 循环 | [工程与移动端](/2026/05/26/interview-webpack-mobile-node/) |
+| 项目 / 开放题 | 性能监控、团队角色、学习方法 | [项目与软技能](/2026/05/26/interview-project-and-soft-skills/) |
+
+***
+
+### 二、高频考点（多厂重复）
+
+**几乎每次必问**
+
+* Cookie / localStorage / sessionStorage
+* Vue2 vs Vue3、响应式原理
+* 前端性能优化（说 **指标 + 手段 + 项目例子**）
+* 移动端适配（rem/vw/safe-area）
+* 跨域与缓存
+* 项目深挖：你负责什么、最难的是什么
+
+**常考开放题**
+
+* 怎么学习、职业规划、如何融入团队
+
+***
+
+### 三、和本站文章的对应关系
+
+| 面试提到的点 | 站内延伸 |
+|--------------|----------|
+| JSBridge / App 内 H5 | [JSBridge 实战](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/) |
+| 性能优化 | [性能优化总览](/2023/07/26/frontend-performance-overview/) |
+| Webpack | [构建与工程化专题](/posts/categories/?id=cce9da) |
+| XSS | [前端安全 XSS/CSP](/2026/05/22/frontend-security-xss-csp-iframe-sandbox/) |
+| headless | [Playwright 架构](/2025/11/16/headless-playwright-architecture-tracing-ci/) |
+| RBAC / 权限 | [07-后台与RBAC](/posts/categories/) |
+
+***
+
+### 四、答题结构（项目题）
+
+```text
+背景（业务一句话）→ 你的职责 → 技术方案 → 权衡 → 结果（最好有数据）→ 复盘
+```
+
+避免只堆名词；**「我做了什么」** 比 「我们知道 webpack」 重要。
+
+***
+
+### 五、原始面经
+
+微众 / SHEIN / CVTE / 富途 等公司 **原题列表**（未改写为答案）：见 [面试原始记录](/2023/08/04/interview/)。
+
+***
+
+### 六、小结
+
+先按专题补缺口，再用原始记录 **模拟自测**。AI 时代八股仍考，但 **项目闭环 + 排查思路** 权重更高，见[《AI 背景下，程序员何去何从》](/2026/05/23/ai-era-programmer-career-outlook/)。
+
+---
+
+---
+url: /blog/2026/05/25/interview-javascript-css-fundamentals/index.md
+---
+# 面经精讲：JavaScript、CSS 与浏览器基础
+微众、SHEIN、CVTE、富途面里 **JS/CSS 基础** 重复率最高。本篇把原题整理成 **答法骨架**，细节链到本站红宝书与 ES6 笔记。
+
+***
+
+### 一、类型判断
+
+**常问**：`typeof` / `instanceof` 区别？还有哪些判断方式？
+
+| 方式 | 适用 | 坑 |
+|------|------|-----|
+| `typeof` | 原始类型 | `typeof null === 'object'` |
+| `instanceof` | 引用类型、原型链 | 跨 iframe 失效 |
+| `Object.prototype.toString` | 通用 | 写法冗长 |
+| `Array.isArray` | 数组 | — |
+
+***
+
+### 二、数组
+
+**常问**：常见方法及区别？
+
+* **改原数组**：push/pop/shift/unshift/splice/sort/reverse
+* **不改原数组**：map/filter/concat/slice/toSorted（新）
+* **聚合**：reduce、some/every
+
+项目里能说 **「用 reduce 做 groupBy」** 比背 API 名单加分。
+
+***
+
+### 三、存储
+
+**常问**：Cookie / localStorage / sessionStorage？
+
+| | Cookie | localStorage | sessionStorage |
+|--|--------|--------------|----------------|
+| 容量 | ~4KB | ~5MB | ~5MB |
+| 随请求发送 | 是 | 否 | 否 |
+| 生命周期 | 可设过期 | 持久 | 标签页 |
+| 服务端可读 | HttpOnly 时否 | 否 | 否 |
+
+**追问**：localStorage 做过期缓存？\
+包一层 `{ expire, data }`，读时比对 `Date.now()`（见小程序缓存文同思路）。
+
+***
+
+### 四、继承与原型
+
+**常问**：JS 继承方式？
+
+* 原型链继承
+* 构造函数 + `call`
+* `Object.create`
+* ES6 `class extends`（语法糖）
+
+能画 **原型链图** 即可。
+
+***
+
+### 五、事件循环
+
+**必考**：输出顺序题。
+
+\==口诀==：同步 → 微任务（Promise.then）→ 宏任务（setTimeout）→ 微任务 → …
+
+详见 [Promise 组合子与微任务](/2022/10/25/es6-promise-combinators-and-microtasks/)。
+
+***
+
+### 六、CSS：BFC
+
+**常问**：什么是 BFC？如何触发？
+
+块级格式化上下文，内部布局不受外部 float 影响。
+
+触发：`overflow: hidden/auto`、`display: flow-root`、`float`、`position: absolute` 等。
+
+应用：清除浮动、两栏自适应、margin 折叠。
+
+***
+
+### 七、Flex / Grid
+
+**常问**：flex 常用属性？
+
+* 容器：`display:flex`、`justify-content`、`align-items`、`flex-wrap`
+* 子项：`flex: 1`、`flex-shrink: 0`
+
+Grid 富途面提到过：了解 `grid-template-columns` 即可，中后台 **flex 更常见**。
+
+***
+
+### 八、防抖节流
+
+| | 防抖 | 节流 |
+|--|------|------|
+| 场景 | 搜索输入、resize 停稳后 | 滚动、按钮连点 |
+| 思路 | 延迟执行，重复触发重置计时 | 固定间隔最多执行一次 |
+
+***
+
+### 九、图片懒加载
+
+思路：
+
+1. `loading="lazy"`（现代浏览器）
+2. `IntersectionObserver` + `data-src`
+3. 占位图 / LQIP
+
+见 [列表与图片性能](/2023/07/12/frontend-performance-list-image/)。
+
+***
+
+### 十、小结
+
+基础题答 **定义 + 使用场景 + 一个坑**。更多 ES 细节翻 [红宝书整理标签](/posts/tags/?tag=%E7%BA%A2%E5%AE%9D%E4%B9%A6%E6%95%B4%E7%90%86)。
+
+---
+
+---
+url: /blog/2026/05/25/interview-network-security-cache/index.md
+---
+# 面经精讲：网络、缓存、跨域与安全
+SHEIN、富途面里 **HTTP 状态码、缓存、CORS、XSS** 出现频率高。本篇按 **面试答法** 整理，细节链到本站安全与网络文。
+
+***
+
+### 一、状态码（常问 subset）
+
+| 码 | 含义 | 面试一句话 |
+|----|------|------------|
+| 301 | 永久重定向 | SEO 权重转移 |
+| 302 | 临时重定向 | 可能改 method（历史坑） |
+| 304 | 协商缓存命中 | Not Modified，用本地 |
+| 307/308 | 严格重定向 | 不改 method |
+| 401 | 未认证 | 跳登录 / 刷新 token |
+| 403 | 无权限 | 已登录但不够权 |
+| 502/504 | 网关/超时 | 后端或链路问题 |
+
+***
+
+### 二、强缓存 vs 协商缓存
+
+**强缓存**：`Cache-Control: max-age` / `Expires`（前者优先）\
+→ 不发请求，200 from disk/memory cache
+
+**协商缓存**：`ETag` / `Last-Modified`\
+→ 请求带 `If-None-Match` / `If-Modified-Since` → 304
+
+前端静态资源：**文件名 hash + max-age 很长**；`index.html` **no-cache**。
+
+见 [网络与静态资源性能](/2023/07/21/frontend-performance-network-assets/)。
+
+***
+
+### 三、跨域
+
+**同源**：协议+域名+端口相同。
+
+**CORS**：服务端 `Access-Control-Allow-Origin`；带 Cookie 要 `Credentials: true` 且 Origin 不能 `*`。
+
+**其他**：开发 Vite proxy；生产 **BFF 同源**；JSONP（老，不推荐）。
+
+详见 [CORS 与 Cookie](/2026/05/22/frontend-cors-credentials-cookie-guide/)。
+
+***
+
+### 四、简单请求 vs 预检
+
+**简单请求**：GET/HEAD/POST + 简单头 + 简单 Content-Type。
+
+否则 **OPTIONS 预检** → 通过后再发真实请求。
+
+富途面常考：带 `Authorization` 的 POST → **预检**。
+
+***
+
+### 五、SSL/TLS
+
+HTTPS = HTTP + TLS。\
+面试说清：**证书校验身份、对称加密传数据、TLS1.2+**（小程序 iOS ATS 同理，见 uni-app 旧坑文）。
+
+***
+
+### 六、XSS 场景题
+
+**题**：URL 参数回填表单有风险吗？\
+有——反射型 XSS。
+
+**预防**：输出编码、不用不可信 `v-html`、CSP、HttpOnly Cookie。
+
+见 [XSS/CSP 深入](/2026/05/22/frontend-security-xss-csp-iframe-sandbox/)。
+
+***
+
+### 七、WebSocket
+
+**常问**：项目里怎么用？
+
+答：长连接、服务端 push；注意 **心跳、重连、鉴权**（query token 或首帧 auth）。\
+Egg 实践：[WebSocket 与 Socket.io](/2026/05/13/eggjs-websocket-socketio-auth-rooms/)。
+
+***
+
+### 八、小结
+
+网络题 **画请求链 + 说头字段** 比背定义强。安全题强调 **存储型/反射型区别 + 具体防御**。
+
+---
+
+---
+url: /blog/2026/05/25/interview-vue-react-framework-questions/index.md
+---
+# 面经精讲：Vue 与 React 框架高频题
+框架题几乎 **每面必问**。本篇按 **Vue2/3 对比、响应式、生命周期、状态、React hooks** 组织答法，并链到本站 Vue 专题。
+
+***
+
+### 一、Vue2 vs Vue3（总表）
+
+| 点 | Vue2 | Vue3 |
+|----|------|------|
+| API | Options API 为主 | Composition API |
+| 响应式 | `Object.defineProperty` | `Proxy` |
+| 根节点 | 单根 | 多根 Fragment |
+| 全局 API | `new Vue()` | `createApp()` |
+| 状态 | Vuex | Pinia 推荐 |
+
+迁移见 [Vue2→3 清单](/2026/05/20/vue2-to-vue3-migration-checklist/)。
+
+***
+
+### 二、响应式原理
+
+**Vue2**：递归遍历 data，`get` 依赖收集，`set` 派发更新；数组变异方法 + `Vue.set`。
+
+**Vue3**：`Proxy` 拦截 get/set/delete；支持 Map/Set；性能更好。
+
+**追问**：`ref` vs `reactive`？
+
+* `ref` 基本类型 / 需要 `.value`
+* `reactive` 对象，解构会丢响应式 → `toRefs`
+
+源码笔记：[defineProperty](/2020/12/17/vue-learn-defineProperty/)、[Dep](/2021/01/05/vue-learn-Dep/)。
+
+***
+
+### 三、生命周期
+
+**Vue2**：beforeCreate → created → beforeMount → mounted → beforeUpdate → updated → beforeDestroy → destroyed。
+
+**Vue3**：`beforeUnmount` / `unmounted`；setup 在 beforeCreate 之前。
+
+**面经题**：Watcher 在哪个阶段？—— 组件 mount 过程中渲染 Watcher，依赖收集在 render 时。
+
+***
+
+### 四、指令与 v-model
+
+**常问**：指令内部做了什么？\
+生命周期：`bind` → `inserted` → `update` → `unbind`（Vue2 命名；Vue3 为 mounted/updated 等钩子）。
+
+**v-model**：`:value` + `@input` 语法糖；组件上为 `modelValue` + `update:modelValue`。
+
+手写 v-model 思路：props 接 value，emit input/update。
+
+***
+
+### 五、EventBus
+
+Vue2 常用 `new Vue()` 作 bus；Vue3 推荐 **mitt** 或 Pinia。\
+说清楚 **订阅要 off**，否则泄漏。
+
+***
+
+### 六、Vuex / Pinia
+
+**Vuex**：state / getters / mutations（同步）/ actions（异步）/ modules。
+
+**Pinia**：无 mutations，store 即 module。见 [Pinia 状态设计](/2026/05/19/vue3-pinia-state-design-patterns/)。
+
+***
+
+### 七、React Hooks（SHEIN/CVTE 问过）
+
+| Hook | 作用 |
+|------|------|
+| useState | 状态 |
+| useEffect | 副作用，依赖数组控制 |
+| useMemo/useCallback | 缓存 |
+| useRef | DOM / 可变值不触发渲染 |
+
+**useEffect vs mounted**：严格模式会双调用；清理函数在 unmount 执行。
+
+本站 React 入门：[React + Vite 结构](/2026/05/24/react-vite-project-structure-basics/)。
+
+***
+
+### 八、发布订阅（富途）
+
+EventEmitter 模式：on / emit / off。\
+Vue 响应式、EventBus、DOM 事件都可往这套解释。
+
+***
+
+### 九、小结
+
+答框架题 **先对比表，再原理一句，再项目里怎么用**。深入读 [Vue 学习路径导读](/2026/05/24/vue-learning-path-index/)。
+
+---
+
+---
+url: /blog/2026/05/25/miniprogram-network-storage-subscription/index.md
+---
+# 小程序深入：网络请求、登录态与本地缓存
+小程序里 **wx.request 包一层** 大家都做过；难的是 **token 刷新、并发重复登录、缓存过期、订阅消息合规** 这几块叠在一起时的边界。本篇给一套 **可拷贝再改** 的分层写法，并标出审核与线上常踩的坑。
+
+***
+
+### 一、推荐分层
+
+```text
+utils/request.js    # 统一 wx.request，拦截器
+utils/auth.js       # login、refresh、logout
+services/*.js       # 业务 API，只关心 path 与 data
+stores/user.js      # 可选：全局用户态
+```
+
+业务页 **不要** 直接 `wx.request`——否则 token 逻辑会复制 N 份。
+
+***
+
+### 二、请求封装（含登录态）
+
+```javascript
+// utils/request.js
+const BASE = 'https://api.example.com';
+
+let isRefreshing = false;
+let pendingQueue = [];
+
+function flushQueue(error, token) {
+  pendingQueue.forEach(({ resolve, reject, config }) => {
+    if (error) reject(error);
+    else resolve(request({ ...config, header: { ...config.header, Authorization: `Bearer ${token}` } }));
+  });
+  pendingQueue = [];
+}
+
+export function request({ url, method = 'GET', data, header = {} }) {
+  const token = wx.getStorageSync('access_token');
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: url.startsWith('http') ? url : `${BASE}${url}`,
+      method,
+      data,
+      header: {
+        'Content-Type': 'application/json',
+        Authorization: token ? `Bearer ${token}` : '',
+        ...header,
+      },
+      success(res) {
+        const { statusCode, data: body } = res;
+        if (statusCode === 401) {
+          handle401({ url, method, data, header }).then(resolve).catch(reject);
+          return;
+        }
+        if (statusCode >= 200 && statusCode < 300) {
+          resolve(body);
+        } else {
+          reject(body || { message: '请求失败' });
+        }
+      },
+      fail: reject,
+    });
+  });
+}
+
+function handle401(config) {
+  return new Promise((resolve, reject) => {
+    pendingQueue.push({ resolve, reject, config });
+    if (isRefreshing) return;
+
+    isRefreshing = true;
+    refreshToken()
+      .then((newToken) => {
+        wx.setStorageSync('access_token', newToken);
+        isRefreshing = false;
+        flushQueue(null, newToken);
+      })
+      .catch((err) => {
+        isRefreshing = false;
+        flushQueue(err);
+        wx.removeStorageSync('access_token');
+        wx.reLaunch({ url: '/pages/login/index' });
+      });
+  });
+}
+```
+
+**要点**
+
+* \==401 队列==：避免并发请求同时触发多次 `wx.login` / refresh。
+* **域名**：必须在小程序后台配置 **request 合法域名**；开发阶段可开「不校验合法域名」，**提审前关掉**。
+* **HTTPS + TLS 1.2+**：iOS 对 ATS 敏感，旧文 uni-app 轮播图案例即 **证书/TLS** 问题。
+
+***
+
+### 三、登录：code2Session
+
+```javascript
+// utils/auth.js
+export function login() {
+  return new Promise((resolve, reject) => {
+    wx.login({
+      success({ code }) {
+        if (!code) return reject(new Error('no code'));
+        request({ url: '/auth/wechat', method: 'POST', data: { code } })
+          .then((res) => {
+            wx.setStorageSync('access_token', res.accessToken);
+            wx.setStorageSync('refresh_token', res.refreshToken);
+            resolve(res);
+          })
+          .catch(reject);
+      },
+      fail: reject,
+    });
+  });
+}
+
+export function refreshToken() {
+  const refresh = wx.getStorageSync('refresh_token');
+  return request({ url: '/auth/refresh', method: 'POST', data: { refreshToken: refresh } })
+    .then((res) => res.accessToken);
+}
+```
+
+**session\_key 勿下发前端**；用户敏感信息走 **服务端解密**（如手机号 `getPhoneNumber` 的 encryptedData）。
+
+***
+
+### 四、本地缓存策略
+
+| API | 容量 | 适用 |
+|-----|------|------|
+| `wx.setStorageSync` | 单 key 1MB，总计 10MB 量级 | 配置、token、草稿 |
+| `wx.setStorage` 异步 | 同上 | 大 JSON 写盘不卡 UI |
+| 文件系统 `wx.getFileSystemManager` | 更大文件 | 离线包、图片缓存 |
+
+```javascript
+const CACHE_TTL = 5 * 60 * 1000;
+
+export function getCache(key) {
+  const raw = wx.getStorageSync(key);
+  if (!raw) return null;
+  const { expire, data } = raw;
+  if (Date.now() > expire) {
+    wx.removeStorageSync(key);
+    return null;
+  }
+  return data;
+}
+
+export function setCache(key, data, ttl = CACHE_TTL) {
+  wx.setStorageSync(key, { expire: Date.now() + ttl, data });
+}
+```
+
+**注意**：清缓存 / 换机 **token 丢失** 是常态；页面要能 **静默登录或引导登录**，不要假设 storage 永在。
+
+***
+
+### 五、订阅消息（一次性 / 长期）
+
+用户 **主动触发** 后才能调 `wx.requestSubscribeMessage`：
+
+```javascript
+async function onPaySuccess() {
+  try {
+    const res = await wx.requestSubscribeMessage({
+      tmplIds: ['模板ID1', '模板ID2'],
+    });
+    // res[模板ID] === 'accept' | 'reject' | 'ban'
+    await request({ url: '/notify/subscribe', method: 'POST', data: { result: res } });
+  } catch (e) {
+    // 用户拒绝或不支持
+  }
+}
+```
+
+**审核**：诱导订阅、未使用场景批量弹窗会被拒；文案与 **实际推送内容** 一致。
+
+***
+
+### 六、安全与合规清单
+
+* 合法域名 + **禁止明文 HTTP**（生产）；
+* 敏感字段 **不在前端日志 console**；
+* `wx.uploadFile` / `downloadFile` 域名单独配置；
+* 用户隐私协议与 **收集清单** 与后台声明一致（2023 后隐私接口更严）。
+
+***
+
+### 七、小结
+
+小程序网络层的核心是：**统一 request → 401 单飞刷新 → 业务 API 无感 token**；缓存带 TTL；订阅消息 **跟用户动作绑定**。把分层做好，后续换 uni-app/Taro 也只是换一层 transport。
+
+相关：[《小程序深入：生命周期、路由与页面栈》](/2026/05/24/miniprogram-lifecycle-routing-navigation/)、[《小程序性能优化与审核踩坑》](/2026/05/26/miniprogram-performance-audit-practice/)。
+
+---
+
+---
+url: /blog/2026/05/26/interview-project-and-soft-skills/index.md
+---
+# 面经精讲：项目深挖、开放题与软技能
+后半场往往 **比八股更决定 offer**：项目真实性、角色、协作、学习力。本篇整理 SHEIN/富途/CVTE 常问的 **开放题与项目题** 答法。
+
+***
+
+### 一、项目介绍模板（2 分钟）
+
+```text
+1. 业务背景（谁用、解决啥）
+2. 技术栈与架构图（一句话）
+3. 我负责：模块 A、性能方案 B、基建 C
+4. 难点：具体矛盾 + 我的决策
+5. 结果：指标（延迟 -30%、崩溃率、交付周期）
+```
+
+避免「我们用了 vue element webpack」流水账。
+
+***
+
+### 二、高频项目追问
+
+| 问题 | 答法要点 |
+|------|----------|
+| 最有亮点的项目 | 选 **可量化** 的一个，不要最老的 |
+| 最大挑战 | 技术 + 协作各准备一个 |
+| 内嵌 H5 做了哪些优化 | 离线包/懒加载/Bridge 减少跳转/监控 |
+| 错误怎么上报 | Sentry + sourceMap + release + userId 哈希 |
+| 性能监控平台 | FCP/LCP、API 耗时、白屏率、采样率 |
+| 团队分工与你的角色 | 诚实：主 R / 协作 / 基建 —— 对齐 JD |
+| 如何快速融入 | 文档、结对、先小 PR、对齐规范 |
+
+***
+
+### 三、性能监控（富途深挖）
+
+上报字段示例：
+
+* **性能**：FCP、LCP、CLS、长任务、资源慢请求
+* **错误**：JS stack、component、route、release
+* **业务**：traceId、tenantId（脱敏）
+
+与 [Sentry 接入文](/2026/05/23/frontend-error-monitoring-sentry-reporting/) 一致即可。
+
+***
+
+### 四、算法题（面经出现）
+
+* 排序找第 K 大 → 快排 partition 或堆
+* 最长子序列 → DP
+* 二叉树 → 递归/层序，说 **思路 + 复杂度** 即可
+
+前端岗 **很少 hard 算法**；说不清可聊 **工程权衡**，别硬编。
+
+***
+
+### 五、开放题
+
+**怎么学习？**
+
+* 官方文档 + 做小项目验证
+* 本站式 **错题本博客**
+* 跟 AI 协作时 **仍跑测试验收**（见 AI 职业文）
+
+**职业规划？**
+
+* 1–3 年：深主栈 + 交付闭环
+* 3–5 年：T 型 / 基建 / 带人（选真实方向）
+
+**离职原因？**
+
+* 客观：业务调整、技术栈不匹配、寻求 **更大职责**
+* 忌：贬前雇主
+
+**对下一份工作的期待？**
+
+* 与 JD 对齐：技术栈、业务域、团队规模
+
+***
+
+### 六、互相了解环节
+
+准备 **3 个问题** 问面试官：
+
+* 团队前端分工与发布节奏？
+* 三个月内期望产出？
+* 技术债与质量闸？
+
+***
+
+### 七、小结
+
+软技能题 **真诚 + 结构 + 与 JD 对齐**。八股专题见 [面经导读](/2026/05/25/interview-guide-index/)。
+
+---
+
+---
+url: /blog/2026/05/26/interview-webpack-mobile-node/index.md
+---
+# 面经精讲：Webpack、移动端适配与 Node
+微众、SHEIN 爱问 **uni-app/Webpack**；富途爱问 **Node 事件循环 vs 浏览器**。本篇串工程化与移动端答法。
+
+***
+
+### 一、Webpack 流程
+
+**常问**：打包原理 / loader 顺序 / plugin 区别？
+
+```text
+entry → 递归依赖 → loader 转换 → 插件介入生命周期 → output
+```
+
+* **Loader**：文件转换（babel、css、file）
+* **Plugin**：整个编译生命周期（HtmlWebpackPlugin、SplitChunks）
+
+**优化**：code split、tree shaking、cache、thread-loader、分析 bundle。
+
+专题：[Webpack 从 0 到 1](/2022/03/08/webpack-from-zero-to-one-entry-output-devserver/) 及工程化目录。
+
+***
+
+### 二、uni-app 打包原理（面试版）
+
+**一句话**：Vue 源码 → 各端编译器（webpack/vite）→ 平台特有运行时 + 条件编译。
+
+**多端**：`#ifdef MP-WEIXIN` 等剔除分支；各端输出独立包。
+
+深入：[uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/)。
+
+***
+
+### 三、移动端适配
+
+**常问**：怎么做适配？
+
+| 方案 | 说明 |
+|------|------|
+| rem + 根 font-size | 动态设置 html font-size |
+| vw/vh | postcss-px-to-viewport |
+| flex + 百分比 | 简单布局 |
+| safe-area | 刘海/底部横条 env() |
+
+专题系列：[viewport/DPR](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)、[safe-area](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)。
+
+**异形屏**：safe-area + 全屏 WebView 下 **viewport-fit=cover**。
+
+***
+
+### 四、App 内 H5 通信
+
+**常问**：JSBridge 了解吗？
+
+答：H5 调 Native **URL Scheme / 注入对象 / WKScriptMessageHandler**；异步 callback id + JSON RPC。
+
+见 [JSBridge 实战](/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/)。
+
+***
+
+### 五、性能优化（总答法）
+
+**结构**：指标（LCP/FCP/TTI）→ 手段 → 项目例子
+
+| 方向 | 手段 |
+|------|------|
+| 加载 | 分包、懒加载、CDN、HTTP2 |
+| 运行时 | 虚拟列表、防抖、Web Worker |
+| 监控 | 性能平台、错误上报 |
+
+[性能总览](/2023/07/26/frontend-performance-overview/)、[Sentry 监控](/2026/05/23/frontend-error-monitoring-sentry-reporting/)。
+
+***
+
+### 六、Headless（微众）
+
+**用途**：无 UI 浏览器自动化——截图、PDF、E2E、爬虫。\
+项目答法：Playwright/Puppeteer + CI。见 [Playwright 架构](/2025/11/16/headless-playwright-architecture-tracing-ci/)。
+
+***
+
+### 七、Node 事件循环 vs 浏览器
+
+| | 浏览器 | Node |
+|--|--------|------|
+| 宏任务 | timer、IO、UI | timer、IO、check、close |
+| 微任务 | Promise | Promise |
+| 特有 | render | **process.nextTick**（微任务前）、**setImmediate** |
+
+[Node 事件循环](/2024/09/23/node-event-loop-libuv-phases/)。
+
+**限流/黑名单**（富途）：IP 计数 Redis + 滑动窗口；黑名单表；验证码。
+
+***
+
+### 八、小结
+
+工程化题 **说清 loader/plugin 分工**；移动端 **safe-area + 适配方案二选一讲透**。Node 题画 **两圈 event loop** 即可。
+
+---
+
+---
+url: /blog/2026/05/26/miniprogram-navigate-miniprogram-half-screen/index.md
+---
+# 小程序跳转与半屏小程序：navigateToMiniProgram 实战
+业务常要 **从 A 小程序打开 B**（支付、联名活动、服务商能力），或使用 **半屏小程序** 降低跳出感。本篇讲 **跳转配置、参数传递、返回栈与审核**。
+
+***
+
+### 一、跳转方式
+
+| API | 场景 |
+|-----|------|
+| `wx.navigateToMiniProgram` | 打开其他小程序 |
+| `wx.openEmbeddedMiniProgram` | **半屏**嵌入（基础库与类目有限制） |
+| 返回 | `wx.navigateBackMiniProgram`（B 调起方返回 A） |
+
+***
+
+### 二、navigateToMiniProgram
+
+```javascript
+wx.navigateToMiniProgram({
+  appId: 'wxXXXXXXXX',
+  path: 'pages/order/index?id=123',
+  extraData: { from: 'campaign' },
+  envVersion: 'release', // develop / trial / release
+  success() {},
+  fail(err) {
+    // 用户取消、未关联、未发布等
+  },
+});
+```
+
+**关联**：公众平台 **设置 → 跳转小程序** 互相绑定（或开放规则允许）。
+
+***
+
+### 三、参数与 extraData
+
+* `path` 带 query → 目标页 `onLoad(options)`
+* `extraData` → 目标 `App.onLaunch/onShow` 的 `referrerInfo.extraData`
+
+与 [生命周期文](/2026/05/24/miniprogram-lifecycle-routing-navigation/) 一致：**页面 onLoad 解析最稳**。
+
+***
+
+### 四、半屏小程序
+
+```javascript
+wx.openEmbeddedMiniProgram({
+  appId: 'wxYYYYYYYY',
+  path: 'pages/pay/index',
+  extraData: { orderId: '42' },
+});
+```
+
+**注意**
+
+* 能力随基础库更新，需 **真机测**
+* UI 上仍是独立小程序上下文，**登录态不自动共享**
+* 支付等仍走 **目标小程序商户号**
+
+***
+
+### 五、安全
+
+* 只跳 **白名单 appId**（服务端下发配置）
+* 不要把 **密钥** 放 extraData
+* 回调业务结果用 **服务端对账**，不要只信前端 success
+
+***
+
+### 六、审核
+
+* 跳转需 **用户明确触发**（点击按钮）
+* 说明 **为何需要跳第三方**
+* 半屏场景提供 **录屏**
+
+***
+
+### 七、小结
+
+跨小程序 = **绑定关系 + path/extraData + 返回约定 + 服务端验单**。支付见 [支付深入](/2026/05/17/miniprogram-payment-flow-and-reconciliation/)。
+
+---
+
+---
+url: /blog/2026/05/26/miniprogram-performance-audit-practice/index.md
+---
+# 小程序性能优化与审核踩坑清单
+小程序 **包体积、首屏、setData 频率** 直接影响留存；审核则是 **另一套规则**。本篇把性能工具链和 **提审常见拒因** 合成一份 checklist，方便上线前过一遍。
+
+***
+
+### 一、包体积与分包
+
+**主包限制**（以微信当前规则为准，上线前再对一下官方文档）：
+
+* 主包 + 分包总体有上限；单分包也有上限；
+* **tabBar 页必须在主包**。
+
+**策略**
+
+```json
+// app.json  excerpt
+{
+  "pages": ["pages/index/index", "pages/user/index"],
+  "subPackages": [
+    {
+      "root": "packageOrder",
+      "pages": ["list/index", "detail/index"]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "wifi",
+      "packages": ["packageOrder"]
+    }
+  }
+}
+```
+
+* 按 **业务域** 拆分包，低频模块进分包；
+* 图片走 **CDN**，大图不要打进包；
+* 独立功能考虑 **插件** 或 **云开发** 减包。
+
+***
+
+### 二、setData：最贵的操作
+
+`setData` 会触发 **逻辑层 → 渲染层** 通讯；频繁、大数据 setData 是卡顿首因。
+
+**Do**
+
+```javascript
+// 只改用到的字段
+this.setData({ 'list[2].title': '新标题' });
+
+// 合并多次更新
+const patch = {};
+items.forEach((item, i) => { patch[`list[${i}].count`] = item.count; });
+this.setData(patch);
+```
+
+**Don't**
+
+* 一次 setData 塞 **整棵大树**；
+* 在 `onPageScroll` 里高频 setData；
+* 把 **未绑定 WXML 的字段** 放进 data（增大 diff）。
+
+使用开发者工具 **性能面板 → SetData 统计** 找热点页。
+
+***
+
+### 三、首屏与渲染
+
+| 手段 | 说明 |
+|------|------|
+| 骨架屏 | 首屏占位，数据到了再替换 |
+| 分批渲染 | 长列表先渲染 20 条，其余 `requestIdleCallback` 或分页 |
+| 自定义组件 `virtual-list` | 超长列表必看 |
+| 避免同步 API 阻塞 | 大 JSON `parse` 放 worker（基础库支持时） |
+
+**wx:if vs hidden**：频繁切换用 `hidden`；条件很少再渲染用 `wx:if` 减节点。
+
+***
+
+### 四、网络与图片
+
+* 接口 **并行** 注意上限，关键路径 **串行最少化**；
+* 列表图 **webp/合适尺寸**，`lazy-load="{{true}}"`；
+* 开启 **HTTP2**、合理 `Cache-Control`（静态资源）。
+
+***
+
+### 五、体验评分与监控
+
+* 小程序后台 **性能质量**、**体验分** 定期看；
+* 自建：**慢启动上报**（`onLaunch` 到首屏可交互）、**JS 错误**（`onError` + 源映射）；
+* 关键路径加 **埋点**：登录成功率、支付转化率。
+
+***
+
+### 六、审核踩坑（高频拒因）
+
+| 类别 | 典型问题 | 处理 |
+|------|----------|------|
+| 类目与资质 | 医疗/金融/直播等缺证照 | 先改类目或补资质 |
+| 隐私 | 未弹隐私协议、过度收集 | 接 **隐私保护指引**、最小化 API |
+| 诱导分享 | 「分享得红包」无实质服务 | 改文案与流程 |
+| 测试账号 | 审核员无法登录 | 提供 **清晰测试号 + 步骤** |
+| 内容 UGC | 无举报、无过滤 | 加审核机制说明 |
+| 虚拟支付 | iOS 虚拟商品走 IAP 规则 | 按平台规则拆支付 |
+| 域名 | 请求未配置合法域名 | 后台配置 + 生产关闭跳过校验 |
+
+**提审材料**：短录屏（核心路径 30s）+ 文字说明，比长篇小作文更有效。
+
+***
+
+### 七、与 uni-app 的差异提醒
+
+* 条件编译 `#ifdef MP-WEIXIN` 隔离微信特有 API；
+* 编译产物体积 **大于手写原生** 时，检查 **按需引入** 与 **tree-shaking**；
+* iOS 真机与开发者工具 **渲染差异** 务必真机测（旧文轮播 SSL 案例）。
+
+***
+
+### 八、上线前 10 条自检
+
+1. 主包体积 OK，分包合理
+2. 首屏无 500、无白屏
+3. 弱网 / 断网有提示
+4. 401 能回登录
+5. setData 热点已优化
+6. 隐私协议与后台声明一致
+7. 合法域名齐全
+8. iOS + Android 各走一遍支付/分享
+9. 测试账号可用
+10. 无 console 敏感日志
+
+***
+
+### 九、小结
+
+小程序性能 **80% 在 setData 与包体积**；审核 **80% 在资质、隐私、可测性**。把工具链和 checklist 固化到发版流程里，比临上线前突击有效得多。
+
+延伸阅读：[《小程序深入：生命周期、路由与页面栈》](/2026/05/24/miniprogram-lifecycle-routing-navigation/)、[《小程序深入：网络请求、登录态与本地缓存》](/2026/05/25/miniprogram-network-storage-subscription/)。
+
+---
+
+---
+url: /blog/2026/05/26/miniprogram-privacy-compliance-guide/index.md
+---
+# 小程序隐私合规：用户协议、收集清单与接口申请
+2023 后微信强化了 **隐私保护指引** 与 **敏感 API 声明**。很多提审失败不是代码 bug，而是 **「用了接口没在后台声明」** 或 **弹窗流程不对**。本篇按上线 checklist 讲。
+
+***
+
+### 一、三块合规
+
+| 块 | 内容 |
+|----|------|
+| **隐私保护指引** | 小程序后台填写收集的信息类型与用途 |
+| **用户同意弹窗** | 首次调用敏感 API 前必须 `requirePrivacyAuthorize` 等（以文档为准） |
+| **接口权限** | 地理位置、相册、手机号等 **后台申请 + 类目匹配** |
+
+***
+
+### 二、常见敏感能力
+
+* 地理位置：`wx.getLocation` / 选点
+* 相册/相机：头像上传、扫码
+* 手机号：`getPhoneNumber`（需企业认证等条件）
+* 剪贴板、蓝牙、日历等——**用前查文档是否需声明**
+
+***
+
+### 三、前端流程建议
+
+```javascript
+// 伪代码：调用敏感 API 前
+async function ensurePrivacy() {
+  if (wx.requirePrivacyAuthorize) {
+    await new Promise((resolve, reject) => {
+      wx.requirePrivacyAuthorize({ success: resolve, fail: reject });
+    });
+  }
+}
+
+async function pickLocation() {
+  await ensurePrivacy();
+  return wx.chooseLocation({});
+}
+```
+
+**原则**：敏感 API **集中封装**，不要散落在 20 个页面。
+
+***
+
+### 四、隐私政策页
+
+* 独立 **隐私政策** H5/小程序页，链接放设置与首次弹窗
+* 文案与后台 **收集清单一致**——审核会对照
+* 更新政策时 **版本号 + 再次告知**（视法规与平台要求）
+
+***
+
+### 五、提审材料
+
+* 测试账号 + 操作录屏（含 **授权弹窗** 步骤）
+* 说明为何需要某权限（**最小必要**）
+* 拒绝 **一启动就索要全部权限**
+
+与 [审核踩坑清单](/2026/05/26/miniprogram-performance-audit-practice/) 配合使用。
+
+***
+
+### 六、小结
+
+隐私合规 = **后台声明 + 用户同意 + 代码封装 + 材料一致**。旧笔记（2020）不含这部分，新业务 **必查当期文档**。
+
+---
+
+---
+url: /blog/2026/05/27/miniprogram-live-channels-overview/index.md
+---
+# 小程序直播与视频号联动：能力边界与接入要点
+带货、活动页常要 **小程序 + 直播 / 视频号** 组合。能力随微信版本迭代快，本篇讲 **常见集成模式、类目与资质、前端要做什么**，具体 API 以 [官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/) 为准。
+
+***
+
+### 一、几种形态
+
+| 形态 | 说明 |
+|------|------|
+| **小程序内直播组件** | 直播间挂在小程序页面（需类目与接口权限） |
+| **视频号主页/直播** | 从小程序 `openChannelsUserProfile` 等跳转视频号 |
+| **小店 / 组件带货** | 与电商、订单系统打通 |
+
+\==先确认类目==：并非所有小程序都能开直播，**后台能力开关** 为准。
+
+***
+
+### 二、典型流程（概念）
+
+```text
+1. 开通直播 / 视频号相关能力（资质、类目）
+2. 创建直播间（后台或 API）
+3. 小程序页面引入 live-player / 直播组件 或 跳转视频号
+4. 商品库与订单走自有或微信小店
+5. 支付、售后仍回小程序订单页 / 客服
+```
+
+***
+
+### 三、前端注意
+
+* **基础库版本** 门槛；低版本 **降级提示**
+* 直播页 **性能**：避免同页 heavy 动画 + 直播同屏
+* 分享路径带 **scene**，进房统计用 [生命周期](/2026/05/24/miniprogram-lifecycle-routing-navigation/) 解析
+* 网络：**弱网重连**、封面图 CDN
+
+***
+
+### 四、与订单/支付
+
+* 直播间下单 often 跳 **小程序订单页** 或 **半屏小程序**
+* 支付走 [微信支付链路](/2026/05/17/miniprogram-payment-flow-and-reconciliation/)
+* 库存与价格 **服务端校验**，不要只信前端传参
+
+***
+
+### 五、合规
+
+* 直播内容、商品类目 **证照**
+* 用户隐私（评论、中奖手机号）走 [隐私合规](/2026/05/26/miniprogram-privacy-compliance-guide/)
+* 抽奖活动 **规则公示**
+
+***
+
+### 六、排障
+
+| 现象 | 方向 |
+|------|------|
+| 组件不显示 | 类目、权限、基础库 |
+| 黑屏 | 流地址、HTTPS、真机 |
+| 无法跳转视频号 | appId 关联、用户是否安装微信 |
+
+***
+
+### 七、小结
+
+直播/视频号 = **资质 + 官方组件/跳转 + 订单支付闭环**。细节随平台更新快，实施前 **先读当期开放文档** 再写代码。
+
+---
+
+---
+url: /blog/2026/05/27/mobile-h5-webview-jsbridge-native-interaction/index.md
+---
+# H5 与 App 原生交互：JSBridge 原理与实战
+业务里常见形态：**App 壳 + WebView 跑 H5**（活动页、支付结果、旧系统迁移）。前端要能 **调相机、分享、返回、传 token**，Native 要能 **控导航栏、注入登录态、收 H5 事件**——中间这层就是 ==JSBridge==。
+
+本篇讲清 **调用模型、协议设计、双端注入、安全与调试**，并给出可直接改的 JS 模板。
+
+***
+
+### 一、WebView 里的三种通信方式
+
+| 方式 | 方向 | 特点 |
+|------|------|------|
+| **URL Scheme 拦截** | H5 → Native | 实现简单；大数据不便 |
+| **prompt / 注入对象** | H5 → Native | Android `@JavascriptInterface`、iOS `WKScriptMessageHandler` |
+| **Native 调 JS** | Native → H5 | `evaluateJavascript` / `callHandler` |
+
+生产环境多为 **混合**：注册表 + 回调 id + JSON payload（类似 RPC）。
+
+***
+
+### 二、H5 侧统一 Bridge 封装
+
+```javascript
+// bridge.js
+const callbacks = {};
+let seq = 0;
+
+function invoke(method, params = {}) {
+  return new Promise((resolve, reject) => {
+    const id = `cb_${Date.now()}_${++seq}`;
+    callbacks[id] = { resolve, reject };
+
+    const message = JSON.stringify({ id, method, params });
+
+    // Android：注入对象
+    if (window.NativeBridge && window.NativeBridge.postMessage) {
+      window.NativeBridge.postMessage(message);
+      return;
+    }
+    // iOS WKWebView
+    if (window.webkit?.messageHandlers?.NativeBridge) {
+      window.webkit.messageHandlers.NativeBridge.postMessage(message);
+      return;
+    }
+    // 降级：iframe + scheme（仅小 payload）
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = `myapp://bridge?payload=${encodeURIComponent(message)}`;
+    document.body.appendChild(iframe);
+    setTimeout(() => iframe.remove(), 0);
+
+    // 超时
+    setTimeout(() => {
+      if (callbacks[id]) {
+        delete callbacks[id];
+        reject(new Error('bridge timeout'));
+      }
+    }, 15000);
+  });
+}
+
+// Native 回调入口（Native 执行 JS 调用）
+window.__bridgeCallback = function (id, ok, data) {
+  const cb = callbacks[id];
+  if (!cb) return;
+  delete callbacks[id];
+  ok ? cb.resolve(data) : cb.reject(data);
+};
+
+export const Bridge = {
+  getToken: () => invoke('getToken'),
+  openCamera: (opts) => invoke('openCamera', opts),
+  closeWebView: () => invoke('closeWebView'),
+  share: (payload) => invoke('share', payload),
+};
+```
+
+**Native 处理完** 后执行：
+
+```javascript
+// 伪代码：Native 注入
+webView.evaluateJavascript(
+  `window.__bridgeCallback('${id}', true, ${JSON.stringify(result)})`
+);
+```
+
+***
+
+### 三、Android 注入示例（Kotlin 思路）
+
+```kotlin
+class AppBridge(private val activity: Activity) {
+    @JavascriptInterface
+    fun postMessage(json: String) {
+        val msg = JSONObject(json)
+        when (msg.getString("method")) {
+            "getToken" -> {
+                val token = TokenStore.get()
+                callback(msg.getString("id"), true, mapOf("token" to token))
+            }
+            "closeWebView" -> activity.finish()
+            // ...
+        }
+    }
+
+    private fun callback(id: String, ok: Boolean, data: Any) {
+        val js = "window.__bridgeCallback('${id}', $ok, ${JSONObject(data)})"
+        activity.runOnUiThread {
+            webView.evaluateJavascript(js, null)
+        }
+    }
+}
+
+// WebSettings
+webView.settings.javaScriptEnabled = true
+webView.addJavascriptInterface(AppBridge(activity), "NativeBridge")
+```
+
+**安全**：`@JavascriptInterface` 仅对 **可信域** 开启；禁止 file 协议加载远程脚本；API 18+ 注意 **任意网页调接口** 风险——配合 **域名白名单** 与 **签名校验**。
+
+***
+
+### 四、iOS WKWebView 示例（Swift 思路）
+
+```swift
+userContentController.add(self, name: "NativeBridge")
+
+func userContentController(_ userContentController: WKUserContentController,
+                           didReceive message: WKScriptMessage) {
+    guard message.name == "NativeBridge",
+          let body = message.body as? String,
+          let data = body.data(using: .utf8),
+          let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+          let method = json["method"] as? String,
+          let id = json["id"] as? String else { return }
+
+    switch method {
+    case "getToken":
+        let token = KeychainHelper.token ?? ""
+        evaluateCallback(id: id, ok: true, data: ["token": token])
+    default: break
+    }
+}
+```
+
+注意 **WKWebView 内存**：Bridge 对象避免循环引用；页面销毁时 `removeScriptMessageHandler`。
+
+***
+
+### 五、协议设计建议
+
+1. **版本字段** `version: 1`，便于灰度；
+2. **method 字符串枚举**，文档化参数 schema；
+3. **异步一律带 callback id**，不要假设同步；
+4. **错误码统一** `{ code, message }`，H5 可 toast 或上报；
+5. **幂等**：`closeWebView`、`share` 等防重复点击。
+
+**登录态**：优先 Native **注入 cookie / header**（同域 BFF），H5 少碰 raw token；必须给 H5 时 **短期 token + 刷新由 Native 做**。
+
+***
+
+### 六、Navigation 与返回栈
+
+| 场景 | 做法 |
+|------|------|
+| H5 想关页 | `Bridge.closeWebView()` |
+| Native Navbar 返回 | Native 拦截返回键，先问 H5 `canGoBack` |
+| H5 内路由 | 监听 `popstate`，Native 返回先 `history.back()` |
+
+```javascript
+export function setupBackHandler() {
+  Bridge.register?.('onNativeBack', () => {
+    if (window.history.length > 1) {
+      history.back();
+      return { handled: true };
+    }
+    return { handled: false };
+  });
+}
+```
+
+***
+
+### 七、安全清单
+
+* 仅 **HTTPS** 加载 H5；禁止混合内容；
+* Bridge method **白名单**，禁止任意 URL 打开；
+* 校验 **message 来源**（包名、域名）；
+* 敏感能力（支付、剪贴板） **二次确认**；
+* 禁止 H5 直接拿 **长期 refresh token**。
+
+***
+
+### 八、调试技巧
+
+* Android：`chrome://inspect` 远程调试 WebView；
+* iOS：Safari 开发菜单 → 模拟器/真机 WebView；
+* 双端 mock：`window.NativeBridge` 在 dev 环境由 **Vite 插件** 注入 fake 实现；
+* 日志：Bridge 层统一 **log 入参出参**（生产脱敏）。
+
+***
+
+### 九、小结
+
+JSBridge 本质是 **带 callback 的跨进程 RPC**：H5 发 `{ id, method, params }`，Native 执行后 `__bridgeCallback`。把协议、错误、安全写进文档，比每个页面各自 `window.prompt` 稳一个数量级。
+
+下一篇：[《混合 App 架构：WebView 容器、离线包与选型》](/2026/05/17/mobile-hybrid-app-architecture-schemes/)——从工程视角看 **什么时候该上 Bridge、什么时候该换容器**。
+
+相关移动端基础：[《viewport/DPR/rem》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)、[《VisualViewport 与键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)、[《安全区 env(safe-area)》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/) 系列。

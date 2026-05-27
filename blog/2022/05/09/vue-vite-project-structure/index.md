@@ -61,7 +61,7 @@ export default defineConfig({
 
 ### 四、与 Monorepo 的关系
 
-若 UI 与 BFF 在同一仓库，常见把 `apps/web`、`packages/ui` 拆开，见《Monorepo 与 pnpm：目录与依赖怎么管》。单仓单应用时保持 `src` 内清晰即可。
+若 UI 与 BFF 在同一仓库，常见把 `apps/web`、`packages/ui` 拆开，见[《Monorepo 与 pnpm：目录与依赖怎么管》](/2025/12/18/monorepo-pnpm-workspace/)。单仓单应用时保持 `src` 内清晰即可。
 
 ***
 

@@ -3,7 +3,7 @@ url: /blog/2025/03/02/micro-frontend-webpack-module-federation/index.md
 ---
 \==Module Federation（MF）== 最初是 **Webpack 5** 特性：**运行时** 从 **remote 容器** 加载 **exposes** 的模块，**`shared` 做依赖单例**。**现在落地新项目更常用 Vite 联邦插件**（`@originjs/vite-plugin-federation` 等），**字段语义与下述 Webpack 一致**，差别只在写在 **`vite.config.ts`** 还是 **`webpack.config.js`**。与 **qiankun 应用级** 不同，MF 更偏 **模块/组件级集成**。
 
-> **Vite 双仓库从 `vite.config`、联调到缓存** 见《**微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）**》。
+> **Vite 双仓库从 `vite.config`、联调到缓存** 见[《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)。
 
 ***
 
@@ -20,7 +20,7 @@ url: /blog/2025/03/02/micro-frontend-webpack-module-federation/index.md
 
 ### 二、最小配置：Vite（推荐新项目）
 
-`remote` 与 `host` 均安装 `@originjs/vite-plugin-federation` 后，在 `vite.config.ts` 的 `plugins` 里各写 **federation({ ... })** —— `name`、`filename: 'remoteEntry.js'`、`exposes`（仅 remote）或 `remotes`（仅 host）与 `shared`。**消费侧** 使用 **`import('remoteName/暴露路径')` + `React.lazy` / `defineAsyncComponent`** 即可。完整片段与端口联调见《**Module Federation 双仓库从初始化到生产部署（详版）**》。
+`remote` 与 `host` 均安装 `@originjs/vite-plugin-federation` 后，在 `vite.config.ts` 的 `plugins` 里各写 **federation({ ... })** —— `name`、`filename: 'remoteEntry.js'`、`exposes`（仅 remote）或 `remotes`（仅 host）与 `shared`。**消费侧** 使用 **`import('remoteName/暴露路径')` + `React.lazy` / `defineAsyncComponent`** 即可。完整片段与端口联调见[《微前端工程实践：Module Federation 双仓库从初始化到生产部署（详版）》](/2025/11/23/micro-frontend-module-federation-practice-full-guide/)。
 
 #### 本地双项目联调（Vite）
 

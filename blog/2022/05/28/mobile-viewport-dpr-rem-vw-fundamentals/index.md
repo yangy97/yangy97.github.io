@@ -21,7 +21,7 @@ H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏�
 
 **直接推论**：
 
-1. **1 CSS px 的边框** 在 **DPR=3** 的屏上，至少要占 **3 个物理像素宽**，肉眼容易觉得「粗」——这是 hairline 问题的根源（见《1px》篇）。
+1. **1 CSS px 的边框** 在 **DPR=3** 的屏上，至少要占 **3 个物理像素宽**，肉眼容易觉得「粗」——这是 hairline 问题的根源（见[《1px》](/2022/07/04/mobile-hairline-1px-border-transform/)篇）。
 2. **截图 / 设计工具** 里标的「px」要先问：**是设计稿坐标还是物理像素**。移动端常见 **750 宽设计稿** 往往对应 **2× 稿**（相对 375 CSS 宽），切图与 **postcss 换算** 要统一基准。
 
 ***
@@ -35,7 +35,7 @@ H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏�
 | **布局视口（Layout Viewport）** | **document** 整体布局的「画布宽度」；**`position: fixed` 常以它为参照**（实现细节随浏览器略有差异，但排障时先按这个模型理解）。 |
 | **视觉视口（Visual Viewport）** | 用户 **当前屏幕上能看到的那一块**；**缩放、地址栏收起、软键盘** 会动它。 |
 
-**键盘弹出**时：布局视口未必立刻等于「可见高度」，于是出现 **底部输入框被挡、整页被顶飞**——这需要 **VisualViewport API** 单独处理（见《键盘》篇）。
+**键盘弹出**时：布局视口未必立刻等于「可见高度」，于是出现 **底部输入框被挡、整页被顶飞**——这需要 **VisualViewport API** 单独处理（见[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)篇）。
 
 ```mermaid
 flowchart LR
@@ -67,7 +67,7 @@ flowchart LR
 | **width=device-width** | 让 **布局视口宽度** 跟随 **设备在竖屏下的 CSS 宽度**（近似 `window.innerWidth` 在未缩放时）。不写时，移动 Safari 可能用 **980px 级** 的默认布局视口，页面像「缩小版桌面站」。 |
 | **initial-scale=1** | 初始缩放为 1；与 **width** 共同决定 **首屏 CSS 宽度**。二者冲突时以浏览器规则为准，**不要依赖未文档化的组合**。 |
 | **maximum-scale=1 / user-scalable=no** | **禁止用户双指缩放**，对 **弱视用户不友好**，也可能影响 **部分系统字体放大** 场景；若业务强依赖，建议 **仅关键页** 使用并留 **无障碍出口**。 |
-| **viewport-fit=cover** | 告诉浏览器 **页面可延伸到刘海/圆角区域**，**`env(safe-area-inset-*)` 才有非零值**（见《安全区》篇）。 |
+| **viewport-fit=cover** | 告诉浏览器 **页面可延伸到刘海/圆角区域**，**`env(safe-area-inset-*)` 才有非零值**（见[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)篇）。 |
 
 ***
 
@@ -137,4 +137,4 @@ setRootFontSize();
 
 ### 八、小结
 
-适配的本质是：**先锁定布局视口（viewport）→ 再选比例系（rem 或 vw）→ 再处理特例（安全区、键盘、hairline）**。下文《安全区》《1px》《键盘》《滚动》四篇把特例拆开写深。
+适配的本质是：**先锁定布局视口（viewport）→ 再选比例系（rem 或 vw）→ 再处理特例（安全区、键盘、hairline）**。下文[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)[《1px》](/2022/07/04/mobile-hairline-1px-border-transform/)[《键盘》](/2022/07/23/mobile-keyboard-visualviewport-input-fixed/)[《滚动》](/2022/08/11/mobile-scroll-touch-overscroll-rubber-band/)四篇把特例拆开写深。

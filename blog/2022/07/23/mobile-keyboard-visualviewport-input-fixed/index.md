@@ -81,7 +81,7 @@ if (window.visualViewport) {
 }
 ```
 
-**说明**：上面是 **思路演示**，真实项目要处理 **无 vv 的降级**、**节流**、**与 iOS 橡皮筋冲突**（见《滚动》篇）。
+**说明**：上面是 **思路演示**，真实项目要处理 **无 vv 的降级**、**节流**、**与 iOS 橡皮筋冲突**（见[《滚动》](/2022/08/11/mobile-scroll-touch-overscroll-rubber-band/)篇）。
 
 ***
 
@@ -150,4 +150,4 @@ H5 **以桥接数据为准**，比 **纯 Web 猜键盘** 稳得多。
 
 ### 九、小结
 
-键盘问题没有 **一行万能代码**，但有 **稳定策略**：**优先结构** → **再用 VisualViewport 补** → **最后才上 focus/blur 黑魔法**。与《viewport》《安全区》连读：**100vh、safe-area、键盘** 三者会 **叠加**，上线前用 **同一套页面模板** 做 **回归**。
+键盘问题没有 **一行万能代码**，但有 **稳定策略**：**优先结构** → **再用 VisualViewport 补** → **最后才上 focus/blur 黑魔法**。与[《viewport》](/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/)[《安全区》](/2022/06/15/mobile-safe-area-notch-env-dynamic-island/)连读：**100vh、safe-area、键盘** 三者会 **叠加**，上线前用 **同一套页面模板** 做 **回归**。

@@ -74,4 +74,4 @@ pnpm 默认 **严格**：子包只能访问 **自己 package.json 声明的依�
 
 ### 六、小结
 
-Monorepo 解决的是 **协作与复用**；成本是 **工具链与纪律**。从小仓库两块 `apps` + 一两个 `packages` 起步，比一上来大而全更可持续。Vue 单应用目录习惯见《Vue + Vite：项目目录怎么摆》；Egg 分层见《Egg.js：目录、Loader 与分层在干什么》。
+Monorepo 解决的是 **协作与复用**；成本是 **工具链与纪律**。从小仓库两块 `apps` + 一两个 `packages` 起步，比一上来大而全更可持续。Vue 单应用目录习惯见[《Vue + Vite：项目目录怎么摆》](/2022/05/09/vue-vite-project-structure/)；Egg 分层见[《Egg.js：目录、Loader 与分层在干什么》](/2024/01/12/eggjs-architecture-guide/)。

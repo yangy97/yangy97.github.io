@@ -197,7 +197,7 @@ location = /index.html {
 
 * 主线程：《JavaScript 与加载》
 * 指标：《Web Vitals 与监控》
-* 图片：《长列表与图片》
+* 图片：[《长列表与图片》](/2023/07/12/frontend-performance-list-image/)
 
 ***
 
