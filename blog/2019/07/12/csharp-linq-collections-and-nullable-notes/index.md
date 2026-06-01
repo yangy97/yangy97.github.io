@@ -1,6 +1,8 @@
 ---
 url: /blog/2019/07/12/csharp-linq-collections-and-nullable-notes/index.md
 ---
+> 内容已合并至 **[C# 入门备忘（前端读者向）](/2026/06/01/csharp-getting-started-for-frontend-devs/)**，下文不再维护。
+
 写业务代码时经常要在 ==LINQ==、**各种集合** 和 **可空引用** 之间切换，这里记几条容易翻车的点，便于以后检索。
 
 ## LINQ

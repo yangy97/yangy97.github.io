@@ -1,6 +1,8 @@
 ---
 url: /blog/2019/03/05/c-object/index.md
 ---
+> 内容已合并至 **[C# 入门备忘（前端读者向）](/2026/06/01/csharp-getting-started-for-frontend-devs/)**，下文不再维护。
+
 ## C#遇到的bug
 
 \==一、Maping.dll重载过多==

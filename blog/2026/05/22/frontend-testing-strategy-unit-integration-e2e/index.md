@@ -61,3 +61,4 @@ AI 生成单测草稿 → 人删假测试 → CI 绿才 merge。见[《AI 辅助
 * [《Vitest + Vue Test Utils 从 0 到 1》](/2026/05/21/vitest-vue-test-utils-zero-to-one/)
 * [《中后台表格与表单测试》](/2026/05/21/frontend-admin-table-form-testing-msw/)
 * [《Headless Playwright 架构与 CI》](/2025/11/16/headless-playwright-architecture-tracing-ci/)
+* [《Playwright E2E：登录到下单全链路》](/2026/06/01/playwright-e2e-admin-order-flow-scenario/)

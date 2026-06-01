@@ -51,8 +51,8 @@ React 子应用 **Module Federation / qiankun** 导出 bootstrap 生命周期；
 
 ### 五、何时深入 React
 
-* 主职栈转 React → 另开系列
-* 仅维护子应用 → 本篇 + 官方文档足够
+* 主职栈转 React → 继续读 [Hooks 与状态管理：从 useState 到 Zustand](/2026/06/01/react-hooks-state-management-patterns/)
+* 仅维护子应用 → 本篇 + Hooks 文 + 官方文档通常足够
 
 ***
 

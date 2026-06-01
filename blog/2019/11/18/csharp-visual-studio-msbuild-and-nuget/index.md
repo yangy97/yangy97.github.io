@@ -1,6 +1,8 @@
 ---
 url: /blog/2019/11/18/csharp-visual-studio-msbuild-and-nuget/index.md
 ---
+> 内容已合并至 **[C# 入门备忘（前端读者向）](/2026/06/01/csharp-getting-started-for-frontend-devs/)**，下文不再维护。
+
 在校招与实习前后搭 ASP.NET / WinForm 小项目时，工具链搞不清楚会浪费大量时间。本文为个人备忘，不是教程。
 
 ## Visual Studio 与解决方案

@@ -9,11 +9,12 @@ url: /blog/2026/05/24/vue-learning-path-index/index.md
 
 ```text
 A. JavaScript 基础 ──► js-learn / ES6 系列
-B. Vue 原理       ──► vue-learn-* 源码笔记
+B. Vue 原理       ──► vue-learn-* + Vue 3 Proxy/编译
 C. Vue 3 工程     ──► composition / pinia / router / TS
+D. 通用前端       ──► CSS 布局 / i18n·a11y（栈无关）
 ```
 
-可以 **A → C 并行**；B 适合想搞懂响应式时按需翻。
+可以 **A → C 并行**；B 适合想搞懂响应式时按需翻；D 作查漏补缺。
 
 ***
 
@@ -38,7 +39,7 @@ C. Vue 3 工程     ──► composition / pinia / router / TS
 * [render](/2020/10/03/vue-learn-render/)
 * [mounted](/2020/11/10/vue-learn-mounted/)
 
-\==不必== 全背；配合 Vue 3 文档对照 **迁移差异**（见 [Vue2→3 迁移清单](/2026/05/20/vue2-to-vue3-migration-checklist/)）。
+\==不必== 全背；读完 Dep 后建议接 [Vue 3 响应式与编译运行时](/2026/06/01/vue3-reactivity-compiler-runtime-deep/)，再读 [编译器 parse/transform/codegen](/2026/06/01/vue3-compiler-source-parse-transform-codegen/)，把 Proxy 与 patchFlag 对齐。迁移差异见 [Vue2→3 迁移清单](/2026/05/20/vue2-to-vue3-migration-checklist/)。
 
 ***
 
@@ -56,21 +57,32 @@ C. Vue 3 工程     ──► composition / pinia / router / TS
 
 ***
 
-### 五、与全站其他目录的衔接
+### 五、路径 D：通用前端（查漏补缺）
 
-* **构建**： [构建与工程化专题目录](/posts/categories/?id=cce9da)
+| 主题 | 文章 |
+|------|------|
+| CSS 布局 | [Flex 与 Grid 实战](/2026/06/01/css-flexbox-grid-layout-practice/) |
+| 国际化与无障碍 | [i18n 工程化与 a11y 清单](/2026/06/01/frontend-i18n-accessibility-practice/) |
+| GraphQL 接入 | [Apollo Client 与缓存](/2026/06/01/frontend-graphql-apollo-client-practice/) |
+| PWA | [Service Worker 与离线缓存](/2026/06/01/frontend-pwa-service-worker-basics/)（在工程化目录） |
+
+***
+
+### 六、与全站其他目录的衔接
+
+* **构建**： [构建与工程化专题目录](/posts/categories/?id=cce9da)（含 [Docker 部署](/2026/06/01/docker-frontend-deployment-basics/)）
 * **性能**：[性能优化标签](/posts/tags/?tag=%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 * **微前端**：[微前端标签](/posts/tags/?tag=%E5%BE%AE%E5%89%8D%E7%AB%AF)
-* **中后台架构**：[08-架构](/posts/categories/) 下 RBAC + 动态表单
+* **中后台架构**：[08-架构](/posts/categories/) 下 RBAC + 动态表单 + [文件预览链路](/2026/05/23/frontend-file-preview-watermark-permission-download/)
 
 ***
 
-### 六、React 读者
+### 七、React 读者
 
-仅维护 React 子应用时读 [React + Vite 结构](/2026/05/24/react-vite-project-structure-basics/) 即可。
+维护 React 子应用：[React + Vite 结构](/2026/05/24/react-vite-project-structure-basics/) → [Hooks 与状态管理](/2026/06/01/react-hooks-state-management-patterns/)。
 
 ***
 
-### 七、小结
+### 八、小结
 
-**上班写 Vue 3 → 走路径 C**；**补 JS 底子 → 路径 A**；\*\* curiosity 驱动 → 路径 B 挑章读\*\*。
+**上班写 Vue 3 → 走路径 C**；**补 JS 底子 → 路径 A**；\*\* curiosity 驱动 → 路径 B 挑章读\*\*；**布局/i18n/部署 → 路径 D**。
