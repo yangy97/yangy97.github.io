@@ -223,3 +223,7 @@
 - [React Hooks 与状态管理：从 useState 到 Zustand](/blog/2026/06/01/react-hooks-state-management-patterns/index.md)
 - [Vue 3 编译器源码导读：parse、transform 与 codegen](/blog/2026/06/01/vue3-compiler-source-parse-transform-codegen/index.md)
 - [Vue 3 响应式与编译运行时：Proxy、effect 与 patch 流程](/blog/2026/06/01/vue3-reactivity-compiler-runtime-deep/index.md)
+- [中后台架构导读：BFF、Monorepo、动态表单与权限门户](/blog/2026/06/02/architecture-admin-index/index.md)
+- [工程化与性能导读：构建、测试、性能与企业级怎么读](/blog/2026/06/02/engineering-learning-path-index/index.md)
+- [企业级运维导读：CI/CD、网关、发布与可观测（前端读者向）](/blog/2026/06/02/enterprise-ops-primer-index/index.md)
+- [RBAC 导读：从权限码到菜单、数据范围与缓存](/blog/2026/06/02/rbac-learning-path-index/index.md)
