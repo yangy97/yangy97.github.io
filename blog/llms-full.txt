@@ -90,7 +90,7 @@ url: /blog/2019/11/18/csharp-visual-studio-msbuild-and-nuget/index.md
 url: /blog/2020/07/01/weixin-uniapp/index.md
 ---
 # 微信+uniapp
-> **过时提示（2020 笔记）**：****uni-app**（Vue 语法多端小程序框架）**（Vue 语法多端小程序框架） 版本、Vue2/Vue3 模板与 iOS 网络策略已变化。系统阅读见 [uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/)、[小程序导读](/2026/05/24/miniprogram-learning-path-index/)。
+> **过时提示（2020 笔记）**：\*\*\*\***uni-app**（Vue 语法多端小程序框架）**（Vue 语法多端小程序框架）**（Vue 语法多端小程序框架） 版本、Vue2/Vue3 模板与 iOS 网络策略已变化。系统阅读见 [uni-app / Taro 选型](/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/)、[小程序导读](/2026/05/24/miniprogram-learning-path-index/)。
 
 ### 初识微信+uniapp 以及遇到的部分坑
 
@@ -196,9 +196,11 @@ url: /blog/2020/07/20/vue-book/index.md
 # Vue小说实现
 ## vue小说
 
-初学vue时 写的移动端小说
+初学 **Vue**（渐进式前端框架）时写的移动端小说 demo。
 
 ## vue全家桶+mui+Mint
+
+**Mint UI**（移动端 Vue 组件库）+ **MUI**（另一套移动端 UI 库）组合练习。
 
 \==话不多说上截图==
 **最下方有github地址，可以下载**
@@ -686,7 +688,7 @@ url: /blog/2020/09/14/weixin/index.md
 **小程序（微信轻应用） 生命周期**
 
 ```javascript
-****onLaunch**（冷启动，全局一次）**（冷启动，全局一次） 生命周期函数--监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+******onLaunch**（冷启动，全局一次）**（冷启动，全局一次）**（冷启动，全局一次） 生命周期函数--监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
 
 onShow 生命周期函数--监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow
 
@@ -770,7 +772,7 @@ app_brand_user_name
 ---
 url: /blog/2020/10/03/vue-learn-render/index.md
 ---
-# ****render**（返回 **VNode**（虚拟 DOM 节点描述对象） 的渲染函数）**（返回 VNode 虚拟 DOM 节点描述对象的渲染函数）
+# \*\*\*\***render**（返回 **VNode**（虚拟 DOM 节点描述对象） 的渲染函数）**（返回 **VNode**（虚拟 DOM 节点描述对象） 的渲染函数）**（返回 VNode 虚拟 DOM 节点描述对象的渲染函数）
 
 Vue 的 \_render 方法是实例的一个私有方法，它用来把实例渲染成一个虚拟 Node。它的定义在`src/core/instance/render.js` 文件中：
 
@@ -843,7 +845,7 @@ url: /blog/2020/10/22/vue-learn-build/index.md
 # vue2源码解析---build
 ### 构建脚本
 
-我们通常会配置 `script` 字段作为 NPM 的执行脚本，`Vue.js` 源码通过 ****Rollup**（Vue 2 打包工具，tree-shaking）**（打包器，支持 tree-shaking） 构建的脚本如下:
+我们通常会配置 `script` 字段作为 NPM 的执行脚本，`Vue.js` 源码通过 \*\*\*\***Rollup**（Vue 2 打包工具，tree-shaking）**（Vue 2 打包工具，tree-shaking）**（打包器，支持 tree-shaking） 构建的脚本如下:
 
 ```javascript 代码如下
 {
@@ -1198,7 +1200,7 @@ export function mountComponent (
 url: /blog/2020/11/28/vue-learn-init/index.md
 ---
 # vue2源码解析---init
-## ==1、源码下载==（Vue 2 仓库）（Vue 2 仓库）
+## ==1、源码下载==（Vue 2 仓库）（Vue 2 仓库）（Vue 2 仓库）
 
 ```javascript
 https://github.com/vuejs/vue.git
@@ -1208,7 +1210,7 @@ https://github.com/vuejs/vue.git
 
 ## **2.基本构建**
 
-基本构建入口 `scripts/build.js`（Rollup 打包脚本）（Rollup 打包脚本）
+基本构建入口 `scripts/build.js`（Rollup 打包脚本）（Rollup 打包脚本）（Rollup 打包脚本）
 
 ```javascript
 let builds = require('./config').getAllBuilds()
@@ -1338,7 +1340,7 @@ Vue.prototype._init = function (options?: Object) {
 url: /blog/2020/12/17/vue-learn-defineProperty/index.md
 ---
 # vue2源码---响应式
-### ****Object.defineProperty**（属性 getter/setter 拦截）**（属性 getter/setter 拦截）
+### \*\*\*\***Object.defineProperty**（属性 getter/setter 拦截）**（属性 getter/setter 拦截）**（属性 getter/setter 拦截）
 
 `Object.defineProperty` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象，先来看一下它的语法：
 
@@ -1414,7 +1416,7 @@ function initProps (vm: Component, propsOptions: Object) {
         }
       })
     } else {
-      // 将每个props的值变成响应式（数据变更驱动视图更新）（数据变更驱动视图更新）
+      // 将每个props的值变成响应式（数据变更驱动视图更新）（数据变更驱动视图更新）（数据变更驱动视图更新）
       defineReactive(props, key, value)
     }
     // static props are already proxied on the component's prototype
@@ -1677,7 +1679,9 @@ url: /blog/2021/01/05/vue-learn-Dep/index.md
 # vue2源码---依赖收集/派发更新
 ### 依赖收集
 
-在前面响应式章节中说了 `defineReactive`方法
+**Dep**（Dependency，依赖收集器，存 Watcher 订阅列表）与 **Watcher**（渲染/计算属性的更新订阅者）是 Vue 2 响应式核心。
+
+在前面响应式章节中说了 `defineReactive` 方法
 
 ```javascript
 export function defineReactive(
@@ -1815,7 +1819,7 @@ export default class Dep {
 
 ```
 
-### Watcher（渲染/计算属性的更新订阅者）
+### Watcher（渲染/计算属性的更新订阅者）（渲染/计算属性的更新订阅者）
 
 这里有个 `target` 对象,这是一个全局唯一 Watcher,它的自身属性 `subs` 也是 `Watcher` 的数组,
 `Watcher`在 `src/core/observer/watcher.js` ,
@@ -2093,7 +2097,7 @@ updateComponent = () => {
 url: /blog/2021/01/24/curry/index.md
 ---
 # curry（柯里化函数）
-### 柯里化（Currying，多参函数变单参链）函数
+### 柯里化（Currying，多参函数变单参链）（Currying，多参函数变单参链）函数
 
 > 柯里化（Currying）是一种关于函数的高阶技术。它不仅被用于 JavaScript，还被用于其他编程语言。
 
@@ -2239,7 +2243,7 @@ console.log(curry(aa, 1, 2, 3, 4)(5));
 url: /blog/2021/02/12/instanceof/index.md
 ---
 # instanceof 手写与原理：原型链、Symbol.hasInstance
-`****instanceof**（沿 `\[\[Prototype]]`链查构造函数）**（沿`\[\[Prototype]]` 链查构造函数）` 判断 **构造函数的 prototype 是否出现在对象的原型链（`__proto__` 链接的对象链）（`__proto__` 链接的对象链）上**。面试常要求手写；生产里更常用 **类型守卫、Array.isArray、duck typing**。本篇补全 **边界、完整实现与替代方案**。
+`******instanceof**（沿 `\[\[Prototype]]`链查构造函数）**（沿`\[\[Prototype]]`链查构造函数）**（沿`\[\[Prototype]]` 链查构造函数）` 判断 **构造函数的 prototype 是否出现在对象的原型链（`__proto__` 链接的对象链）（`__proto__` 链接的对象链）（`__proto__` 链接的对象链）上**。面试常要求手写；生产里更常用 **类型守卫、Array.isArray、duck typing**。本篇补全 **边界、完整实现与替代方案**。
 
 ***
 
@@ -2367,14 +2371,14 @@ Vue 2/3 内部判断 plain object、VNode 类型时 **不用** 面向用户的 `
 url: /blog/2021/03/02/promise/index.md
 ---
 # promise相关 （promise,all,race,any)
-### promise A+（Promises/A+ 规范，thenable 链式）（Promises/A+ 规范，thenable 链式）
+### promise A+（Promises/A+ 规范，thenable 链式）（Promises/A+ 规范，thenable 链式）（Promises/A+ 规范，thenable 链式）
 
 ```js
 const PENDING = "pending";
 const FULFILLED = "fulfilled";
 const REJECTED = "rejected";
 class MyPromise {
-  #state = PENDING（待定，仅可变更一次）（待定，仅可变更一次）;
+  #state = PENDING（待定，仅可变更一次）（待定，仅可变更一次）（待定，仅可变更一次）;
   #result = undefined;
   #handler = [];
   constructor(executor) {
@@ -2705,7 +2709,7 @@ ParallelRequset(urls, 3).then((res) => {
 url: /blog/2021/04/09/adpater/index.md
 ---
 # 移动端适配
-### 移动端适配（响应式/移动端布局缩放）（响应式/移动端布局缩放） vw+****rem**（相对根元素字体大小）**（相对根元素字体大小） 解决方案
+### 移动端适配（响应式/移动端布局缩放）（响应式/移动端布局缩放）（响应式/移动端布局缩放） vw+\*\*\*\***rem**（相对根元素字体大小）**（相对根元素字体大小）**（相对根元素字体大小） 解决方案
 
 ## 了解一下 rem
 
@@ -2852,7 +2856,7 @@ css 中 20px 改写为 0.2rem 即可
 url: /blog/2021/04/28/paralle/index.md
 ---
 # parallel(并发控制2)
-话不多说只是上代码
+**并发控制**（限制同时进行的异步任务数，避免打爆接口）示例：
 
 ```js
 function isPromise(p) {
@@ -3126,7 +3130,7 @@ url: /blog/2021/06/23/js-learn-3/index.md
 
 #### `var`  声明提升
 
-使用 `var` 时，下面的代码不会报错。这是因为使用这个关键字声明的变量会自动提升到函数作用域顶部：
+**变量提升**（hoisting，声明被提升到作用域顶部）——使用 `var` 时，下面的代码不会报错：
 
 ```js
 function foo() { 
@@ -3820,7 +3824,7 @@ url: /blog/2021/08/19/js-learn-9/index.md
 # 代理与反射
 ### Proxy
 
-> 代理是使用 Proxy 构造函数创建的,这个构造函数接收两个参数：目标对象和处理程序对象。缺少其中任何一个参数都会抛出 TypeError
+> **Proxy**（代理对象，拦截 target 的 get/set 等操作）是使用 `Proxy` 构造函数创建的，接收两个参数：目标对象和处理程序对象（handler）。缺少任一参数会抛出 **TypeError**。
 
 ```js
 const target = { 
@@ -4050,7 +4054,7 @@ new King(); // King instantiated using "new"
 King(); // Error: King must be instantiated using "new"
 ```
 
-#### 闭包（函数+词法环境引用）（函数+词法环境引用）
+#### 闭包（函数+词法环境引用）（函数+词法环境引用）（函数+词法环境引用）
 
 > 闭包指的是那些引用了另一个函数作用域中变量的函数，通常是在嵌套函数中实现的
 
@@ -4093,11 +4097,11 @@ King(); // Error: King must be instantiated using "new"
 url: /blog/2021/09/25/js-learn-bom/index.md
 ---
 # BOM
-### BOM（Browser Object Model，浏览器对象模型）（Browser Object Model，浏览器对象模型）
+### BOM（Browser Object Model，浏览器对象模型）（Browser Object Model，浏览器对象模型）（Browser Object Model，浏览器对象模型）
 
 #### setTimeOut中this指向
 
-> 所有超时执行的代码（函数）都会在全局作用域中的一个匿名函数中运行，因此函数中的 this 值在非严格模式下始终指向 window（全局对象），而在严格模式下是 undefined。如果给 setTimeout()提供了一个箭头函数，那么 this 会保留为定义它时所在的词汇作用域
+> 所有超时执行的代码（函数）都会在全局作用域中的一个匿名函数中运行，因此函数中的 this 值在非严格模式下始终指向 window（全局对象）（全局对象），而在严格模式下是 undefined。如果给 setTimeout()提供了一个箭头函数，那么 this 会保留为定义它时所在的词汇作用域
 
 #### URLSearchParams
 
@@ -4234,7 +4238,7 @@ url: /blog/2021/10/14/js-learn-DOM/index.md
 # DOM
 ### DOM（Document Object Model，文档树 API）
 
-#### MutationObserver（异步监听 DOM 变更）（异步监听 DOM 变更）
+#### MutationObserver（异步监听 DOM 变更）（异步监听 DOM 变更）（异步监听 DOM 变更）
 
 > MutationObserver 可以观察整个文档、DOM 树的一部分，或某个元素,可以在 DOM 被修改时异步执行回调
 
@@ -4327,7 +4331,7 @@ url: /blog/2021/11/02/js-learn-event/index.md
 # 事件Event
 ### 事件 Event
 
-#### 事件冒泡（从目标向 document 传播）（从目标向 document 传播）(IE事件流)
+#### 事件冒泡（从目标向 document 传播）（从目标向 document 传播）（从目标向 document 传播）(IE事件流)
 
 > 简而言之 从最深节点向上触发,然后向上传播至没有那么具体的元素（文档）
 
@@ -4466,7 +4470,7 @@ window.addEventListener("deviceorientation", (event) => {
 4. absolute：布尔值，表示设备是否返回绝对值。
 5. compassCalibrated：布尔值，表示设备的指南针是否正确校准。
 
-#### 事件委托（父节点监听子事件）（父节点监听子事件）
+#### 事件委托（父节点监听子事件）（父节点监听子事件）（父节点监听子事件）
 
 > 利用事件冒泡事件
 
@@ -4478,7 +4482,7 @@ url: /blog/2021/11/21/js-learn-animation-canvas/index.md
 # 动画&canvas
 ### 动画\&canvas
 
-#### ****requestAnimationFrame**（与刷新率同步的动画帧）**（与刷新率同步的动画帧）
+#### \*\*\*\***requestAnimationFrame**（与刷新率同步的动画帧）**（与刷新率同步的动画帧）**（与刷新率同步的动画帧）
 
 > 一般计算机显示器的屏幕刷新率都是 60Hz,实现平滑动画最佳的重绘间隔为 `1000 毫秒/60，大约 17 毫秒`
 > `requestAnimationFrame`()方法接收一个参数，此参数是一个要在重绘屏幕前调用的函数,表示下次重绘的时间,传给 `requestAnimationFrame`()的函数实际上可以接收一个参数
@@ -4535,7 +4539,7 @@ if (drawing.getContext) {
 > 这些方法都接收 4 个参数：矩形 x 坐标、矩形 y 坐标、
 > 矩形宽度和矩形高度
 
-> 想学习可以系统性看 [MDN ****Canvas**（位图画布 2D/WebGL）**（位图画布 2D/WebGL）](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
+> 想学习可以系统性看 [MDN \*\*\*\***Canvas**（位图画布 2D/WebGL）**（位图画布 2D/WebGL）**（位图画布 2D/WebGL）](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
 
 #### WebGL
 
@@ -4579,7 +4583,7 @@ url: /blog/2021/12/09/js-learn-json/index.md
 # JSON序列化
 ### JSON
 
-#### `**JSON.stringify**（对象→字符串）()`
+#### `****JSON.stringify**（对象→字符串）**（对象→字符串）()`
 
 > `可以传三个参数` `第一个表示需要序列化的对象`,`第二个可以是数组,可以是函数`,`第三个是控制格式`
 
@@ -4693,7 +4697,7 @@ url: /blog/2021/12/28/js-learn-xhr/index.md
    每次 readyState 从一个值变成另一个值，都会触发 readystatechange 事件
 
 ```js
-let xhr = new XMLHttpRequest(); // 传统 AJAX（Asynchronous JavaScript And XML/JSON）（异步 HTTP 请求）对象 // 传统 AJAX（异步 HTTP 请求）对象 
+let xhr = new XMLHttpRequest(); // 传统 AJAX（Asynchronous JavaScript And XML/JSON）（异步 HTTP 请求）对象 // 传统 AJAX（Asynchronous JavaScript And XML/JSON）（异步 HTTP 请求）对象 // 传统 AJAX（异步 HTTP 请求）对象 
 xhr.onreadystatechange = function() { 
  if (xhr.readyState == 4) { 
  if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) { 
@@ -4783,7 +4787,7 @@ socket.onclose = function() {
 url: /blog/2022/01/16/js-learn-storage/index.md
 ---
 # 存储相关：Cookie、Web Storage 与安全实践
-浏览器存储是前端面试与 **鉴权方案** 的常客。本篇在红宝书笔记基础上，补 \*\*\*\***Cookie**（可设 HttpOnly/过期）**（可设 HttpOnly/过期） 属性链、Storage 边界、安全默认值**，并与 [Token 存储](/2023/05/22/frontend-auth-token-storage-refresh-xss/) 文衔接。
+浏览器存储是前端面试与 **鉴权方案** 的常客。本篇在红宝书笔记基础上，补 \*\*\*\*****Cookie**（可设 HttpOnly/过期）**（可设 HttpOnly/过期）**（可设 HttpOnly/过期） 属性链、Storage 边界、安全默认值**，并与 [Token 存储](/2023/05/22/frontend-auth-token-storage-refresh-xss/) 文衔接。
 
 ***
 
@@ -4829,7 +4833,7 @@ document.cookie = 'pref=; Max-Age=0; Path=/';
 ### 二、Web Storage API
 
 ```javascript
-****localStorage**（持久键值，同源）**（持久键值，同源）.setItem('key', JSON.stringify(value));
+******localStorage**（持久键值，同源）**（持久键值，同源）**（持久键值，同源）.setItem('key', JSON.stringify(value));
 const raw = localStorage.getItem('key');
 const value = raw ? JSON.parse(raw) : null;
 localStorage.removeItem('key');
@@ -4842,7 +4846,7 @@ localStorage.clear(); // 慎用：清整个源
 | `setItem(name, value)` | 存字符串（对象先 `JSON.stringify`） |
 | `removeItem(name)` | 删除 |
 | `key(index)` | 按序取下标名 |
-| `clear()` | 清空（Firefox 对 ****sessionStorage**（标签页级键值）**（标签页级键值） 行为曾不一致，以现行为准） |
+| `clear()` | 清空（Firefox 对 \*\*\*\***sessionStorage**（标签页级键值）**（标签页级键值）**（标签页级键值） 行为曾不一致，以现行为准） |
 
 也可用属性语法：`sessionStorage.name`（与 `getItem('name')` 等价）。
 
@@ -4911,7 +4915,7 @@ url: /blog/2022/02/04/js-learn-rule/index.md
 2. 变量和函数命名 尽可能见名知意
    ii. 变量名应该是名词
    ii. 函数名应该以动词开
-   ii 使用驼峰写法(camelCase)
+   ii. 使用 **驼峰写法**（camelCase，首单词小写、后续首字母大写）
 3. 变量类型透明化
 
 ```js
@@ -5136,9 +5140,13 @@ url: /blog/2022/02/23/js-learn-es/index.md
 # es6+
 ### es6+部分方法
 
+**ES6+**（ECMAScript 2015 及以后，let/箭头函数/class 等）常用数组方法：
+
 #### 数组打平方法
 
 ##### 递归
+
+**数组打平**（flatten，嵌套数组变一维）递归写法：
 
 ```js
 function flatten(sourceArray, flattenedArray = []) { 
@@ -5247,7 +5255,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.[contenthash:8].js',
+    filename: 'bundle.[contenthash:8].js', // contenthash：内容变才变 hash，利于长期缓存
     clean: true,
     // 部署到子路径时再配，例如 publicPath: '/blog/assets/'
     publicPath: '/',
@@ -5256,7 +5264,7 @@ module.exports = {
     static: path.resolve(__dirname, 'public'),
     port: 8080,
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: true, // History 路由下未知路径回退 index.html，避免刷新 404
   },
   plugins: [
     new HtmlWebpackPlugin({ template: 'public/index.html' }),
@@ -5315,15 +5323,15 @@ url: /blog/2022/03/13/compatibility-css/index.md
 
 ### padding
 
-> 如果容器可以滚动 `在IE和FireFox下 ``padding-bottom`会被`忽略`,`chrome不会`
+> 如果容器可以滚动，在 **IE**（Internet Explorer）和 **FireFox** 下 `padding-bottom` 会被忽略，`chrome` 不会
 
-> chrome是子元素超过`content box`触发滚动条显示,在IE和FireFox,是`padding box`会触发滚动条
+> chrome 是子元素超过 **content box**（内容盒，不含 padding）触发滚动条显示；在 IE 和 FireFox 是 **padding box**（含 padding 的盒模型）会触发滚动条
 
 > `建议: 页面底部留白不建议用padding`
 
 ### margin 合并规则
 
-> 正正取最大,正负值相加,负负最负值
+> **margin 折叠**（相邻块级元素垂直 margin 合并为较大值）：正正取最大，正负值相加，负负取最负值
 
 ### `margin=>auto`
 
@@ -5562,7 +5570,7 @@ console.log(Array.prototype.at.call(arrayLike, -1)); // "b"
 
 > `concat()`（浅拷贝合并，不改原数组） 方法用于合并两个或多个数组。此方法不会更改现有数组，而是`返回一个新数组`。
 
-> 如果任何源数组是`稀疏数组（含 empty slot 空槽，非 undefined）（含 empty slot 空槽，非 undefined）`，concat() 方法会保留空槽
+> 如果任何源数组是`稀疏数组（含 empty slot 空槽，非 undefined）（含 empty slot 空槽，非 undefined）（含 empty slot 空槽，非 undefined）`，concat() 方法会保留空槽
 
 #### 稀疏数组
 
@@ -5990,7 +5998,7 @@ export default defineConfig({
 url: /blog/2022/05/28/mobile-viewport-dpr-rem-vw-fundamentals/index.md
 ---
 # 移动端适配深入：viewport、DPR、rem/vw 与「谁说了算」
-H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏览器用哪一把尺子画布局==、**屏幕用多少物理点去画**、**你写的 1px 最终落在哪**。本篇把 **布局视口**（layout viewport，CSS 布局基准）/ **视觉视口**（visual viewport，可见区域）、**DPR**（devicePixelRatio，物理像素/CSS 像素比）（devicePixelRatio，物理像素/CSS 像素比）、**rem**（相对根字体）/ **vw**（视口宽 1%）/ **px**（CSS 像素） 放在一条因果链里讲，并给出 **可落地的换算与踩坑清单**。
+H5 适配不是「把设计稿除以 2」的算术题，而是搞清楚：==浏览器用哪一把尺子画布局==、**屏幕用多少物理点去画**、**你写的 1px 最终落在哪**。本篇把 **布局视口**（layout viewport，CSS 布局基准）/ **视觉视口**（visual viewport，可见区域）、**DPR**（devicePixelRatio，物理像素/CSS 像素比）（devicePixelRatio，物理像素/CSS 像素比）（devicePixelRatio，物理像素/CSS 像素比）、**rem**（相对根字体）/ **vw**（视口宽 1%）/ **px**（CSS 像素） 放在一条因果链里讲，并给出 **可落地的换算与踩坑清单**。
 
 ***
 
@@ -6134,7 +6142,7 @@ setRootFontSize();
 url: /blog/2022/06/15/mobile-safe-area-notch-env-dynamic-island/index.md
 ---
 # 移动端深入：刘海屏、安全区 env(safe-area-inset-*) 与 fixed 底部栏
-\==Safe Area== 是系统在 **刘海、圆角、Home 指示条、横屏摄像头侧** 等区域外，给内容留出的 **「可安全渲染」矩形**。Web 侧通过 **`env(safe-area-inset-*)`（读取系统安全区内边距）（读取系统安全区内边距）** 读取 **四边内边距**。本篇从 **前置条件、写法、fixed 场景、横竖屏、Android WebView** 分层写深，避免「抄了 padding 仍被挡」。
+\==Safe Area== 是系统在 **刘海、圆角、Home 指示条、横屏摄像头侧** 等区域外，给内容留出的 **「可安全渲染」矩形**。Web 侧通过 **`env(safe-area-inset-*)`（读取系统安全区内边距）（读取系统安全区内边距）（读取系统安全区内边距）** 读取 **四边内边距**。本篇从 **前置条件、写法、fixed 场景、横竖屏、Android WebView** 分层写深，避免「抄了 padding 仍被挡」。
 
 ***
 
@@ -6915,7 +6923,7 @@ url: /blog/2022/08/30/es6-temporal-dead-zone-and-block-scope/index.md
 
 ## 暂时性死区（TDZ）—— 重点里的重点
 
-从**进入块级作用域**到 **`let`/`const` 声明语句执行完** 之间，该绑定处于 **TDZ**（Temporal Dead Zone，let/const 声明前不可访问）（Temporal Dead Zone，let/const 声明前不可访问）：可以解析标识符，但**禁止读取**（包括 `typeof` 的安全用法也会失败）。
+从**进入块级作用域**到 **`let`/`const` 声明语句执行完** 之间，该绑定处于 **TDZ**（Temporal Dead Zone，let/const 声明前不可访问）（Temporal Dead Zone，let/const 声明前不可访问）（Temporal Dead Zone，let/const 声明前不可访问）：可以解析标识符，但**禁止读取**（包括 `typeof` 的安全用法也会失败）。
 
 ```js
 // 同一外层块内，不能在声明前访问
@@ -7218,7 +7226,7 @@ url: /blog/2022/10/25/es6-promise-combinators-and-microtasks/index.md
 
 `resolve` / `reject` 只能终态一次；链上的 `then` 返回新 Promise。==不常写但容易混==的是：**组合子**解决的是「多路异步的聚合语义」，和单个 `then` 链是不同层级的问题。
 
-## `Promise.all`（全部 fulfilled 才 resolve）（全部 fulfilled 才 resolve）——「全赢才赢，一输全输」
+## `Promise.all`（全部 fulfilled 才 resolve）（全部 fulfilled 才 resolve）（全部 fulfilled 才 resolve）——「全赢才赢，一输全输」
 
 * 全 fulfilled → `values` 数组（顺序与入参一致，**不是完成顺序**）。
 * **任一** rejected → **立刻**以该原因 reject，其它结果丢弃（并不取消仍在飞行的请求）。
@@ -7293,7 +7301,7 @@ console.log('script end')
 url: /blog/2022/11/23/webpack-resolve-alias-extensions-deep/index.md
 ---
 # Webpack 深入：resolve（alias、extensions、条件导出）与模块寻址
-## ==resolve== 决定 `import './foo'` 最终落到哪个文件；配错会出现 **打包进两份 React**、**tree-shaking**（摇掉未用导出）失效、**条件导出走错入口**。
+## ==**resolve**（模块寻址配置，决定 `import` 落在哪个文件）== 决定 `import './foo'` 最终落到哪个文件；配错会出现 **打包进两份 React**、**tree-shaking**（Tree Shaking，摇掉未用导出以减体积）失效、**条件导出**（package.json `exports` 按环境选入口）走错入口。
 
 ### 一、extensions：省略后缀时的查找顺序
 
@@ -7540,7 +7548,7 @@ url: /blog/2023/04/29/webpack-tapable-compiler-plugin-mechanism/index.md
 
 | 对象 | 生命周期 | 典型用途 |
 |------|----------|----------|
-| ==Compiler== | 一次 `webpack()` 调用，**多轮 watch 仍复用** | 读配置、注册插件、整体起止 |
+| ==Compiler==（一次 `webpack()` 调用的顶层实例，多轮 watch 仍复用） | 一次 `webpack()` 调用，**多轮 watch 仍复用** | 读配置、注册插件、整体起止 |
 | **Compilation** | 每次 **新的编译**（一次构建或一次增量） | 模块图、chunk、优化、生成资源 |
 
 **直觉**：`Compiler` 像 **工厂**；`Compilation` 像 **某批次工单**。
@@ -7720,7 +7728,7 @@ url: /blog/2023/06/20/webpack/index.md
 
 * 加载器（Loader）
 
-  * webpack 只能理解 JS 和 JSON 文件，loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用
+  * webpack 只能理解 JS 和 JSON 文件，**loader**（把非 JS 资源转成 webpack 可消费模块的转换器）让 webpack 能够去处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用
 
   * 例子：`css-loader | html-loader `
 
@@ -8920,7 +8928,7 @@ ReadableStream 管道里，**下游慢** 应 **反压上游**（`pipeTo` 默认�
 url: /blog/2023/06/27/frontend-large-file-upload-chunk-oss/index.md
 ---
 # 前端大文件上传深入：分片、断点续传、秒传与直传 OSS
-## 浏览器 ==不能直接写磁盘路径==，上传依赖 **`input[type=file]` + FormData / Blob**，大文件若一次性 `POST`，容易 **超时、断网全丢、服务端内存爆**。企业里常见方案：**分片（multipart）**、**断点续传**、**秒传（哈希去重）**、**前端直传对象存储**（**OSS** / COS / **S3**）。
+## 浏览器 ==不能直接写磁盘路径==，上传依赖 **`input[type=file]` + FormData / Blob**，大文件若一次性 `POST`，容易 **超时、断网全丢、服务端内存爆**。企业里常见方案：**分片**（multipart，按块上传再合并）、**断点续传**、**秒传**（哈希去重）、**前端直传对象存储**（**OSS**（Object Storage Service，对象存储，如阿里云 OSS / 腾讯 COS / AWS S3））。
 
 ### 一、为什么必须分片：TCP、超时与网关
 
@@ -10328,7 +10336,7 @@ url: /blog/2023/08/05/frontend-performance-ssr-hydration-basics/index.md
 
 ### 四、流式 SSR（概念）
 
-服务端 **边生成边刷 HTML**，可 **更早 TTFB/首字节**，但 **水合顺序** 与 **脚本依赖** 要设计。Nuxt、Next 等有现成方案；自研成本高。
+服务端 **边生成边刷 HTML**，可 **更早 TTFB**（Time To First Byte，首字节时间），但 **水合顺序** 与 **脚本依赖** 要设计。Nuxt、Next 等有现成方案；自研成本高。
 
 ***
 
@@ -10342,10 +10350,10 @@ SSR 不减免 **图片/字体/JS 分包**；LCP 仍可能被 **大图** 卡住�
 
 | 场景 | 倾向 |
 |------|------|
-| 内容/SEO 强依赖 | SSR 或 SSG |
+| 内容/SEO 强依赖 | SSR 或 **SSG**（Static Site Generation，构建期生成静态 HTML） |
 | 登录后后台 | SPA + 骨架屏 常更省总成本 |
 | 全球静态分发 | SSG + CDN 常优于自建 SSR 集群 |
-| 仅部分页面 SEO | 选 **预渲染** 子集 |
+| 仅部分页面 SEO | 选 **预渲染**（Prerender，构建时为指定路由生成 HTML）子集 |
 
 ***
 
@@ -10759,7 +10767,7 @@ await page.pdf({
 
 ***
 
-### 三、视觉回归：像素 diff 与「语义」回归
+### 三、**视觉回归**（Visual Regression，对比截图像素/阈值发现 UI 意外变化）：像素 diff 与「语义」回归
 
 工具链常见：**Playwright `expect(page).toHaveScreenshot()`**、Percy、Chromatic。\
 像素对比对 **字体抗锯齿、亚像素滚动** 敏感。
@@ -11911,7 +11919,7 @@ async show() {
 url: /blog/2024/05/18/eggjs-router-controller-convention/index.md
 ---
 # Egg.js 路由与 Controller 深入：REST、动态参数、resources 与校验边界
-## Egg 推荐 ==`app/router.js` 集中声明==，由 **Controller** 表达 HTTP 语义。
+## Egg 推荐 ==`app/router.js` 集中声明==，由 **Controller**（控制器，承接 HTTP 参数并调用 service 返回 body）表达 HTTP 语义。
 
 ### 一、`router.js` 常见写法
 
@@ -11928,7 +11936,7 @@ module.exports = app => {
 ```
 
 * \==`:id`== → `ctx.params.id`（字符串）。
-* **Query** → `ctx.query`，注意 **数组与重复 key** 的解析规则。
+* **Query**（URL 查询字符串）→ `ctx.query`，注意 **数组与重复 key** 的解析规则。
 
 #### 2）`router.resources`（**REST** CRUD 一条龙，Representational State Transfer，用 HTTP 动词操作资源）
 
@@ -12020,7 +12028,7 @@ url: /blog/2024/05/26/vite-optimize-deps-prebundle-gotchas/index.md
 
 * \==CommonJS / 散落入口==：浏览器不能原生 `require`（CJS 模块系统）。
 * **大量小文件**：直接请求 **deep path** 会 **请求风暴**。
-* **统一 ESM 形状**：后续 **转换成本** 更低。
+* **统一 ESM**（ECMAScript Modules，浏览器可用的 `import`/`export` 模块格式）**形状**：后续 **转换成本** 更低。
 
 ***
 
@@ -12239,7 +12247,7 @@ url: /blog/2024/07/08/node-async-error-unhandled-rejection/index.md
 url: /blog/2024/07/19/vite-plugin-minimal-resolveid-load/index.md
 ---
 # Vite 从 0 到 1：写一个最小插件（resolveId + load + transform）
-## Vite 插件 ==兼容 Rollup 插件钩子==，并扩展 **`configureServer`** 等 **仅开发期** 钩子。理解 **`resolveId` → `load` → `transform`** 三段（解析模块 ID → 读内容 → 改源码），就能 **虚拟模块**、**替换环境常量**、**注入 HMR**。
+## Vite 插件 ==兼容 **Rollup**（生产构建用的模块打包器）插件钩子==，并扩展 **`configureServer`**（仅开发期定制 dev 服务器）等钩子。理解 **`resolveId`（解析模块 ID）→ `load`（读取模块内容）→ `transform`（改写源码）** 三段，就能 **虚拟模块**、**替换环境常量**、**注入 HMR**（Hot Module Replacement，热模块替换）。
 
 ### 一、插件本质
 
@@ -12588,7 +12596,7 @@ url: /blog/2024/09/23/node-event-loop-libuv-phases/index.md
 
 | 类型 | 表现 | 对策 |
 |------|------|------|
-| **I/O 密集** | 等磁盘/网络，CPU 空 | 保持异步 API，注意 **并发上限** 与 **背压** |
+| **I/O 密集** | 等磁盘/网络，CPU 空 | 保持异步 API，注意 **并发上限** 与 **背压**（backpressure，生产快于消费时让上游暂停写入的流控） |
 | **CPU 密集** | 大循环、加解密、图像处理 | **Worker Threads**、子进程、或 **独立服务**；不要指望 **拆成很多 `setTimeout`** 就能并行算 |
 
 V8 执行 JS 时 **长时间不进入事件循环**，定时器、心跳、TCP 保活都会 **推迟**。
@@ -12715,7 +12723,7 @@ server: {
 
 ***
 
-### 四、与 BFF 同仓
+### 四、与 **BFF**（Backend For Frontend，为前端聚合接口的后端层）同仓
 
 * **开发**：Vite 代理 `/api` → **Egg 7001**。
 * **生产**：Nginx **同域反代** `/api`，前端 **`fetch('/api')` 不变**。
@@ -12856,7 +12864,7 @@ Stream 三句话：**能 pipe 就别一次性读进内存**；**手写 data 事�
 ---
 url: /blog/2025/01/08/micro-frontend-theory-boundaries-routing/index.md
 ---
-**微前端** 不是「把一个大 SPA 拆成多个仓库」这么简单，而是 ==在浏览器里组合多个独立交付的前端应用==，同时处理 **路由、样式、JS 全局污染、版本共存、发布节奏**。**主应用（基座）** 负责壳层路由与挂载点；**子应用** 可异构技术栈、独立发版。下面从 **何时值得做、拆分维度、路由策略、应用间通信** 写理论层，并给 **决策表**。
+**微前端**（在浏览器里组合多个可独立交付、独立发版的前端应用）不是「把一个大 SPA（Single Page Application，单页应用）拆成多个仓库」这么简单，还要同时处理 **路由、样式、JS 全局污染、版本共存、发布节奏**。**主应用（基座）**（Shell：菜单、登录与子应用挂载容器）负责壳层路由与挂载点；**子应用** 可异构技术栈、独立发版。下面从 **何时值得做、拆分维度、路由策略、应用间通信** 写理论层，并给 **决策表**。
 
 ***
 
@@ -12866,7 +12874,7 @@ url: /blog/2025/01/08/micro-frontend-theory-boundaries-routing/index.md
 |------|------|
 | ==团队规模== | 多团队 **并行发版**，不想共用一个巨型仓库流水线 |
 | **技术异构** | 老系统 **Vue2**、新模块 **React18**，短期无法统一栈 |
-| **增量迁移** | **绞杀者模式**：一块块替换遗留页面 |
+| **增量迁移** | **绞杀者模式**（Strangler Fig Pattern，逐步用新模块替换旧系统边角的迁移策略）：一块块替换遗留页面 |
 
 **反模式**：团队 **<2 个前端**、发布 **周更同步** 仍上微前端 → **复杂度 > 收益**。
 
@@ -12886,7 +12894,7 @@ url: /blog/2025/01/08/micro-frontend-theory-boundaries-routing/index.md
 
 ### 三、路由：主应用与子应用谁「拥有」URL
 
-**activeRule / basename** 决定子应用何时挂载；**history 模式** 下壳层必须配置 **fallback** 把未知路径交回主应用 HTML。
+**activeRule**（路由前缀或函数，命中时挂载子应用）/ **basename** 决定子应用何时挂载；**history 模式** 下壳层必须配置 **fallback** 把未知路径交回主应用 HTML。
 
 **方案 A：主应用统一路由（推荐常见）**
 
@@ -12906,7 +12914,7 @@ url: /blog/2025/01/08/micro-frontend-theory-boundaries-routing/index.md
 | **CustomEvent / 主应用 bus** | 低频、松耦合 |
 | **Props 下发** | 主 → 子 **配置、主题、权限** |
 | **共享全局 store（慎）** | 强耦合，**版本升级** 易炸 |
-| **Backend For Frontend** | 数据 **以服务端为真**，前端只展示 |
+| **BFF**（Backend For Frontend，为前端聚合接口、统一鉴权的后端层） | 数据 **以服务端为真**，前端只展示 |
 
 **原则**：**能 REST/GraphQL 解决的，别用前端总线传业务状态**。
 
@@ -12916,7 +12924,7 @@ url: /blog/2025/01/08/micro-frontend-theory-boundaries-routing/index.md
 
 * **命名约定**：团队自律 **BEM**，成本低。
 * **CSS Modules / scoped**：构建期隔离，**子应用独立构建** 时天然分开。
-* **Shadow DOM**：**强隔离**，但 **第三方组件**（如弹层挂 body）常 **穿透** 出问题。
+* **Shadow DOM**（影子 DOM，样式与节点树与主文档隔离）：**强隔离**，但 **第三方组件**（如弹层挂 body）常 **穿透** 出问题。
 
 ***
 
@@ -13563,7 +13571,7 @@ url: /blog/2025/03/29/micro-frontend-wujie-garfish-comparison/index.md
 
 ### 三、wujie（无界）：WebComponent + iframe 思路变种
 
-公开资料强调：**webcomponent 容器** + **子应用运行在 iframe**（或类 iframe 环境）带来的 **强隔离**，主应用通过 **代理** 同步路由与 **注入**。\
+公开资料强调：**Web Components**（浏览器自定义元素 + Shadow DOM 标准）容器 + **子应用运行在 iframe**（或类 iframe 环境）带来的 **强隔离**，主应用通过 **代理** 同步路由与 **注入**。\
 **优点**：**样式与 JS 隔离** 相对省心；**缺点**：**跨 iframe 的 DOM 通信、弹层挂载点** 要按文档处理 **deactive 激活** 等。
 
 **适合**：**强隔离**、子应用 **不愿被改太多** 时评估。
@@ -14277,7 +14285,7 @@ url: /blog/2025/06/17/micro-frontend-icestark-emp-piral-nx/index.md
 
 ### 四、Nx + Module Federation
 
-* **定位**：在 **monorepo** 里维护 host/remote，**依赖图、缓存、受影响分析** 由 Nx 负责，[Nx Module Federation](https://nx.dev/concepts/module-federation)。
+* **定位**：在 **monorepo**（单 Git 仓库管理多包/多应用）里维护 host/remote，**依赖图、缓存、受影响分析** 由 Nx 负责，[Nx Module Federation](https://nx.dev/concepts/module-federation)。
 * **何时优先考虑**：代码已在 **Nx workspace**，希望 **远程模块** 与 **CI 增量** 同一套工具链。
 * **实际操作要点**：
   * 使用 **`@nx/react` 等生成器** 创建 **host** 与 **remote** 应用。
@@ -15718,7 +15726,7 @@ Garfish 落地 **= `run` 里配清 `activeWhen` 与 `entry` + 子应用 bridge �
 url: /blog/2025/11/16/headless-playwright-architecture-tracing-ci/index.md
 ---
 # 无头浏览器 Playwright 深入：架构、Tracing 与 CI 稳定化
-## Playwright 不只是「能点页面的脚本」：它把 ==Browser → Context → Page== 分层、内置 **自动等待**、**Trace**（执行录像/网络/快照，用于排障）/视频 与 **多浏览器** 抽象。
+## Playwright 不只是「能点页面的脚本」：它把 ==Browser → Context → Page== 分层、内置 **自动等待**（断言前自动轮询至可操作）、**Trace**（执行录像/网络/快照，用于排障）/视频 与 **多浏览器** 抽象。
 
 ### 一、Browser / Context / Page 各管什么
 
@@ -15751,7 +15759,7 @@ test.describe('订单流', () => {
 
 ### 二、选择器：优先角色与可访问名，少用脆弱 CSS
 
-Playwright 推荐 **`getByRole`、`getByLabel`、`getByText`**（与 **Testing Library** 可访问性优先理念一致），避免 `#app > div:nth-child(3)` 这类 **布局一变就碎** 的选择器。
+Playwright 推荐 **`getByRole`、`getByLabel`、`getByText`**（与 **Testing Library**（React Testing Library 系，按角色/标签查询 DOM）可访问性优先理念一致），避免 `#app > div:nth-child(3)` 这类 **布局一变就碎** 的选择器。
 
 **示例：表单**
 
@@ -16955,7 +16963,7 @@ location /api/chat/ {
 
 1. **上游超时**：大于「模型最坏情况」，并 **小于** 网关最外层超时；中间层逐级递减，避免「客户端已断、服务端还在算」。
 2. **客户端取消**：用户关闭页面或切换会话时 **AbortController** 取消 fetch，减少无效算力。
-3. **幂等与请求 ID**：同一会话重发时带 **client\_request\_id**，便于日志对齐，避免重复扣费争议（依厂商能力）。
+3. **幂等**（Idempotency，同请求重试不产生重复副作用）**与请求 ID**：同一会话重发时带 **client\_request\_id**，便于日志对齐，避免重复扣费争议（依厂商能力）。
 4. **结构化日志**：记录 `model`、`latency_first_token`、`latency_total`、`status`、`truncated`（是否触顶 max\_tokens），**不要**把用户完整 prompt 打进明文日志（合规与脱敏）。
 5. **背压与队列**：高峰时对 `/chat` 做 **排队 + 429**，保护 GPU 池；别无限接受长连接。
 6. **降级路径**：流式失败自动 retry 一次非流式短答，或返回「服务繁忙」模板。
@@ -17939,7 +17947,7 @@ url: /blog/2026/05/11/ai-rag-and-agent-tools/index.md
 url: /blog/2026/05/13/eggjs-agent-process-patterns/index.md
 ---
 # Egg.js Agent 进程：适合做什么、如何避免和 Worker 抢活
-Egg.js 的 **Agent** 是介于 master 与 worker 之间的常驻进程：**单例**，用来做不适合在多 Worker 重复跑的琐事（监听文件、维护客户端连接池的一层调度）。滥用会把 Agent 变成第二个单体。**本篇列清单：推荐场景 vs 反模式**，并与 **`egg-development`** 下的行为差异对齐心智模型。
+Egg.js 的 **Agent**（代理进程：集群内单例，负责调度与跨 Worker 协调）是介于 **master**（主进程，负责 fork Worker）与 **Worker**（工作进程，实际处理 HTTP 请求）之间的常驻进程：**单例**（全集群唯一实例），用来做不适合在多 Worker 重复跑的琐事（监听文件、维护客户端连接池的一层调度）。滥用会把 Agent 变成第二个单体。**本篇列清单：推荐场景 vs 反模式**，并与 **`egg-development`** 下的行为差异对齐心智模型。
 
 ***
 
@@ -18185,7 +18193,7 @@ extend 是 **缩小样板代码** 的利器，也是 **隐式依赖** 的放大�
 url: /blog/2026/05/13/eggjs-logging-tracing-correlation-id/index.md
 ---
 # Egg.js 日志与链路：logger 层级、ctx.logger、traceId 贯通 HttpClient
-Egg.js 内置基于 **log4js** 的日志体系：**应用日志 / 核心日志 / 调度日志** 分流已有预设。线上排障时，真正的痛点往往是 **跨进程 / 跨服务的一条 trace**，本篇写如何在 Egg 里把 **traceId（或 W3C traceparent，分布式链路追踪标准头）** 从入口打到 **ctx.curl**。
+Egg.js 内置基于 **log4js**（Node.js 常用日志分级库） 的日志体系：**应用日志 / 核心日志 / 调度日志** 分流已有预设。线上排障时，真正的痛点往往是 **跨进程 / 跨服务的一条 trace**，本篇写如何在 Egg 里把 **traceId（或 W3C traceparent，分布式链路追踪标准头）** 从入口打到 **ctx.curl**。
 
 ***
 
@@ -18378,7 +18386,7 @@ url: /blog/2026/05/13/eggjs-production-cluster-graceful-shutdown-health/index.md
 2. **等待在途请求完成**，设置 **上限时间**（如 30s）；超时强制退出。
 3. **关闭 DB pool / Redis / MQ**，防止进程挂了连接泄漏。
 
-Egg / cluster 下要确保 **每个 Worker** 都执行 cleanup；**Agent** 也要 **beforeClose**。
+Egg / **cluster**（多 Worker 进程集群模式）下要确保 **每个 Worker** 都执行 cleanup；**Agent**（代理进程，集群单例）也要 **beforeClose**。
 
 ***
 
@@ -18484,7 +18492,7 @@ Egg.js 多 Worker **进程内存不共享**：Session（服务端会话状态）
 
 ### 三、集群与 sticky
 
-若暂时无法外置 Session，网关 **session sticky** 能救命但不根治：**滚动发布 / Worker 重启** 仍会丢会话。长期仍应 **Redis**。
+若暂时无法外置 Session，网关 **session sticky**（会话亲和：同一客户端固定打到同一 Worker）能救命但不根治：**滚动发布 / Worker 重启** 仍会丢会话。长期仍应 **Redis**。
 
 ***
 
@@ -19077,7 +19085,7 @@ url: /blog/2026/05/13/rbac-audit-log-privilege-escalation-detection/index.md
 2. **低权限账号触发 EXPORT**：可能是接口漏拦。
 3. **深夜批量 UPDATE**：结合 **地理位置异常**（若采集）。
 
-对接 SIEM 时用 **固定 schema** 便于关联。
+对接 **SIEM**（Security Information and Event Management，安全信息与事件管理） 时用 **固定 schema** 便于关联。
 
 ***
 
@@ -19134,7 +19142,7 @@ RBAC 产品是 **策略 + 证据链**。把审计当成 **一等功能**（字�
 url: /blog/2026/05/13/rbac-data-scope-row-level-department-tree/index.md
 ---
 # 数据权限（行级）：部门树、递归 CTE、OWNER_ONLY 与自定义规则并存
-接口 **RBAC** 鉴权通过后，用户仍可能 **看见不该看的行**。**数据权限（Data Scope，行级可见范围）** 常见模型：**全部 / 本部门及子部门 / 仅本人 / 自定义列表**。本篇写 **约束下发通道**、**SQL 拼接陷阱**、以及 **审计如何记录 scope**。
+接口 **RBAC**（Role-Based Access Control，基于角色的访问控制）鉴权通过后，用户仍可能 **看见不该看的行**。**数据权限（Data Scope，行级可见范围）** 常见模型：**全部 / 本部门及子部门 / 仅本人 / 自定义列表**。本篇写 **约束下发通道**、**SQL 拼接陷阱**、以及 **审计如何记录 scope**。
 
 ***
 
@@ -19241,7 +19249,7 @@ return ctx.model.Order.findAll({ where });
 url: /blog/2026/05/13/rbac-permission-cache-menu-jwt-redis/index.md
 ---
 # RBAC 权限缓存：会话快照、Redis、JWT claims 与菜单树合并算法
-每次请求扫库拼权限在 **QPS 稍高** 时就会成为瓶颈。本篇讨论三种缓存层级：**HTTP 内会话**、**Redis 侧权限集**、**JWT claims**（JWT 载荷中的身份/版本字段），以及前端 **`routes → menuTree`** 合并时要注意的 **父子依赖**。
+每次请求扫库拼权限在 **QPS**（每秒查询数，衡量接口吞吐）稍高时就会成为瓶颈。本篇讨论三种缓存层级：**HTTP 内会话**、**Redis**（内存键值存储，常用于缓存与会话）侧权限集、**JWT claims**（JWT 载荷中的身份/版本字段），以及前端 **`routes → menuTree`** 合并时要注意的 **父子依赖**。
 
 ***
 
@@ -19454,7 +19462,7 @@ async function can(ctx, action, resourceId) {
 url: /blog/2026/05/14/portal-scene-strategy-multi-region-permissions/index.md
 ---
 # 多地域门户：场景策略与权限的全链路（Egg 后端 + Vue 前端）
-某 **机构客户门户** 采用 **Egg 单应用 + Vue 3 SPA**：多套地域部署共用一套仓库，通过 **环境变量** 切换站点；权限上既要支撑 **个人 / 机构 / 合规 / 内部代管** 等产品形态，又要让 **同一套前端路由与后端接口** 在不同形态下自动 **收窄菜单与 API 可见范围**。工程上使用 **`sceneManager`**（策略链，按序遍历 **`IScene`（场景策略接口：各实现提供 `isMatch` 判定当前请求是否命中、`getConfig` 产出该形态的功能/权限配置快照）**）在请求级产出场景配置，再与 **中心化机构策略**、**使用者 RPC 权限** 合成 **`flatCaps`（扁平能力键列表，原子权限码的逗号/分隔串，供首屏与路由裁剪）** 与 **ACL 树**（嵌套权限目录）。按 **仓库拓扑 → 端到端流程 → 示意代码 → 场景理论** 展开。**文中所有代码块均为架构示意**，字段名、路径、类名已与真实仓库 **刻意不一致**，不可复制粘贴进业务工程。
+某 **机构客户门户** 采用 **Egg 单应用 + Vue 3 SPA**（单页应用，浏览器内客户端路由）：多套地域部署共用一套仓库，通过 **环境变量** 切换站点；权限上既要支撑 **个人 / 机构 / 合规 / 内部代管** 等产品形态，又要让 **同一套前端路由与后端接口** 在不同形态下自动 **收窄菜单与 API 可见范围**。工程上使用 **`sceneManager`**（策略链管理器，按序遍历各 **`IScene`**（场景策略接口：各实现提供 `isMatch` 判定当前请求是否命中、`getConfig` 产出该形态的功能/权限配置快照））在请求级产出场景配置，再与 **中心化机构策略**、**使用者 RPC 权限** 合成 **`flatCaps`**（扁平能力键列表，原子权限码的逗号/分隔串，供首屏与路由裁剪） 与 **ACL 树**（嵌套权限目录）。按 **仓库拓扑 → 端到端流程 → 示意代码 → 场景理论** 展开。**文中所有代码块均为架构示意**，字段名、路径、类名已与真实仓库 **刻意不一致**，不可复制粘贴进业务工程。
 
 ***
 
@@ -19874,7 +19882,7 @@ async function effectivePermissions(ctx, orgId, userId) {
 url: /blog/2026/05/15/oa-template-monorepo-frontend-architecture/index.md
 ---
 # OA 单体脚手架从前端架构视角：pnpm 分包、路由即菜单与类型化 API
-某 **OA 场景单体模板仓库** 将 **Vue 3 SPA**、**Egg 系 Node 网关（可作轻量 BFF）**、**纯 TypeScript 共享包**、**Playwright E2E** 收敛在同一个 **pnpm workspace**（Monorepo 工作区，单仓多包）里：开发时用 **并发脚本** 拉起 Vite 与后端；业务代码里用 **「路由即菜单」** 降低菜单与路由漂移风险；接口层走 **由服务端契约生成的类型化客户端**，使页面调用接近 **本地函数**。下文从前端架构师的视角拆解 **分层、数据流、扩展点与质量闸**。
+某 **OA 场景单体模板仓库** 将 **Vue 3 SPA**（单页应用，浏览器内客户端路由、无整页刷新）、**Egg 系 Node 网关（可作轻量 BFF）**、**纯 TypeScript 共享包**、**Playwright E2E**（端到端自动化测试框架） 收敛在同一个 **pnpm workspace**（Monorepo 工作区，单仓多包）里：开发时用 **并发脚本** 拉起 Vite 与后端；业务代码里用 **「路由即菜单」** 降低菜单与路由漂移风险；接口层走 **由服务端契约生成的类型化客户端**，使页面调用接近 **本地函数**。下文从前端架构师的视角拆解 **分层、数据流、扩展点与质量闸**。
 
 **文中所有代码块均为架构示意**：组件库 API、路由路径、控制器类名、HTTP 路径、构建脚本字符串等均 **刻意不与任一真实模板仓库一致**，请勿复制粘贴对齐工程。
 
@@ -19910,7 +19918,7 @@ url: /blog/2026/05/15/oa-template-monorepo-frontend-architecture/index.md
 
 ### 一、前端在整体里的位置：「壳 + 页 + SDK」
 
-**Shell（壳）** 只负责布局与 `RouterView`；业务 **Views** 通过 **Pinia** 与 **契约化 API 客户端** 拉数据，权限若需要可接 **RBAC** 路由 meta，但模板不内置完整权限中心。
+**Shell（壳）** 只负责布局与 `RouterView`；业务 **Views** 通过 **Pinia**（Vue 3 官方推荐的状态管理库） 与 **契约化 API 客户端** 拉数据，权限若需要可接 **RBAC**（基于角色的访问控制） 路由 meta，但模板不内置完整权限中心。
 
 | 层次 | 职责 | 典型产物 |
 |------|------|-----------|
@@ -20133,7 +20141,7 @@ flowchart LR
   REG --> SVC
 ```
 
-**要点**：浏览器 **永远不直接** 使用该运行时；**SPA** 只打 BFF 的 HTTP，由 BFF 进程 **类型稳定地** 消费后端 **RPC**（远程过程调用）能力。
+**要点**：浏览器 **永远不直接** 使用该运行时；**SPA**（Single Page Application，单页应用） 只打 BFF 的 HTTP，由 BFF 进程 **类型稳定地** 消费后端 **RPC**（远程过程调用）能力。
 
 ***
 
@@ -20572,7 +20580,7 @@ url: /blog/2026/05/17/miniprogram-uniapp-taro-selection-and-pitfalls/index.md
 
 ### 二、uni-app 常见坑
 
-**1. 条件编译（`#ifdef` 按平台切代码）（`#ifdef` 按平台切代码）漏写**
+**1. 条件编译（`#ifdef` 按平台切代码）（`#ifdef` 按平台切代码）（`#ifdef` 按平台切代码）漏写**
 
 ```javascript
 // #ifdef MP-WEIXIN
@@ -21197,7 +21205,7 @@ AI 写测试 **快但不准**——边界条件、异步时序、mock（测试�
 ```text
 为 OrderList.vue 写测试：MSW mock GET /api/orders
 覆盖：空列表、loading、错误 toast、分页下一页
-使用 @vue/test-utils，不要 snapshot 整页
+使用 @vue/test-utils，不要 **snapshot**（快照测试，比对整段渲染输出）整页
 ```
 
 AI 常错：**没 reset handlers** → 加 `afterEach(() => server.resetHandlers())`。
@@ -21212,7 +21220,7 @@ AI 常错：**没 reset handlers** → 加 `afterEach(() => server.resetHandlers
 不要 hardcode 真实密码，用 process.env.E2E_USER
 ```
 
-**必须人审**：selector 是否稳定、是否测了 **关键断言** 而非只 `toHaveURL`。
+**必须人审**：**selector**（定位器，如 `data-testid`）是否稳定、是否测了 **关键断言** 而非只 `toHaveURL`。
 
 ***
 
@@ -21818,7 +21826,7 @@ Vue 2 **EOL**（End of Life，停止维护） 后，存量项目迁移是 **渐�
 url: /blog/2026/05/20/vue3-composables-design-patterns-deep/index.md
 ---
 # Vue 3 Composables 设计模式：复用、边界与测试
-`useXxx` 是 Vue 3 **组合式 API**（Composition API，逻辑按功能组织） 的核心复用单元。写得好的 composable **像小型服务**；写得坏的会变成 **隐式全局状态泥球**（多处共享可变状态、边界不清）（多处共享可变状态、边界不清）。本篇在[《组合式 API 常用写法》](/2022/04/20/vue3-composition-api-patterns/)基础上加深 **命名、参数、副作用、测试**。
+`useXxx` 是 Vue 3 **组合式 API**（Composition API，逻辑按功能组织） 的核心复用单元。写得好的 composable **像小型服务**；写得坏的会变成 **隐式全局状态泥球**（多处共享可变状态、边界不清）（多处共享可变状态、边界不清）（多处共享可变状态、边界不清）。本篇在[《组合式 API 常用写法》](/2022/04/20/vue3-composition-api-patterns/)基础上加深 **命名、参数、副作用、测试**。
 
 ***
 
@@ -21827,7 +21835,7 @@ url: /blog/2026/05/20/vue3-composables-design-patterns-deep/index.md
 | 适合 | 不适合 |
 |------|--------|
 | 2+ 组件重复的逻辑 | 只用一次的 5 行代码 |
-| 有明确输入输出（纯函数式接口）（纯函数式接口） | 强绑定某页面 DOM 结构 |
+| 有明确输入输出（纯函数式接口）（纯函数式接口）（纯函数式接口） | 强绑定某页面 DOM 结构 |
 | 可单测的纯逻辑 | 到处读写 unrelated store |
 
 ***
@@ -22209,7 +22217,7 @@ url: /blog/2026/05/21/typescript-generics-utility-types-practice/index.md
 
 ***
 
-### 一、API 响应泛型（`<T>` 占位符约束 data 形状）（`<T>` 占位符约束 data 形状）
+### 一、API 响应泛型（`<T>` 占位符约束 data 形状）（`<T>` 占位符约束 data 形状）（`<T>` 占位符约束 data 形状）
 
 ```typescript
 type ApiResult<T> = { code: number; data: T; message: string };
@@ -22723,7 +22731,7 @@ Content-Security-Policy:
 url: /blog/2026/05/22/frontend-testing-strategy-unit-integration-e2e/index.md
 ---
 # 前端测试策略：单测、集成与 E2E 怎么分层
-## 测试不是越多越好，而是 **在对的层花对的成本**。本篇给 **测试金字塔（前端版）**、各层职责、与现有 Playwright/Vitest 文的衔接。
+## 测试不是越多越好，而是 **在对的层花对的成本**。本篇给 **测试金字塔**（Test Pyramid，少量慢测在上、大量快测在下的分层思想，前端版）、各层职责、与现有 Playwright/Vitest 文的衔接。
 
 ### 一、金字塔
 
@@ -22749,7 +22757,7 @@ url: /blog/2026/05/22/frontend-testing-strategy-unit-integration-e2e/index.md
 
 * **bug 贵在哪层**，就在哪层补测试
 * flaky E2E → 先下沉到 MSW 集成
-* **性能预算 CI** 与 **smoke E2E**（冒烟级最小主路径用例）并行，不互相替代
+* **性能预算 CI**（Performance Budget，构建产物体积或 Web Vitals 超阈则 fail）与 **smoke E2E**（冒烟级最小主路径用例）并行，不互相替代
 
 ***
 
@@ -23011,7 +23019,7 @@ url: /blog/2026/05/23/css-tailwind-modules-scoped-selection/index.md
 | 方案 | 优点 | 缺点 |
 |------|------|------|
 | **Tailwind** | 迭代快、少命名 | HTML 类名长、需设计 token 约束 |
-| **CSS Modules**（编译期局部类名）（编译期局部类名） | 类名隔离、可 TS | 文件分散 |
+| **CSS Modules**（编译期局部类名）（编译期局部类名）（编译期局部类名） | 类名隔离、可 TS | 文件分散 |
 | **Vue Scoped** | SFC 一体 | 深层穿透麻烦；难跨组件共享 |
 | **BEM + Sass** | 老项目熟悉 | 易全局污染 |
 
@@ -23064,7 +23072,7 @@ url: /blog/2026/05/23/css-tailwind-modules-scoped-selection/index.md
 url: /blog/2026/05/23/frontend-error-monitoring-sentry-reporting/index.md
 ---
 # 前端错误监控：Sentry 接入、Source Map 与告警降噪
-## 线上白屏用户不会提 bug，要靠 **错误监控 + 性能指标**。本篇以 **Sentry**（前端错误/性能采集 SaaS）为例讲 **接入、release、source map、告警策略**，与后端 observability 文呼应。
+## 线上白屏用户不会提 bug，要靠 **错误监控 + 性能指标**。本篇以 **Sentry**（前端错误/性能采集 SaaS）为例讲 **接入、release、source map、告警策略**，与后端 **可观测性**（Observability，日志/指标/追踪等线上排障能力组合）文呼应。
 
 ### 一、接入（Vue 3）
 
@@ -23148,13 +23156,13 @@ url: /blog/2026/05/23/frontend-file-preview-watermark-permission-download/index.
 **禁止** 把永久 OSS 公网 URL 写进列表接口 JSON。\
 **禁止** 只在前端 `v-if="canDownload"` 而不校验 ticket。
 
-与 RBAC 关系：列表层 **数据权限** 过滤 fileId（见 [行级数据权限](/2023/07/12/rbac-data-scope-row-level-department-tree/)）。
+与 **RBAC**（基于角色的访问控制）关系：列表层 **数据权限** 过滤 fileId（见 [行级数据权限](/2023/07/12/rbac-data-scope-row-level-department-tree/)）。
 
 ***
 
 ### 二、Ticket 与签名 URL
 
-#### 2.1 签发（BFF / Egg）
+#### 2.1 签发（**BFF**（Backend For Frontend，为前端聚合 HTTP 的 Node 网关层） / Egg）
 
 ```typescript
 // 伪代码：ticket 一次性或短 TTL，绑定 user + file + action
@@ -23312,7 +23320,7 @@ async function download(fileId: string) {
 url: /blog/2026/05/24/design-token-theme-dark-mode-practice/index.md
 ---
 # Design Token 与主题换肤：CSS 变量、暗色与中后台实践
-换肤不是「多写一套 CSS」，而是 **Token 语义化 + CSS 变量运行时切换**。本篇给 **颜色/间距/圆角 token 层** 与 **暗色模式**（prefers-color-scheme / class 切换）（prefers-color-scheme / class 切换） 落地方式（与 Plume 博客换肤思路相通）。
+换肤不是「多写一套 CSS」，而是 **Token 语义化 + CSS 变量运行时切换**。本篇给 **颜色/间距/圆角 token 层** 与 **暗色模式**（prefers-color-scheme / class 切换）（prefers-color-scheme / class 切换）（prefers-color-scheme / class 切换） 落地方式（与 Plume 博客换肤思路相通）。
 
 ***
 
@@ -23457,7 +23465,7 @@ url: /blog/2026/05/24/miniprogram-lifecycle-routing-navigation/index.md
 
 ***
 
-### 一、App 级生命周期（小程序全局 `App()` 钩子）（小程序全局 `App()` 钩子）
+### 一、App 级生命周期（小程序全局 `App()` 钩子）（小程序全局 `App()` 钩子）（小程序全局 `App()` 钩子）
 
 ```javascript
 // app.js
@@ -24049,7 +24057,7 @@ url: /blog/2026/05/25/interview-vue-react-framework-questions/index.md
 
 | 点 | Vue2 | Vue3 |
 |----|------|------|
-| API | Options API 为主 | ****Composition API**（组合式，逻辑聚合）**（组合式，逻辑聚合） |
+| API | Options API 为主 | \*\*\*\***Composition API**（组合式，逻辑聚合）**（组合式，逻辑聚合）**（组合式，逻辑聚合） |
 | 响应式 | `Object.defineProperty`（属性级拦截） | `Proxy`（对象级拦截） |
 | 根节点 | 单根 | 多根 Fragment |
 | 全局 API | `new Vue()` | `createApp()` |
@@ -24142,7 +24150,7 @@ Vue 响应式、EventBus、DOM 事件都可往这套解释。
 url: /blog/2026/05/25/miniprogram-network-storage-subscription/index.md
 ---
 # 小程序深入：网络请求、登录态与本地缓存
-小程序里 **wx.request**（HTTPS 网络请求）（HTTPS 请求 API） 包一层 大家都做过；难的是 **token 刷新**、**并发重复登录**、**缓存过期**、**订阅消息**（用户授权后模板推送）（用户授权模板推送） 合规 这几块叠在一起时的边界。本篇给一套 **可拷贝再改** 的分层写法，并标出审核与线上常踩的坑。
+小程序里 **wx.request**（HTTPS 网络请求）（HTTPS 网络请求）（HTTPS 请求 API） 包一层 大家都做过；难的是 **token 刷新**、**并发重复登录**、**缓存过期**、**订阅消息**（用户授权后模板推送）（用户授权后模板推送）（用户授权模板推送） 合规 这几块叠在一起时的边界。本篇给一套 **可拷贝再改** 的分层写法，并标出审核与线上常踩的坑。
 
 ***
 
@@ -24543,7 +24551,7 @@ entry → 递归依赖 → loader 转换 → 插件介入生命周期 → output
 url: /blog/2026/05/26/miniprogram-navigate-miniprogram-half-screen/index.md
 ---
 # 小程序跳转与半屏小程序：navigateToMiniProgram 实战
-业务常要 **从 A 小程序打开 B**（支付、联名活动、服务商能力），或使用 **半屏小程序**（`openEmbeddedMiniProgram`，嵌入式打开）（`openEmbeddedMiniProgram`，嵌入式打开） 降低跳出感。本篇讲 **跳转配置、参数传递、返回栈与审核**。
+业务常要 **从 A 小程序打开 B**（支付、联名活动、服务商能力），或使用 **半屏小程序**（`openEmbeddedMiniProgram`，嵌入式打开）（`openEmbeddedMiniProgram`，嵌入式打开）（`openEmbeddedMiniProgram`，嵌入式打开） 降低跳出感。本篇讲 **跳转配置、参数传递、返回栈与审核**。
 
 ***
 
@@ -24551,7 +24559,7 @@ url: /blog/2026/05/26/miniprogram-navigate-miniprogram-half-screen/index.md
 
 | API | 场景 |
 |-----|------|
-| `wx.navigateToMiniProgram`（跳转独立小程序）（跳转独立小程序） | 打开其他小程序 |
+| `wx.navigateToMiniProgram`（跳转独立小程序）（跳转独立小程序）（跳转独立小程序） | 打开其他小程序 |
 | `wx.openEmbeddedMiniProgram` | **半屏**嵌入（基础库与类目有限制） |
 | 返回 | `wx.navigateBackMiniProgram`（B 调起方返回 A） |
 
@@ -25298,7 +25306,7 @@ Tailwind 与 Design Token 文（[选型](/2023/05/23/css-tailwind-modules-scoped
 | 导航栏、工具条、按钮组 | **Flex** | 一维（主轴方向）、内容驱动宽度 |
 | 表单行内 label + input | **Flex** | 对齐轴清晰 |
 | 整页 dashboard 分栏 | **Grid** | 二维区域命名 |
-| 照片墙、固定列数卡片 | **Grid** | `repeat(auto-fill, minmax())`（自适应列数网格） |
+| 照片墙、固定列数卡片 | **Grid** | `repeat(auto-fill, minmax())`（自适应列数网格）（自适应列数网格） |
 | 未知条目数横向滚动 | **Flex** + `overflow-x` | Grid 也可，Flex 更直觉 |
 | 表格语义 | **`<table>`** 或组件库 Table | 别硬用 Grid 冒充表格 |
 
@@ -25637,7 +25645,7 @@ Ingress、TLS、蓝绿发布见 [发布策略](/2023/06/08/enterprise-release-st
 ---
 url: /blog/2026/06/01/frontend-graphql-apollo-client-practice/index.md
 ---
-REST 之外，中台与 BFF 层 increasingly 暴露 **GraphQL**（查询语言，客户端指定字段）（查询语言，客户端指定字段）。本站已有 [Protobuf RPC 客户端栈](/2023/08/15/bff-protobuf-rpc-client-stack-srpc-pattern/)，本篇补 **前端怎么接、和 REST 怎么选、缓存怎么踩坑**——以 Apollo Client + Vue/React（UI 组件库） 为例，概念可迁移到 urql / TanStack Query。
+REST 之外，中台与 BFF 层 increasingly 暴露 **GraphQL**（查询语言，客户端指定字段）（查询语言，客户端指定字段）（查询语言，客户端指定字段）。本站已有 [Protobuf RPC 客户端栈](/2023/08/15/bff-protobuf-rpc-client-stack-srpc-pattern/)，本篇补 **前端怎么接、和 REST 怎么选、缓存怎么踩坑**——以 Apollo Client + Vue/React（UI 组件库）（UI 组件库） 为例，概念可迁移到 urql / TanStack Query。
 
 ***
 
@@ -26146,7 +26154,7 @@ PWA 的价值在 **可预期的离线壳 + 可控更新节奏**；Service Worker
 ---
 url: /blog/2026/06/01/playwright-e2e-admin-order-flow-scenario/index.md
 ---
-## 已有 [Playwright 架构与 Tracing](/2025/11/16/headless-playwright-architecture-tracing-ci/) 讲 Browser/Context/Trace；本篇补 **一条可拷贝的中后台业务链**：**登录态复用 → 列表筛选 → 表单提交 → 断言 Toast/路由**，并带 **Page Object 与 CI 配置**。
+## 已有 [Playwright 架构与 Tracing](/2025/11/16/headless-playwright-architecture-tracing-ci/) 讲 Browser/Context/Trace；本篇补 **一条可拷贝的中后台业务链**：**登录态复用 → 列表筛选 → 表单提交 → 断言 Toast/路由**，并带 **Page Object**（页面对象模式，把页面操作与断言封装为类/模块）**与 CI 配置**。
 
 ### 一、场景与验收标准
 
@@ -26370,7 +26378,7 @@ AI 适合根据 Page Object **生成用例骨架**；你必须审：
 url: /blog/2026/06/01/react-hooks-state-management-patterns/index.md
 ---
 # React Hooks 与状态管理：从 useState 到 Zustand
-本站 Vue 内容多，但协作与微前端场景常碰 React（UI 组件库）。已有 [React + Vite 项目结构](/2026/05/24/react-vite-project-structure-basics/) 讲目录；这篇补 **Hooks**（React 函数组件状态/副作用 API） 心智模型 + 状态分层 + 选型，用 Vue 读者熟悉的类比降低切换成本。
+本站 Vue 内容多，但协作与微前端场景常碰 React（UI 组件库）（UI 组件库）。已有 [React + Vite 项目结构](/2026/05/24/react-vite-project-structure-basics/) 讲目录；这篇补 **Hooks**（React 函数组件状态/副作用 API） 心智模型 + 状态分层 + 选型，用 Vue 读者熟悉的类比降低切换成本。
 
 ***
 
@@ -26942,7 +26950,7 @@ url: /blog/2026/06/02/engineering-learning-path-index/index.md
 Node       事件循环、Stream、Egg 基础（进阶在 06 目录）
 ```
 
-**读法原则**：每篇深文开头都有 **「读前说明」** 和 **术语速查**；仍卡住时回到本篇查 **该先读哪篇**。
+**读法原则**：深文在正文里对缩写/行话做 **inline 解释**（括号说明）；仍卡住时回到本篇查 **该先读哪篇**。
 
 ***
 
@@ -27111,7 +27119,7 @@ url: /blog/2026/06/02/enterprise-ops-primer-index/index.md
 url: /blog/2026/06/02/rbac-learning-path-index/index.md
 ---
 # RBAC 导读：从权限码到菜单、数据范围与缓存
-后台权限文章容易写成 **「直接上表结构」**，没做过权限系统的读者会懵：**菜单、按钮、接口、数据行** 到底几层？本篇是 `07-后台与RBAC` 的 **101 + 阅读顺序**；五篇正文文首已补 **读前说明**。
+后台权限文章容易写成 **「直接上表结构」**，没做过权限系统的读者会懵：**菜单、按钮、接口、数据行** 到底几层？本篇是 `07-后台与RBAC` 的 **101 + 阅读顺序**；五篇正文在关键术语**首次出现处**有括号简要说明。
 
 ***
 
